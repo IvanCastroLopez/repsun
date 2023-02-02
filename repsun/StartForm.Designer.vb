@@ -22,6 +22,7 @@ Partial Class StartForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartForm))
         Me.tlp_start = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_logo = New System.Windows.Forms.PictureBox()
         Me.tlp_start.SuspendLayout()
@@ -64,6 +65,7 @@ Partial Class StartForm
         Me.ClientSize = New System.Drawing.Size(960, 540)
         Me.Controls.Add(Me.tlp_start)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StartForm"
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
