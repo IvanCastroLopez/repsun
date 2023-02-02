@@ -22,9 +22,17 @@ Partial Class LoginForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'LoginForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "LoginForm"
+        Me.Name = "LoginForm"
+        Me.Text = "Login"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

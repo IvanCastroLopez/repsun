@@ -67,7 +67,7 @@ Partial Class StartForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StartForm"
-        Me.Text = "Form1"
+        Me.Text = "Bienvenido"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_start.ResumeLayout(False)
         CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).EndInit()
