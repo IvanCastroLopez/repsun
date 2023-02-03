@@ -132,5 +132,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\LogoTransparente_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\Login\login-left-banner.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
