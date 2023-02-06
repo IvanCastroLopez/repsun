@@ -130,12 +130,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Imagenes\LogoTransparente_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Imagenes\Login\login-left-banner.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\Imagenes\Logo\LogoFondoOscuro_1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\Logo\Logo_Transparente_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\Fondos\Login\Login-Background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
