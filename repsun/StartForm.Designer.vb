@@ -24,9 +24,9 @@ Partial Class StartForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartForm))
         Me.tlp_start = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbx_logo = New System.Windows.Forms.PictureBox()
         Me.tlp_start.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_start
@@ -35,7 +35,7 @@ Partial Class StartForm
         Me.tlp_start.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143!))
         Me.tlp_start.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.85715!))
         Me.tlp_start.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143!))
-        Me.tlp_start.Controls.Add(Me.PictureBox1, 1, 1)
+        Me.tlp_start.Controls.Add(Me.pbx_logo, 1, 1)
         Me.tlp_start.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_start.Location = New System.Drawing.Point(0, 0)
         Me.tlp_start.Name = "tlp_start"
@@ -46,16 +46,16 @@ Partial Class StartForm
         Me.tlp_start.Size = New System.Drawing.Size(960, 540)
         Me.tlp_start.TabIndex = 1
         '
-        'PictureBox1
+        'pbx_logo
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
-        Me.PictureBox1.Location = New System.Drawing.Point(277, 157)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(405, 225)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_logo.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
+        Me.pbx_logo.Location = New System.Drawing.Point(277, 157)
+        Me.pbx_logo.Name = "pbx_logo"
+        Me.pbx_logo.Size = New System.Drawing.Size(405, 225)
+        Me.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_logo.TabIndex = 0
+        Me.pbx_logo.TabStop = False
         '
         'StartForm
         '
@@ -70,11 +70,11 @@ Partial Class StartForm
         Me.Text = "Bienvenido"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_start.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents tlp_start As TableLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbx_logo As PictureBox
 End Class
