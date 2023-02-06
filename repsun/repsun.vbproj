@@ -156,5 +156,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\Fondos\Login\Login-Background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\Fondos\SurtidorOnTop\SurtidorOnTop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
