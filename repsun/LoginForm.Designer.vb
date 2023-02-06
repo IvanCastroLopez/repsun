@@ -23,32 +23,23 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.FlowLayoutPanel1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(800, 450)
-        Me.SplitContainer1.SplitterDistance = 213
-        Me.SplitContainer1.TabIndex = 0
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(258, 99)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(200, 100)
-        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel1.BackgroundImage = Global.repsun.My.Resources.Resources.Login_Background
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.30719!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.84641!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.84641!))
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
+        Me.TableLayoutPanel1.TabIndex = 0
         '
         'LoginForm
         '
@@ -62,13 +53,9 @@ Partial Class LoginForm
         Me.Name = "LoginForm"
         Me.Text = "Login"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class
