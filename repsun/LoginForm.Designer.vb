@@ -29,9 +29,9 @@ Partial Class LoginForm
         Me.lbl_bienvenido = New System.Windows.Forms.Label()
         Me.lbl_username = New System.Windows.Forms.Label()
         Me.txt_user = New System.Windows.Forms.TextBox()
-        Me.lbl_contraseña = New System.Windows.Forms.Label()
-        Me.txt_password = New System.Windows.Forms.TextBox()
-        Me.btn_done = New System.Windows.Forms.Button()
+        Me.lbl_contrasena = New System.Windows.Forms.Label()
+        Me.txt_contrasena = New System.Windows.Forms.TextBox()
+        Me.btn_inicioSesion = New System.Windows.Forms.Button()
         Me.tlp_login.SuspendLayout()
         CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel2.SuspendLayout()
@@ -77,9 +77,9 @@ Partial Class LoginForm
         Me.FlowLayoutPanel2.Controls.Add(Me.lbl_bienvenido)
         Me.FlowLayoutPanel2.Controls.Add(Me.lbl_username)
         Me.FlowLayoutPanel2.Controls.Add(Me.txt_user)
-        Me.FlowLayoutPanel2.Controls.Add(Me.lbl_contraseña)
-        Me.FlowLayoutPanel2.Controls.Add(Me.txt_password)
-        Me.FlowLayoutPanel2.Controls.Add(Me.btn_done)
+        Me.FlowLayoutPanel2.Controls.Add(Me.lbl_contrasena)
+        Me.FlowLayoutPanel2.Controls.Add(Me.txt_contrasena)
+        Me.FlowLayoutPanel2.Controls.Add(Me.btn_inicioSesion)
         Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(210, 98)
@@ -116,39 +116,39 @@ Partial Class LoginForm
         Me.txt_user.Size = New System.Drawing.Size(382, 53)
         Me.txt_user.TabIndex = 2
         '
-        'lbl_contraseña
+        'lbl_contrasena
         '
-        Me.lbl_contraseña.AutoSize = True
-        Me.lbl_contraseña.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contraseña.Location = New System.Drawing.Point(3, 189)
-        Me.lbl_contraseña.Name = "lbl_contraseña"
-        Me.lbl_contraseña.Size = New System.Drawing.Size(162, 38)
-        Me.lbl_contraseña.TabIndex = 3
-        Me.lbl_contraseña.Text = "Contraseña:"
+        Me.lbl_contrasena.AutoSize = True
+        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
+        Me.lbl_contrasena.Location = New System.Drawing.Point(3, 189)
+        Me.lbl_contrasena.Name = "lbl_contrasena"
+        Me.lbl_contrasena.Size = New System.Drawing.Size(162, 38)
+        Me.lbl_contrasena.TabIndex = 3
+        Me.lbl_contrasena.Text = "Contraseña:"
         '
-        'txt_password
+        'txt_contrasena
         '
-        Me.txt_password.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_password.Location = New System.Drawing.Point(3, 230)
-        Me.txt_password.Name = "txt_password"
-        Me.txt_password.Size = New System.Drawing.Size(382, 53)
-        Me.txt_password.TabIndex = 4
+        Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
+        Me.txt_contrasena.Location = New System.Drawing.Point(3, 230)
+        Me.txt_contrasena.Name = "txt_contrasena"
+        Me.txt_contrasena.Size = New System.Drawing.Size(382, 53)
+        Me.txt_contrasena.TabIndex = 4
         '
-        'btn_done
+        'btn_inicioSesion
         '
-        Me.btn_done.AutoSize = True
-        Me.btn_done.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btn_done.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_done.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_done.ForeColor = System.Drawing.Color.White
-        Me.btn_done.Location = New System.Drawing.Point(529, 3)
-        Me.btn_done.Name = "btn_done"
-        Me.btn_done.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
-        Me.btn_done.Size = New System.Drawing.Size(213, 112)
-        Me.btn_done.TabIndex = 5
-        Me.btn_done.Text = "Iniciar Sesión"
-        Me.btn_done.UseVisualStyleBackColor = False
+        Me.btn_inicioSesion.AutoSize = True
+        Me.btn_inicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
+        Me.btn_inicioSesion.Location = New System.Drawing.Point(529, 3)
+        Me.btn_inicioSesion.Name = "btn_inicioSesion"
+        Me.btn_inicioSesion.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(427, 112)
+        Me.btn_inicioSesion.TabIndex = 5
+        Me.btn_inicioSesion.Text = "Iniciar Sesión"
+        Me.btn_inicioSesion.UseVisualStyleBackColor = False
         '
         'LoginForm
         '
@@ -176,7 +176,7 @@ Partial Class LoginForm
     Friend WithEvents lbl_bienvenido As Label
     Friend WithEvents lbl_username As Label
     Friend WithEvents txt_user As TextBox
-    Friend WithEvents lbl_contraseña As Label
-    Friend WithEvents txt_password As TextBox
-    Friend WithEvents btn_done As Button
+    Friend WithEvents lbl_contrasena As Label
+    Friend WithEvents txt_contrasena As TextBox
+    Friend WithEvents btn_inicioSesion As Button
 End Class
