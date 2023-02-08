@@ -1,8 +1,4 @@
 ﻿Public Class UtilidadResolucion
-    'Private Sub Form1_Onload(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    AutoLayout(AutoSuitableScreen())
-    'End Sub
-
     Dim smallSize As Size = New Size(800, 600)
     Dim middleSize As Size = New Size(1440, 900)
     Dim largeSize As Size = New Size(1900, 1200)
