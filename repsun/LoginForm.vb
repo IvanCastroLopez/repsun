@@ -13,4 +13,8 @@
     Private Sub tlp_login_Paint(sender As Object, e As PaintEventArgs) Handles tlp_login.Paint
 
     End Sub
+
+    Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
+
+    End Sub
 End Class
