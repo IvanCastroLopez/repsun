@@ -113,7 +113,7 @@ Partial Class LoginForm
         Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
         Me.txt_user.Location = New System.Drawing.Point(3, 133)
         Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(382, 53)
+        Me.txt_user.Size = New System.Drawing.Size(520, 53)
         Me.txt_user.TabIndex = 2
         '
         'lbl_contrasena
@@ -132,7 +132,7 @@ Partial Class LoginForm
         Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
         Me.txt_contrasena.Location = New System.Drawing.Point(3, 230)
         Me.txt_contrasena.Name = "txt_contrasena"
-        Me.txt_contrasena.Size = New System.Drawing.Size(382, 53)
+        Me.txt_contrasena.Size = New System.Drawing.Size(520, 53)
         Me.txt_contrasena.TabIndex = 4
         '
         'btn_inicioSesion
@@ -145,7 +145,7 @@ Partial Class LoginForm
         Me.btn_inicioSesion.Location = New System.Drawing.Point(529, 3)
         Me.btn_inicioSesion.Name = "btn_inicioSesion"
         Me.btn_inicioSesion.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(427, 112)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(401, 112)
         Me.btn_inicioSesion.TabIndex = 5
         Me.btn_inicioSesion.Text = "Iniciar Sesión"
         Me.btn_inicioSesion.UseVisualStyleBackColor = False

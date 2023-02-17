@@ -15,6 +15,7 @@
     End Sub
 
     Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
-
+        MenuPrincipalForm.ShowDialog()
+        Me.Hide()
     End Sub
 End Class

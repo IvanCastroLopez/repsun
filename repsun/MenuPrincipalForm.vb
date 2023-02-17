@@ -3,4 +3,8 @@
         SurtidorOnTop.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
+
+    End Sub
 End Class
