@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionForm.Designer.vb">
+      <DependentUpon>GestionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuPrincipalForm.Designer.vb">
       <DependentUpon>MenuPrincipalForm.vb</DependentUpon>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GestionForm.resx">
+      <DependentUpon>GestionForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
