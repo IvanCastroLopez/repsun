@@ -4,12 +4,12 @@ Public Class Herramientas
 
     '** CAMBIO LITROS/PRECIO **
     ''' <summary>
-    ''' 
+    ''' Realiza el cambio de litros al precio actual del combustible (sacado de la base de datos).
     ''' </summary>
-    ''' <param name="litros"></param>
-    ''' <param name="tipo_combustible"></param>
-    ''' <returns></returns>
-    Public Shared Function cambioLitrosPrecio(litros As Decimal, tipo_combustible As tipoCombustible) As Decimal
+    ''' <param name="litros">Litros a cambiar</param>
+    ''' <param name="tipo_combustible">Tipo de combustible</param>
+    ''' <returns>El precio de la cantidad de Litros de combustible introducida</returns>
+    Public Shared Function CambioLitrosPrecio(litros As Decimal, tipo_combustible As tipoCombustible) As Decimal
 
         ' Se crea una conexión a la base de datos de combustibles.
         Dim conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
@@ -38,7 +38,14 @@ Public Class Herramientas
         Return litros * precioPorLitro
     End Function
 
-    Public Shared Function cambioPrecioLitros(dinero As Decimal, tipo_combustible As tipoCombustible) As Decimal
+    '** CAMBIO PRECIOS/LITROS
+    ''' <summary>
+    ''' Realiza el cambio de dinero introducido a litros según el precio actual del combustible (sacado de la base de datos).
+    ''' </summary>
+    ''' <param name="dinero">Dinero a cambiar</param>
+    ''' <param name="tipo_combustible">Tipo de combustible</param>
+    ''' <returns>La cantidad de combustible equivalente al dinero introducido</returns>
+    Public Shared Function CambioPrecioLitros(dinero As Decimal, tipo_combustible As tipoCombustible) As Decimal
 
         ' Se crea una conexión a la base de datos de combustibles.
         Dim conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
