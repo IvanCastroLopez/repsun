@@ -11,7 +11,7 @@ Public Class Validaciones
     Public Shared Function ValidarNombreUsuario(nombreUsuario As String) As Boolean
 
         ' Patrón con formato "nombre.apellidoNúmero"
-        Dim pattern As String = "^[a-z]+\.[a-z]+$"
+        Dim pattern As String = "^[a-z]+\.[a-z]+[0-9]$"
 
         ' Utilizar la función Regex.IsMatch para verificar si el nombre cumple con el formato especificado
         Return Regex.IsMatch(nombreUsuario, pattern) Or nombreUsuario.Equals("admin")
@@ -26,7 +26,6 @@ Public Class Validaciones
     Public Shared Function ValidarContrasena(contrasena As String) As Boolean
 
         Dim caracteresValidos As String = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ_-"
-
         ' Comprobamos que la contraseña tiene más de 4 caracteres y menos de 11
         If Len(contrasena) > 4 And Len(contrasena) < 11 Then
 
