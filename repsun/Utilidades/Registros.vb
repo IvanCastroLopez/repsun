@@ -1,4 +1,4 @@
-﻿Public Class Errores
+﻿Public Class Registros
 
     ''' <summary>
     ''' Función que muestra un mensaje de error en una ventana de mensaje y graba el error en un archivo de registro.

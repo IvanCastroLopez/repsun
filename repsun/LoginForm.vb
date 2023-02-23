@@ -28,7 +28,7 @@ Public Class LoginForm
             MenuPrincipalForm.Show()
             Me.Hide()
         Else
-            Errores.grabarError("Acceso Inválido", "Acceso invalido")
+            Registros.grabarError("Acceso Inválido", "Acceso invalido")
 
         End If
     End Sub

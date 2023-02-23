@@ -88,7 +88,7 @@
     <Compile Include="MenuPrincipalForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilidades\Errores.vb" />
+    <Compile Include="Utilidades\Registros.vb" />
     <Compile Include="Utilidades\Herramientas.vb" />
     <Compile Include="Utilidades\Validaciones.vb" />
     <Compile Include="Utilidades\UtilidadResolucion.vb" />
