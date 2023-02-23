@@ -10,9 +10,9 @@ Public Class LoginForm
         ' Cambiar tamaño de estos
         ' lbl_bienvenido
         ' lbl_username
-        ' txt_user
-        ' lbl_contrasena
         ' txt_contrasena
+        ' lbl_contrasena
+        ' txt_user
         ' btn_inicioSesion
 
     End Sub
@@ -58,4 +58,19 @@ Public Class LoginForm
         txt_user.Clear()
         txt_contrasena.Clear()
     End Sub
+
+    Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
+        If txt_user.Text = "nombre.apellido1" Then
+            txt_user.Text = ""
+            txt_user.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
+        If txt_user.Text = "" Then
+            txt_user.Text = "nombre.apellido1"
+            txt_user.ForeColor = Color.Gray
+        End If
+    End Sub
+
 End Class
