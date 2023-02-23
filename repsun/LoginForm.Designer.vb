@@ -26,12 +26,12 @@ Partial Class LoginForm
         Me.tlp_login = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_logo = New System.Windows.Forms.PictureBox()
         Me.tlp_inLogin = New System.Windows.Forms.TableLayoutPanel()
+        Me.btn_inicioSesion = New System.Windows.Forms.Button()
+        Me.txt_user = New System.Windows.Forms.TextBox()
+        Me.lbl_contrasena = New System.Windows.Forms.Label()
+        Me.txt_contrasena = New System.Windows.Forms.TextBox()
         Me.lbl_bienvenido = New System.Windows.Forms.Label()
         Me.lbl_username = New System.Windows.Forms.Label()
-        Me.txt_contrasena = New System.Windows.Forms.TextBox()
-        Me.lbl_contrasena = New System.Windows.Forms.Label()
-        Me.txt_user = New System.Windows.Forms.TextBox()
-        Me.btn_inicioSesion = New System.Windows.Forms.Button()
         Me.tlp_login.SuspendLayout()
         CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_inLogin.SuspendLayout()
@@ -97,6 +97,49 @@ Partial Class LoginForm
         Me.tlp_inLogin.Size = New System.Drawing.Size(1417, 696)
         Me.tlp_inLogin.TabIndex = 1
         '
+        'btn_inicioSesion
+        '
+        Me.btn_inicioSesion.AutoSize = True
+        Me.btn_inicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
+        Me.btn_inicioSesion.Location = New System.Drawing.Point(3, 424)
+        Me.btn_inicioSesion.Name = "btn_inicioSesion"
+        Me.btn_inicioSesion.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(401, 112)
+        Me.btn_inicioSesion.TabIndex = 14
+        Me.btn_inicioSesion.Text = "Iniciar Sesión"
+        Me.btn_inicioSesion.UseVisualStyleBackColor = False
+        '
+        'txt_user
+        '
+        Me.txt_user.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
+        Me.txt_user.Location = New System.Drawing.Point(3, 343)
+        Me.txt_user.Name = "txt_user"
+        Me.txt_user.Size = New System.Drawing.Size(520, 53)
+        Me.txt_user.TabIndex = 13
+        '
+        'lbl_contrasena
+        '
+        Me.lbl_contrasena.AutoSize = True
+        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
+        Me.lbl_contrasena.Location = New System.Drawing.Point(3, 287)
+        Me.lbl_contrasena.Name = "lbl_contrasena"
+        Me.lbl_contrasena.Size = New System.Drawing.Size(162, 38)
+        Me.lbl_contrasena.TabIndex = 12
+        Me.lbl_contrasena.Text = "Contraseña:"
+        '
+        'txt_contrasena
+        '
+        Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
+        Me.txt_contrasena.Location = New System.Drawing.Point(3, 206)
+        Me.txt_contrasena.Name = "txt_contrasena"
+        Me.txt_contrasena.Size = New System.Drawing.Size(520, 53)
+        Me.txt_contrasena.TabIndex = 11
+        '
         'lbl_bienvenido
         '
         Me.lbl_bienvenido.AutoSize = True
@@ -116,49 +159,6 @@ Partial Class LoginForm
         Me.lbl_username.Size = New System.Drawing.Size(520, 58)
         Me.lbl_username.TabIndex = 8
         Me.lbl_username.Text = "Por favor, identifícate con tu Nombre de usuario:"
-        '
-        'txt_contrasena
-        '
-        Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_contrasena.Location = New System.Drawing.Point(3, 206)
-        Me.txt_contrasena.Name = "txt_contrasena"
-        Me.txt_contrasena.Size = New System.Drawing.Size(520, 53)
-        Me.txt_contrasena.TabIndex = 11
-        '
-        'lbl_contrasena
-        '
-        Me.lbl_contrasena.AutoSize = True
-        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contrasena.Location = New System.Drawing.Point(3, 287)
-        Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(162, 38)
-        Me.lbl_contrasena.TabIndex = 12
-        Me.lbl_contrasena.Text = "Contraseña:"
-        '
-        'txt_user
-        '
-        Me.txt_user.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_user.Location = New System.Drawing.Point(3, 343)
-        Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(520, 53)
-        Me.txt_user.TabIndex = 13
-        '
-        'btn_inicioSesion
-        '
-        Me.btn_inicioSesion.AutoSize = True
-        Me.btn_inicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btn_inicioSesion.Location = New System.Drawing.Point(3, 424)
-        Me.btn_inicioSesion.Name = "btn_inicioSesion"
-        Me.btn_inicioSesion.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(401, 112)
-        Me.btn_inicioSesion.TabIndex = 14
-        Me.btn_inicioSesion.Text = "Iniciar Sesión"
-        Me.btn_inicioSesion.UseVisualStyleBackColor = False
         '
         'LoginForm
         '

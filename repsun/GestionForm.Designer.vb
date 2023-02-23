@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GestionForm
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,101 +20,115 @@ Partial Class GestionForm
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lbl_bienvenido = New System.Windows.Forms.Label()
-        Me.lbl_username = New System.Windows.Forms.Label()
-        Me.txt_user = New System.Windows.Forms.TextBox()
-        Me.lbl_contrasena = New System.Windows.Forms.Label()
-        Me.txt_contrasena = New System.Windows.Forms.TextBox()
-        Me.btn_inicioSesion = New System.Windows.Forms.Button()
+        Me.tlp_gestion = New System.Windows.Forms.TableLayoutPanel()
+        Me.tbc_gestion = New System.Windows.Forms.TabControl()
+        Me.tpg_combustible = New System.Windows.Forms.TabPage()
+        Me.tpg_tienda = New System.Windows.Forms.TabPage()
+        Me.tpg_empleados = New System.Windows.Forms.TabPage()
+        Me.tpg_proveedores = New System.Windows.Forms.TabPage()
+        Me.tpg_clientes = New System.Windows.Forms.TabPage()
+        Me.tlp_gestion.SuspendLayout()
+        Me.tbc_gestion.SuspendLayout()
         Me.SuspendLayout()
         '
-        'lbl_bienvenido
+        'tlp_gestion
         '
-        Me.lbl_bienvenido.AutoSize = True
-        Me.lbl_bienvenido.Font = New System.Drawing.Font("Yu Gothic UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_bienvenido.Location = New System.Drawing.Point(317, 198)
-        Me.lbl_bienvenido.Name = "lbl_bienvenido"
-        Me.lbl_bienvenido.Size = New System.Drawing.Size(394, 54)
-        Me.lbl_bienvenido.TabIndex = 6
-        Me.lbl_bienvenido.Text = "Bienvenido a Repsun"
+        Me.tlp_gestion.ColumnCount = 2
+        Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.40799!))
+        Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.59201!))
+        Me.tlp_gestion.Controls.Add(Me.tbc_gestion, 1, 1)
+        Me.tlp_gestion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_gestion.Location = New System.Drawing.Point(0, 0)
+        Me.tlp_gestion.Name = "tlp_gestion"
+        Me.tlp_gestion.RowCount = 2
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.246377!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.75362!))
+        Me.tlp_gestion.Size = New System.Drawing.Size(1902, 1033)
+        Me.tlp_gestion.TabIndex = 0
         '
-        'lbl_username
+        'tbc_gestion
         '
-        Me.lbl_username.AutoSize = True
-        Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(317, 252)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(617, 38)
-        Me.lbl_username.TabIndex = 7
-        Me.lbl_username.Text = "Por favor, identifícate con tu Nombre de usuario:"
+        Me.tbc_gestion.Controls.Add(Me.tpg_combustible)
+        Me.tbc_gestion.Controls.Add(Me.tpg_tienda)
+        Me.tbc_gestion.Controls.Add(Me.tpg_empleados)
+        Me.tbc_gestion.Controls.Add(Me.tpg_proveedores)
+        Me.tbc_gestion.Controls.Add(Me.tpg_clientes)
+        Me.tbc_gestion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbc_gestion.Font = New System.Drawing.Font("Yu Gothic UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbc_gestion.Location = New System.Drawing.Point(239, 77)
+        Me.tbc_gestion.Name = "tbc_gestion"
+        Me.tbc_gestion.SelectedIndex = 0
+        Me.tbc_gestion.Size = New System.Drawing.Size(1660, 953)
+        Me.tbc_gestion.TabIndex = 0
         '
-        'txt_user
+        'tpg_combustible
         '
-        Me.txt_user.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_user.Location = New System.Drawing.Point(520, 0)
-        Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(520, 53)
-        Me.txt_user.TabIndex = 8
+        Me.tpg_combustible.Location = New System.Drawing.Point(4, 40)
+        Me.tpg_combustible.Name = "tpg_combustible"
+        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_combustible.Size = New System.Drawing.Size(1652, 909)
+        Me.tpg_combustible.TabIndex = 0
+        Me.tpg_combustible.Text = "Combustible"
+        Me.tpg_combustible.UseVisualStyleBackColor = True
         '
-        'lbl_contrasena
+        'tpg_tienda
         '
-        Me.lbl_contrasena.AutoSize = True
-        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contrasena.Location = New System.Drawing.Point(317, 349)
-        Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(162, 38)
-        Me.lbl_contrasena.TabIndex = 9
-        Me.lbl_contrasena.Text = "Contraseña:"
+        Me.tpg_tienda.Location = New System.Drawing.Point(4, 40)
+        Me.tpg_tienda.Name = "tpg_tienda"
+        Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_tienda.Size = New System.Drawing.Size(1652, 909)
+        Me.tpg_tienda.TabIndex = 1
+        Me.tpg_tienda.Text = "Tienda"
+        Me.tpg_tienda.UseVisualStyleBackColor = True
         '
-        'txt_contrasena
+        'tpg_empleados
         '
-        Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_contrasena.Location = New System.Drawing.Point(0, 0)
-        Me.txt_contrasena.Name = "txt_contrasena"
-        Me.txt_contrasena.Size = New System.Drawing.Size(520, 53)
-        Me.txt_contrasena.TabIndex = 10
+        Me.tpg_empleados.Location = New System.Drawing.Point(4, 40)
+        Me.tpg_empleados.Name = "tpg_empleados"
+        Me.tpg_empleados.Size = New System.Drawing.Size(1652, 909)
+        Me.tpg_empleados.TabIndex = 2
+        Me.tpg_empleados.Text = "Empleados"
+        Me.tpg_empleados.UseVisualStyleBackColor = True
         '
-        'btn_inicioSesion
+        'tpg_proveedores
         '
-        Me.btn_inicioSesion.AutoSize = True
-        Me.btn_inicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btn_inicioSesion.Location = New System.Drawing.Point(317, 449)
-        Me.btn_inicioSesion.Name = "btn_inicioSesion"
-        Me.btn_inicioSesion.Padding = New System.Windows.Forms.Padding(12, 32, 11, 32)
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(401, 112)
-        Me.btn_inicioSesion.TabIndex = 11
-        Me.btn_inicioSesion.Text = "Iniciar Sesión"
-        Me.btn_inicioSesion.UseVisualStyleBackColor = False
+        Me.tpg_proveedores.Location = New System.Drawing.Point(4, 40)
+        Me.tpg_proveedores.Name = "tpg_proveedores"
+        Me.tpg_proveedores.Size = New System.Drawing.Size(1652, 909)
+        Me.tpg_proveedores.TabIndex = 3
+        Me.tpg_proveedores.Text = "Proveedores"
+        Me.tpg_proveedores.UseVisualStyleBackColor = True
+        '
+        'tpg_clientes
+        '
+        Me.tpg_clientes.Location = New System.Drawing.Point(4, 40)
+        Me.tpg_clientes.Name = "tpg_clientes"
+        Me.tpg_clientes.Size = New System.Drawing.Size(1652, 909)
+        Me.tpg_clientes.TabIndex = 4
+        Me.tpg_clientes.Text = "Clientes"
+        Me.tpg_clientes.UseVisualStyleBackColor = True
         '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1669, 759)
-        Me.Controls.Add(Me.lbl_bienvenido)
-        Me.Controls.Add(Me.lbl_username)
-        Me.Controls.Add(Me.txt_user)
-        Me.Controls.Add(Me.lbl_contrasena)
-        Me.Controls.Add(Me.txt_contrasena)
-        Me.Controls.Add(Me.btn_inicioSesion)
+        Me.ClientSize = New System.Drawing.Size(1902, 1033)
+        Me.Controls.Add(Me.tlp_gestion)
         Me.Name = "GestionForm"
         Me.Text = "GestionForm"
+        Me.tlp_gestion.ResumeLayout(False)
+        Me.tbc_gestion.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lbl_bienvenido As Label
-    Friend WithEvents lbl_username As Label
-    Friend WithEvents txt_user As TextBox
-    Friend WithEvents lbl_contrasena As Label
-    Friend WithEvents txt_contrasena As TextBox
-    Friend WithEvents btn_inicioSesion As Button
+    Friend WithEvents tlp_gestion As TableLayoutPanel
+    Friend WithEvents tbc_gestion As TabControl
+    Friend WithEvents tpg_combustible As TabPage
+    Friend WithEvents tpg_tienda As TabPage
+    Friend WithEvents tpg_empleados As TabPage
+    Friend WithEvents tpg_proveedores As TabPage
+    Friend WithEvents tpg_clientes As TabPage
 End Class
