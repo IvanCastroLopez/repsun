@@ -1,3 +1,5 @@
+Imports System.Text.RegularExpressions
+
 Public Class Validaciones
 
     ' ** VALIDAR DNI **
@@ -107,5 +109,50 @@ Public Class Validaciones
             ' Si la contraseña no cumple con los parámetros devolvemos false
             Return False
         End If
+    End Function
+
+    ' **  VALIDAR EMAIL **
+    ''' <summary>
+    ''' Comprueba que se trata de un email válido. Debe contener "@" entre la parte local y el dominio
+    ''' y el dominio debe de contener más de 3 letras antes del punto y al menos 2 después.
+    ''' </summary>
+    ''' <param name="email">String: email que se quiere validar</param>
+    ''' <returns>Devuelve:
+    '''     - True: si el email es válido
+    '''     - False: si no es válido
+    ''' </returns>
+    Public Shared Function ValidarEmail(email As String) As Boolean
+        Dim pattern As String = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
+        Return Regex.IsMatch(email, pattern)
+    End Function
+
+    ''' <summary>
+    ''' Valida los números de teléfono. Debe tener 9 dígitos y empiezar por 9 u 8 (para teléfonos fijos) 
+    ''' y 6 ó 7, para teléfonos móviles.
+    ''' </summary>
+    ''' <param name="_tlfno">String: teléfono que se desea validar</param>
+    ''' <returns>Devuelve:
+    '''     - True: si el teléfono es válido
+    '''     - False: si no es válido
+    ''' </returns>
+    Public Shared Function ValidarTelefono(tlfno As String) As Boolean
+        If Len(tlfno) = 9 Then
+            Dim digito As Char = ""
+            For n As Integer = 1 To Len(tlfno)
+                digito = GetChar(tlfno, n)
+                If Not IsNumeric(digito) Then
+                    Return False
+                ElseIf n = 1 Then
+                    Dim num As Integer = Val(digito)
+                    If num <> 6 And num <> 7 And num <> 8 And num <> 9 Then
+                        Return False
+                    End If
+                End If
+            Next
+            Return True
+        Else
+            Return False
+        End If
+
     End Function
 End Class
