@@ -8,10 +8,7 @@ Public Class Validaciones
     ''' y verifica mediante la fórmula específica si la letra introducida es correcta.
     ''' </summary>
     ''' <param name="dni">String: DNI introducido por el usuario en el campo de texto</param>
-    ''' <returns>Devuelve:
-    '''     - True: si los datos son correctos.
-    '''     - False: si los datos no son correctos.
-    ''' </returns>
+    ''' <returns>True si el dni es válido, False en caso contrario.</returns>
     Public Shared Function ValidarDni(dni As String) As Boolean
         ' Pongo el dni en mayúsculas si no lo está
         dni = dni.ToUpper
@@ -81,10 +78,7 @@ Public Class Validaciones
     ''' Validación para contraseña de un usuario. Debe estar compuesta por más de 5 caracteres y menos de 10.
     ''' </summary>
     ''' <param name="contrasena">String: Contraseña introducida por el usuario</param>
-    ''' <returns>
-    '''     - False: Si la contraseña no es válida.
-    '''     - True: Si la contraseña es válida.
-    ''' </returns>
+    ''' <returns>True si la contraseña es válida, False en caso contrario.</returns>
     Public Shared Function ValidarContrasena(contrasena As String) As Boolean
 
         Dim caracteresValidos As String = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ_-"
@@ -111,16 +105,13 @@ Public Class Validaciones
         End If
     End Function
 
-    ' **  VALIDAR EMAIL **
+    ' ** VALIDAR EMAIL **
     ''' <summary>
     ''' Comprueba que se trata de un email válido. Debe contener "@" entre la parte local y el dominio
     ''' y el dominio debe de contener más de 3 letras antes del punto y al menos 2 después.
     ''' </summary>
     ''' <param name="email">String: email que se quiere validar</param>
-    ''' <returns>Devuelve:
-    '''     - True: si el email es válido
-    '''     - False: si no es válido
-    ''' </returns>
+    ''' <returns>True si el email es válido, False en caso contrario.</returns>
     Public Shared Function ValidarEmail(email As String) As Boolean
         ' Definir una expresión regular para validar el formato del correo electrónico
         Dim pattern As String = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
@@ -133,10 +124,7 @@ Public Class Validaciones
     ''' y 6 ó 7, para teléfonos móviles.
     ''' </summary>
     ''' <param name="_tlfno">String: teléfono que se desea validar</param>
-    ''' <returns>Devuelve:
-    '''     - True: si el teléfono es válido
-    '''     - False: si no es válido
-    ''' </returns>
+    ''' <returns>True si el telefono es válido, False en caso contrario.</returns>
     Public Shared Function ValidarTelefono(tlfno As String) As Boolean
         ' Verificar que el número de teléfono tenga 9 dígitos
         If Len(tlfno) = 9 Then
@@ -165,5 +153,17 @@ Public Class Validaciones
             ' Si el número de teléfono no tiene 9 dígitos, es inválido
             Return False
         End If
+    End Function
+
+    ' ** VALIDAR NOMBRE **
+    ''' <summary>
+    ''' Verifica si es un nombre válido.
+    ''' </summary>
+    ''' <param name="nombre">El nombre a verificar.</param>
+    ''' <returns>True si el nombre no contiene números, False en caso contrario.</returns>
+    Public Shared Function ValidarNombre(nombre As String) As Boolean
+        'La función utiliza la función IsNumeric para verificar si el nombre pasado como argumento es un número
+        'La función Not invierte el valor devuelto por IsNumeric, es decir, devuelve True si el valor pasado no es un número
+        Return Not IsNumeric(nombre)
     End Function
 End Class
