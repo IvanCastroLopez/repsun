@@ -78,7 +78,7 @@ Partial Class LoginForm
         '
         Me.tlp_inLogin.ColumnCount = 3
         Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.47142!))
-        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 498.0!))
+        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107.0!))
         Me.tlp_inLogin.Controls.Add(Me.btn_inicioSesion, 0, 5)
         Me.tlp_inLogin.Controls.Add(Me.txt_user, 0, 4)
@@ -165,7 +165,7 @@ Partial Class LoginForm
         Me.lbl_username.Location = New System.Drawing.Point(2, 118)
         Me.lbl_username.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(407, 47)
+        Me.lbl_username.Size = New System.Drawing.Size(482, 30)
         Me.lbl_username.TabIndex = 8
         Me.lbl_username.Text = "Por favor, identifícate con tu Nombre de usuario:"
         '
