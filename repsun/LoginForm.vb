@@ -31,7 +31,7 @@ Public Class LoginForm
 
             If reader.Read() Then
                 Dim usuarioBD As String = reader("nombre_usuario").ToString()
-                Dim contrasenaBD As String = reader("contraseña").ToString()
+                Dim contrasenaBD As String = reader("contrasena").ToString()
 
                 Registros.grabarAccesos(usuarioBD, contrasenaBD, True)
                 limpiarCampos()
