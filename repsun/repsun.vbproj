@@ -184,5 +184,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\Fondos\SurtidorOnTop\SurtidorOnTop.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

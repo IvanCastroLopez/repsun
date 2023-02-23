@@ -68,7 +68,7 @@ Public Class Validaciones
     ''' Comprueba los números de teléfono. Debe tener 9 dígitos y empiezar por 9 u 8 (para teléfonos fijos) 
     ''' y 6 ó 7, para teléfonos móviles.
     ''' </summary>
-    ''' <param name="_tlfno">String: teléfono que se desea validar</param>
+    ''' <param name="tlfno">String: teléfono que se desea validar</param>
     ''' <returns>True si el telefono es válido, False en caso contrario.</returns>
     Public Shared Function ValidarTelefono(tlfno As String) As Boolean
 

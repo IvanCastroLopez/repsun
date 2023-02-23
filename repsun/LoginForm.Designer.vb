@@ -167,8 +167,8 @@ Partial Class LoginForm
         Me.tlp_login.Name = "tlp_login"
         Me.tlp_login.RowCount = 5
         Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.555809!))
-        Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.252847!))
-        Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.94533!))
+        Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.138952!))
+        Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.05923!))
         Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.35644!))
         Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.66337!))
         Me.tlp_login.Size = New System.Drawing.Size(1440, 878)
@@ -176,11 +176,15 @@ Partial Class LoginForm
         '
         'pbx_exit
         '
-        Me.pbx_exit.BackColor = System.Drawing.Color.Red
-        Me.pbx_exit.Location = New System.Drawing.Point(1393, 3)
+        Me.pbx_exit.BackColor = System.Drawing.Color.Transparent
+        Me.pbx_exit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_exit.Image = Global.repsun.My.Resources.Resources.Close
+        Me.pbx_exit.Location = New System.Drawing.Point(1390, 0)
+        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(0)
         Me.pbx_exit.Name = "pbx_exit"
         Me.tlp_login.SetRowSpan(Me.pbx_exit, 2)
-        Me.pbx_exit.Size = New System.Drawing.Size(44, 45)
+        Me.pbx_exit.Size = New System.Drawing.Size(50, 50)
+        Me.pbx_exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_exit.TabIndex = 2
         Me.pbx_exit.TabStop = False
         '
