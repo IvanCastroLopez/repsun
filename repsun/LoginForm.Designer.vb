@@ -40,7 +40,7 @@ Partial Class LoginForm
         'tlp_login
         '
         Me.tlp_login.BackgroundImage = Global.repsun.My.Resources.Resources.Login_Background
-        Me.tlp_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tlp_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tlp_login.ColumnCount = 4
         Me.tlp_login.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.4!))
         Me.tlp_login.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.4!))
