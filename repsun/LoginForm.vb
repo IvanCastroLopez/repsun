@@ -26,4 +26,7 @@ Public Class LoginForm
         End If
     End Sub
 
+    Private Sub pbx_exit_Click(sender As Object, e As EventArgs) Handles pbx_exit.Click
+        Me.Close()
+    End Sub
 End Class
