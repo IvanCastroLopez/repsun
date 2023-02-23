@@ -10,12 +10,15 @@
 
     End Sub
 
-    Private Sub tlp_login_Paint(sender As Object, e As PaintEventArgs) Handles tlp_login.Paint
-
-    End Sub
-
-    Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs)
-        MenuPrincipalForm.ShowDialog()
+    ''' <summary>
+    ''' Abre el formulario "MenuPrincipalForm" y oculta el formulario actual.
+    ''' </summary>
+    ''' <param name="sender">Botón inicio sesión</param>
+    ''' <param name="e">Click</param>
+    Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
+        If () Then
+            MenuPrincipalForm.Show()
         Me.Hide()
     End Sub
+
 End Class
