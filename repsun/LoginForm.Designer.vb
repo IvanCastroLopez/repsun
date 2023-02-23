@@ -48,10 +48,10 @@ Partial Class LoginForm
         Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196.0!))
         Me.tlp_inLogin.Controls.Add(Me.btn_inicioSesion, 0, 5)
         Me.tlp_inLogin.Controls.Add(Me.txt_contrasena, 0, 4)
-        Me.tlp_inLogin.Controls.Add(Me.lbl_contrasena, 0, 3)
         Me.tlp_inLogin.Controls.Add(Me.txt_user, 0, 2)
         Me.tlp_inLogin.Controls.Add(Me.lbl_bienvenido, 0, 0)
         Me.tlp_inLogin.Controls.Add(Me.lbl_username, 0, 1)
+        Me.tlp_inLogin.Controls.Add(Me.lbl_contrasena, 0, 3)
         Me.tlp_inLogin.Location = New System.Drawing.Point(674, 356)
         Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_inLogin.Name = "tlp_inLogin"
@@ -98,9 +98,9 @@ Partial Class LoginForm
         Me.lbl_contrasena.Location = New System.Drawing.Point(4, 407)
         Me.lbl_contrasena.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(220, 51)
+        Me.lbl_contrasena.Size = New System.Drawing.Size(212, 51)
         Me.lbl_contrasena.TabIndex = 12
-        Me.lbl_contrasena.Text = "Contraseña:"
+        Me.lbl_contrasena.Text = "Contraseña"
         '
         'txt_user
         '
@@ -130,9 +130,9 @@ Partial Class LoginForm
         Me.lbl_username.Location = New System.Drawing.Point(4, 201)
         Me.lbl_username.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(353, 51)
+        Me.lbl_username.Size = New System.Drawing.Size(345, 51)
         Me.lbl_username.TabIndex = 8
-        Me.lbl_username.Text = "Nombre de usuario:"
+        Me.lbl_username.Text = "Nombre de usuario"
         '
         'pbx_logo
         '
