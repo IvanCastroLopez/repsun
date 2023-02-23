@@ -21,6 +21,8 @@ Public Class LoginForm
     ''' <param name="e">Click</param>
     Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
         If Validaciones.ValidarNombreUsuario(txt_user.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) Then
+
+
             MenuPrincipalForm.Show()
             Me.Hide()
         End If
