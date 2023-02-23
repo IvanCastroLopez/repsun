@@ -4,14 +4,14 @@ Public Class Validaciones
 
     ' ** VALIDAR NOMBRE DE USUARIO **
     ''' <summary>
-    ''' Comprueba que se trata de un nombre de usuario válido. Debe seguir el formato "nombreApellidoNúmero".
+    ''' Comprueba que se trata de un nombre de usuario válido. Debe seguir el formato "nombre.apellidoNúmero".
     ''' </summary>
     ''' <param name="nombreUsuario"></param>
     ''' <returns></returns>
     Public Shared Function ValidarNombreUsuario(nombreUsuario As String) As Boolean
 
-        ' Patrón con formato "NombreApellidoNúmero"
-        Dim pattern As String = "^[A-Z][a-z]+\w*[A-Z][a-z]+\d*$"
+        ' Patrón con formato "nombre.apellidoNúmero"
+        Dim pattern As String = "^[a-z]+\.[a-z]+$"
 
         ' Utilizar la función Regex.IsMatch para verificar si el nombre cumple con el formato especificado
         Return Regex.IsMatch(nombreUsuario, pattern) Or nombreUsuario.Equals("admin")
