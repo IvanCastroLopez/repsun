@@ -1,4 +1,6 @@
-﻿Public Class LoginForm
+﻿Imports Utilidades
+
+Public Class LoginForm
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Cambiar tamaño de estos
         ' lbl_bienvenido
@@ -16,9 +18,10 @@
     ''' <param name="sender">Botón inicio sesión</param>
     ''' <param name="e">Click</param>
     Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
-        If () Then
+        If (Utilidades.Validaciones.ValidarDni(sender)) Then
             MenuPrincipalForm.Show()
-        Me.Hide()
+            Me.Hide()
+        End If
     End Sub
 
 End Class
