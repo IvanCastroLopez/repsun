@@ -57,20 +57,48 @@ Public Class LoginForm
     Private Sub limpiarCampos()
         txt_user.Clear()
         txt_contrasena.Clear()
+        btn_inicioSesion.Select()
     End Sub
 
-    Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
+    Private Sub txt_user_TextChanged(sender As Object, e As EventArgs) Handles txt_user.TextChanged
         If txt_user.Text = "nombre.apellido1" Then
             txt_user.Text = ""
             txt_user.ForeColor = Color.Black
-        End If
-    End Sub
-
-    Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
-        If txt_user.Text = "" Then
+        ElseIf txt_user.Text = "" Then
             txt_user.Text = "nombre.apellido1"
             txt_user.ForeColor = Color.Gray
         End If
     End Sub
+
+    'Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
+    '    If txt_user.Text = "nombre.apellido1" Then
+    '        txt_user.Text = ""
+    '        txt_user.ForeColor = Color.Black
+    '    End If
+    'End Sub
+
+    'Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
+    '    If txt_user.Text = "" Then
+    '        txt_user.Text = "nombre.apellido1"
+    '        txt_user.ForeColor = Color.Gray
+    '    End If
+    'End Sub
+
+    Private Sub txt_contrasena_GotFocus(sender As Object, e As EventArgs) Handles txt_contrasena.GotFocus
+        If txt_contrasena.Text = "contraseña" Then
+            txt_contrasena.Text = ""
+            txt_contrasena.UseSystemPasswordChar = True
+            txt_contrasena.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub txt_contrasena_LostFocus(sender As Object, e As EventArgs) Handles txt_contrasena.LostFocus
+        If txt_contrasena.Text = "" Then
+            txt_contrasena.Text = "contraseña"
+            txt_contrasena.UseSystemPasswordChar = False
+            txt_contrasena.ForeColor = Color.Gray
+        End If
+    End Sub
+
 
 End Class
