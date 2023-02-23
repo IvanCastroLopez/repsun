@@ -19,7 +19,7 @@ Public Class Validaciones
 
     ' ** VALIDAR CONTRASEÑA**
     ''' <summary>
-    ''' Comprueba la contraseña de un usuario. Debe estar compuesta por más de 5 caracteres y menos de 10.
+    ''' Comprueba la contraseña de un usuario. Debe estar compuesta por más de 4 caracteres y menos de 10.
     ''' </summary>
     ''' <param name="contrasena">String: Contraseña introducida por el usuario</param>
     ''' <returns>True si la contraseña es válida, False en caso contrario.</returns>
@@ -27,8 +27,8 @@ Public Class Validaciones
 
         Dim caracteresValidos As String = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ_-"
 
-        ' Comprobamos que la contraseña tiene más de 5 caracteres y menos de 11
-        If Len(contrasena) > 5 And Len(contrasena) < 11 Then
+        ' Comprobamos que la contraseña tiene más de 4 caracteres y menos de 11
+        If Len(contrasena) > 4 And Len(contrasena) < 11 Then
 
             ' Recorro la contraseña caracter a caracter
             For a = 1 To Len(contrasena)
