@@ -1,0 +1,6 @@
+"23/02/2023 23:11:06 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"23/02/2023 23:12:48 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"23/02/2023 23:15:39 [Acceso Denegado] | Nombre de usuario: pepe | Contraseña: pepe"
+"23/02/2023 23:17:20 [Acceso Denegado] | Nombre de usuario: pepe | Contraseña: pepe"
+"23/02/2023 23:17:56 [Acceso Denegado] | Nombre de usuario: admin | Contraseña: admin.admin0"
+"23/02/2023 23:20:34 [Acceso Denegado] | Nombre de usuario: admin | Contraseña: admin.admin"
