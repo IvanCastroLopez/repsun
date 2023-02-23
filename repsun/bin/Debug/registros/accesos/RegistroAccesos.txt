@@ -4,3 +4,8 @@
 "23/02/2023 23:17:20 [Acceso Denegado] | Nombre de usuario: pepe | Contraseña: pepe"
 "23/02/2023 23:17:56 [Acceso Denegado] | Nombre de usuario: admin | Contraseña: admin.admin0"
 "23/02/2023 23:20:34 [Acceso Denegado] | Nombre de usuario: admin | Contraseña: admin.admin"
+"23/02/2023 23:41:27 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"23/02/2023 23:41:59 [Acceso Denegado] | Nombre de usuario: pepepe | Contraseña: pepe.pepe1"
+"24/02/2023 0:12:42 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: contraseña"
+"24/02/2023 0:12:53 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: "
+"24/02/2023 0:15:32 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: contraseña"
