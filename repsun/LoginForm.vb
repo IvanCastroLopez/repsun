@@ -60,29 +60,19 @@ Public Class LoginForm
         btn_inicioSesion.Select()
     End Sub
 
-    Private Sub txt_user_TextChanged(sender As Object, e As EventArgs) Handles txt_user.TextChanged
+    Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
         If txt_user.Text = "nombre.apellido1" Then
             txt_user.Text = ""
             txt_user.ForeColor = Color.Black
-        ElseIf txt_user.Text = "" Then
+        End If
+    End Sub
+
+    Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
+        If txt_user.Text = "" Then
             txt_user.Text = "nombre.apellido1"
             txt_user.ForeColor = Color.Gray
         End If
     End Sub
-
-    'Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
-    '    If txt_user.Text = "nombre.apellido1" Then
-    '        txt_user.Text = ""
-    '        txt_user.ForeColor = Color.Black
-    '    End If
-    'End Sub
-
-    'Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
-    '    If txt_user.Text = "" Then
-    '        txt_user.Text = "nombre.apellido1"
-    '        txt_user.ForeColor = Color.Gray
-    '    End If
-    'End Sub
 
     Private Sub txt_contrasena_GotFocus(sender As Object, e As EventArgs) Handles txt_contrasena.GotFocus
         If txt_contrasena.Text = "contraseña" Then
@@ -100,5 +90,8 @@ Public Class LoginForm
         End If
     End Sub
 
-
+    Private Sub txt_contrasena_TextChanged(sender As Object, e As EventArgs) Handles txt_contrasena.TextChanged
+        txt_contrasena.UseSystemPasswordChar = True
+        txt_contrasena.ForeColor = Color.Black
+    End Sub
 End Class

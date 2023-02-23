@@ -1,12 +1,12 @@
 ﻿Public Class Registros
 
     ''' <summary>
-    ''' Función que muestra un mensaje de error en una ventana de mensaje y graba el error en un archivo de registro.
+    ''' Muestra un mensaje de error en una ventana de mensaje y graba el error en un archivo de registro.
     ''' </summary>
     ''' <param name="message">Mensaje de error a mostrar.</param>
     ''' <param name="titulo">Título de la ventana de mensaje de error.</param>
     ''' <returns>Devuelve un valor entero: 1 si se grabó el error correctamente y 0 si hubo un error al grabar el error.</returns>
-    Public Shared Function grabarError(message As String, titulo As String) As Integer
+    Public Shared Function GrabarError(message As String, titulo As String) As Integer
         Try
             ' Mostrar mensaje de error en ventana de mensaje
             MsgBox(message, 48, titulo)
@@ -35,13 +35,13 @@
 
 
     ''' <summary>
-    ''' Este método se encarga de registrar los accesos al sistema en un archivo de texto.
+    ''' Registra los accesos al sistema en un archivo de texto.
     ''' </summary>
     ''' <param name="nombreUsuario">El nombre del usuario que intentó acceder al sistema.</param>
     ''' <param name="contrasena">La contraseña proporcionada por el usuario.</param>
     ''' <param name="acceso">Un valor booleano que indica si el acceso fue exitoso o no.</param>
     ''' <returns>Un entero que indica si se pudo grabar el acceso correctamente (1) o si hubo un error (0).</returns>
-    Public Shared Function grabarAccesos(nombreUsuario As String, contrasena As String, acceso As Boolean) As Integer
+    Public Shared Function GrabarAccesos(nombreUsuario As String, contrasena As String, acceso As Boolean) As Integer
         Try
             Dim accesoValido As String
             If (acceso) Then

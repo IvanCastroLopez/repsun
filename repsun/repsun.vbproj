@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesOnTop.Designer.vb">
+      <DependentUpon>ClientesOnTop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesOnTop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionForm.Designer.vb">
       <DependentUpon>GestionForm.vb</DependentUpon>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ClientesOnTop.resx">
+      <DependentUpon>ClientesOnTop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionForm.resx">
       <DependentUpon>GestionForm.vb</DependentUpon>
     </EmbeddedResource>
