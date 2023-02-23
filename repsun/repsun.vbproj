@@ -187,5 +187,9 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
+    <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
