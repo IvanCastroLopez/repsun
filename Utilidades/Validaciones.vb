@@ -12,7 +12,7 @@ Public Class Validaciones
     '''     - True: si los datos son correctos.
     '''     - False: si los datos no son correctos.
     ''' </returns>
-    Public Shared Function ValidarDNI(dni As String) As Boolean
+    Public Shared Function ValidarDni(dni As String) As Boolean
         ' Pongo el dni en mayúsculas si no lo está
         dni = dni.ToUpper
 
@@ -136,23 +136,32 @@ Public Class Validaciones
     '''     - False: si no es válido
     ''' </returns>
     Public Shared Function ValidarTelefono(tlfno As String) As Boolean
+        ' Verificar que el número de teléfono tenga 9 dígitos'
         If Len(tlfno) = 9 Then
+            ' Inicializar variable para guardar cada dígito del número de teléfono'
             Dim digito As Char = ""
+            ' Recorrer cada dígito del número de teléfono'
             For n As Integer = 1 To Len(tlfno)
+                ' Obtener el dígito actual'
                 digito = GetChar(tlfno, n)
+                ' Verificar si el dígito es un número'
                 If Not IsNumeric(digito) Then
+                    ' Si el dígito no es un número, el número de teléfono es inválido'
                     Return False
                 ElseIf n = 1 Then
+                    ' Si es el primer dígito del número de teléfono, verificar si es válido'
                     Dim num As Integer = Val(digito)
                     If num <> 6 And num <> 7 And num <> 8 And num <> 9 Then
+                        ' Si el primer dígito no es válido, el número de teléfono es inválido'
                         Return False
                     End If
                 End If
             Next
+            ' Si se han recorrido todos los dígitos sin problemas, el número de teléfono es válido'
             Return True
         Else
+            ' Si el número de teléfono no tiene 9 dígitos, es inválido'
             Return False
         End If
-
     End Function
 End Class
