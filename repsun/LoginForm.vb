@@ -25,14 +25,14 @@ Public Class LoginForm
         Dim usuario As String
         Dim contrasena As String
         If Validaciones.ValidarNombreUsuario(txt_user.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) Then
-
-
             MenuPrincipalForm.Show()
             Me.Hide()
         Else
             Errores.grabarError("Acceso Inválido", "Acceso invalido")
 
         End If
+        MenuPrincipalForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub pbx_exit_Click(sender As Object, e As EventArgs) Handles pbx_exit.Click
