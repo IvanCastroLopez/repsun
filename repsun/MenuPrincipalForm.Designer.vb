@@ -44,7 +44,7 @@ Partial Class MenuPrincipalForm
         Me.TableLayoutPanel1.Controls.Add(Me.btn_salir, 2, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.7305!))
@@ -57,7 +57,7 @@ Partial Class MenuPrincipalForm
         '
         Me.btn_tpv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_tpv.Location = New System.Drawing.Point(4, 75)
-        Me.btn_tpv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_tpv.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_tpv.Name = "btn_tpv"
         Me.btn_tpv.Size = New System.Drawing.Size(503, 326)
         Me.btn_tpv.TabIndex = 0
@@ -68,7 +68,7 @@ Partial Class MenuPrincipalForm
         '
         Me.btn_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_gestion.Location = New System.Drawing.Point(515, 75)
-        Me.btn_gestion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_gestion.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_gestion.Name = "btn_gestion"
         Me.btn_gestion.Size = New System.Drawing.Size(503, 326)
         Me.btn_gestion.TabIndex = 1
@@ -79,7 +79,7 @@ Partial Class MenuPrincipalForm
         '
         Me.btn_zonaClientes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_zonaClientes.Location = New System.Drawing.Point(4, 409)
-        Me.btn_zonaClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_zonaClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_zonaClientes.Name = "btn_zonaClientes"
         Me.btn_zonaClientes.Size = New System.Drawing.Size(503, 263)
         Me.btn_zonaClientes.TabIndex = 2
@@ -90,7 +90,7 @@ Partial Class MenuPrincipalForm
         '
         Me.btn_surtidores.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_surtidores.Location = New System.Drawing.Point(515, 409)
-        Me.btn_surtidores.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_surtidores.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_surtidores.Name = "btn_surtidores"
         Me.btn_surtidores.Size = New System.Drawing.Size(503, 263)
         Me.btn_surtidores.TabIndex = 3
@@ -101,7 +101,7 @@ Partial Class MenuPrincipalForm
         '
         Me.btn_salir.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_salir.Location = New System.Drawing.Point(1026, 4)
-        Me.btn_salir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_salir.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(70, 63)
         Me.btn_salir.TabIndex = 4
@@ -114,7 +114,7 @@ Partial Class MenuPrincipalForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1100, 676)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MenuPrincipalForm"
         Me.Text = "MenuPrincipalForm"
         Me.TableLayoutPanel1.ResumeLayout(False)
