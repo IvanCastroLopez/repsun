@@ -20,15 +20,15 @@ Public Class GestionForm
 
         Me.dgv_empleados.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_empleados.DataSource = gestion_dataset
-        dgv_empleados.DataMember = "Tabla"
+        dgv_empleados.DataMember = "Empleado"
 
         Me.dgv_proveedores.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_proveedores.DataSource = gestion_dataset
-        dgv_proveedores.DataMember = "Tabla"
+        dgv_proveedores.DataMember = "Proveedor"
 
         Me.dgv_clientes.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_clientes.DataSource = gestion_dataset
-        dgv_clientes.DataMember = "Tabla"
+        dgv_clientes.DataMember = "ClienteRepsol"
     End Sub
 
 
