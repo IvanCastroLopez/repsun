@@ -74,6 +74,7 @@ Partial Class GestionForm
         '
         'tbc_gestion
         '
+        Me.tlp_gestion.SetColumnSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.Controls.Add(Me.tpg_combustible)
         Me.tbc_gestion.Controls.Add(Me.tpg_tienda)
         Me.tbc_gestion.Controls.Add(Me.tpg_empleados)
@@ -86,7 +87,7 @@ Partial Class GestionForm
         Me.tbc_gestion.Name = "tbc_gestion"
         Me.tlp_gestion.SetRowSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.SelectedIndex = 0
-        Me.tbc_gestion.Size = New System.Drawing.Size(1474, 991)
+        Me.tbc_gestion.Size = New System.Drawing.Size(1520, 991)
         Me.tbc_gestion.TabIndex = 2
         '
         'tpg_combustible
@@ -95,7 +96,7 @@ Partial Class GestionForm
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
         Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(2)
-        Me.tpg_combustible.Size = New System.Drawing.Size(1466, 953)
+        Me.tpg_combustible.Size = New System.Drawing.Size(1512, 953)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
         Me.tpg_combustible.UseVisualStyleBackColor = True
@@ -144,10 +145,10 @@ Partial Class GestionForm
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.Close
-        Me.PictureBox1.Location = New System.Drawing.Point(1873, 15)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(15)
+        Me.PictureBox1.Location = New System.Drawing.Point(1863, 5)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
