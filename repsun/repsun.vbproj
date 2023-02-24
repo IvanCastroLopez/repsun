@@ -196,9 +196,13 @@
     <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Imagenes\Iconos\Anadir.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Buscar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Clientes.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Combustible.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Eliminar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Empleados.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Modificar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Proveedores.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Tienda.png" />
