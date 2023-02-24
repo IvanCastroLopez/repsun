@@ -24,3 +24,4 @@
 "24/02/2023 22:04:30 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
 "24/02/2023 22:15:05 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
 "24/02/2023 22:46:19 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"25/02/2023 0:42:47 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"

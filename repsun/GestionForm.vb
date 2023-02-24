@@ -41,4 +41,11 @@ Public Class GestionForm
         Me.Hide()
     End Sub
 
+    Private Sub pbx_close_Click(sender As Object, e As EventArgs) Handles pbx_close.Click
+        Me.Close()
+    End Sub
+
+    Private Sub pbx_salir_Click(sender As Object, e As EventArgs) Handles pbx_salir.Click
+        Me.Close(
+    End Sub
 End Class
