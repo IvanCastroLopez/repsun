@@ -46,7 +46,7 @@ Partial Class ClientesOnTop
         Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(2)
         Me.tbc_gestion.Name = "tbc_gestion"
         Me.tbc_gestion.SelectedIndex = 0
-        Me.tbc_gestion.Size = New System.Drawing.Size(800, 450)
+        Me.tbc_gestion.Size = New System.Drawing.Size(1904, 1041)
         Me.tbc_gestion.TabIndex = 1
         '
         'tpg_combustible
@@ -56,7 +56,7 @@ Partial Class ClientesOnTop
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
         Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(2)
-        Me.tpg_combustible.Size = New System.Drawing.Size(792, 412)
+        Me.tpg_combustible.Size = New System.Drawing.Size(1896, 1003)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
         Me.tpg_combustible.UseVisualStyleBackColor = True
@@ -105,22 +105,26 @@ Partial Class ClientesOnTop
         'tlp_combustible
         '
         Me.tlp_combustible.ColumnCount = 2
-        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
         Me.tlp_combustible.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_combustible.Location = New System.Drawing.Point(2, 2)
         Me.tlp_combustible.Name = "tlp_combustible"
-        Me.tlp_combustible.RowCount = 2
-        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_combustible.Size = New System.Drawing.Size(788, 408)
+        Me.tlp_combustible.RowCount = 6
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_combustible.Size = New System.Drawing.Size(1892, 999)
         Me.tlp_combustible.TabIndex = 0
         '
         'ClientesOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.tbc_gestion)
         Me.Name = "ClientesOnTop"
         Me.Text = "ClientesOnTop"
