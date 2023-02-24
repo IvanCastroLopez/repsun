@@ -41,10 +41,15 @@ Partial Class tpvForm
         Me.txt_introducido = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -53,13 +58,14 @@ Partial Class tpvForm
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666!))
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
         Me.tlp_tpv.Controls.Add(Me.tlp_caja, 1, 0)
-        Me.tlp_tpv.Controls.Add(Me.Panel1, 0, 0)
+        Me.tlp_tpv.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.tlp_tpv.Controls.Add(Me.TabControl1, 0, 1)
         Me.tlp_tpv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_tpv.Location = New System.Drawing.Point(0, 0)
         Me.tlp_tpv.Name = "tlp_tpv"
-        Me.tlp_tpv.RowCount = 1
-        Me.tlp_tpv.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_tpv.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlp_tpv.RowCount = 2
+        Me.tlp_tpv.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.tlp_tpv.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334!))
         Me.tlp_tpv.Size = New System.Drawing.Size(1904, 1041)
         Me.tlp_tpv.TabIndex = 0
         '
@@ -73,6 +79,7 @@ Partial Class tpvForm
         Me.tlp_caja.Location = New System.Drawing.Point(1272, 3)
         Me.tlp_caja.Name = "tlp_caja"
         Me.tlp_caja.RowCount = 2
+        Me.tlp_tpv.SetRowSpan(Me.tlp_caja, 2)
         Me.tlp_caja.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
         Me.tlp_caja.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
         Me.tlp_caja.Size = New System.Drawing.Size(629, 1035)
@@ -336,13 +343,49 @@ Partial Class tpvForm
         Me.btn_teclado_2.Text = "2"
         Me.btn_teclado_2.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'PictureBox1
         '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1263, 1035)
-        Me.Panel1.TabIndex = 1
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 167)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Location = New System.Drawing.Point(3, 176)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1263, 862)
+        Me.TabControl1.TabIndex = 2
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 46)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1255, 812)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(192, 74)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'tpvForm
         '
@@ -350,6 +393,7 @@ Partial Class tpvForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.tlp_tpv)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "tpvForm"
         Me.Text = "tpvForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -357,6 +401,8 @@ Partial Class tpvForm
         Me.tlp_caja.ResumeLayout(False)
         Me.tlp_teclado.ResumeLayout(False)
         Me.tlp_teclado.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -380,5 +426,8 @@ Partial Class tpvForm
     Friend WithEvents txt_introducido As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btn_teclado_2 As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
 End Class
