@@ -75,7 +75,7 @@ Partial Class LoginForm
         Me.btn_inicioSesion.Location = New System.Drawing.Point(0, 332)
         Me.btn_inicioSesion.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_inicioSesion.Name = "btn_inicioSesion"
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(393, 99)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(389, 40)
         Me.btn_inicioSesion.TabIndex = 3
         Me.btn_inicioSesion.Text = "Iniciar Sesión"
         Me.btn_inicioSesion.UseVisualStyleBackColor = False
@@ -89,7 +89,7 @@ Partial Class LoginForm
         Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_contrasena.MaxLength = 10
         Me.txt_contrasena.Name = "txt_contrasena"
-        Me.txt_contrasena.Size = New System.Drawing.Size(391, 44)
+        Me.txt_contrasena.Size = New System.Drawing.Size(714, 44)
         Me.txt_contrasena.TabIndex = 2
         '
         'txt_user
@@ -101,7 +101,7 @@ Partial Class LoginForm
         Me.txt_user.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_user.MaxLength = 30
         Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(391, 44)
+        Me.txt_user.Size = New System.Drawing.Size(714, 44)
         Me.txt_user.TabIndex = 1
         Me.txt_user.Text = "nombre.apellido1"
         '
@@ -112,7 +112,7 @@ Partial Class LoginForm
         Me.lbl_bienvenido.Location = New System.Drawing.Point(2, 0)
         Me.lbl_bienvenido.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_bienvenido.Name = "lbl_bienvenido"
-        Me.lbl_bienvenido.Size = New System.Drawing.Size(324, 45)
+        Me.lbl_bienvenido.Size = New System.Drawing.Size(316, 45)
         Me.lbl_bienvenido.TabIndex = 0
         Me.lbl_bienvenido.Text = "Bienvenido a Repsun"
         '
@@ -121,24 +121,12 @@ Partial Class LoginForm
         Me.lbl_username.AutoSize = True
         Me.lbl_username.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(1, 104)
-        Me.lbl_username.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lbl_username.Location = New System.Drawing.Point(2, 109)
+        Me.lbl_username.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(1041, 36)
+        Me.lbl_username.Size = New System.Drawing.Size(201, 30)
         Me.lbl_username.TabIndex = 0
         Me.lbl_username.Text = "Nombre de usuario"
-        '
-        'lbl_contrasena
-        '
-        Me.lbl_contrasena.AutoSize = True
-        Me.lbl_contrasena.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contrasena.Location = New System.Drawing.Point(2, 218)
-        Me.lbl_contrasena.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(1039, 36)
-        Me.lbl_contrasena.TabIndex = 4
-        Me.lbl_contrasena.Text = "Contraseña"
         '
         'lbl_perdido
         '
@@ -156,11 +144,11 @@ Partial Class LoginForm
         Me.pbx_logo.BackColor = System.Drawing.Color.Transparent
         Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_logo.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
-        Me.pbx_logo.Location = New System.Drawing.Point(148, 42)
-        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(2)
+        Me.pbx_logo.Location = New System.Drawing.Point(150, 44)
+        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(4)
         Me.pbx_logo.Name = "pbx_logo"
         Me.tlp_login.SetRowSpan(Me.pbx_logo, 2)
-        Me.pbx_logo.Size = New System.Drawing.Size(142, 147)
+        Me.pbx_logo.Size = New System.Drawing.Size(138, 143)
         Me.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_logo.TabIndex = 0
         Me.pbx_logo.TabStop = False
@@ -196,11 +184,11 @@ Partial Class LoginForm
         Me.pbx_exit.BackColor = System.Drawing.Color.Transparent
         Me.pbx_exit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_exit.Image = Global.repsun.My.Resources.Resources.Close
-        Me.pbx_exit.Location = New System.Drawing.Point(1371, 8)
-        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(8)
+        Me.pbx_exit.Location = New System.Drawing.Point(1378, 15)
+        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(15)
         Me.pbx_exit.Name = "pbx_exit"
         Me.tlp_login.SetRowSpan(Me.pbx_exit, 2)
-        Me.pbx_exit.Size = New System.Drawing.Size(33, 33)
+        Me.pbx_exit.Size = New System.Drawing.Size(19, 19)
         Me.pbx_exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_exit.TabIndex = 2
         Me.pbx_exit.TabStop = False
