@@ -88,8 +88,8 @@ Partial Class ClientesOnTop
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.dgv_tienda, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.tlp_botones, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -105,9 +105,9 @@ Partial Class ClientesOnTop
         '
         Me.dgv_tienda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_tienda.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_tienda.Location = New System.Drawing.Point(310, 75)
+        Me.dgv_tienda.Location = New System.Drawing.Point(187, 75)
         Me.dgv_tienda.Name = "dgv_tienda"
-        Me.dgv_tienda.Size = New System.Drawing.Size(918, 642)
+        Me.dgv_tienda.Size = New System.Drawing.Size(1041, 642)
         Me.dgv_tienda.TabIndex = 0
         '
         'tlp_botones
@@ -131,7 +131,7 @@ Partial Class ClientesOnTop
         Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.tlp_botones.Size = New System.Drawing.Size(301, 642)
+        Me.tlp_botones.Size = New System.Drawing.Size(178, 642)
         Me.tlp_botones.TabIndex = 1
         '
         'pbx_create
