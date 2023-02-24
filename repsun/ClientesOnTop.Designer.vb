@@ -27,19 +27,19 @@ Partial Class ClientesOnTop
         Me.tpg_tienda = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgv_tienda = New System.Windows.Forms.DataGridView()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.tpg_empleados = New System.Windows.Forms.TabPage()
-        Me.tpg_proveedores = New System.Windows.Forms.TabPage()
-        Me.tpg_clientes = New System.Windows.Forms.TabPage()
+        Me.tlp_botones = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_create = New System.Windows.Forms.PictureBox()
         Me.pbx_read = New System.Windows.Forms.PictureBox()
         Me.pbx_update = New System.Windows.Forms.PictureBox()
         Me.pbx_delete = New System.Windows.Forms.PictureBox()
+        Me.tpg_empleados = New System.Windows.Forms.TabPage()
+        Me.tpg_proveedores = New System.Windows.Forms.TabPage()
+        Me.tpg_clientes = New System.Windows.Forms.TabPage()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_tienda.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgv_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.tlp_botones.SuspendLayout()
         CType(Me.pbx_create, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_read, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_update, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +91,7 @@ Partial Class ClientesOnTop
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.dgv_tienda, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.tlp_botones, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -110,29 +110,73 @@ Partial Class ClientesOnTop
         Me.dgv_tienda.Size = New System.Drawing.Size(918, 642)
         Me.dgv_tienda.TabIndex = 0
         '
-        'TableLayoutPanel2
+        'tlp_botones
         '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.pbx_create, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.pbx_read, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.pbx_update, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.pbx_delete, 0, 7)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 75)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 9
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(301, 642)
-        Me.TableLayoutPanel2.TabIndex = 1
+        Me.tlp_botones.ColumnCount = 1
+        Me.tlp_botones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_botones.Controls.Add(Me.pbx_create, 0, 1)
+        Me.tlp_botones.Controls.Add(Me.pbx_read, 0, 3)
+        Me.tlp_botones.Controls.Add(Me.pbx_update, 0, 5)
+        Me.tlp_botones.Controls.Add(Me.pbx_delete, 0, 7)
+        Me.tlp_botones.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_botones.Location = New System.Drawing.Point(3, 75)
+        Me.tlp_botones.Name = "tlp_botones"
+        Me.tlp_botones.RowCount = 9
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tlp_botones.Size = New System.Drawing.Size(301, 642)
+        Me.tlp_botones.TabIndex = 1
+        '
+        'pbx_create
+        '
+        Me.pbx_create.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_create.Image = Global.repsun.My.Resources.Resources.Anadir
+        Me.pbx_create.Location = New System.Drawing.Point(3, 74)
+        Me.pbx_create.Name = "pbx_create"
+        Me.pbx_create.Size = New System.Drawing.Size(295, 65)
+        Me.pbx_create.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_create.TabIndex = 0
+        Me.pbx_create.TabStop = False
+        '
+        'pbx_read
+        '
+        Me.pbx_read.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_read.Image = Global.repsun.My.Resources.Resources.Buscar
+        Me.pbx_read.Location = New System.Drawing.Point(3, 216)
+        Me.pbx_read.Name = "pbx_read"
+        Me.pbx_read.Size = New System.Drawing.Size(295, 65)
+        Me.pbx_read.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_read.TabIndex = 1
+        Me.pbx_read.TabStop = False
+        '
+        'pbx_update
+        '
+        Me.pbx_update.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_update.Image = Global.repsun.My.Resources.Resources.Modificar
+        Me.pbx_update.Location = New System.Drawing.Point(3, 358)
+        Me.pbx_update.Name = "pbx_update"
+        Me.pbx_update.Size = New System.Drawing.Size(295, 65)
+        Me.pbx_update.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_update.TabIndex = 2
+        Me.pbx_update.TabStop = False
+        '
+        'pbx_delete
+        '
+        Me.pbx_delete.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_delete.Image = Global.repsun.My.Resources.Resources.Eliminar
+        Me.pbx_delete.Location = New System.Drawing.Point(3, 500)
+        Me.pbx_delete.Name = "pbx_delete"
+        Me.pbx_delete.Size = New System.Drawing.Size(295, 65)
+        Me.pbx_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_delete.TabIndex = 3
+        Me.pbx_delete.TabStop = False
         '
         'tpg_empleados
         '
@@ -164,42 +208,6 @@ Partial Class ClientesOnTop
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
         '
-        'pbx_create
-        '
-        Me.pbx_create.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_create.Location = New System.Drawing.Point(3, 74)
-        Me.pbx_create.Name = "pbx_create"
-        Me.pbx_create.Size = New System.Drawing.Size(295, 65)
-        Me.pbx_create.TabIndex = 0
-        Me.pbx_create.TabStop = False
-        '
-        'pbx_read
-        '
-        Me.pbx_read.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_read.Location = New System.Drawing.Point(3, 216)
-        Me.pbx_read.Name = "pbx_read"
-        Me.pbx_read.Size = New System.Drawing.Size(295, 65)
-        Me.pbx_read.TabIndex = 1
-        Me.pbx_read.TabStop = False
-        '
-        'pbx_update
-        '
-        Me.pbx_update.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_update.Location = New System.Drawing.Point(3, 358)
-        Me.pbx_update.Name = "pbx_update"
-        Me.pbx_update.Size = New System.Drawing.Size(295, 65)
-        Me.pbx_update.TabIndex = 2
-        Me.pbx_update.TabStop = False
-        '
-        'pbx_delete
-        '
-        Me.pbx_delete.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_delete.Location = New System.Drawing.Point(3, 500)
-        Me.pbx_delete.Name = "pbx_delete"
-        Me.pbx_delete.Size = New System.Drawing.Size(295, 65)
-        Me.pbx_delete.TabIndex = 3
-        Me.pbx_delete.TabStop = False
-        '
         'ClientesOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,7 +220,7 @@ Partial Class ClientesOnTop
         Me.tpg_tienda.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgv_tienda, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.tlp_botones.ResumeLayout(False)
         CType(Me.pbx_create, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_read, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_update, System.ComponentModel.ISupportInitialize).EndInit()
@@ -229,7 +237,7 @@ Partial Class ClientesOnTop
     Friend WithEvents tpg_clientes As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents dgv_tienda As DataGridView
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents tlp_botones As TableLayoutPanel
     Friend WithEvents pbx_create As PictureBox
     Friend WithEvents pbx_read As PictureBox
     Friend WithEvents pbx_update As PictureBox
