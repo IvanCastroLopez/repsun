@@ -31,9 +31,12 @@ Partial Class GestionForm
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tlp_gestion.SuspendLayout()
+        Me.tlp_botonesGestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -59,16 +62,17 @@ Partial Class GestionForm
         '
         'tlp_botonesGestion
         '
-        Me.tlp_botonesGestion.ColumnCount = 2
-        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.ColumnCount = 1
+        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlp_botonesGestion.Controls.Add(Me.PictureBox2, 0, 0)
         Me.tlp_botonesGestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_botonesGestion.Location = New System.Drawing.Point(3, 3)
         Me.tlp_botonesGestion.Name = "tlp_botonesGestion"
         Me.tlp_botonesGestion.RowCount = 2
         Me.tlp_gestion.SetRowSpan(Me.tlp_botonesGestion, 3)
-        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.13527!))
+        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.86473!))
         Me.tlp_botonesGestion.Size = New System.Drawing.Size(374, 1035)
         Me.tlp_botonesGestion.TabIndex = 0
         '
@@ -153,6 +157,18 @@ Partial Class GestionForm
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(15)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(368, 368)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -165,8 +181,10 @@ Partial Class GestionForm
         Me.Text = "GestionForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_gestion.ResumeLayout(False)
+        Me.tlp_botonesGestion.ResumeLayout(False)
         Me.tbc_gestion.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -180,4 +198,5 @@ Partial Class GestionForm
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents tpg_clientes As TabPage
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

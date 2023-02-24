@@ -94,4 +94,8 @@ Public Class LoginForm
         txt_contrasena.UseSystemPasswordChar = True
         txt_contrasena.ForeColor = Color.Black
     End Sub
+
+    Private Sub txt_user_TextChanged(sender As Object, e As EventArgs) Handles txt_user.TextChanged
+
+    End Sub
 End Class
