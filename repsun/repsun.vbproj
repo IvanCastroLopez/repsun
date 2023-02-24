@@ -99,6 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="tpvForm.Designer.vb">
+      <DependentUpon>tpvForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tpvForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utilidades\Registros.vb" />
     <Compile Include="Utilidades\Herramientas.vb" />
     <Compile Include="Utilidades\Validaciones.vb" />
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SurtidorOnTop.resx">
       <DependentUpon>SurtidorOnTop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tpvForm.resx">
+      <DependentUpon>tpvForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
