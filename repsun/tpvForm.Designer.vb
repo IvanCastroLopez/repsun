@@ -54,6 +54,7 @@ Partial Class tpvForm
         '
         'tlp_tpv
         '
+        Me.tlp_tpv.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.tlp_tpv.ColumnCount = 2
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666!))
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
@@ -369,23 +370,27 @@ Partial Class tpvForm
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TabPage1.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.TabPage1.Location = New System.Drawing.Point(4, 46)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1255, 812)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.TabPage1.Text = "Combustible"
         '
         'TabPage2
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TabPage2.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TabPage2.Location = New System.Drawing.Point(4, 46)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(192, 74)
+        Me.TabPage2.Size = New System.Drawing.Size(1255, 812)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.TabPage2.Text = "Tienda"
         '
         'tpvForm
         '
