@@ -12,4 +12,9 @@
         GestionForm.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btn_tpv_Click(sender As Object, e As EventArgs) Handles btn_tpv.Click
+        ClientesOnTop.Show()
+        Me.Hide()
+    End Sub
 End Class
