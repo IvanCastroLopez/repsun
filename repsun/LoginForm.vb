@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 
 Public Class LoginForm
+    Public Shared userConnected As String
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
     Public adaptador As New OleDbDataAdapter("Select * from Usuarios", conexion)
     Dim query As String = "SELECT * FROM usuarios WHERE nombre_usuario = @usuario AND contrasena = @contrasena"
@@ -27,6 +28,7 @@ Public Class LoginForm
                 Dim contrasenaBD As String = reader("contrasena").ToString()
 
                 Registros.GrabarAccesos(usuarioBD, contrasenaBD, True)
+                userConnected = usuarioBD
                 limpiarCampos()
                 MenuPrincipalForm.Show()
                 Me.Hide()
@@ -86,9 +88,5 @@ Public Class LoginForm
     Private Sub txt_contrasena_TextChanged(sender As Object, e As EventArgs) Handles txt_contrasena.TextChanged
         txt_contrasena.UseSystemPasswordChar = True
         txt_contrasena.ForeColor = Color.Black
-    End Sub
-
-    Private Sub txt_user_TextChanged(sender As Object, e As EventArgs) Handles txt_user.TextChanged
-
     End Sub
 End Class

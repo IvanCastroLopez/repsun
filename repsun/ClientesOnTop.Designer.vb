@@ -28,7 +28,9 @@ Partial Class ClientesOnTop
         Me.tpg_empleados = New System.Windows.Forms.TabPage()
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
+        Me.tlp_combustible = New System.Windows.Forms.TableLayoutPanel()
         Me.tbc_gestion.SuspendLayout()
+        Me.tpg_combustible.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbc_gestion
@@ -49,6 +51,7 @@ Partial Class ClientesOnTop
         '
         'tpg_combustible
         '
+        Me.tpg_combustible.Controls.Add(Me.tlp_combustible)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 34)
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
@@ -64,7 +67,7 @@ Partial Class ClientesOnTop
         Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_tienda.Name = "tpg_tienda"
         Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(2)
-        Me.tpg_tienda.Size = New System.Drawing.Size(1769, 888)
+        Me.tpg_tienda.Size = New System.Drawing.Size(792, 412)
         Me.tpg_tienda.TabIndex = 1
         Me.tpg_tienda.Text = "Tienda"
         Me.tpg_tienda.UseVisualStyleBackColor = True
@@ -74,7 +77,7 @@ Partial Class ClientesOnTop
         Me.tpg_empleados.Location = New System.Drawing.Point(4, 34)
         Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_empleados.Name = "tpg_empleados"
-        Me.tpg_empleados.Size = New System.Drawing.Size(1769, 888)
+        Me.tpg_empleados.Size = New System.Drawing.Size(792, 412)
         Me.tpg_empleados.TabIndex = 2
         Me.tpg_empleados.Text = "Empleados"
         Me.tpg_empleados.UseVisualStyleBackColor = True
@@ -84,7 +87,7 @@ Partial Class ClientesOnTop
         Me.tpg_proveedores.Location = New System.Drawing.Point(4, 34)
         Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_proveedores.Name = "tpg_proveedores"
-        Me.tpg_proveedores.Size = New System.Drawing.Size(1769, 888)
+        Me.tpg_proveedores.Size = New System.Drawing.Size(792, 412)
         Me.tpg_proveedores.TabIndex = 3
         Me.tpg_proveedores.Text = "Proveedores"
         Me.tpg_proveedores.UseVisualStyleBackColor = True
@@ -94,10 +97,24 @@ Partial Class ClientesOnTop
         Me.tpg_clientes.Location = New System.Drawing.Point(4, 34)
         Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_clientes.Name = "tpg_clientes"
-        Me.tpg_clientes.Size = New System.Drawing.Size(1769, 888)
+        Me.tpg_clientes.Size = New System.Drawing.Size(792, 412)
         Me.tpg_clientes.TabIndex = 4
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
+        '
+        'tlp_combustible
+        '
+        Me.tlp_combustible.ColumnCount = 2
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_combustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_combustible.Location = New System.Drawing.Point(2, 2)
+        Me.tlp_combustible.Name = "tlp_combustible"
+        Me.tlp_combustible.RowCount = 2
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_combustible.Size = New System.Drawing.Size(788, 408)
+        Me.tlp_combustible.TabIndex = 0
         '
         'ClientesOnTop
         '
@@ -108,6 +125,7 @@ Partial Class ClientesOnTop
         Me.Name = "ClientesOnTop"
         Me.Text = "ClientesOnTop"
         Me.tbc_gestion.ResumeLayout(False)
+        Me.tpg_combustible.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -118,4 +136,5 @@ Partial Class ClientesOnTop
     Friend WithEvents tpg_empleados As TabPage
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents tpg_clientes As TabPage
+    Friend WithEvents tlp_combustible As TableLayoutPanel
 End Class
