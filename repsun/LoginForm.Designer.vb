@@ -29,10 +29,11 @@ Partial Class LoginForm
         Me.txt_user = New System.Windows.Forms.TextBox()
         Me.lbl_bienvenido = New System.Windows.Forms.Label()
         Me.lbl_username = New System.Windows.Forms.Label()
-        Me.lbl_contrasena = New System.Windows.Forms.Label()
+        Me.lbl_perdido = New System.Windows.Forms.Label()
         Me.pbx_logo = New System.Windows.Forms.PictureBox()
         Me.tlp_login = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_exit = New System.Windows.Forms.PictureBox()
+        Me.lbl_contrasena = New System.Windows.Forms.Label()
         Me.tlp_inLogin.SuspendLayout()
         CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_login.SuspendLayout()
@@ -41,26 +42,25 @@ Partial Class LoginForm
         '
         'tlp_inLogin
         '
-        Me.tlp_inLogin.ColumnCount = 3
+        Me.tlp_inLogin.ColumnCount = 1
         Me.tlp_login.SetColumnSpan(Me.tlp_inLogin, 2)
-        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.47142!))
-        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
-        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196.0!))
+        Me.tlp_inLogin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_inLogin.Controls.Add(Me.btn_inicioSesion, 0, 5)
         Me.tlp_inLogin.Controls.Add(Me.txt_contrasena, 0, 4)
         Me.tlp_inLogin.Controls.Add(Me.txt_user, 0, 2)
         Me.tlp_inLogin.Controls.Add(Me.lbl_bienvenido, 0, 0)
         Me.tlp_inLogin.Controls.Add(Me.lbl_username, 0, 1)
+        Me.tlp_inLogin.Controls.Add(Me.lbl_contrasena, 0, 3)
         Me.tlp_inLogin.Location = New System.Drawing.Point(369, 195)
         Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_inLogin.Name = "tlp_inLogin"
         Me.tlp_inLogin.RowCount = 6
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.tlp_inLogin.Size = New System.Drawing.Size(1039, 553)
         Me.tlp_inLogin.TabIndex = 0
         '
@@ -71,10 +71,10 @@ Partial Class LoginForm
         Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btn_inicioSesion.Location = New System.Drawing.Point(0, 608)
+        Me.btn_inicioSesion.Location = New System.Drawing.Point(0, 438)
         Me.btn_inicioSesion.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_inicioSesion.Name = "btn_inicioSesion"
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(389, 85)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(389, 40)
         Me.btn_inicioSesion.TabIndex = 3
         Me.btn_inicioSesion.Text = "Iniciar Sesión"
         Me.btn_inicioSesion.UseVisualStyleBackColor = False
@@ -83,7 +83,7 @@ Partial Class LoginForm
         '
         Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
         Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_contrasena.Location = New System.Drawing.Point(4, 267)
+        Me.txt_contrasena.Location = New System.Drawing.Point(4, 360)
         Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_contrasena.Name = "txt_contrasena"
         Me.txt_contrasena.Size = New System.Drawing.Size(714, 44)
@@ -93,7 +93,7 @@ Partial Class LoginForm
         '
         Me.txt_user.Dock = System.Windows.Forms.DockStyle.Left
         Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_user.Location = New System.Drawing.Point(4, 156)
+        Me.txt_user.Location = New System.Drawing.Point(4, 196)
         Me.txt_user.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(714, 44)
@@ -113,24 +113,24 @@ Partial Class LoginForm
         'lbl_username
         '
         Me.lbl_username.AutoSize = True
-        Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(4, 201)
-        Me.lbl_username.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_username.Location = New System.Drawing.Point(2, 109)
+        Me.lbl_username.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(201, 30)
         Me.lbl_username.TabIndex = 0
         Me.lbl_username.Text = "Nombre de usuario"
         '
-        'lbl_contrasena
+        'lbl_perdido
         '
-        Me.lbl_contrasena.AutoSize = True
-        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contrasena.Location = New System.Drawing.Point(2, 220)
-        Me.lbl_contrasena.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(220, 51)
-        Me.lbl_contrasena.TabIndex = 0
-        Me.lbl_contrasena.Text = "Contraseña"
+        Me.lbl_perdido.AutoSize = True
+        Me.lbl_perdido.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
+        Me.lbl_perdido.Location = New System.Drawing.Point(2, 220)
+        Me.lbl_perdido.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_perdido.Name = "lbl_perdido"
+        Me.lbl_perdido.Size = New System.Drawing.Size(220, 51)
+        Me.lbl_perdido.TabIndex = 0
+        Me.lbl_perdido.Text = "Contraseña"
         '
         'pbx_logo
         '
@@ -186,6 +186,16 @@ Partial Class LoginForm
         Me.pbx_exit.TabIndex = 2
         Me.pbx_exit.TabStop = False
         '
+        'lbl_contrasena
+        '
+        Me.lbl_contrasena.AutoSize = True
+        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
+        Me.lbl_contrasena.Location = New System.Drawing.Point(3, 274)
+        Me.lbl_contrasena.Name = "lbl_contrasena"
+        Me.lbl_contrasena.Size = New System.Drawing.Size(122, 30)
+        Me.lbl_contrasena.TabIndex = 4
+        Me.lbl_contrasena.Text = "Contraseña"
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -214,8 +224,9 @@ Partial Class LoginForm
     Friend WithEvents pbx_exit As PictureBox
     Friend WithEvents btn_inicioSesion As Button
     Friend WithEvents txt_contrasena As TextBox
-    Friend WithEvents lbl_contrasena As Label
+    Friend WithEvents lbl_perdido As Label
     Friend WithEvents txt_user As TextBox
     Friend WithEvents lbl_bienvenido As Label
     Friend WithEvents lbl_username As Label
+    Friend WithEvents lbl_contrasena As Label
 End Class
