@@ -62,16 +62,15 @@ Partial Class GestionForm
         Me.tlp_gestion.Controls.Add(Me.Panel1, 0, 0)
         Me.tlp_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_gestion.Location = New System.Drawing.Point(0, 0)
-        Me.tlp_gestion.Margin = New System.Windows.Forms.Padding(6)
         Me.tlp_gestion.Name = "tlp_gestion"
         Me.tlp_gestion.RowCount = 3
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.425209!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.539203!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.03559!))
-        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tlp_gestion.Size = New System.Drawing.Size(2588, 1628)
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11.0!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11.0!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11.0!))
+        Me.tlp_gestion.Size = New System.Drawing.Size(1412, 882)
         Me.tlp_gestion.TabIndex = 0
         '
         'tbc_gestion
@@ -84,72 +83,72 @@ Partial Class GestionForm
         Me.tbc_gestion.Controls.Add(Me.tpg_clientes)
         Me.tbc_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbc_gestion.Font = New System.Drawing.Font("Yu Gothic UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbc_gestion.Location = New System.Drawing.Point(262, 76)
-        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbc_gestion.Location = New System.Drawing.Point(143, 41)
+        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbc_gestion.Name = "tbc_gestion"
         Me.tlp_gestion.SetRowSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.SelectedIndex = 0
-        Me.tbc_gestion.Size = New System.Drawing.Size(2322, 1548)
+        Me.tbc_gestion.Size = New System.Drawing.Size(1267, 839)
         Me.tbc_gestion.TabIndex = 2
         '
         'tpg_combustible
         '
-        Me.tpg_combustible.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_combustible.Location = New System.Drawing.Point(4, 34)
+        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_combustible.Name = "tpg_combustible"
-        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpg_combustible.Size = New System.Drawing.Size(2314, 1490)
+        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_combustible.Size = New System.Drawing.Size(1259, 801)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
         Me.tpg_combustible.UseVisualStyleBackColor = True
         '
         'tpg_tienda
         '
-        Me.tpg_tienda.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_tienda.Location = New System.Drawing.Point(4, 34)
+        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_tienda.Name = "tpg_tienda"
-        Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpg_tienda.Size = New System.Drawing.Size(2314, 1490)
+        Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_tienda.Size = New System.Drawing.Size(1259, 801)
         Me.tpg_tienda.TabIndex = 1
         Me.tpg_tienda.Text = "Tienda"
         Me.tpg_tienda.UseVisualStyleBackColor = True
         '
         'tpg_empleados
         '
-        Me.tpg_empleados.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_empleados.Location = New System.Drawing.Point(4, 34)
+        Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_empleados.Name = "tpg_empleados"
-        Me.tpg_empleados.Size = New System.Drawing.Size(2314, 1490)
+        Me.tpg_empleados.Size = New System.Drawing.Size(1259, 801)
         Me.tpg_empleados.TabIndex = 2
         Me.tpg_empleados.Text = "Empleados"
         Me.tpg_empleados.UseVisualStyleBackColor = True
         '
         'tpg_proveedores
         '
-        Me.tpg_proveedores.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_proveedores.Location = New System.Drawing.Point(4, 34)
+        Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_proveedores.Name = "tpg_proveedores"
-        Me.tpg_proveedores.Size = New System.Drawing.Size(2314, 1490)
+        Me.tpg_proveedores.Size = New System.Drawing.Size(1259, 801)
         Me.tpg_proveedores.TabIndex = 3
         Me.tpg_proveedores.Text = "Proveedores"
         Me.tpg_proveedores.UseVisualStyleBackColor = True
         '
         'tpg_clientes
         '
-        Me.tpg_clientes.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_clientes.Location = New System.Drawing.Point(4, 34)
+        Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_clientes.Name = "tpg_clientes"
-        Me.tpg_clientes.Size = New System.Drawing.Size(2314, 1490)
+        Me.tpg_clientes.Size = New System.Drawing.Size(1259, 801)
         Me.tpg_clientes.TabIndex = 4
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
         '
         'pbx_close
         '
-        Me.pbx_close.Location = New System.Drawing.Point(2535, 9)
-        Me.pbx_close.Margin = New System.Windows.Forms.Padding(9)
+        Me.pbx_close.Location = New System.Drawing.Point(1383, 5)
+        Me.pbx_close.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.pbx_close.Name = "pbx_close"
-        Me.pbx_close.Size = New System.Drawing.Size(44, 54)
+        Me.pbx_close.Size = New System.Drawing.Size(24, 29)
         Me.pbx_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_close.TabIndex = 3
         Me.pbx_close.TabStop = False
@@ -165,17 +164,20 @@ Partial Class GestionForm
         Me.Panel1.Controls.Add(Me.pbx_clientes)
         Me.Panel1.Controls.Add(Me.pbx_proveedores)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Location = New System.Drawing.Point(2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
         Me.tlp_gestion.SetRowSpan(Me.Panel1, 3)
-        Me.Panel1.Size = New System.Drawing.Size(252, 1622)
+        Me.Panel1.Size = New System.Drawing.Size(137, 878)
         Me.Panel1.TabIndex = 4
         '
         'pbx_combustible
         '
-        Me.pbx_combustible.Location = New System.Drawing.Point(0, 181)
+        Me.pbx_combustible.Image = Global.repsun.My.Resources.Resources.Combustible
+        Me.pbx_combustible.Location = New System.Drawing.Point(0, 98)
+        Me.pbx_combustible.Margin = New System.Windows.Forms.Padding(2, 20, 2, 20)
         Me.pbx_combustible.Name = "pbx_combustible"
-        Me.pbx_combustible.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_combustible.Size = New System.Drawing.Size(136, 72)
         Me.pbx_combustible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_combustible.TabIndex = 14
         Me.pbx_combustible.TabStop = False
@@ -183,27 +185,33 @@ Partial Class GestionForm
         'pbx_logo
         '
         Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pbx_logo.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
         Me.pbx_logo.Location = New System.Drawing.Point(0, 0)
+        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_logo.Name = "pbx_logo"
-        Me.pbx_logo.Size = New System.Drawing.Size(252, 173)
+        Me.pbx_logo.Size = New System.Drawing.Size(137, 94)
         Me.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_logo.TabIndex = 7
         Me.pbx_logo.TabStop = False
         '
         'pbx_tienda
         '
-        Me.pbx_tienda.Location = New System.Drawing.Point(0, 320)
+        Me.pbx_tienda.Image = Global.repsun.My.Resources.Resources.Tienda
+        Me.pbx_tienda.Location = New System.Drawing.Point(0, 173)
+        Me.pbx_tienda.Margin = New System.Windows.Forms.Padding(2, 20, 2, 20)
         Me.pbx_tienda.Name = "pbx_tienda"
-        Me.pbx_tienda.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_tienda.Size = New System.Drawing.Size(136, 72)
         Me.pbx_tienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_tienda.TabIndex = 15
         Me.pbx_tienda.TabStop = False
         '
         'pbx_empleados
         '
-        Me.pbx_empleados.Location = New System.Drawing.Point(0, 459)
+        Me.pbx_empleados.Image = Global.repsun.My.Resources.Resources.Empleados
+        Me.pbx_empleados.Location = New System.Drawing.Point(0, 249)
+        Me.pbx_empleados.Margin = New System.Windows.Forms.Padding(2, 20, 2, 20)
         Me.pbx_empleados.Name = "pbx_empleados"
-        Me.pbx_empleados.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_empleados.Size = New System.Drawing.Size(136, 72)
         Me.pbx_empleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_empleados.TabIndex = 16
         Me.pbx_empleados.TabStop = False
@@ -211,39 +219,45 @@ Partial Class GestionForm
         'pbx_salir
         '
         Me.pbx_salir.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pbx_salir.Location = New System.Drawing.Point(0, 1489)
+        Me.pbx_salir.Image = Global.repsun.My.Resources.Resources.Salir
+        Me.pbx_salir.Location = New System.Drawing.Point(0, 788)
+        Me.pbx_salir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_salir.Name = "pbx_salir"
-        Me.pbx_salir.Size = New System.Drawing.Size(252, 133)
+        Me.pbx_salir.Size = New System.Drawing.Size(137, 90)
         Me.pbx_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pbx_salir.TabIndex = 12
         Me.pbx_salir.TabStop = False
         '
         'pbx_clientes
         '
-        Me.pbx_clientes.Location = New System.Drawing.Point(0, 598)
+        Me.pbx_clientes.Image = Global.repsun.My.Resources.Resources.Proveedores
+        Me.pbx_clientes.Location = New System.Drawing.Point(0, 324)
+        Me.pbx_clientes.Margin = New System.Windows.Forms.Padding(2, 20, 2, 20)
         Me.pbx_clientes.Name = "pbx_clientes"
-        Me.pbx_clientes.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_clientes.Size = New System.Drawing.Size(136, 72)
         Me.pbx_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_clientes.TabIndex = 17
         Me.pbx_clientes.TabStop = False
         '
         'pbx_proveedores
         '
-        Me.pbx_proveedores.Location = New System.Drawing.Point(0, 737)
+        Me.pbx_proveedores.Image = Global.repsun.My.Resources.Resources.Clientes
+        Me.pbx_proveedores.Location = New System.Drawing.Point(0, 399)
+        Me.pbx_proveedores.Margin = New System.Windows.Forms.Padding(2, 20, 2, 20)
         Me.pbx_proveedores.Name = "pbx_proveedores"
-        Me.pbx_proveedores.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_proveedores.Size = New System.Drawing.Size(136, 72)
         Me.pbx_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_proveedores.TabIndex = 18
         Me.pbx_proveedores.TabStop = False
         '
         'GestionForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2588, 1628)
+        Me.ClientSize = New System.Drawing.Size(1412, 882)
         Me.Controls.Add(Me.tlp_gestion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "GestionForm"
         Me.Text = "GestionForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

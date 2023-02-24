@@ -136,4 +136,22 @@
   <data name="Logo_Transparente_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Logo\Logo_Transparente_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Combustible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\combustible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tienda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\iconos\tienda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
