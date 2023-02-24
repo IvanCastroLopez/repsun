@@ -14,11 +14,16 @@
     End Sub
 
     Private Sub btn_tpv_Click(sender As Object, e As EventArgs) Handles btn_tpv.Click
-        ClientesOnTop.Show()
+        tpvForm.Show()
         Me.Hide()
     End Sub
 
     Private Sub MenuPrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btn_zonaClientes_Click(sender As Object, e As EventArgs) Handles btn_zonaClientes.Click
+        ClientesOnTop.ShowDialog()
+        Me.Hide()
     End Sub
 End Class

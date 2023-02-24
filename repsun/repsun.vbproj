@@ -99,6 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="tpvForm.Designer.vb">
+      <DependentUpon>tpvForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tpvForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utilidades\Registros.vb" />
     <Compile Include="Utilidades\Herramientas.vb" />
     <Compile Include="Utilidades\Validaciones.vb" />
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="SurtidorOnTop.resx">
       <DependentUpon>SurtidorOnTop.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tpvForm.resx">
+      <DependentUpon>tpvForm.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -196,6 +205,7 @@
     <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Imagenes\Fondos\tpv\tpv.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Anadir.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Buscar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Clientes.png" />
