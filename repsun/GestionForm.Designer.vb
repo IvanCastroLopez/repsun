@@ -29,26 +29,26 @@ Partial Class GestionForm
         Me.tpg_empleados = New System.Windows.Forms.TabPage()
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.pbx_close = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pbx_logo = New System.Windows.Forms.PictureBox()
+        Me.pbx_salir = New System.Windows.Forms.PictureBox()
+        Me.pbx_proveedores = New System.Windows.Forms.PictureBox()
+        Me.pbx_clientes = New System.Windows.Forms.PictureBox()
+        Me.pbx_empleados = New System.Windows.Forms.PictureBox()
+        Me.pbx_tienda = New System.Windows.Forms.PictureBox()
+        Me.pbx_combustible = New System.Windows.Forms.PictureBox()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -58,8 +58,8 @@ Partial Class GestionForm
         Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.64193!))
         Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.362419!))
         Me.tlp_gestion.Controls.Add(Me.tbc_gestion, 1, 1)
-        Me.tlp_gestion.Controls.Add(Me.PictureBox1, 2, 0)
-        Me.tlp_gestion.Controls.Add(Me.FlowLayoutPanel1, 0, 0)
+        Me.tlp_gestion.Controls.Add(Me.pbx_close, 2, 0)
+        Me.tlp_gestion.Controls.Add(Me.Panel1, 0, 0)
         Me.tlp_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_gestion.Location = New System.Drawing.Point(0, 0)
         Me.tlp_gestion.Margin = New System.Windows.Forms.Padding(6)
@@ -68,6 +68,7 @@ Partial Class GestionForm
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.425209!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.539203!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.03559!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tlp_gestion.Size = New System.Drawing.Size(2588, 1628)
@@ -143,107 +144,97 @@ Partial Class GestionForm
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'pbx_close
         '
-        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.Close
-        Me.PictureBox1.Location = New System.Drawing.Point(2535, 9)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 54)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.pbx_close.Location = New System.Drawing.Point(2535, 9)
+        Me.pbx_close.Margin = New System.Windows.Forms.Padding(9)
+        Me.pbx_close.Name = "pbx_close"
+        Me.pbx_close.Size = New System.Drawing.Size(44, 54)
+        Me.pbx_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_close.TabIndex = 3
+        Me.pbx_close.TabStop = False
         '
-        'FlowLayoutPanel1
+        'Panel1
         '
-        Me.FlowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox4)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox5)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox6)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox8)
-        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox7)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 3)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
-        Me.tlp_gestion.SetRowSpan(Me.FlowLayoutPanel1, 3)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(252, 1622)
-        Me.FlowLayoutPanel1.TabIndex = 4
+        Me.Panel1.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Panel1.Controls.Add(Me.pbx_combustible)
+        Me.Panel1.Controls.Add(Me.pbx_logo)
+        Me.Panel1.Controls.Add(Me.pbx_tienda)
+        Me.Panel1.Controls.Add(Me.pbx_empleados)
+        Me.Panel1.Controls.Add(Me.pbx_salir)
+        Me.Panel1.Controls.Add(Me.pbx_clientes)
+        Me.Panel1.Controls.Add(Me.pbx_proveedores)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.tlp_gestion.SetRowSpan(Me.Panel1, 3)
+        Me.Panel1.Size = New System.Drawing.Size(252, 1622)
+        Me.Panel1.TabIndex = 4
         '
-        'PictureBox2
+        'pbx_logo
         '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
-        Me.PictureBox2.Location = New System.Drawing.Point(13, 13)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(249, 173)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pbx_logo.Location = New System.Drawing.Point(0, 0)
+        Me.pbx_logo.Name = "pbx_logo"
+        Me.pbx_logo.Size = New System.Drawing.Size(252, 173)
+        Me.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_logo.TabIndex = 7
+        Me.pbx_logo.TabStop = False
         '
-        'PictureBox3
+        'pbx_salir
         '
-        Me.PictureBox3.Image = Global.repsun.My.Resources.Resources.Combustible
-        Me.PictureBox3.Location = New System.Drawing.Point(13, 192)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
+        Me.pbx_salir.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pbx_salir.Location = New System.Drawing.Point(0, 1489)
+        Me.pbx_salir.Name = "pbx_salir"
+        Me.pbx_salir.Size = New System.Drawing.Size(252, 133)
+        Me.pbx_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_salir.TabIndex = 12
+        Me.pbx_salir.TabStop = False
         '
-        'PictureBox4
+        'pbx_proveedores
         '
-        Me.PictureBox4.Image = Global.repsun.My.Resources.Resources.Store
-        Me.PictureBox4.Location = New System.Drawing.Point(13, 331)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
+        Me.pbx_proveedores.Location = New System.Drawing.Point(0, 737)
+        Me.pbx_proveedores.Name = "pbx_proveedores"
+        Me.pbx_proveedores.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_proveedores.TabIndex = 18
+        Me.pbx_proveedores.TabStop = False
         '
-        'PictureBox5
+        'pbx_clientes
         '
-        Me.PictureBox5.Image = Global.repsun.My.Resources.Resources.Empleado
-        Me.PictureBox5.Location = New System.Drawing.Point(13, 470)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 3
-        Me.PictureBox5.TabStop = False
+        Me.pbx_clientes.Location = New System.Drawing.Point(0, 598)
+        Me.pbx_clientes.Name = "pbx_clientes"
+        Me.pbx_clientes.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_clientes.TabIndex = 17
+        Me.pbx_clientes.TabStop = False
         '
-        'PictureBox6
+        'pbx_empleados
         '
-        Me.PictureBox6.Image = Global.repsun.My.Resources.Resources.Cliente
-        Me.PictureBox6.Location = New System.Drawing.Point(13, 609)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 4
-        Me.PictureBox6.TabStop = False
+        Me.pbx_empleados.Location = New System.Drawing.Point(0, 459)
+        Me.pbx_empleados.Name = "pbx_empleados"
+        Me.pbx_empleados.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_empleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_empleados.TabIndex = 16
+        Me.pbx_empleados.TabStop = False
         '
-        'PictureBox8
+        'pbx_tienda
         '
-        Me.PictureBox8.Image = Global.repsun.My.Resources.Resources.Proveedores
-        Me.PictureBox8.Location = New System.Drawing.Point(13, 748)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 6
-        Me.PictureBox8.TabStop = False
+        Me.pbx_tienda.Location = New System.Drawing.Point(0, 320)
+        Me.pbx_tienda.Name = "pbx_tienda"
+        Me.pbx_tienda.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_tienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_tienda.TabIndex = 15
+        Me.pbx_tienda.TabStop = False
         '
-        'PictureBox7
+        'pbx_combustible
         '
-        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PictureBox7.Image = Global.repsun.My.Resources.Resources.Salir
-        Me.PictureBox7.Location = New System.Drawing.Point(13, 887)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 5
-        Me.PictureBox7.TabStop = False
+        Me.pbx_combustible.Location = New System.Drawing.Point(0, 181)
+        Me.pbx_combustible.Name = "pbx_combustible"
+        Me.pbx_combustible.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_combustible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_combustible.TabIndex = 14
+        Me.pbx_combustible.TabStop = False
         '
         'GestionForm
         '
@@ -258,15 +249,15 @@ Partial Class GestionForm
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_gestion.ResumeLayout(False)
         Me.tbc_gestion.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -278,13 +269,13 @@ Partial Class GestionForm
     Friend WithEvents tpg_empleados As TabPage
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents tpg_clientes As TabPage
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents pbx_close As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pbx_logo As PictureBox
+    Friend WithEvents pbx_salir As PictureBox
+    Friend WithEvents pbx_combustible As PictureBox
+    Friend WithEvents pbx_tienda As PictureBox
+    Friend WithEvents pbx_empleados As PictureBox
+    Friend WithEvents pbx_clientes As PictureBox
+    Friend WithEvents pbx_proveedores As PictureBox
 End Class
