@@ -112,7 +112,7 @@ Partial Class LoginForm
         Me.lbl_bienvenido.Location = New System.Drawing.Point(2, 0)
         Me.lbl_bienvenido.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_bienvenido.Name = "lbl_bienvenido"
-        Me.lbl_bienvenido.Size = New System.Drawing.Size(316, 45)
+        Me.lbl_bienvenido.Size = New System.Drawing.Size(324, 45)
         Me.lbl_bienvenido.TabIndex = 0
         Me.lbl_bienvenido.Text = "Bienvenido a Repsun"
         '
@@ -121,12 +121,19 @@ Partial Class LoginForm
         Me.lbl_username.AutoSize = True
         Me.lbl_username.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(2, 109)
+        Me.lbl_username.Location = New System.Drawing.Point(2, 104)
         Me.lbl_username.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(201, 30)
+        Me.lbl_username.Size = New System.Drawing.Size(1039, 36)
         Me.lbl_username.TabIndex = 0
         Me.lbl_username.Text = "Nombre de usuario"
+        '
+        'lbl_contrasena
+        '
+        Me.lbl_contrasena.Location = New System.Drawing.Point(3, 218)
+        Me.lbl_contrasena.Name = "lbl_contrasena"
+        Me.lbl_contrasena.Size = New System.Drawing.Size(100, 23)
+        Me.lbl_contrasena.TabIndex = 4
         '
         'lbl_perdido
         '

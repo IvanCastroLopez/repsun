@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ClientesOnTop
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ClientesOnTop
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tbc_gestion = New System.Windows.Forms.TabControl()
         Me.tpg_combustible = New System.Windows.Forms.TabPage()
@@ -28,9 +28,7 @@ Partial Class ClientesOnTop
         Me.tpg_empleados = New System.Windows.Forms.TabPage()
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.tbc_gestion.SuspendLayout()
-        Me.tpg_combustible.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbc_gestion
@@ -51,7 +49,6 @@ Partial Class ClientesOnTop
         '
         'tpg_combustible
         '
-        Me.tpg_combustible.Controls.Add(Me.TableLayoutPanel1)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 34)
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
@@ -102,19 +99,6 @@ Partial Class ClientesOnTop
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
         '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(407, 110)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(200, 100)
-        Me.TableLayoutPanel1.TabIndex = 0
-        '
         'ClientesOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -124,7 +108,6 @@ Partial Class ClientesOnTop
         Me.Name = "ClientesOnTop"
         Me.Text = "ClientesOnTop"
         Me.tbc_gestion.ResumeLayout(False)
-        Me.tpg_combustible.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -135,5 +118,4 @@ Partial Class ClientesOnTop
     Friend WithEvents tpg_empleados As TabPage
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents tpg_clientes As TabPage
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class
