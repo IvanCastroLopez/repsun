@@ -8,7 +8,7 @@ Public Class GestionForm
         Dim adaptador As New OleDbDataAdapter("Select * from Usuarios", conexion)
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbx_close.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) 
         MenuPrincipalForm.Show()
         Me.Hide()
     End Sub
