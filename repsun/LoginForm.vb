@@ -33,18 +33,18 @@ Public Class LoginForm
                 Dim usuarioBD As String = reader("nombre_usuario").ToString()
                 Dim contrasenaBD As String = reader("contrasena").ToString()
 
-                Registros.grabarAccesos(usuarioBD, contrasenaBD, True)
+                Registros.GrabarAccesos(usuarioBD, contrasenaBD, True)
                 limpiarCampos()
                 MenuPrincipalForm.Show()
                 Me.Hide()
             Else
                 MessageBox.Show("Usuario o contraseña incorrectos.")
-                Registros.grabarAccesos(txt_user.Text, txt_contrasena.Text, False)
+                Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
                 limpiarCampos()
             End If
         Else
-            Registros.grabarError("El nombre de usuario o la contraseña están mal escritos", "Acceso invalido")
-            Registros.grabarAccesos(txt_user.Text, txt_contrasena.Text, False)
+            Registros.GrabarError("El nombre de usuario o la contraseña están mal escritos", "Acceso invalido")
+            Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
             limpiarCampos()
         End If
     End Sub

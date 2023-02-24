@@ -22,38 +22,58 @@ Partial Class GestionForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlp_gestion = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlp_botonesGestion = New System.Windows.Forms.TableLayoutPanel()
         Me.tbc_gestion = New System.Windows.Forms.TabControl()
         Me.tpg_combustible = New System.Windows.Forms.TabPage()
         Me.tpg_tienda = New System.Windows.Forms.TabPage()
         Me.tpg_empleados = New System.Windows.Forms.TabPage()
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'tlp_gestion
         '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.15!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.15!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.7!))
-        Me.TableLayoutPanel1.Controls.Add(Me.tbc_gestion, 1, 3)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.05!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.05!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.05!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.85!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1904, 1041)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.tlp_gestion.ColumnCount = 3
+        Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.67857!))
+        Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.363445!))
+        Me.tlp_gestion.Controls.Add(Me.tbc_gestion, 1, 1)
+        Me.tlp_gestion.Controls.Add(Me.tlp_botonesGestion, 0, 0)
+        Me.tlp_gestion.Controls.Add(Me.PictureBox1, 2, 0)
+        Me.tlp_gestion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_gestion.Location = New System.Drawing.Point(0, 0)
+        Me.tlp_gestion.Name = "tlp_gestion"
+        Me.tlp_gestion.RowCount = 3
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.418828!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.536984!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.9!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlp_gestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlp_gestion.Size = New System.Drawing.Size(1904, 1041)
+        Me.tlp_gestion.TabIndex = 0
+        '
+        'tlp_botonesGestion
+        '
+        Me.tlp_botonesGestion.ColumnCount = 2
+        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_botonesGestion.Location = New System.Drawing.Point(3, 3)
+        Me.tlp_botonesGestion.Name = "tlp_botonesGestion"
+        Me.tlp_botonesGestion.RowCount = 2
+        Me.tlp_gestion.SetRowSpan(Me.tlp_botonesGestion, 3)
+        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlp_botonesGestion.Size = New System.Drawing.Size(374, 1035)
+        Me.tlp_botonesGestion.TabIndex = 0
         '
         'tbc_gestion
         '
-        Me.TableLayoutPanel1.SetColumnSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.Controls.Add(Me.tpg_combustible)
         Me.tbc_gestion.Controls.Add(Me.tpg_tienda)
         Me.tbc_gestion.Controls.Add(Me.tpg_empleados)
@@ -61,12 +81,12 @@ Partial Class GestionForm
         Me.tbc_gestion.Controls.Add(Me.tpg_clientes)
         Me.tbc_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbc_gestion.Font = New System.Drawing.Font("Yu Gothic UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbc_gestion.Location = New System.Drawing.Point(552, 295)
+        Me.tbc_gestion.Location = New System.Drawing.Point(382, 48)
         Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(2)
         Me.tbc_gestion.Name = "tbc_gestion"
-        Me.TableLayoutPanel1.SetRowSpan(Me.tbc_gestion, 2)
+        Me.tlp_gestion.SetRowSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.SelectedIndex = 0
-        Me.tbc_gestion.Size = New System.Drawing.Size(800, 450)
+        Me.tbc_gestion.Size = New System.Drawing.Size(1474, 991)
         Me.tbc_gestion.TabIndex = 2
         '
         'tpg_combustible
@@ -75,7 +95,7 @@ Partial Class GestionForm
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
         Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(2)
-        Me.tpg_combustible.Size = New System.Drawing.Size(792, 412)
+        Me.tpg_combustible.Size = New System.Drawing.Size(1466, 953)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
         Me.tpg_combustible.UseVisualStyleBackColor = True
@@ -121,28 +141,42 @@ Partial Class GestionForm
         Me.tpg_clientes.Text = "Clientes"
         Me.tpg_clientes.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.Close
+        Me.PictureBox1.Location = New System.Drawing.Point(1873, 15)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.tlp_gestion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "GestionForm"
         Me.Text = "GestionForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.tlp_gestion.ResumeLayout(False)
         Me.tbc_gestion.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents tlp_gestion As TableLayoutPanel
+    Friend WithEvents tlp_botonesGestion As TableLayoutPanel
     Friend WithEvents tbc_gestion As TabControl
     Friend WithEvents tpg_combustible As TabPage
     Friend WithEvents tpg_tienda As TabPage
     Friend WithEvents tpg_empleados As TabPage
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents tpg_clientes As TabPage
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
