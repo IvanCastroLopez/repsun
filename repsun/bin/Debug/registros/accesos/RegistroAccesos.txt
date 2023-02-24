@@ -9,3 +9,5 @@
 "24/02/2023 0:12:42 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: contraseña"
 "24/02/2023 0:12:53 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: "
 "24/02/2023 0:15:32 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: contraseña"
+"24/02/2023 0:45:24 [Acceso Denegado] | Nombre de usuario:  | Contraseña: contraseña"
+"24/02/2023 0:45:46 [Acceso Denegado] | Nombre de usuario: nombre.apellido1 | Contraseña: contraseña"

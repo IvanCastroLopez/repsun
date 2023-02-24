@@ -7,14 +7,7 @@ Public Class LoginForm
     Dim query As String = "SELECT * FROM usuarios WHERE nombre_usuario = @usuario AND contrasena = @contrasena"
     Dim comando As New OleDbCommand(query, conexion)
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Cambiar tamaño de estos
-        ' lbl_bienvenido
-        ' lbl_username
-        ' txt_contrasena
-        ' lbl_contrasena
-        ' txt_user
-        ' btn_inicioSesion
-
+        Me.ActiveControl = Nothing
     End Sub
 
     ''' <summary>
@@ -57,7 +50,7 @@ Public Class LoginForm
     Private Sub limpiarCampos()
         txt_user.Clear()
         txt_contrasena.Clear()
-        btn_inicioSesion.Select()
+        Me.ActiveControl = Nothing
     End Sub
 
     Private Sub txt_user_GotFocus(sender As Object, e As EventArgs) Handles txt_user.GotFocus
