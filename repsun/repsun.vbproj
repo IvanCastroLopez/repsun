@@ -196,6 +196,11 @@
     <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Imagenes\Iconos\Cliente.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Combustible.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Empleado.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Store.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
     <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
   </ItemGroup>

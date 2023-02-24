@@ -53,15 +53,15 @@ Partial Class LoginForm
         Me.tlp_inLogin.Controls.Add(Me.lbl_contrasena, 0, 3)
         Me.tlp_inLogin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_inLogin.Location = New System.Drawing.Point(367, 193)
-        Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(2)
         Me.tlp_inLogin.Name = "tlp_inLogin"
         Me.tlp_inLogin.RowCount = 6
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
-        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.481482!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.88889!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.481482!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.88889!))
+        Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.74074!))
         Me.tlp_inLogin.Size = New System.Drawing.Size(1043, 562)
         Me.tlp_inLogin.TabIndex = 0
         '
@@ -72,10 +72,10 @@ Partial Class LoginForm
         Me.btn_inicioSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_inicioSesion.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_inicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btn_inicioSesion.Location = New System.Drawing.Point(0, 448)
+        Me.btn_inicioSesion.Location = New System.Drawing.Point(0, 332)
         Me.btn_inicioSesion.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_inicioSesion.Name = "btn_inicioSesion"
-        Me.btn_inicioSesion.Size = New System.Drawing.Size(212, 40)
+        Me.btn_inicioSesion.Size = New System.Drawing.Size(393, 99)
         Me.btn_inicioSesion.TabIndex = 3
         Me.btn_inicioSesion.Text = "Iniciar Sesión"
         Me.btn_inicioSesion.UseVisualStyleBackColor = False
@@ -84,8 +84,10 @@ Partial Class LoginForm
         '
         Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Left
         Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_contrasena.Location = New System.Drawing.Point(2, 366)
-        Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_contrasena.ForeColor = System.Drawing.Color.Black
+        Me.txt_contrasena.Location = New System.Drawing.Point(2, 256)
+        Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_contrasena.MaxLength = 10
         Me.txt_contrasena.Name = "txt_contrasena"
         Me.txt_contrasena.Size = New System.Drawing.Size(391, 44)
         Me.txt_contrasena.TabIndex = 2
@@ -94,11 +96,14 @@ Partial Class LoginForm
         '
         Me.txt_user.Dock = System.Windows.Forms.DockStyle.Left
         Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.txt_user.Location = New System.Drawing.Point(2, 198)
-        Me.txt_user.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_user.ForeColor = System.Drawing.Color.Gray
+        Me.txt_user.Location = New System.Drawing.Point(2, 142)
+        Me.txt_user.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_user.MaxLength = 30
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(391, 44)
         Me.txt_user.TabIndex = 1
+        Me.txt_user.Text = "nombre.apellido1"
         '
         'lbl_bienvenido
         '
@@ -114,22 +119,24 @@ Partial Class LoginForm
         'lbl_username
         '
         Me.lbl_username.AutoSize = True
+        Me.lbl_username.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_username.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(1, 112)
+        Me.lbl_username.Location = New System.Drawing.Point(1, 104)
         Me.lbl_username.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(201, 30)
+        Me.lbl_username.Size = New System.Drawing.Size(1041, 36)
         Me.lbl_username.TabIndex = 0
         Me.lbl_username.Text = "Nombre de usuario"
         '
         'lbl_contrasena
         '
         Me.lbl_contrasena.AutoSize = True
+        Me.lbl_contrasena.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
-        Me.lbl_contrasena.Location = New System.Drawing.Point(2, 280)
+        Me.lbl_contrasena.Location = New System.Drawing.Point(2, 218)
         Me.lbl_contrasena.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(122, 30)
+        Me.lbl_contrasena.Size = New System.Drawing.Size(1039, 36)
         Me.lbl_contrasena.TabIndex = 4
         Me.lbl_contrasena.Text = "Contraseña"
         '
@@ -150,7 +157,7 @@ Partial Class LoginForm
         Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_logo.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
         Me.pbx_logo.Location = New System.Drawing.Point(148, 42)
-        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.pbx_logo.Name = "pbx_logo"
         Me.tlp_login.SetRowSpan(Me.pbx_logo, 2)
         Me.pbx_logo.Size = New System.Drawing.Size(142, 147)
@@ -173,7 +180,7 @@ Partial Class LoginForm
         Me.tlp_login.Controls.Add(Me.pbx_exit, 4, 0)
         Me.tlp_login.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_login.Location = New System.Drawing.Point(0, 0)
-        Me.tlp_login.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tlp_login.Margin = New System.Windows.Forms.Padding(2)
         Me.tlp_login.Name = "tlp_login"
         Me.tlp_login.RowCount = 5
         Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.555809!))
@@ -190,7 +197,7 @@ Partial Class LoginForm
         Me.pbx_exit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_exit.Image = Global.repsun.My.Resources.Resources.Close
         Me.pbx_exit.Location = New System.Drawing.Point(1371, 8)
-        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
+        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(8)
         Me.pbx_exit.Name = "pbx_exit"
         Me.tlp_login.SetRowSpan(Me.pbx_exit, 2)
         Me.pbx_exit.Size = New System.Drawing.Size(33, 33)
@@ -207,7 +214,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.tlp_login)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "LoginForm"
         Me.Text = "Login"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
