@@ -121,43 +121,19 @@
   <data name="repsun_icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Logo\repsun-icono.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Combustible" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Combustible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LogoTransparente_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Logo\LogoTransparente_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login-Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Fondos\Login\Login-Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Empleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Empleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SurtidorOnTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Fondos\SurtidorOnTop\SurtidorOnTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Iconos\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Logo_Transparente_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Logo\Logo_Transparente_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Store" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Store.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Salir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Salir2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\Iconos\Salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
