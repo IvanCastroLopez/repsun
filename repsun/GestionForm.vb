@@ -4,7 +4,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub btn_create_Click(sender As Object, e As EventArgs) Handles btn_create.Click
+    Private Sub btn_create_Click(sender As Object, e As EventArgs) 
 
     End Sub
 End Class
