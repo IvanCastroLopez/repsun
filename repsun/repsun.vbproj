@@ -199,6 +199,7 @@
     <Content Include="bin\Debug\Imagenes\Iconos\Cliente.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Combustible.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Empleado.png" />
+    <None Include="bin\Debug\Imagenes\Iconos\Proveedores.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Store.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />

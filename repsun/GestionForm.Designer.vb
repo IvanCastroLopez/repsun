@@ -36,8 +36,8 @@ Partial Class GestionForm
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,8 +47,8 @@ Partial Class GestionForm
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -168,14 +168,16 @@ Partial Class GestionForm
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
         Me.tlp_gestion.SetRowSpan(Me.FlowLayoutPanel1, 3)
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(252, 1622)
         Me.FlowLayoutPanel1.TabIndex = 4
         '
         'PictureBox2
         '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(249, 173)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -185,7 +187,7 @@ Partial Class GestionForm
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.repsun.My.Resources.Resources.Combustible
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 182)
+        Me.PictureBox3.Location = New System.Drawing.Point(13, 192)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(249, 133)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -195,7 +197,7 @@ Partial Class GestionForm
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.repsun.My.Resources.Resources.Store
-        Me.PictureBox4.Location = New System.Drawing.Point(3, 321)
+        Me.PictureBox4.Location = New System.Drawing.Point(13, 331)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(249, 133)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -205,7 +207,7 @@ Partial Class GestionForm
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.repsun.My.Resources.Resources.Empleado
-        Me.PictureBox5.Location = New System.Drawing.Point(3, 460)
+        Me.PictureBox5.Location = New System.Drawing.Point(13, 470)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(249, 133)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -215,32 +217,33 @@ Partial Class GestionForm
         'PictureBox6
         '
         Me.PictureBox6.Image = Global.repsun.My.Resources.Resources.Cliente
-        Me.PictureBox6.Location = New System.Drawing.Point(3, 599)
+        Me.PictureBox6.Location = New System.Drawing.Point(13, 609)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(249, 133)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox6.TabIndex = 4
         Me.PictureBox6.TabStop = False
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.repsun.My.Resources.Resources.Salir
-        Me.PictureBox7.Location = New System.Drawing.Point(3, 877)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(249, 133)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 5
-        Me.PictureBox7.TabStop = False
-        '
         'PictureBox8
         '
-        Me.PictureBox8.Image = Global.repsun.My.Resources.Resources.Salir
-        Me.PictureBox8.Location = New System.Drawing.Point(3, 738)
+        Me.PictureBox8.Image = Global.repsun.My.Resources.Resources.Proveedores
+        Me.PictureBox8.Location = New System.Drawing.Point(13, 748)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(249, 133)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox8.TabIndex = 6
         Me.PictureBox8.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PictureBox7.Image = Global.repsun.My.Resources.Resources.Salir
+        Me.PictureBox7.Location = New System.Drawing.Point(13, 887)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(249, 133)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 5
+        Me.PictureBox7.TabStop = False
         '
         'GestionForm
         '
@@ -262,8 +265,8 @@ Partial Class GestionForm
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
