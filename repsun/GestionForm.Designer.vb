@@ -31,24 +31,24 @@ Partial Class GestionForm
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
         Me.pbx_close = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.pbx_logo = New System.Windows.Forms.PictureBox()
-        Me.pbx_salir = New System.Windows.Forms.PictureBox()
-        Me.pbx_proveedores = New System.Windows.Forms.PictureBox()
-        Me.pbx_clientes = New System.Windows.Forms.PictureBox()
-        Me.pbx_empleados = New System.Windows.Forms.PictureBox()
-        Me.pbx_tienda = New System.Windows.Forms.PictureBox()
         Me.pbx_combustible = New System.Windows.Forms.PictureBox()
+        Me.pbx_logo = New System.Windows.Forms.PictureBox()
+        Me.pbx_tienda = New System.Windows.Forms.PictureBox()
+        Me.pbx_empleados = New System.Windows.Forms.PictureBox()
+        Me.pbx_salir = New System.Windows.Forms.PictureBox()
+        Me.pbx_clientes = New System.Windows.Forms.PictureBox()
+        Me.pbx_proveedores = New System.Windows.Forms.PictureBox()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -171,6 +171,15 @@ Partial Class GestionForm
         Me.Panel1.Size = New System.Drawing.Size(252, 1622)
         Me.Panel1.TabIndex = 4
         '
+        'pbx_combustible
+        '
+        Me.pbx_combustible.Location = New System.Drawing.Point(0, 181)
+        Me.pbx_combustible.Name = "pbx_combustible"
+        Me.pbx_combustible.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_combustible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_combustible.TabIndex = 14
+        Me.pbx_combustible.TabStop = False
+        '
         'pbx_logo
         '
         Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Top
@@ -181,33 +190,14 @@ Partial Class GestionForm
         Me.pbx_logo.TabIndex = 7
         Me.pbx_logo.TabStop = False
         '
-        'pbx_salir
+        'pbx_tienda
         '
-        Me.pbx_salir.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pbx_salir.Location = New System.Drawing.Point(0, 1489)
-        Me.pbx_salir.Name = "pbx_salir"
-        Me.pbx_salir.Size = New System.Drawing.Size(252, 133)
-        Me.pbx_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_salir.TabIndex = 12
-        Me.pbx_salir.TabStop = False
-        '
-        'pbx_proveedores
-        '
-        Me.pbx_proveedores.Location = New System.Drawing.Point(0, 737)
-        Me.pbx_proveedores.Name = "pbx_proveedores"
-        Me.pbx_proveedores.Size = New System.Drawing.Size(249, 133)
-        Me.pbx_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_proveedores.TabIndex = 18
-        Me.pbx_proveedores.TabStop = False
-        '
-        'pbx_clientes
-        '
-        Me.pbx_clientes.Location = New System.Drawing.Point(0, 598)
-        Me.pbx_clientes.Name = "pbx_clientes"
-        Me.pbx_clientes.Size = New System.Drawing.Size(249, 133)
-        Me.pbx_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_clientes.TabIndex = 17
-        Me.pbx_clientes.TabStop = False
+        Me.pbx_tienda.Location = New System.Drawing.Point(0, 320)
+        Me.pbx_tienda.Name = "pbx_tienda"
+        Me.pbx_tienda.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_tienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_tienda.TabIndex = 15
+        Me.pbx_tienda.TabStop = False
         '
         'pbx_empleados
         '
@@ -218,23 +208,33 @@ Partial Class GestionForm
         Me.pbx_empleados.TabIndex = 16
         Me.pbx_empleados.TabStop = False
         '
-        'pbx_tienda
+        'pbx_salir
         '
-        Me.pbx_tienda.Location = New System.Drawing.Point(0, 320)
-        Me.pbx_tienda.Name = "pbx_tienda"
-        Me.pbx_tienda.Size = New System.Drawing.Size(249, 133)
-        Me.pbx_tienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_tienda.TabIndex = 15
-        Me.pbx_tienda.TabStop = False
+        Me.pbx_salir.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pbx_salir.Location = New System.Drawing.Point(0, 1489)
+        Me.pbx_salir.Name = "pbx_salir"
+        Me.pbx_salir.Size = New System.Drawing.Size(252, 133)
+        Me.pbx_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pbx_salir.TabIndex = 12
+        Me.pbx_salir.TabStop = False
         '
-        'pbx_combustible
+        'pbx_clientes
         '
-        Me.pbx_combustible.Location = New System.Drawing.Point(0, 181)
-        Me.pbx_combustible.Name = "pbx_combustible"
-        Me.pbx_combustible.Size = New System.Drawing.Size(249, 133)
-        Me.pbx_combustible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_combustible.TabIndex = 14
-        Me.pbx_combustible.TabStop = False
+        Me.pbx_clientes.Location = New System.Drawing.Point(0, 598)
+        Me.pbx_clientes.Name = "pbx_clientes"
+        Me.pbx_clientes.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_clientes.TabIndex = 17
+        Me.pbx_clientes.TabStop = False
+        '
+        'pbx_proveedores
+        '
+        Me.pbx_proveedores.Location = New System.Drawing.Point(0, 737)
+        Me.pbx_proveedores.Name = "pbx_proveedores"
+        Me.pbx_proveedores.Size = New System.Drawing.Size(249, 133)
+        Me.pbx_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_proveedores.TabIndex = 18
+        Me.pbx_proveedores.TabStop = False
         '
         'GestionForm
         '
@@ -251,13 +251,14 @@ Partial Class GestionForm
         Me.tbc_gestion.ResumeLayout(False)
         CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.PerformLayout()
         CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
