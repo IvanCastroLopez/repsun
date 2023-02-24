@@ -116,11 +116,6 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -151,7 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -196,12 +190,12 @@
     <None Include="bin\Debug\Imagenes\Iconos\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\Imagenes\Iconos\Cliente.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Clientes.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Combustible.png" />
-    <Content Include="bin\Debug\Imagenes\Iconos\Empleado.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Empleados.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Proveedores.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
-    <Content Include="bin\Debug\Imagenes\Iconos\Store.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Tienda.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
     <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
   </ItemGroup>
