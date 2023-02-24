@@ -162,8 +162,8 @@ Partial Class GestionForm
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
         Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(15)
         Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Padding = New System.Windows.Forms.Padding(30)
         Me.PictureBox2.Size = New System.Drawing.Size(368, 368)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 0
