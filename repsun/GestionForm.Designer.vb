@@ -38,6 +38,11 @@ Partial Class GestionForm
         Me.pbx_proveedores = New System.Windows.Forms.PictureBox()
         Me.pbx_clientes = New System.Windows.Forms.PictureBox()
         Me.pbx_salir = New System.Windows.Forms.PictureBox()
+        Me.lbl_combustible = New System.Windows.Forms.Label()
+        Me.lbl_tienda = New System.Windows.Forms.Label()
+        Me.lbl_Empleados = New System.Windows.Forms.Label()
+        Me.lbl_proveedores = New System.Windows.Forms.Label()
+        Me.lbl_clientes = New System.Windows.Forms.Label()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,6 +168,11 @@ Partial Class GestionForm
         Me.tlp_categorias.Controls.Add(Me.pbx_proveedores, 0, 8)
         Me.tlp_categorias.Controls.Add(Me.pbx_clientes, 0, 10)
         Me.tlp_categorias.Controls.Add(Me.pbx_salir, 0, 12)
+        Me.tlp_categorias.Controls.Add(Me.lbl_combustible, 0, 3)
+        Me.tlp_categorias.Controls.Add(Me.lbl_tienda, 0, 5)
+        Me.tlp_categorias.Controls.Add(Me.lbl_Empleados, 0, 7)
+        Me.tlp_categorias.Controls.Add(Me.lbl_proveedores, 0, 9)
+        Me.tlp_categorias.Controls.Add(Me.lbl_clientes, 0, 11)
         Me.tlp_categorias.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_categorias.Location = New System.Drawing.Point(3, 3)
         Me.tlp_categorias.Name = "tlp_categorias"
@@ -261,6 +271,66 @@ Partial Class GestionForm
         Me.pbx_salir.TabIndex = 6
         Me.pbx_salir.TabStop = False
         '
+        'lbl_combustible
+        '
+        Me.lbl_combustible.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_combustible.AutoSize = True
+        Me.lbl_combustible.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_combustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_combustible.Location = New System.Drawing.Point(18, 249)
+        Me.lbl_combustible.Name = "lbl_combustible"
+        Me.lbl_combustible.Size = New System.Drawing.Size(98, 21)
+        Me.lbl_combustible.TabIndex = 7
+        Me.lbl_combustible.Text = "Combustible"
+        '
+        'lbl_tienda
+        '
+        Me.lbl_tienda.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_tienda.AutoSize = True
+        Me.lbl_tienda.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_tienda.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_tienda.Location = New System.Drawing.Point(39, 373)
+        Me.lbl_tienda.Name = "lbl_tienda"
+        Me.lbl_tienda.Size = New System.Drawing.Size(56, 21)
+        Me.lbl_tienda.TabIndex = 8
+        Me.lbl_tienda.Text = "Tienda"
+        '
+        'lbl_Empleados
+        '
+        Me.lbl_Empleados.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_Empleados.AutoSize = True
+        Me.lbl_Empleados.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Empleados.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_Empleados.Location = New System.Drawing.Point(24, 497)
+        Me.lbl_Empleados.Name = "lbl_Empleados"
+        Me.lbl_Empleados.Size = New System.Drawing.Size(86, 21)
+        Me.lbl_Empleados.TabIndex = 9
+        Me.lbl_Empleados.Text = "Empleados"
+        '
+        'lbl_proveedores
+        '
+        Me.lbl_proveedores.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_proveedores.AutoSize = True
+        Me.lbl_proveedores.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_proveedores.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_proveedores.Location = New System.Drawing.Point(19, 621)
+        Me.lbl_proveedores.Name = "lbl_proveedores"
+        Me.lbl_proveedores.Size = New System.Drawing.Size(97, 21)
+        Me.lbl_proveedores.TabIndex = 10
+        Me.lbl_proveedores.Text = "Proveedores"
+        '
+        'lbl_clientes
+        '
+        Me.lbl_clientes.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_clientes.AutoSize = True
+        Me.lbl_clientes.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_clientes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_clientes.Location = New System.Drawing.Point(35, 745)
+        Me.lbl_clientes.Name = "lbl_clientes"
+        Me.lbl_clientes.Size = New System.Drawing.Size(65, 21)
+        Me.lbl_clientes.TabIndex = 11
+        Me.lbl_clientes.Text = "Clientes"
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -276,6 +346,7 @@ Partial Class GestionForm
         Me.tbc_gestion.ResumeLayout(False)
         CType(Me.pbx_close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlp_categorias.ResumeLayout(False)
+        Me.tlp_categorias.PerformLayout()
         CType(Me.pbx_icon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).EndInit()
@@ -303,4 +374,9 @@ Partial Class GestionForm
     Friend WithEvents pbx_proveedores As PictureBox
     Friend WithEvents pbx_clientes As PictureBox
     Friend WithEvents pbx_salir As PictureBox
+    Friend WithEvents lbl_combustible As Label
+    Friend WithEvents lbl_tienda As Label
+    Friend WithEvents lbl_Empleados As Label
+    Friend WithEvents lbl_proveedores As Label
+    Friend WithEvents lbl_clientes As Label
 End Class
