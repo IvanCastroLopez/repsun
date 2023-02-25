@@ -7,7 +7,10 @@ Public Class GestionForm
     Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
     Public adaptador_proveedores As New OleDbDataAdapter("Select * from Proveedor", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
+    Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
     Public gestion_dataset As New DataSet
+    Public comandoPublic As New OleDbCommand
+    Public readerPublic As OleDbDataReader
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleado")
@@ -25,6 +28,7 @@ Public Class GestionForm
 
         dgv_clientes.DataSource = gestion_dataset
         dgv_clientes.DataMember = "ClienteRepsol"
+
         actualizarDataGridView()
     End Sub
 
@@ -44,6 +48,10 @@ Public Class GestionForm
 
         ' No es necesario vaciar los DataMembers de los DataGridView
         ' ya que los DataTables que se asignan están actualizados
+
+    End Sub
+
+    Public Sub actualizarAjusesCombustible()
 
     End Sub
 
@@ -148,51 +156,75 @@ Public Class GestionForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
 
-    Private Sub pgb_sinPlomo95_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo95.Click
 
-    End Sub
-
-    Private Sub pgb_sinPlomo98_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo98.Click
-
-    End Sub
-
-    Private Sub pgb_diesel_Click(sender As Object, e As EventArgs) Handles pgb_diesel.Click
-
-    End Sub
-
-    Private Sub pgb_dieselPlus_Click(sender As Object, e As EventArgs) Handles pgb_dieselPlus.Click
-
-    End Sub
     ' ----
+    Dim precioPorLitro As String = readerPublic("precio_por_litro").ToString()
+    Dim cantidadLitros As String = readerPublic("cantidad").ToString()
+    Public Sub tpg_combustible_Enter(sender As Object, e As EventArgs) Handles tpg_combustible.Enter
+        Dim queryCombustible As String = "SELECT * FROM combustible WHERE tipo_combustible = @com"
+        comandoPublic = New OleDbCommand(queryCombustible, conexion)
+    End Sub
+
     Private Sub btn_rellenarTanque_Click(sender As Object, e As EventArgs) Handles btn_rellenarTanque.Click
 
     End Sub
 
     Private Sub cargarSinPlomo95()
-
+        cbx_tipoCombustible.SelectedIndex = 0
+        comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_95")
+        conexion.Open()
     End Sub
 
     Private Sub cargarSinPlomo98()
-
+        cbx_tipoCombustible.SelectedIndex = 1
+        comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_98")
+        conexion.Open()
     End Sub
 
     Private Sub cargarDiesel()
-
+        cbx_tipoCombustible.SelectedIndex = 2
+        comandoPublic.Parameters.AddWithValue("@com", "diesel")
+        conexion.Open()
     End Sub
 
     Private Sub cargarDieselPlus()
-
+        cbx_tipoCombustible.SelectedIndex = 3
+        comandoPublic.Parameters.AddWithValue("@com", "diesel_plus")
+        conexion.Open()
     End Sub
 
+    ''' <summary>
+    ''' Utilidad para cargar los valores de cada tipo de combustible
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub cbx_tipoCombustible_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipoCombustible.SelectedIndexChanged
         If cbx_tipoCombustible.SelectedIndex = 0 Then
-
+            cargarSinPlomo95()
         ElseIf cbx_tipoCombustible.SelectedIndex = 1 Then
-
+            cargarSinPlomo98()
         ElseIf cbx_tipoCombustible.SelectedIndex = 2 Then
-
+            cargarDiesel()
         ElseIf cbx_tipoCombustible.SelectedIndex = 3 Then
-
+            cargarDieselPlus()
         End If
     End Sub
+
+    Private Sub pgb_sinPlomo95_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo95.Click
+        cargarSinPlomo95()
+    End Sub
+
+    Private Sub pgb_sinPlomo98_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo98.Click
+        cargarSinPlomo98()
+    End Sub
+
+    Private Sub pgb_diesel_Click(sender As Object, e As EventArgs) Handles pgb_diesel.Click
+        cargarDiesel()
+    End Sub
+
+    Private Sub pgb_dieselPlus_Click(sender As Object, e As EventArgs) Handles pgb_dieselPlus.Click
+        cargarDieselPlus()
+    End Sub
+
+
 End Class
