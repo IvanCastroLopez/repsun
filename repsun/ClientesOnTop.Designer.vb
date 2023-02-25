@@ -72,13 +72,13 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(1243, 762)
+        Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(1204, 681)
         Me.tlp_GestionProductosOnTop.TabIndex = 1
         '
         'txt_precio
         '
         Me.txt_precio.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_precio.Location = New System.Drawing.Point(529, 489)
+        Me.txt_precio.Location = New System.Drawing.Point(509, 435)
         Me.txt_precio.Name = "txt_precio"
         Me.txt_precio.Size = New System.Drawing.Size(185, 20)
         Me.txt_precio.TabIndex = 6
@@ -88,7 +88,7 @@ Partial Class ClientesOnTop
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(595, 465)
+        Me.Label4.Location = New System.Drawing.Point(575, 411)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 21)
         Me.Label4.TabIndex = 3
@@ -99,7 +99,7 @@ Partial Class ClientesOnTop
         Me.cbx_categoria.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cbx_categoria.FormattingEnabled = True
         Me.cbx_categoria.Items.AddRange(New Object() {"Comida", "Bebida", "Otros"})
-        Me.cbx_categoria.Location = New System.Drawing.Point(531, 394)
+        Me.cbx_categoria.Location = New System.Drawing.Point(511, 349)
         Me.cbx_categoria.Name = "cbx_categoria"
         Me.cbx_categoria.Size = New System.Drawing.Size(181, 21)
         Me.cbx_categoria.TabIndex = 7
@@ -109,7 +109,7 @@ Partial Class ClientesOnTop
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(583, 357)
+        Me.Label3.Location = New System.Drawing.Point(563, 315)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 21)
         Me.Label3.TabIndex = 2
@@ -118,7 +118,7 @@ Partial Class ClientesOnTop
         'txt_nombre
         '
         Me.txt_nombre.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_nombre.Location = New System.Drawing.Point(529, 273)
+        Me.txt_nombre.Location = New System.Drawing.Point(509, 243)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(185, 20)
         Me.txt_nombre.TabIndex = 5
@@ -128,7 +128,7 @@ Partial Class ClientesOnTop
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(587, 249)
+        Me.Label2.Location = New System.Drawing.Point(568, 219)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 21)
         Me.Label2.TabIndex = 1
@@ -137,7 +137,7 @@ Partial Class ClientesOnTop
         'txt_codigoProducto
         '
         Me.txt_codigoProducto.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_codigoProducto.Location = New System.Drawing.Point(529, 165)
+        Me.txt_codigoProducto.Location = New System.Drawing.Point(509, 147)
         Me.txt_codigoProducto.Name = "txt_codigoProducto"
         Me.txt_codigoProducto.Size = New System.Drawing.Size(185, 20)
         Me.txt_codigoProducto.TabIndex = 4
@@ -147,7 +147,7 @@ Partial Class ClientesOnTop
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(589, 141)
+        Me.Label1.Location = New System.Drawing.Point(570, 123)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 21)
         Me.Label1.TabIndex = 0
@@ -158,7 +158,7 @@ Partial Class ClientesOnTop
         Me.lbl_TituloGestionProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_TituloGestionProductos.AutoSize = True
         Me.lbl_TituloGestionProductos.Font = New System.Drawing.Font("Yu Gothic UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TituloGestionProductos.Location = New System.Drawing.Point(491, 27)
+        Me.lbl_TituloGestionProductos.Location = New System.Drawing.Point(471, 22)
         Me.lbl_TituloGestionProductos.Name = "lbl_TituloGestionProductos"
         Me.lbl_TituloGestionProductos.Size = New System.Drawing.Size(261, 37)
         Me.lbl_TituloGestionProductos.TabIndex = 9
@@ -170,11 +170,11 @@ Partial Class ClientesOnTop
         Me.pbx_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.pbx_accion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbx_accion.Image = Global.repsun.My.Resources.Resources.Check
-        Me.pbx_accion.Location = New System.Drawing.Point(531, 597)
+        Me.pbx_accion.Location = New System.Drawing.Point(512, 531)
         Me.pbx_accion.Name = "pbx_accion"
         Me.pbx_accion.Padding = New System.Windows.Forms.Padding(20)
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.pbx_accion, 2)
-        Me.pbx_accion.Size = New System.Drawing.Size(180, 102)
+        Me.pbx_accion.Size = New System.Drawing.Size(180, 90)
         Me.pbx_accion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_accion.TabIndex = 10
         Me.pbx_accion.TabStop = False
@@ -183,7 +183,7 @@ Partial Class ClientesOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1243, 762)
+        Me.ClientSize = New System.Drawing.Size(1204, 681)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "ClientesOnTop"

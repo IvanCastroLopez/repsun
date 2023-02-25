@@ -24,6 +24,5 @@
 
     Private Sub btn_zonaClientes_Click(sender As Object, e As EventArgs) Handles btn_zonaClientes.Click
         ClientesOnTop.ShowDialog()
-        Me.Hide()
     End Sub
 End Class
