@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/repsun/bin/Debug/registros/accesos/RegistroAccesos.txt
+/repsun/bin/Debug/registros/errores/RegistroErrores.txt
