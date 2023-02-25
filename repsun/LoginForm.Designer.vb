@@ -130,10 +130,13 @@ Partial Class LoginForm
         '
         'lbl_contrasena
         '
+        Me.lbl_contrasena.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 16.2!)
         Me.lbl_contrasena.Location = New System.Drawing.Point(3, 218)
         Me.lbl_contrasena.Name = "lbl_contrasena"
-        Me.lbl_contrasena.Size = New System.Drawing.Size(100, 23)
+        Me.lbl_contrasena.Size = New System.Drawing.Size(1037, 36)
         Me.lbl_contrasena.TabIndex = 4
+        Me.lbl_contrasena.Text = "Contraseña"
         '
         'lbl_perdido
         '

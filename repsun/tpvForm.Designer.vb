@@ -45,11 +45,16 @@ Partial Class tpvForm
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -383,14 +388,45 @@ Partial Class tpvForm
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage2.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TabPage2.Controls.Add(Me.TabControl2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 46)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1255, 812)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Tienda"
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.TabPage3)
+        Me.TabControl2.Controls.Add(Me.TabPage4)
+        Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl2.Location = New System.Drawing.Point(3, 3)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(1249, 806)
+        Me.TabControl2.TabIndex = 0
+        '
+        'TabPage3
+        '
+        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TabPage3.Location = New System.Drawing.Point(4, 46)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1241, 756)
+        Me.TabPage3.TabIndex = 0
+        Me.TabPage3.Text = "TabPage3"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TabPage4.Location = New System.Drawing.Point(4, 46)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(1241, 756)
+        Me.TabPage4.TabIndex = 1
+        Me.TabPage4.Text = "TabPage4"
         '
         'tpvForm
         '
@@ -408,6 +444,8 @@ Partial Class tpvForm
         Me.tlp_teclado.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -435,4 +473,7 @@ Partial Class tpvForm
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
 End Class
