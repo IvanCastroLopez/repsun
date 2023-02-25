@@ -82,10 +82,22 @@
     <Compile Include="ClientesOnTop.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GestionEmpleadosOnTop.Designer.vb">
+      <DependentUpon>GestionEmpleadosOnTop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmpleadosOnTop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionForm.Designer.vb">
       <DependentUpon>GestionForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GestionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProductosOnTop.Designer.vb">
+      <DependentUpon>GestionProductosOnTop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProductosOnTop.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuPrincipalForm.Designer.vb">
@@ -145,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionForm.resx">
       <DependentUpon>GestionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionProductosOnTop.resx">
+      <DependentUpon>GestionProductosOnTop.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
