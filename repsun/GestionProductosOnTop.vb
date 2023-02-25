@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Runtime.Remoting.Channels
 
 Public Class GestionProductosOnTop
     ' Variable pública que comprueba si quieres actualizar o crear un producto
@@ -21,6 +22,10 @@ Public Class GestionProductosOnTop
         Else
             lbl_TituloGestionProductos.Text = "Editar un producto"
         End If
+    End Sub
+
+    Public Sub GestionProductosOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
+        productoUpdate = Nothing
     End Sub
 
     Private Sub pbx_accion_Click(sender As Object, e As EventArgs) Handles pbx_accion.Click
@@ -55,6 +60,9 @@ Public Class GestionProductosOnTop
                 Registros.GrabarError("Ha ocurrido un error creando el producto. Revise los campos", "Error creando el producto")
             End Try
         End If
+
+        conexion.Close()
+
     End Sub
 
 End Class

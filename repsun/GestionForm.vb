@@ -70,7 +70,7 @@ Public Class GestionForm
         GestionProductosOnTop.productoUpdate = Herramientas.InputBoxNumeros("Introduzca el id del producto a editar", "Editar producto")
 
         ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionProductosOnTop.
-        If Not GestionProductosOnTop.productoUpdate = "" Then
+        If Not GestionProductosOnTop.productoUpdate = Nothing Then
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna cod_producto es igual a la variable codigo.

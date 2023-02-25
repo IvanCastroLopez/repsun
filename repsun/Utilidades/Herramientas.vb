@@ -9,7 +9,7 @@ Public Class Herramientas
     ''' <param name="prompt">String: El texto que se muestra como mensaje en el InputBox</param>
     ''' <param name="title">String: title</param>
     ''' <returns>Una cadena que contiene el número ingresado por el usuario, o una cadena vacía si el usuario cancela el InputBox.</returns>
-    Public Shared Function InputBoxNumeros(prompt As String, title As String, Optional defaultValue As String = "") As String
+    Public Shared Function InputBoxNumeros(prompt As String, title As String) As String
         ' Declaramos una variable para almacenar el valor ingresado por el usuario.
         Dim input As String = ""
 
@@ -19,7 +19,7 @@ Public Class Herramientas
         ' Utilizamos un bucle While para asegurarnos de que se ingrese un número válido.
         While Not isNum
             ' Mostramos el InputBox con el texto de prompt, el título de title y el valor predeterminado de defaultValue.
-            input = InputBox(prompt, title, defaultValue)
+            input = InputBox(prompt, title)
 
             ' Comprobamos si el valor ingresado es un número válido utilizando la función IsNumeric().
             If IsNumeric(input) Then
