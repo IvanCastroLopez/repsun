@@ -92,14 +92,31 @@ Public Class GestionForm
             End If
         End If
     End Sub
-
-    Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
-
-    End Sub
-
-    Private Sub TableLayoutPanel5_Paint(sender As Object, e As PaintEventArgs) Handles tlp_depositosCombustibles.Paint
-
-    End Sub
     ' ** BOTONES ELIMINAR **
 
+    ' ** BOTONES CATEGORÍAS **
+    Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
+        ' Selecciona la pestaña "Combustible" (índice 0) en el control TabControl.
+        tbc_gestion.SelectTab(0)
+    End Sub
+
+    Private Sub pbx_tienda_Click(sender As Object, e As EventArgs) Handles pbx_tienda.Click
+        ' Selecciona la pestaña "Tienda" (índice 1) en el control TabControl.
+        tbc_gestion.SelectTab(1)
+    End Sub
+
+    Private Sub pbx_empleados_Click(sender As Object, e As EventArgs) Handles pbx_empleados.Click
+        ' Selecciona la pestaña "Empleados" (índice 2) en el control TabControl.
+        tbc_gestion.SelectTab(2)
+    End Sub
+
+    Private Sub pbx_proveedores_Click(sender As Object, e As EventArgs) Handles pbx_proveedores.Click
+        ' Selecciona la pestaña "Proveedores" (índice 3) en el control TabControl.
+        tbc_gestion.SelectTab(3)
+    End Sub
+
+    Private Sub pbx_clientes_Click(sender As Object, e As EventArgs) Handles pbx_clientes.Click
+        ' Selecciona la pestaña "Clientes" (índice 4) en el control TabControl.
+        tbc_gestion.SelectTab(4)
+    End Sub
 End Class

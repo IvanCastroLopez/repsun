@@ -46,7 +46,6 @@ Public Class GestionProductosOnTop
             txt_nombre.Text = reader("nombre").ToString()
             cbx_categoria.Text = reader("categoria").ToString()
             txt_precio.Text = reader("precio").ToString()
-
         End If
     End Sub
 
