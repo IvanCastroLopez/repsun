@@ -57,7 +57,7 @@ Public Class GestionProductosOnTop
     End Sub
 
     'Este sub se ejecuta cuando se hace clic en el botón de acción (pbx_accion).
-    Private Sub pbx_accion_Click(sender As Object, e As EventArgs) Handles pbx_accion.Click
+    Private Sub btn_accion_Click(sender As Object, e As EventArgs) Handles btn_accion.Click
         'Si booleanCrear es True, significa que se está creando un nuevo producto, por lo que se ejecuta esta sección de código.
         If booleanCrear Then
             ' Creamos una variable para almacenar el resultado de la consulta.

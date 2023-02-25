@@ -31,19 +31,18 @@ Partial Class GestionProductosOnTop
         Me.cbx_categoria = New System.Windows.Forms.ComboBox()
         Me.txt_precio = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.pbx_accion = New System.Windows.Forms.PictureBox()
         Me.lbl_TituloGestionProductos = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_accion = New System.Windows.Forms.Button()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
-        CType(Me.pbx_accion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_GestionProductosOnTop
         '
         Me.tlp_GestionProductosOnTop.BackColor = System.Drawing.Color.Transparent
-        Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
-        Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.Login_Background
+        Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tlp_GestionProductosOnTop.ColumnCount = 3
         Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -55,9 +54,9 @@ Partial Class GestionProductosOnTop
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.cbx_categoria, 1, 7)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_precio, 1, 9)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label4, 1, 8)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.pbx_accion, 1, 11)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionProductos, 1, 0)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label5, 1, 4)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 11)
         Me.tlp_GestionProductosOnTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_GestionProductosOnTop.Location = New System.Drawing.Point(0, 0)
         Me.tlp_GestionProductosOnTop.Name = "tlp_GestionProductosOnTop"
@@ -97,7 +96,7 @@ Partial Class GestionProductosOnTop
         Me.txt_codigoProducto.Location = New System.Drawing.Point(404, 147)
         Me.txt_codigoProducto.Name = "txt_codigoProducto"
         Me.txt_codigoProducto.Size = New System.Drawing.Size(395, 31)
-        Me.txt_codigoProducto.TabIndex = 4
+        Me.txt_codigoProducto.TabIndex = 1
         '
         'txt_nombre
         '
@@ -106,7 +105,7 @@ Partial Class GestionProductosOnTop
         Me.txt_nombre.Location = New System.Drawing.Point(404, 243)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(395, 31)
-        Me.txt_nombre.TabIndex = 5
+        Me.txt_nombre.TabIndex = 2
         '
         'Label3
         '
@@ -128,7 +127,7 @@ Partial Class GestionProductosOnTop
         Me.cbx_categoria.Location = New System.Drawing.Point(404, 339)
         Me.cbx_categoria.Name = "cbx_categoria"
         Me.cbx_categoria.Size = New System.Drawing.Size(395, 33)
-        Me.cbx_categoria.TabIndex = 7
+        Me.cbx_categoria.TabIndex = 3
         '
         'txt_precio
         '
@@ -137,7 +136,7 @@ Partial Class GestionProductosOnTop
         Me.txt_precio.Location = New System.Drawing.Point(404, 435)
         Me.txt_precio.Name = "txt_precio"
         Me.txt_precio.Size = New System.Drawing.Size(395, 31)
-        Me.txt_precio.TabIndex = 6
+        Me.txt_precio.TabIndex = 4
         '
         'Label4
         '
@@ -149,21 +148,6 @@ Partial Class GestionProductosOnTop
         Me.Label4.Size = New System.Drawing.Size(70, 30)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Precio"
-        '
-        'pbx_accion
-        '
-        Me.pbx_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.pbx_accion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbx_accion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_accion.Image = Global.repsun.My.Resources.Resources.Check
-        Me.pbx_accion.Location = New System.Drawing.Point(404, 531)
-        Me.pbx_accion.Name = "pbx_accion"
-        Me.pbx_accion.Padding = New System.Windows.Forms.Padding(20)
-        Me.tlp_GestionProductosOnTop.SetRowSpan(Me.pbx_accion, 2)
-        Me.pbx_accion.Size = New System.Drawing.Size(395, 90)
-        Me.pbx_accion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_accion.TabIndex = 10
-        Me.pbx_accion.TabStop = False
         '
         'lbl_TituloGestionProductos
         '
@@ -198,6 +182,21 @@ Partial Class GestionProductosOnTop
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Nombre"
         '
+        'btn_accion
+        '
+        Me.btn_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(193, Byte), Integer))
+        Me.btn_accion.BackgroundImage = Global.repsun.My.Resources.Resources.Check
+        Me.btn_accion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_accion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_accion.FlatAppearance.BorderColor = System.Drawing.Color.Green
+        Me.btn_accion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_accion.Location = New System.Drawing.Point(404, 531)
+        Me.btn_accion.Name = "btn_accion"
+        Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
+        Me.btn_accion.Size = New System.Drawing.Size(395, 90)
+        Me.btn_accion.TabIndex = 12
+        Me.btn_accion.UseVisualStyleBackColor = False
+        '
         'GestionProductosOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -207,10 +206,9 @@ Partial Class GestionProductosOnTop
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GestionProductosOnTop"
-        Me.Text = "GestionProductosOnTop"
+        Me.Text = "Gestión de producto"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
         Me.tlp_GestionProductosOnTop.PerformLayout()
-        CType(Me.pbx_accion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -225,6 +223,6 @@ Partial Class GestionProductosOnTop
     Friend WithEvents txt_codigoProducto As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_TituloGestionProductos As Label
-    Friend WithEvents pbx_accion As PictureBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents btn_accion As Button
 End Class
