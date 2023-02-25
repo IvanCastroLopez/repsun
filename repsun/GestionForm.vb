@@ -96,6 +96,10 @@ Public Class GestionForm
     Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
 
     End Sub
+
+    Private Sub TableLayoutPanel5_Paint(sender As Object, e As PaintEventArgs) Handles tlp_depositosCombustibles.Paint
+
+    End Sub
     ' ** BOTONES ELIMINAR **
 
 End Class
