@@ -13,6 +13,19 @@ Public Class GestionForm
     End Sub
 
     Public Sub actualizarDataGridView()
+
+        dgv_tienda.DataSource = Nothing
+        dgv_tienda.DataMember = Nothing
+
+        dgv_empleados.DataSource = Nothing
+        dgv_empleados.DataMember = Nothing
+
+        dgv_proveedores.DataSource = Nothing
+        dgv_proveedores.DataMember = Nothing
+
+        dgv_clientes.DataSource = Nothing
+        dgv_clientes.DataMember = Nothing
+
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleado")
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
