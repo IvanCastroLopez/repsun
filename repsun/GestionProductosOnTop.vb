@@ -41,11 +41,12 @@ Public Class GestionProductosOnTop
             comando.Parameters.AddWithValue("@cod", productoUpdate)
             Dim reader As OleDbDataReader = comando.ExecuteReader
             ' Cambio de todos los editText
-
-            txt_codigoProducto.Text = productoUpdate
-            txt_nombre.Text = reader("nombre").ToString()
-            cbx_categoria.Text = reader("categoria").ToString()
-            txt_precio.Text = reader("precio").ToString()
+            If reader.Read Then
+                txt_codigoProducto.Text = productoUpdate
+                txt_nombre.Text = reader("nombre").ToString()
+                cbx_categoria.Text = reader("categoria").ToString()
+                txt_precio.Text = reader("precio").ToString()
+            End If
         End If
     End Sub
 
