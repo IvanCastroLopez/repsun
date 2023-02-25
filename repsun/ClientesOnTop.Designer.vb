@@ -26,7 +26,7 @@ Partial Class ClientesOnTop
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_codigoCliente = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.lbl_TituloGestionProductos = New System.Windows.Forms.Label()
+        Me.lbl_TituloGestionClientes = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_apellidos = New System.Windows.Forms.TextBox()
@@ -53,7 +53,7 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label1, 1, 2)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_codigoCliente, 1, 3)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_nombre, 1, 5)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionProductos, 1, 0)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionClientes, 1, 0)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label5, 1, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label2, 2, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_apellidos, 2, 5)
@@ -116,17 +116,17 @@ Partial Class ClientesOnTop
         Me.txt_nombre.Size = New System.Drawing.Size(295, 31)
         Me.txt_nombre.TabIndex = 5
         '
-        'lbl_TituloGestionProductos
+        'lbl_TituloGestionClientes
         '
-        Me.lbl_TituloGestionProductos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbl_TituloGestionProductos.AutoSize = True
-        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionProductos, 2)
-        Me.lbl_TituloGestionProductos.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TituloGestionProductos.Location = New System.Drawing.Point(454, 18)
-        Me.lbl_TituloGestionProductos.Name = "lbl_TituloGestionProductos"
-        Me.lbl_TituloGestionProductos.Size = New System.Drawing.Size(295, 45)
-        Me.lbl_TituloGestionProductos.TabIndex = 9
-        Me.lbl_TituloGestionProductos.Text = "Gestión de clientes"
+        Me.lbl_TituloGestionClientes.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_TituloGestionClientes.AutoSize = True
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionClientes, 2)
+        Me.lbl_TituloGestionClientes.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_TituloGestionClientes.Location = New System.Drawing.Point(454, 18)
+        Me.lbl_TituloGestionClientes.Name = "lbl_TituloGestionClientes"
+        Me.lbl_TituloGestionClientes.Size = New System.Drawing.Size(295, 45)
+        Me.lbl_TituloGestionClientes.TabIndex = 9
+        Me.lbl_TituloGestionClientes.Text = "Gestión de clientes"
         '
         'Label5
         '
@@ -257,7 +257,7 @@ Partial Class ClientesOnTop
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_codigoCliente As TextBox
     Friend WithEvents txt_nombre As TextBox
-    Friend WithEvents lbl_TituloGestionProductos As Label
+    Friend WithEvents lbl_TituloGestionClientes As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_apellidos As TextBox
