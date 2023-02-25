@@ -134,4 +134,59 @@ Public Class GestionForm
         tbc_gestion.SelectTab(4)
     End Sub
 
+
+    ' ** GESTION COMBUSTIBLES **
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
+    Private Sub pgb_sinPlomo95_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo95.Click
+
+    End Sub
+
+    Private Sub pgb_sinPlomo98_Click(sender As Object, e As EventArgs) Handles pgb_sinPlomo98.Click
+
+    End Sub
+
+    Private Sub pgb_diesel_Click(sender As Object, e As EventArgs) Handles pgb_diesel.Click
+
+    End Sub
+
+    Private Sub pgb_dieselPlus_Click(sender As Object, e As EventArgs) Handles pgb_dieselPlus.Click
+
+    End Sub
+    ' ----
+    Private Sub btn_rellenarTanque_Click(sender As Object, e As EventArgs) Handles btn_rellenarTanque.Click
+
+    End Sub
+
+    Private Sub cargarSinPlomo95()
+
+    End Sub
+
+    Private Sub cargarSinPlomo98()
+
+    End Sub
+
+    Private Sub cargarDiesel()
+
+    End Sub
+
+    Private Sub cargarDieselPlus()
+
+    End Sub
+
+    Private Sub cbx_tipoCombustible_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipoCombustible.SelectedIndexChanged
+        If cbx_tipoCombustible.SelectedIndex = 0 Then
+
+        ElseIf cbx_tipoCombustible.SelectedIndex = 1 Then
+
+        ElseIf cbx_tipoCombustible.SelectedIndex = 2 Then
+
+        ElseIf cbx_tipoCombustible.SelectedIndex = 3 Then
+
+        End If
+    End Sub
 End Class
