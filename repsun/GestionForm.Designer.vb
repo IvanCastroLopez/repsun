@@ -43,7 +43,7 @@ Partial Class GestionForm
         Me.tpg_tienda = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_botonesTienda = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.pbx_eliminartienda = New System.Windows.Forms.PictureBox()
         Me.pbx_editarTienda = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -118,7 +118,7 @@ Partial Class GestionForm
         Me.tpg_tienda.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.tlp_botonesTienda.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_eliminartienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_editarTienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_crearTienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -482,7 +482,7 @@ Partial Class GestionForm
         '
         Me.tlp_botonesTienda.ColumnCount = 1
         Me.tlp_botonesTienda.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_botonesTienda.Controls.Add(Me.PictureBox5, 0, 11)
+        Me.tlp_botonesTienda.Controls.Add(Me.pbx_eliminartienda, 0, 11)
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_editarTienda, 0, 9)
         Me.tlp_botonesTienda.Controls.Add(Me.Label11, 0, 10)
         Me.tlp_botonesTienda.Controls.Add(Me.Label12, 0, 12)
@@ -517,17 +517,16 @@ Partial Class GestionForm
         Me.tlp_botonesTienda.Size = New System.Drawing.Size(333, 1322)
         Me.tlp_botonesTienda.TabIndex = 3
         '
-        'PictureBox5
+        'pbx_eliminartienda
         '
-        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox5.Image = Global.repsun.My.Resources.Resources.Eliminar
-        Me.PictureBox5.Location = New System.Drawing.Point(6, 809)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(6)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(321, 61)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 3
-        Me.PictureBox5.TabStop = False
+        Me.pbx_eliminartienda.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_eliminartienda.Image = Global.repsun.My.Resources.Resources.Eliminar
+        Me.pbx_eliminartienda.Location = New System.Drawing.Point(3, 432)
+        Me.pbx_eliminartienda.Name = "pbx_eliminartienda"
+        Me.pbx_eliminartienda.Size = New System.Drawing.Size(176, 33)
+        Me.pbx_eliminartienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_eliminartienda.TabIndex = 3
+        Me.pbx_eliminartienda.TabStop = False
         '
         'pbx_editarTienda
         '
@@ -1466,7 +1465,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.tlp_botonesTienda.ResumeLayout(False)
         Me.tlp_botonesTienda.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_eliminartienda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_editarTienda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_crearTienda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1519,7 +1518,7 @@ Partial Class GestionForm
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents tlp_botonesTienda As TableLayoutPanel
     Friend WithEvents Label9 As Label
-    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents pbx_eliminartienda As PictureBox
     Friend WithEvents pbx_editarTienda As PictureBox
     Friend WithEvents pbx_ As PictureBox
     Friend WithEvents Label10 As Label
