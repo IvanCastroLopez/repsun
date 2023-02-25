@@ -158,11 +158,11 @@ Public Class GestionForm
 
 
     ' ----
-    Dim precioPorLitro As String = readerPublic("precio_por_litro").ToString()
-    Dim cantidadLitros As String = readerPublic("cantidad").ToString()
     Public Sub tpg_combustible_Enter(sender As Object, e As EventArgs) Handles tpg_combustible.Enter
         Dim queryCombustible As String = "SELECT * FROM combustible WHERE tipo_combustible = @com"
         comandoPublic = New OleDbCommand(queryCombustible, conexion)
+        Dim precioPorLitro As String = readerPublic("precio_por_litro").ToString()
+        Dim cantidadLitros As String = readerPublic("cantidad").ToString()
     End Sub
 
     Private Sub btn_rellenarTanque_Click(sender As Object, e As EventArgs) Handles btn_rellenarTanque.Click
@@ -173,24 +173,31 @@ Public Class GestionForm
         cbx_tipoCombustible.SelectedIndex = 0
         comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_95")
         conexion.Open()
+        readerPublic = comandoPublic.ExecuteReader
+        nud_precioCombustible.Value = readerPublic("precio_por_litro").ToString()
+        'pgb_restanteDeposito.Value
+
     End Sub
 
     Private Sub cargarSinPlomo98()
         cbx_tipoCombustible.SelectedIndex = 1
         comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_98")
         conexion.Open()
+        readerPublic = comandoPublic.ExecuteReader
     End Sub
 
     Private Sub cargarDiesel()
         cbx_tipoCombustible.SelectedIndex = 2
         comandoPublic.Parameters.AddWithValue("@com", "diesel")
         conexion.Open()
+        readerPublic = comandoPublic.ExecuteReader
     End Sub
 
     Private Sub cargarDieselPlus()
         cbx_tipoCombustible.SelectedIndex = 3
         comandoPublic.Parameters.AddWithValue("@com", "diesel_plus")
         conexion.Open()
+        readerPublic = comandoPublic.ExecuteReader
     End Sub
 
     ''' <summary>
