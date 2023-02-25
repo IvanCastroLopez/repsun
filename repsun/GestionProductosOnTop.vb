@@ -27,7 +27,7 @@ Public Class GestionProductosOnTop
         'Este bloque de código establece el título del formulario según si se está creando un nuevo producto o editando uno existente.
         If booleanCrear Then
             lbl_TituloGestionProductos.Text = "Crear un producto"
-            txt_codigoProducto.Enabled = False
+            txt_codigoProducto.Enabled = True
             txt_codigoProducto.Text = ""
             txt_nombre.Text = ""
             cbx_categoria.Text = ""
@@ -52,6 +52,7 @@ Public Class GestionProductosOnTop
 
     Public Sub GestionProductosOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         productoUpdate = Nothing
+        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
@@ -86,7 +87,7 @@ Public Class GestionProductosOnTop
             End If
 
         Else 'Si booleanCrear es False, significa que se está editando un producto existente, por lo que se ejecuta esta sección de código.
-            Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@precio where cod_producto=@cod"
+            Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
             Dim comando As New OleDbCommand(ordensql, conexion)
             comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
             comando.Parameters.AddWithValue("@nom", txt_nombre.Text)

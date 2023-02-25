@@ -9,6 +9,23 @@ Public Class GestionForm
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     Public gestion_dataset As New DataSet
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        actualizarDataGridView()
+    End Sub
+
+    Public Sub actualizarDataGridView()
+
+        dgv_tienda.DataSource = Nothing
+        dgv_tienda.DataMember = Nothing
+
+        dgv_empleados.DataSource = Nothing
+        dgv_empleados.DataMember = Nothing
+
+        dgv_proveedores.DataSource = Nothing
+        dgv_proveedores.DataMember = Nothing
+
+        dgv_clientes.DataSource = Nothing
+        dgv_clientes.DataMember = Nothing
+
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleado")
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
@@ -17,15 +34,12 @@ Public Class GestionForm
         dgv_tienda.DataSource = gestion_dataset
         dgv_tienda.DataMember = "Producto"
 
-        Me.dgv_empleados.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_empleados.DataSource = gestion_dataset
         dgv_empleados.DataMember = "Empleado"
 
-        Me.dgv_proveedores.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_proveedores.DataSource = gestion_dataset
         dgv_proveedores.DataMember = "Proveedor"
 
-        Me.dgv_clientes.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_clientes.DataSource = gestion_dataset
         dgv_clientes.DataMember = "ClienteRepsol"
     End Sub
