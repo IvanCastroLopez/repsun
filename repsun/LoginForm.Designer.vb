@@ -53,7 +53,7 @@ Partial Class LoginForm
         Me.tlp_inLogin.Controls.Add(Me.lbl_contrasena, 0, 3)
         Me.tlp_inLogin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_inLogin.Location = New System.Drawing.Point(674, 356)
-        Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp_inLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_inLogin.Name = "tlp_inLogin"
         Me.tlp_inLogin.RowCount = 6
         Me.tlp_inLogin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852!))
@@ -86,7 +86,7 @@ Partial Class LoginForm
         Me.txt_contrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
         Me.txt_contrasena.ForeColor = System.Drawing.Color.Black
         Me.txt_contrasena.Location = New System.Drawing.Point(4, 474)
-        Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_contrasena.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_contrasena.MaxLength = 10
         Me.txt_contrasena.Name = "txt_contrasena"
         Me.txt_contrasena.Size = New System.Drawing.Size(1306, 71)
@@ -98,7 +98,7 @@ Partial Class LoginForm
         Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
         Me.txt_user.ForeColor = System.Drawing.Color.Gray
         Me.txt_user.Location = New System.Drawing.Point(4, 263)
-        Me.txt_user.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_user.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_user.MaxLength = 30
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(1306, 71)
@@ -156,7 +156,7 @@ Partial Class LoginForm
         Me.pbx_logo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_logo.Image = Global.repsun.My.Resources.Resources.Logo_Transparente_2
         Me.pbx_logo.Location = New System.Drawing.Point(275, 81)
-        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
+        Me.pbx_logo.Margin = New System.Windows.Forms.Padding(7)
         Me.pbx_logo.Name = "pbx_logo"
         Me.tlp_login.SetRowSpan(Me.pbx_logo, 2)
         Me.pbx_logo.Size = New System.Drawing.Size(254, 264)
@@ -179,7 +179,7 @@ Partial Class LoginForm
         Me.tlp_login.Controls.Add(Me.pbx_exit, 4, 0)
         Me.tlp_login.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_login.Location = New System.Drawing.Point(0, 0)
-        Me.tlp_login.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp_login.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_login.Name = "tlp_login"
         Me.tlp_login.RowCount = 5
         Me.tlp_login.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.555809!))
@@ -196,7 +196,7 @@ Partial Class LoginForm
         Me.pbx_exit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_exit.Image = Global.repsun.My.Resources.Resources.Close
         Me.pbx_exit.Location = New System.Drawing.Point(2528, 28)
-        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(28, 28, 28, 28)
+        Me.pbx_exit.Margin = New System.Windows.Forms.Padding(28)
         Me.pbx_exit.Name = "pbx_exit"
         Me.tlp_login.SetRowSpan(Me.pbx_exit, 2)
         Me.pbx_exit.Size = New System.Drawing.Size(32, 34)
@@ -213,7 +213,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.tlp_login)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "LoginForm"
         Me.Text = "Login"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
