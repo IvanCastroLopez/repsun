@@ -30,7 +30,7 @@ Partial Class GestionForm
         Me.tlp_botonesTienda = New System.Windows.Forms.TableLayoutPanel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.pbx_editarTienda = New System.Windows.Forms.PictureBox()
         Me.pbx_ = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.pbx_crearTienda = New System.Windows.Forms.PictureBox()
@@ -48,7 +48,7 @@ Partial Class GestionForm
         Me.pbx_crearEmpleados = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_empleados = New System.Windows.Forms.DataGridView()
         Me.tpg_proveedores = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_botonesProveedores = New System.Windows.Forms.TableLayoutPanel()
@@ -60,10 +60,10 @@ Partial Class GestionForm
         Me.pbx_crearProveedor = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.dgv_proveedores = New System.Windows.Forms.DataGridView()
         Me.tpg_clientes = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.dgv_clientes = New System.Windows.Forms.DataGridView()
         Me.tlp_botonesClientes = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_buscarClientes = New System.Windows.Forms.Label()
         Me.pbx_deleteCliente = New System.Windows.Forms.PictureBox()
@@ -93,7 +93,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel1.SuspendLayout()
         Me.tlp_botonesTienda.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_editarTienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_crearTienda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +104,7 @@ Partial Class GestionForm
         CType(Me.pbx_editarEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_buscarEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_crearEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpg_proveedores.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.tlp_botonesProveedores.SuspendLayout()
@@ -112,10 +112,10 @@ Partial Class GestionForm
         CType(Me.pbx_editarProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_buscarProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_crearProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpg_clientes.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_botonesClientes.SuspendLayout()
         CType(Me.pbx_deleteCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_updateCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -215,7 +215,7 @@ Partial Class GestionForm
         Me.tlp_botonesTienda.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_botonesTienda.Controls.Add(Me.Label9, 0, 8)
         Me.tlp_botonesTienda.Controls.Add(Me.PictureBox5, 0, 11)
-        Me.tlp_botonesTienda.Controls.Add(Me.PictureBox6, 0, 9)
+        Me.tlp_botonesTienda.Controls.Add(Me.pbx_editarTienda, 0, 9)
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_, 0, 7)
         Me.tlp_botonesTienda.Controls.Add(Me.Label10, 0, 6)
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_crearTienda, 0, 5)
@@ -270,16 +270,16 @@ Partial Class GestionForm
         Me.PictureBox5.TabIndex = 3
         Me.PictureBox5.TabStop = False
         '
-        'PictureBox6
+        'pbx_editarTienda
         '
-        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox6.Image = Global.repsun.My.Resources.Resources.Modificar
-        Me.PictureBox6.Location = New System.Drawing.Point(3, 354)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(176, 33)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 2
-        Me.PictureBox6.TabStop = False
+        Me.pbx_editarTienda.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_editarTienda.Image = Global.repsun.My.Resources.Resources.Modificar
+        Me.pbx_editarTienda.Location = New System.Drawing.Point(3, 354)
+        Me.pbx_editarTienda.Name = "pbx_editarTienda"
+        Me.pbx_editarTienda.Size = New System.Drawing.Size(176, 33)
+        Me.pbx_editarTienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_editarTienda.TabIndex = 2
+        Me.pbx_editarTienda.TabStop = False
         '
         'pbx_
         '
@@ -341,11 +341,16 @@ Partial Class GestionForm
         '
         'dgv_tienda
         '
+        Me.dgv_tienda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dgv_tienda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_tienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_tienda.Location = New System.Drawing.Point(191, 82)
+        Me.dgv_tienda.MultiSelect = False
         Me.dgv_tienda.Name = "dgv_tienda"
+        Me.dgv_tienda.ReadOnly = True
         Me.dgv_tienda.RowHeadersWidth = 72
+        Me.dgv_tienda.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.dgv_tienda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_tienda.Size = New System.Drawing.Size(1061, 712)
         Me.dgv_tienda.TabIndex = 0
         '
@@ -366,7 +371,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.tlp_botonesEmpleados, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.DataGridView1, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.dgv_empleados, 1, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -506,15 +511,15 @@ Partial Class GestionForm
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Eliminar"
         '
-        'DataGridView1
+        'dgv_empleados
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(191, 83)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 72
-        Me.DataGridView1.Size = New System.Drawing.Size(1065, 715)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_empleados.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_empleados.Location = New System.Drawing.Point(191, 83)
+        Me.dgv_empleados.Name = "dgv_empleados"
+        Me.dgv_empleados.RowHeadersWidth = 72
+        Me.dgv_empleados.Size = New System.Drawing.Size(1065, 715)
+        Me.dgv_empleados.TabIndex = 0
         '
         'tpg_proveedores
         '
@@ -533,7 +538,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
         Me.TableLayoutPanel4.Controls.Add(Me.tlp_botonesProveedores, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.DataGridView2, 1, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.dgv_proveedores, 1, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -673,15 +678,15 @@ Partial Class GestionForm
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Eliminar"
         '
-        'DataGridView2
+        'dgv_proveedores
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(191, 83)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersWidth = 72
-        Me.DataGridView2.Size = New System.Drawing.Size(1065, 715)
-        Me.DataGridView2.TabIndex = 0
+        Me.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_proveedores.Location = New System.Drawing.Point(191, 83)
+        Me.dgv_proveedores.Name = "dgv_proveedores"
+        Me.dgv_proveedores.RowHeadersWidth = 72
+        Me.dgv_proveedores.Size = New System.Drawing.Size(1065, 715)
+        Me.dgv_proveedores.TabIndex = 0
         '
         'tpg_clientes
         '
@@ -699,7 +704,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel6.ColumnCount = 2
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.DataGridView3, 1, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.dgv_clientes, 1, 1)
         Me.TableLayoutPanel6.Controls.Add(Me.tlp_botonesClientes, 0, 1)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
@@ -711,15 +716,15 @@ Partial Class GestionForm
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(1259, 801)
         Me.TableLayoutPanel6.TabIndex = 3
         '
-        'DataGridView3
+        'dgv_clientes
         '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.Location = New System.Drawing.Point(191, 83)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.RowHeadersWidth = 72
-        Me.DataGridView3.Size = New System.Drawing.Size(1065, 715)
-        Me.DataGridView3.TabIndex = 0
+        Me.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_clientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_clientes.Location = New System.Drawing.Point(191, 83)
+        Me.dgv_clientes.Name = "dgv_clientes"
+        Me.dgv_clientes.RowHeadersWidth = 72
+        Me.dgv_clientes.Size = New System.Drawing.Size(1065, 715)
+        Me.dgv_clientes.TabIndex = 0
         '
         'tlp_botonesClientes
         '
@@ -1054,7 +1059,7 @@ Partial Class GestionForm
         Me.tlp_botonesTienda.ResumeLayout(False)
         Me.tlp_botonesTienda.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_editarTienda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_crearTienda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_tienda, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1066,7 +1071,7 @@ Partial Class GestionForm
         CType(Me.pbx_editarEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_buscarEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_crearEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpg_proveedores.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.tlp_botonesProveedores.ResumeLayout(False)
@@ -1075,10 +1080,10 @@ Partial Class GestionForm
         CType(Me.pbx_editarProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_buscarProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_crearProveedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpg_clientes.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlp_botonesClientes.ResumeLayout(False)
         Me.tlp_botonesClientes.PerformLayout()
         CType(Me.pbx_deleteCliente, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1107,7 +1112,7 @@ Partial Class GestionForm
     Friend WithEvents tlp_botonesTienda As TableLayoutPanel
     Friend WithEvents Label9 As Label
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents pbx_editarTienda As PictureBox
     Friend WithEvents pbx_ As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents pbx_crearTienda As PictureBox
@@ -1125,7 +1130,7 @@ Partial Class GestionForm
     Friend WithEvents pbx_crearEmpleados As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_empleados As DataGridView
     Friend WithEvents tpg_proveedores As TabPage
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents tlp_botonesProveedores As TableLayoutPanel
@@ -1137,10 +1142,10 @@ Partial Class GestionForm
     Friend WithEvents pbx_crearProveedor As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgv_proveedores As DataGridView
     Friend WithEvents tpg_clientes As TabPage
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents dgv_clientes As DataGridView
     Friend WithEvents tlp_botonesClientes As TableLayoutPanel
     Friend WithEvents lbl_buscarClientes As Label
     Friend WithEvents pbx_deleteCliente As PictureBox
