@@ -1,18 +1,17 @@
 ﻿Imports System.Data.OleDb
 
 Public Class ClientesOnTop
-    ' Variable pública que comprueba si quieres actualizar o crear un ClienteRepsol
+    ' Variable pública que comprueba si quieres actualizar o crear un Cliente Repsol
     Public Shared booleanCrear As Boolean
 
     ' Variable pública que guarda el ClienteRepsol a actualizar
     Public Shared clienteUpdate As Integer
 
-
     'Aquí se establece la conexión a la base de datos mediante el proveedor Microsoft.ACE.OLEDB.12.0 y se especifica la ubicación de la base de datos.
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
 
     'Aquí se crea un adaptador de datos OleDbDataAdapter para seleccionar todos los datos de la tabla "ClienteRepsol" de la base de datos.
-    Public adaptador_tienda As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
+    Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
 
     'Aquí se crea un objeto DataSet llamado "gestion_dataset".
     Public gestion_dataset As New DataSet
@@ -22,7 +21,7 @@ Public Class ClientesOnTop
 
         conexion.Open()
         'Aquí se llena el DataSet "gestion_dataset" con los datos de la tabla "ClienteRepsol".
-        adaptador_tienda.Fill(gestion_dataset, "ClienteRepsol")
+        adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
         'Este bloque de código establece el título del formulario según si se está creando un nuevo cliente o editando uno existente.
         If booleanCrear Then
             lbl_TituloGestionclientes.Text = "Crear un cliente"
@@ -44,9 +43,10 @@ Public Class ClientesOnTop
             If reader.Read Then
                 txt_codigoCliente.Text = clienteUpdate
                 txt_nombre.Text = reader("nombre").ToString()
-                txt_apellidos.Text = ""
-                txt_dni.Text = ""
-                txt_email.Text = ""
+                txt_apellidos.Text = reader("apellidos").ToString()
+                txt_dni.Text = reader("dni").ToString()
+                txt_email.Text = reader("email").ToString()
+                dtp_fechaAlta.Value = reader("fecha_alta")
             End If
         End If
     End Sub
@@ -64,20 +64,21 @@ Public Class ClientesOnTop
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna cod_cliente es igual a la variable codigo.
-            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM cliente WHERE cod_cliente = @cod", conexion)
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
-            If resultado > 0 Then
+            If resultado > 0 And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarEmail(txt_email.Text) Then
                 ' La variable codigo existe dentro de la columna cod_cliente de la tabla cliente.
-                Dim ordensql As String = "Insert Into cliente (cod_cliente,nombre,apellidos,dni,email,fecha_alta) values (@cod,@nom,@ape,@dni,@ema,@dat)"
+                Dim ordensql As String = "Insert Into ClienteRepsol (cod_cliente,nombre,apellidos,dni,email,fecha_alta) values (@cod,@nom,@ape,@dni,@ema,@dat)"
                 Dim comando As New OleDbCommand(ordensql, conexion)
                 comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
                 comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
                 comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
                 comando.Parameters.AddWithValue("@dni", txt_dni.Text)
                 comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
+                comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Value)
                 Try
                     comando.ExecuteNonQuery()
                     Me.Close()
@@ -90,14 +91,14 @@ Public Class ClientesOnTop
             End If
 
         Else 'Si booleanCrear es False, significa que se está editando un cliente existente, por lo que se ejecuta esta sección de código.
-            Dim ordensql As String = "UPDATE cliente set nombre=@nom, apellidos=@ape, dni=@dni, email=@ema, fecha_alta=@dat where cod_cliente=@cod"
+            Dim ordensql As String = "UPDATE ClienteRepsol set nombre=@nom, apellidos=@ape, dni=@dni, email=@ema, fecha_alta=@dat where cod_cliente=@cod"
             Dim comando As New OleDbCommand(ordensql, conexion)
             comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
             comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
             comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
             comando.Parameters.AddWithValue("@dni", txt_dni.Text)
             comando.Parameters.AddWithValue("@ema", txt_email.Text)
-            comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
+            comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Value)
             Try
                 comando.ExecuteNonQuery()
                 Me.Close()

@@ -109,7 +109,7 @@ Public Class Validaciones
     Public Shared Function ValidarNombre(nombre As String) As Boolean
         'La función utiliza la función IsNumeric para verificar si el nombre pasado como argumento es un número
         'La función Not invierte el valor devuelto por IsNumeric, es decir, devuelve True si el valor pasado no es un número
-        Return Not IsNumeric(nombre)
+        Return Not IsNumeric(nombre) And nombre.Length < 31
     End Function
 
     ' ** VALIDAR DNI **
