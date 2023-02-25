@@ -23,6 +23,7 @@
     End Sub
 
     Private Sub btn_zonaClientes_Click(sender As Object, e As EventArgs) Handles btn_zonaClientes.Click
+        ClientesOnTop.booleanCrear = True
         ClientesOnTop.ShowDialog()
     End Sub
 End Class
