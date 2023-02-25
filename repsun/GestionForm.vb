@@ -92,6 +92,10 @@ Public Class GestionForm
             End If
         End If
     End Sub
+
+    Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
+
+    End Sub
     ' ** BOTONES ELIMINAR **
 
 End Class
