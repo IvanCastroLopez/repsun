@@ -36,7 +36,6 @@ Partial Class GestionForm
         Me.pbx_crearTienda = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.pbx_ = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.dgv_tienda = New System.Windows.Forms.DataGridView()
         Me.tpg_empleados = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -132,13 +131,6 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -182,7 +174,6 @@ Partial Class GestionForm
         '
         'tpg_combustible
         '
-        Me.tpg_combustible.Controls.Add(Me.TableLayoutPanel3)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 54)
         Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tpg_combustible.Name = "tpg_combustible"
@@ -233,7 +224,6 @@ Partial Class GestionForm
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_crearTienda, 0, 7)
         Me.tlp_botonesTienda.Controls.Add(Me.Label9, 0, 6)
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_, 0, 5)
-        Me.tlp_botonesTienda.Controls.Add(Me.TextBox1, 0, 4)
         Me.tlp_botonesTienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_botonesTienda.Location = New System.Drawing.Point(6, 154)
         Me.tlp_botonesTienda.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
@@ -352,13 +342,6 @@ Partial Class GestionForm
         Me.pbx_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_.TabIndex = 1
         Me.pbx_.TabStop = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(3, 159)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 32)
-        Me.TextBox1.TabIndex = 12
         '
         'dgv_tienda
         '
@@ -1169,14 +1152,6 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel5.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
