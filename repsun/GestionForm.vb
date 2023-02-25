@@ -14,7 +14,6 @@ Public Class GestionForm
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
         adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
 
-        Me.dgv_tienda.Font = New Font("Arial", 10, FontStyle.Regular)
         dgv_tienda.DataSource = gestion_dataset
         dgv_tienda.DataMember = "Producto"
 
@@ -72,7 +71,24 @@ Public Class GestionForm
 
         ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionProductosOnTop.
         If Not GestionProductosOnTop.productoUpdate = "" Then
-            GestionProductosOnTop.ShowDialog()
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_producto es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = " & GestionProductosOnTop.productoUpdate, conexion)
+            ' Abrimos la conexión a la base de datos.
+            conexion.Open()
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Cerramos la conexión a la base de datos.
+            conexion.Close()
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
+                GestionProductosOnTop.ShowDialog()
+            Else
+                ' La variable codigo no existe dentro de la columna cod_producto de la tabla Producto.
+                Registros.GrabarError("El código introducido no existe en la base de datos", "El producto seleccionado no existe")
+            End If
         End If
     End Sub
     ' ** BOTONES ELIMINAR **

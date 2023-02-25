@@ -2,6 +2,7 @@
 
 Public Class Herramientas
 
+    ' ** INPUT BOX SOLO PARA NÚMEROS **
     ''' <summary>
     ''' Devuelve un InputBox que solo permite la entrada de números.
     ''' </summary>
@@ -113,4 +114,5 @@ Public Class Herramientas
         sin_plomo_95
         sin_plomo_98
     End Enum
+
 End Class
