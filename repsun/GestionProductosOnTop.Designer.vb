@@ -40,6 +40,9 @@ Partial Class GestionProductosOnTop
         '
         'tlp_GestionProductosOnTop
         '
+        Me.tlp_GestionProductosOnTop.BackColor = System.Drawing.Color.Transparent
+        Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.tlp_GestionProductosOnTop.ColumnCount = 1
         Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_precio, 0, 9)
@@ -166,6 +169,8 @@ Partial Class GestionProductosOnTop
         '
         Me.pbx_accion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.pbx_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.pbx_accion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbx_accion.Image = Global.repsun.My.Resources.Resources.Check
         Me.pbx_accion.Location = New System.Drawing.Point(310, 354)
         Me.pbx_accion.Name = "pbx_accion"
         Me.pbx_accion.Padding = New System.Windows.Forms.Padding(20)

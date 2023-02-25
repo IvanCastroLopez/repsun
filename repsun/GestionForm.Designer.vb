@@ -87,6 +87,7 @@ Partial Class GestionForm
         Me.lbl_Empleados = New System.Windows.Forms.Label()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
         Me.lbl_clientes = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_tienda.SuspendLayout()
@@ -213,14 +214,15 @@ Partial Class GestionForm
         '
         Me.tlp_botonesTienda.ColumnCount = 1
         Me.tlp_botonesTienda.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_botonesTienda.Controls.Add(Me.Label9, 0, 8)
         Me.tlp_botonesTienda.Controls.Add(Me.PictureBox5, 0, 11)
         Me.tlp_botonesTienda.Controls.Add(Me.pbx_editarTienda, 0, 9)
-        Me.tlp_botonesTienda.Controls.Add(Me.pbx_, 0, 7)
-        Me.tlp_botonesTienda.Controls.Add(Me.Label10, 0, 6)
-        Me.tlp_botonesTienda.Controls.Add(Me.pbx_crearTienda, 0, 5)
         Me.tlp_botonesTienda.Controls.Add(Me.Label11, 0, 10)
         Me.tlp_botonesTienda.Controls.Add(Me.Label12, 0, 12)
+        Me.tlp_botonesTienda.Controls.Add(Me.Label10, 0, 8)
+        Me.tlp_botonesTienda.Controls.Add(Me.pbx_crearTienda, 0, 7)
+        Me.tlp_botonesTienda.Controls.Add(Me.Label9, 0, 6)
+        Me.tlp_botonesTienda.Controls.Add(Me.pbx_, 0, 5)
+        Me.tlp_botonesTienda.Controls.Add(Me.TextBox1, 0, 4)
         Me.tlp_botonesTienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_botonesTienda.Location = New System.Drawing.Point(3, 82)
         Me.tlp_botonesTienda.Name = "tlp_botonesTienda"
@@ -253,7 +255,7 @@ Partial Class GestionForm
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(54, 312)
+        Me.Label9.Location = New System.Drawing.Point(54, 234)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(74, 30)
         Me.Label9.TabIndex = 9
@@ -283,9 +285,8 @@ Partial Class GestionForm
         '
         'pbx_
         '
-        Me.pbx_.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_.Image = Global.repsun.My.Resources.Resources.Buscar
-        Me.pbx_.Location = New System.Drawing.Point(3, 276)
+        Me.pbx_.Location = New System.Drawing.Point(3, 198)
         Me.pbx_.Name = "pbx_"
         Me.pbx_.Size = New System.Drawing.Size(176, 33)
         Me.pbx_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -298,7 +299,7 @@ Partial Class GestionForm
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(60, 234)
+        Me.Label10.Location = New System.Drawing.Point(60, 312)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(62, 30)
         Me.Label10.TabIndex = 9
@@ -306,9 +307,8 @@ Partial Class GestionForm
         '
         'pbx_crearTienda
         '
-        Me.pbx_crearTienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_crearTienda.Image = Global.repsun.My.Resources.Resources.Anadir
-        Me.pbx_crearTienda.Location = New System.Drawing.Point(3, 198)
+        Me.pbx_crearTienda.Location = New System.Drawing.Point(3, 276)
         Me.pbx_crearTienda.Name = "pbx_crearTienda"
         Me.pbx_crearTienda.Size = New System.Drawing.Size(176, 33)
         Me.pbx_crearTienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1041,6 +1041,13 @@ Partial Class GestionForm
         Me.lbl_clientes.TabIndex = 11
         Me.lbl_clientes.Text = "Clientes"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(3, 159)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 32)
+        Me.TextBox1.TabIndex = 12
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1169,4 +1176,5 @@ Partial Class GestionForm
     Friend WithEvents lbl_Empleados As Label
     Friend WithEvents lbl_proveedores As Label
     Friend WithEvents lbl_clientes As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
