@@ -2,12 +2,44 @@
 
 Public Class Herramientas
 
+    ''' <summary>
+    ''' Devuelve un InputBox que solo permite la entrada de números.
+    ''' </summary>
+    ''' <param name="prompt">String: El texto que se muestra como mensaje en el InputBox</param>
+    ''' <param name="title">String: title</param>
+    ''' <returns>Una cadena que contiene el número ingresado por el usuario, o una cadena vacía si el usuario cancela el InputBox.</returns>
+    Public Shared Function InputBoxNumeros(prompt As String, title As String, Optional defaultValue As String = "") As String
+        ' Declaramos una variable para almacenar el valor ingresado por el usuario.
+        Dim input As String = ""
+
+        ' Declaramos una variable para indicar si el valor ingresado es un número válido.
+        Dim isNum As Boolean = False
+
+        ' Utilizamos un bucle While para asegurarnos de que se ingrese un número válido.
+        While Not isNum
+            ' Mostramos el InputBox con el texto de prompt, el título de title y el valor predeterminado de defaultValue.
+            input = InputBox(prompt, title, defaultValue)
+
+            ' Comprobamos si el valor ingresado es un número válido utilizando la función IsNumeric().
+            If IsNumeric(input) Then
+                ' Si el valor es un número válido, actualizamos la variable isNum para salir del bucle.
+                isNum = True
+            Else
+                ' Si el valor no es un número válido, mostramos un mensaje de error al usuario y volvemos a pedir un valor.
+                Registros.GrabarError("Ingrese solo números", "Error de entrada")
+            End If
+        End While
+
+        ' Devolvemos el valor ingresado por el usuario.
+        Return input
+    End Function
+
     '** CAMBIO LITROS/PRECIO **
     ''' <summary>
     ''' Realiza el cambio de litros al precio actual del combustible (sacado de la base de datos).
     ''' </summary>
-    ''' <param name="litros">Litros a cambiar</param>
-    ''' <param name="tipo_combustible">Tipo de combustible</param>
+    ''' <param name="litros">Decimal: Litros a cambiar</param>
+    ''' <param name="tipo_combustible">tipoCombustible: Tipo de combustible</param>
     ''' <returns>El precio de la cantidad de Litros de combustible introducida</returns>
     Public Shared Function CambioLitrosPrecio(litros As Decimal, tipo_combustible As tipoCombustible) As Decimal
 
@@ -42,8 +74,8 @@ Public Class Herramientas
     ''' <summary>
     ''' Realiza el cambio de dinero introducido a litros según el precio actual del combustible (sacado de la base de datos).
     ''' </summary>
-    ''' <param name="dinero">Dinero a cambiar</param>
-    ''' <param name="tipo_combustible">Tipo de combustible</param>
+    ''' <param name="dinero">Decimal: Dinero a cambiar</param>
+    ''' <param name="tipo_combustible">tipoCombustible: Tipo de combustible</param>
     ''' <returns>La cantidad de combustible equivalente al dinero introducido</returns>
     Public Shared Function CambioPrecioLitros(dinero As Decimal, tipo_combustible As tipoCombustible) As Decimal
 
