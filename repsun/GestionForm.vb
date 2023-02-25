@@ -41,23 +41,40 @@ Public Class GestionForm
     End Sub
 
     ' ** BOTONES CREAR **
+    ''' <summary>
+    ''' Muestra GestionProductosOnTop.
+    ''' </summary>
+    ''' <param name="sender">Object: pbx_crearTienda</param>
+    ''' <param name="e">EventArgs: Click</param>
     Private Sub pbx_crearTienda_Click(sender As Object, e As EventArgs) Handles pbx_crearTienda.Click
+        ' Establecemos la variable booleanCrear de la clase GestionProductosOnTop en True.
         GestionProductosOnTop.booleanCrear = True
-        GestionProductosOnTop.ShowDialog()
 
-    End Sub
-
-    Private Sub pbx_editarTienda_Click(sender As Object, e As EventArgs) Handles pbx_editarTienda.Click
-        GestionProductosOnTop.booleanCrear = False
-        GestionProductosOnTop.productoUpdate = InputBox("Introduzca el codigo del producto a modificar")
+        ' Mostramos la ventana GestionProductosOnTop.
         GestionProductosOnTop.ShowDialog()
     End Sub
-
 
     ' ** BOTONES BUSCAR **
 
     ' ** BOTONES EDITAR **
+    ''' <summary>
+    ''' Muestra un inputbox pidiendo el id del producto a modificar, si el id es válido entonces muestra GestionProductosOnTop.
+    ''' </summary>
+    ''' <param name="sender">Object: pbx_editarTienda</param>
+    ''' <param name="e">EventArgs: Click</param>
+    Private Sub pbx_editarTienda_Click(sender As Object, e As EventArgs) Handles pbx_editarTienda.Click
+        ' Establecemos la variable booleanCrear de la clase GestionProductosOnTop en False.
+        GestionProductosOnTop.booleanCrear = False
 
+        ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del producto a editar.
+        ' Pasamos los parámetros "Editar producto" como título del InputBox y una cadena vacía como valor predeterminado.
+        GestionProductosOnTop.productoUpdate = Herramientas.InputBoxNumeros("Introduzca el id del producto a editar", "Editar producto")
+
+        ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionProductosOnTop.
+        If Not GestionProductosOnTop.productoUpdate = "" Then
+            GestionProductosOnTop.ShowDialog()
+        End If
+    End Sub
     ' ** BOTONES ELIMINAR **
 
 End Class
