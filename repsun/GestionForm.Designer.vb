@@ -30,6 +30,9 @@ Partial Class GestionForm
         Me.cbx_tipoCombustible = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoCombustible = New System.Windows.Forms.Label()
         Me.lbl_precioCombustible = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.lbl_litrosCombustible = New System.Windows.Forms.Label()
         Me.tlp_depositosCombustibles = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_diesel = New System.Windows.Forms.Label()
         Me.lbl_dieselPlus = New System.Windows.Forms.Label()
@@ -102,20 +105,14 @@ Partial Class GestionForm
         Me.lbl_Empleados = New System.Windows.Forms.Label()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
         Me.lbl_clientes = New System.Windows.Forms.Label()
-        Me.tlp_combustible = New System.Windows.Forms.TableLayoutPanel()
-        Me.tlp_depositosCombustibles = New System.Windows.Forms.TableLayoutPanel()
-        Me.lbl_diesel = New System.Windows.Forms.Label()
-        Me.lbl_dieselPlus = New System.Windows.Forms.Label()
-        Me.lbl_sinPlomo98 = New System.Windows.Forms.Label()
-        Me.lbl_sinPlomo95 = New System.Windows.Forms.Label()
-        Me.pgb_sinPlomo95 = New System.Windows.Forms.ProgressBar()
-        Me.pgb_sinPlomo98 = New System.Windows.Forms.ProgressBar()
-        Me.pgb_dieselPlus = New System.Windows.Forms.ProgressBar()
-        Me.pgb_diesel = New System.Windows.Forms.ProgressBar()
-        Me.tlp_ajustesCombustible = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
+        Me.tlp_combustible.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tlp_depositosCombustibles.SuspendLayout()
         Me.tpg_tienda.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.tlp_botonesTienda.SuspendLayout()
@@ -157,8 +154,6 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tlp_combustible.SuspendLayout()
-        Me.tlp_depositosCombustibles.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -192,8 +187,8 @@ Partial Class GestionForm
         Me.tbc_gestion.Controls.Add(Me.tpg_clientes)
         Me.tbc_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbc_gestion.Font = New System.Drawing.Font("Yu Gothic UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbc_gestion.Location = New System.Drawing.Point(143, 41)
-        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbc_gestion.Location = New System.Drawing.Point(262, 76)
+        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(4)
         Me.tbc_gestion.Name = "tbc_gestion"
         Me.tlp_gestion.SetRowSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.SelectedIndex = 0
@@ -204,22 +199,286 @@ Partial Class GestionForm
         '
         Me.tpg_combustible.Controls.Add(Me.tlp_combustible)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 54)
-        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(4)
+        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(7)
         Me.tpg_combustible.Name = "tpg_combustible"
-        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.tpg_combustible.Size = New System.Drawing.Size(1259, 801)
+        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(4)
+        Me.tpg_combustible.Size = New System.Drawing.Size(2314, 1490)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
         Me.tpg_combustible.UseVisualStyleBackColor = True
         '
+        'tlp_combustible
+        '
+        Me.tlp_combustible.ColumnCount = 2
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
+        Me.tlp_combustible.Controls.Add(Me.TableLayoutPanel3, 0, 1)
+        Me.tlp_combustible.Controls.Add(Me.tlp_depositosCombustibles, 0, 1)
+        Me.tlp_combustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_combustible.Location = New System.Drawing.Point(4, 4)
+        Me.tlp_combustible.Margin = New System.Windows.Forms.Padding(11)
+        Me.tlp_combustible.Name = "tlp_combustible"
+        Me.tlp_combustible.RowCount = 2
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
+        Me.tlp_combustible.Size = New System.Drawing.Size(2306, 1482)
+        Me.tlp_combustible.TabIndex = 1
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.cbx_tipoCombustible, 1, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_tipoCombustible, 1, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_precioCombustible, 1, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.NumericUpDown1, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.NumericUpDown2, 1, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_litrosCombustible, 1, 5)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(356, 159)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(11)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 18
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555832!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555277!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1939, 1312)
+        Me.TableLayoutPanel3.TabIndex = 4
+        '
+        'cbx_tipoCombustible
+        '
+        Me.cbx_tipoCombustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbx_tipoCombustible.FormattingEnabled = True
+        Me.cbx_tipoCombustible.Location = New System.Drawing.Point(390, 147)
+        Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
+        Me.cbx_tipoCombustible.Size = New System.Drawing.Size(575, 53)
+        Me.cbx_tipoCombustible.TabIndex = 0
+        '
+        'lbl_tipoCombustible
+        '
+        Me.lbl_tipoCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_tipoCombustible.AutoSize = True
+        Me.lbl_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_tipoCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_tipoCombustible.Location = New System.Drawing.Point(562, 72)
+        Me.lbl_tipoCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_tipoCombustible.Name = "lbl_tipoCombustible"
+        Me.lbl_tipoCombustible.Size = New System.Drawing.Size(230, 50)
+        Me.lbl_tipoCombustible.TabIndex = 10
+        Me.lbl_tipoCombustible.Text = "Combustible"
+        '
+        'lbl_precioCombustible
+        '
+        Me.lbl_precioCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_precioCombustible.AutoSize = True
+        Me.lbl_precioCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_precioCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_precioCombustible.Location = New System.Drawing.Point(616, 216)
+        Me.lbl_precioCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_precioCombustible.Name = "lbl_precioCombustible"
+        Me.lbl_precioCombustible.Size = New System.Drawing.Size(122, 50)
+        Me.lbl_precioCombustible.TabIndex = 11
+        Me.lbl_precioCombustible.Text = "Precio"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.DecimalPlaces = 4
+        Me.NumericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NumericUpDown1.Location = New System.Drawing.Point(390, 291)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(575, 50)
+        Me.NumericUpDown1.TabIndex = 12
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.DecimalPlaces = 2
+        Me.NumericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NumericUpDown2.Location = New System.Drawing.Point(390, 435)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(575, 50)
+        Me.NumericUpDown2.TabIndex = 14
+        '
+        'lbl_litrosCombustible
+        '
+        Me.lbl_litrosCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_litrosCombustible.AutoSize = True
+        Me.lbl_litrosCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_litrosCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_litrosCombustible.Location = New System.Drawing.Point(592, 360)
+        Me.lbl_litrosCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_litrosCombustible.Name = "lbl_litrosCombustible"
+        Me.lbl_litrosCombustible.Size = New System.Drawing.Size(170, 50)
+        Me.lbl_litrosCombustible.TabIndex = 15
+        Me.lbl_litrosCombustible.Text = "Cantidad"
+        '
+        'tlp_depositosCombustibles
+        '
+        Me.tlp_depositosCombustibles.ColumnCount = 1
+        Me.tlp_depositosCombustibles.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_diesel, 0, 10)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_dieselPlus, 0, 12)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_sinPlomo95, 0, 6)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_sinPlomo95, 0, 5)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_sinPlomo98, 0, 7)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_dieselPlus, 0, 11)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_diesel, 0, 9)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_sinPlomo98, 0, 8)
+        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_, 0, 2)
+        Me.tlp_depositosCombustibles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_depositosCombustibles.Location = New System.Drawing.Point(11, 159)
+        Me.tlp_depositosCombustibles.Margin = New System.Windows.Forms.Padding(11)
+        Me.tlp_depositosCombustibles.Name = "tlp_depositosCombustibles"
+        Me.tlp_depositosCombustibles.RowCount = 18
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
+        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68.0!))
+        Me.tlp_depositosCombustibles.Size = New System.Drawing.Size(323, 1312)
+        Me.tlp_depositosCombustibles.TabIndex = 3
+        '
+        'lbl_diesel
+        '
+        Me.lbl_diesel.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_diesel.AutoSize = True
+        Me.lbl_diesel.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_diesel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_diesel.Location = New System.Drawing.Point(101, 720)
+        Me.lbl_diesel.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_diesel.Name = "lbl_diesel"
+        Me.lbl_diesel.Size = New System.Drawing.Size(120, 50)
+        Me.lbl_diesel.TabIndex = 10
+        Me.lbl_diesel.Text = "Diesel"
+        '
+        'lbl_dieselPlus
+        '
+        Me.lbl_dieselPlus.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_dieselPlus.AutoSize = True
+        Me.lbl_dieselPlus.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_dieselPlus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_dieselPlus.Location = New System.Drawing.Point(84, 864)
+        Me.lbl_dieselPlus.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_dieselPlus.Name = "lbl_dieselPlus"
+        Me.lbl_dieselPlus.Size = New System.Drawing.Size(155, 50)
+        Me.lbl_dieselPlus.TabIndex = 11
+        Me.lbl_dieselPlus.Text = "Diesel +"
+        '
+        'lbl_sinPlomo95
+        '
+        Me.lbl_sinPlomo95.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_sinPlomo95.AutoSize = True
+        Me.lbl_sinPlomo95.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_sinPlomo95.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_sinPlomo95.Location = New System.Drawing.Point(42, 432)
+        Me.lbl_sinPlomo95.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_sinPlomo95.Name = "lbl_sinPlomo95"
+        Me.lbl_sinPlomo95.Size = New System.Drawing.Size(238, 50)
+        Me.lbl_sinPlomo95.TabIndex = 9
+        Me.lbl_sinPlomo95.Text = "Sin Plomo 95"
+        '
+        'pgb_sinPlomo95
+        '
+        Me.pgb_sinPlomo95.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pgb_sinPlomo95.Location = New System.Drawing.Point(6, 366)
+        Me.pgb_sinPlomo95.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_sinPlomo95.Name = "pgb_sinPlomo95"
+        Me.pgb_sinPlomo95.Size = New System.Drawing.Size(311, 60)
+        Me.pgb_sinPlomo95.TabIndex = 12
+        '
+        'pgb_sinPlomo98
+        '
+        Me.pgb_sinPlomo98.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pgb_sinPlomo98.Location = New System.Drawing.Point(6, 510)
+        Me.pgb_sinPlomo98.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_sinPlomo98.Name = "pgb_sinPlomo98"
+        Me.pgb_sinPlomo98.Size = New System.Drawing.Size(311, 60)
+        Me.pgb_sinPlomo98.TabIndex = 13
+        '
+        'pgb_dieselPlus
+        '
+        Me.pgb_dieselPlus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pgb_dieselPlus.Location = New System.Drawing.Point(6, 798)
+        Me.pgb_dieselPlus.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_dieselPlus.Name = "pgb_dieselPlus"
+        Me.pgb_dieselPlus.Size = New System.Drawing.Size(311, 60)
+        Me.pgb_dieselPlus.TabIndex = 14
+        '
+        'pgb_diesel
+        '
+        Me.pgb_diesel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pgb_diesel.Location = New System.Drawing.Point(6, 654)
+        Me.pgb_diesel.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_diesel.Name = "pgb_diesel"
+        Me.pgb_diesel.Size = New System.Drawing.Size(311, 60)
+        Me.pgb_diesel.TabIndex = 15
+        '
+        'lbl_sinPlomo98
+        '
+        Me.lbl_sinPlomo98.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_sinPlomo98.AutoSize = True
+        Me.lbl_sinPlomo98.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_sinPlomo98.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_sinPlomo98.Location = New System.Drawing.Point(42, 576)
+        Me.lbl_sinPlomo98.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_sinPlomo98.Name = "lbl_sinPlomo98"
+        Me.lbl_sinPlomo98.Size = New System.Drawing.Size(238, 50)
+        Me.lbl_sinPlomo98.TabIndex = 9
+        Me.lbl_sinPlomo98.Text = "Sin Plomo 98"
+        '
+        'lbl_
+        '
+        Me.lbl_.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl_.AutoSize = True
+        Me.lbl_.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_.Location = New System.Drawing.Point(44, 144)
+        Me.lbl_.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_.Name = "lbl_"
+        Me.tlp_depositosCombustibles.SetRowSpan(Me.lbl_, 2)
+        Me.lbl_.Size = New System.Drawing.Size(235, 100)
+        Me.lbl_.TabIndex = 16
+        Me.lbl_.Text = "Combustible Restante"
+        Me.lbl_.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'tpg_tienda
         '
         Me.tpg_tienda.Controls.Add(Me.TableLayoutPanel1)
-        Me.tpg_tienda.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_tienda.Location = New System.Drawing.Point(4, 54)
+        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(4)
         Me.tpg_tienda.Name = "tpg_tienda"
-        Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.tpg_tienda.Size = New System.Drawing.Size(1259, 801)
+        Me.tpg_tienda.Padding = New System.Windows.Forms.Padding(4)
+        Me.tpg_tienda.Size = New System.Drawing.Size(2314, 1490)
         Me.tpg_tienda.TabIndex = 1
         Me.tpg_tienda.Text = "Tienda"
         Me.tpg_tienda.UseVisualStyleBackColor = True
@@ -347,10 +606,10 @@ Partial Class GestionForm
         '
         Me.pbx_crearTienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_crearTienda.Image = Global.repsun.My.Resources.Resources.Anadir
-        Me.pbx_crearTienda.Location = New System.Drawing.Point(2, 275)
-        Me.pbx_crearTienda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_crearTienda.Location = New System.Drawing.Point(4, 515)
+        Me.pbx_crearTienda.Margin = New System.Windows.Forms.Padding(4)
         Me.pbx_crearTienda.Name = "pbx_crearTienda"
-        Me.pbx_crearTienda.Size = New System.Drawing.Size(175, 33)
+        Me.pbx_crearTienda.Size = New System.Drawing.Size(325, 65)
         Me.pbx_crearTienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_crearTienda.TabIndex = 0
         Me.pbx_crearTienda.TabStop = False
@@ -372,8 +631,8 @@ Partial Class GestionForm
         '
         Me.pbx_.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_.Image = Global.repsun.My.Resources.Resources.Buscar
-        Me.pbx_.Location = New System.Drawing.Point(2, 197)
-        Me.pbx_.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_.Location = New System.Drawing.Point(4, 369)
+        Me.pbx_.Margin = New System.Windows.Forms.Padding(4)
         Me.pbx_.Name = "pbx_"
         Me.pbx_.Size = New System.Drawing.Size(325, 65)
         Me.pbx_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -399,8 +658,8 @@ Partial Class GestionForm
         'tpg_empleados
         '
         Me.tpg_empleados.Controls.Add(Me.TableLayoutPanel2)
-        Me.tpg_empleados.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_empleados.Location = New System.Drawing.Point(4, 54)
+        Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(4)
         Me.tpg_empleados.Name = "tpg_empleados"
         Me.tpg_empleados.Size = New System.Drawing.Size(2314, 1490)
         Me.tpg_empleados.TabIndex = 2
@@ -577,8 +836,8 @@ Partial Class GestionForm
         'tpg_proveedores
         '
         Me.tpg_proveedores.Controls.Add(Me.TableLayoutPanel4)
-        Me.tpg_proveedores.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_proveedores.Location = New System.Drawing.Point(4, 54)
+        Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(4)
         Me.tpg_proveedores.Name = "tpg_proveedores"
         Me.tpg_proveedores.Size = New System.Drawing.Size(2314, 1490)
         Me.tpg_proveedores.TabIndex = 3
@@ -755,8 +1014,8 @@ Partial Class GestionForm
         'tpg_clientes
         '
         Me.tpg_clientes.Controls.Add(Me.TableLayoutPanel6)
-        Me.tpg_clientes.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_clientes.Location = New System.Drawing.Point(4, 54)
+        Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(4)
         Me.tpg_clientes.Name = "tpg_clientes"
         Me.tpg_clientes.Size = New System.Drawing.Size(2314, 1490)
         Me.tpg_clientes.TabIndex = 4
@@ -934,8 +1193,8 @@ Partial Class GestionForm
         'pbx_close
         '
         Me.pbx_close.Image = Global.repsun.My.Resources.Resources.Close
-        Me.pbx_close.Location = New System.Drawing.Point(1383, 5)
-        Me.pbx_close.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbx_close.Location = New System.Drawing.Point(2535, 9)
+        Me.pbx_close.Margin = New System.Windows.Forms.Padding(9)
         Me.pbx_close.Name = "pbx_close"
         Me.pbx_close.Size = New System.Drawing.Size(44, 52)
         Me.pbx_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1129,159 +1388,6 @@ Partial Class GestionForm
         Me.lbl_clientes.TabIndex = 11
         Me.lbl_clientes.Text = "Clientes"
         '
-        'tlp_combustible
-        '
-        Me.tlp_combustible.ColumnCount = 2
-        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
-        Me.tlp_combustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.tlp_combustible.Controls.Add(Me.tlp_depositosCombustibles, 0, 1)
-        Me.tlp_combustible.Controls.Add(Me.tlp_ajustesCombustible, 1, 1)
-        Me.tlp_combustible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_combustible.Location = New System.Drawing.Point(4, 4)
-        Me.tlp_combustible.Margin = New System.Windows.Forms.Padding(6)
-        Me.tlp_combustible.Name = "tlp_combustible"
-        Me.tlp_combustible.RowCount = 2
-        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.tlp_combustible.Size = New System.Drawing.Size(2306, 1482)
-        Me.tlp_combustible.TabIndex = 1
-        '
-        'tlp_depositosCombustibles
-        '
-        Me.tlp_depositosCombustibles.ColumnCount = 1
-        Me.tlp_depositosCombustibles.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_diesel, 0, 10)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_dieselPlus, 0, 12)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_sinPlomo95, 0, 6)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_sinPlomo95, 0, 5)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_sinPlomo98, 0, 7)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_dieselPlus, 0, 11)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.pgb_diesel, 0, 9)
-        Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_sinPlomo98, 0, 8)
-        Me.tlp_depositosCombustibles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_depositosCombustibles.Location = New System.Drawing.Point(6, 154)
-        Me.tlp_depositosCombustibles.Margin = New System.Windows.Forms.Padding(6)
-        Me.tlp_depositosCombustibles.Name = "tlp_depositosCombustibles"
-        Me.tlp_depositosCombustibles.RowCount = 18
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
-        Me.tlp_depositosCombustibles.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
-        Me.tlp_depositosCombustibles.Size = New System.Drawing.Size(333, 1322)
-        Me.tlp_depositosCombustibles.TabIndex = 3
-        '
-        'lbl_diesel
-        '
-        Me.lbl_diesel.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl_diesel.AutoSize = True
-        Me.lbl_diesel.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_diesel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_diesel.Location = New System.Drawing.Point(106, 730)
-        Me.lbl_diesel.Name = "lbl_diesel"
-        Me.lbl_diesel.Size = New System.Drawing.Size(120, 50)
-        Me.lbl_diesel.TabIndex = 10
-        Me.lbl_diesel.Text = "Diesel"
-        '
-        'lbl_dieselPlus
-        '
-        Me.lbl_dieselPlus.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl_dieselPlus.AutoSize = True
-        Me.lbl_dieselPlus.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_dieselPlus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_dieselPlus.Location = New System.Drawing.Point(89, 876)
-        Me.lbl_dieselPlus.Name = "lbl_dieselPlus"
-        Me.lbl_dieselPlus.Size = New System.Drawing.Size(155, 50)
-        Me.lbl_dieselPlus.TabIndex = 11
-        Me.lbl_dieselPlus.Text = "Diesel +"
-        '
-        'lbl_sinPlomo98
-        '
-        Me.lbl_sinPlomo98.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl_sinPlomo98.AutoSize = True
-        Me.lbl_sinPlomo98.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sinPlomo98.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_sinPlomo98.Location = New System.Drawing.Point(47, 584)
-        Me.lbl_sinPlomo98.Name = "lbl_sinPlomo98"
-        Me.lbl_sinPlomo98.Size = New System.Drawing.Size(238, 50)
-        Me.lbl_sinPlomo98.TabIndex = 9
-        Me.lbl_sinPlomo98.Text = "Sin Plomo 98"
-        '
-        'lbl_sinPlomo95
-        '
-        Me.lbl_sinPlomo95.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl_sinPlomo95.AutoSize = True
-        Me.lbl_sinPlomo95.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sinPlomo95.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_sinPlomo95.Location = New System.Drawing.Point(47, 438)
-        Me.lbl_sinPlomo95.Name = "lbl_sinPlomo95"
-        Me.lbl_sinPlomo95.Size = New System.Drawing.Size(238, 50)
-        Me.lbl_sinPlomo95.TabIndex = 9
-        Me.lbl_sinPlomo95.Text = "Sin Plomo 95"
-        '
-        'pgb_sinPlomo95
-        '
-        Me.pgb_sinPlomo95.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pgb_sinPlomo95.Location = New System.Drawing.Point(3, 368)
-        Me.pgb_sinPlomo95.Name = "pgb_sinPlomo95"
-        Me.pgb_sinPlomo95.Size = New System.Drawing.Size(327, 67)
-        Me.pgb_sinPlomo95.TabIndex = 12
-        '
-        'pgb_sinPlomo98
-        '
-        Me.pgb_sinPlomo98.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pgb_sinPlomo98.Location = New System.Drawing.Point(3, 514)
-        Me.pgb_sinPlomo98.Name = "pgb_sinPlomo98"
-        Me.pgb_sinPlomo98.Size = New System.Drawing.Size(327, 67)
-        Me.pgb_sinPlomo98.TabIndex = 13
-        '
-        'pgb_dieselPlus
-        '
-        Me.pgb_dieselPlus.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pgb_dieselPlus.Location = New System.Drawing.Point(3, 806)
-        Me.pgb_dieselPlus.Name = "pgb_dieselPlus"
-        Me.pgb_dieselPlus.Size = New System.Drawing.Size(327, 67)
-        Me.pgb_dieselPlus.TabIndex = 14
-        '
-        'pgb_diesel
-        '
-        Me.pgb_diesel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pgb_diesel.Location = New System.Drawing.Point(3, 660)
-        Me.pgb_diesel.Name = "pgb_diesel"
-        Me.pgb_diesel.Size = New System.Drawing.Size(327, 67)
-        Me.pgb_diesel.TabIndex = 15
-        '
-        'tlp_ajustesCombustible
-        '
-        Me.tlp_ajustesCombustible.ColumnCount = 2
-        Me.tlp_ajustesCombustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlp_ajustesCombustible.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.tlp_ajustesCombustible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_ajustesCombustible.Location = New System.Drawing.Point(348, 151)
-        Me.tlp_ajustesCombustible.Name = "tlp_ajustesCombustible"
-        Me.tlp_ajustesCombustible.RowCount = 5
-        Me.tlp_ajustesCombustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.68504!))
-        Me.tlp_ajustesCombustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.68504!))
-        Me.tlp_ajustesCombustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.68504!))
-        Me.tlp_ajustesCombustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.68504!))
-        Me.tlp_ajustesCombustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.25984!))
-        Me.tlp_ajustesCombustible.Size = New System.Drawing.Size(1955, 1328)
-        Me.tlp_ajustesCombustible.TabIndex = 4
-        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -1289,13 +1395,20 @@ Partial Class GestionForm
         Me.ClientSize = New System.Drawing.Size(2588, 1628)
         Me.Controls.Add(Me.tlp_gestion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "GestionForm"
         Me.Text = "GestionForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_gestion.ResumeLayout(False)
         Me.tbc_gestion.ResumeLayout(False)
         Me.tpg_combustible.ResumeLayout(False)
+        Me.tlp_combustible.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlp_depositosCombustibles.ResumeLayout(False)
+        Me.tlp_depositosCombustibles.PerformLayout()
         Me.tpg_tienda.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.tlp_botonesTienda.ResumeLayout(False)
@@ -1342,9 +1455,6 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tlp_combustible.ResumeLayout(False)
-        Me.tlp_depositosCombustibles.ResumeLayout(False)
-        Me.tlp_depositosCombustibles.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
