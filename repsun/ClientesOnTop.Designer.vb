@@ -23,37 +23,47 @@ Partial Class ClientesOnTop
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tlp_GestionProductosOnTop = New System.Windows.Forms.TableLayoutPanel()
-        Me.txt_precio = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cbx_categoria = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_codigoProducto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_codigoCliente = New System.Windows.Forms.TextBox()
+        Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.lbl_TituloGestionProductos = New System.Windows.Forms.Label()
-        Me.pbx_accion = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_apellidos = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_dni = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dtp_fechaAlta = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_email = New System.Windows.Forms.TextBox()
+        Me.btn_accion = New System.Windows.Forms.Button()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
-        CType(Me.pbx_accion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_GestionProductosOnTop
         '
         Me.tlp_GestionProductosOnTop.BackColor = System.Drawing.Color.Transparent
-        Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
-        Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.tlp_GestionProductosOnTop.ColumnCount = 1
-        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_precio, 0, 9)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label4, 0, 8)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.cbx_categoria, 0, 7)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label3, 0, 6)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_nombre, 0, 5)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label2, 0, 4)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_codigoProducto, 0, 3)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label1, 0, 2)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionProductos, 0, 0)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.pbx_accion, 0, 11)
+        Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.Login_Background
+        Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.tlp_GestionProductosOnTop.ColumnCount = 4
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813!))
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label1, 1, 2)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_codigoCliente, 1, 3)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_nombre, 1, 5)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionProductos, 1, 0)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label5, 1, 4)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label2, 2, 4)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_apellidos, 2, 5)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label4, 1, 6)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_dni, 1, 7)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label3, 1, 8)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.dtp_fechaAlta, 1, 9)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label6, 2, 6)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_email, 2, 7)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 11)
         Me.tlp_GestionProductosOnTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_GestionProductosOnTop.Location = New System.Drawing.Point(0, 0)
         Me.tlp_GestionProductosOnTop.Name = "tlp_GestionProductosOnTop"
@@ -73,111 +83,160 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(1204, 681)
-        Me.tlp_GestionProductosOnTop.TabIndex = 1
-        '
-        'txt_precio
-        '
-        Me.txt_precio.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_precio.Location = New System.Drawing.Point(509, 435)
-        Me.txt_precio.Name = "txt_precio"
-        Me.txt_precio.Size = New System.Drawing.Size(185, 20)
-        Me.txt_precio.TabIndex = 6
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(575, 411)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 21)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Precio"
-        '
-        'cbx_categoria
-        '
-        Me.cbx_categoria.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cbx_categoria.FormattingEnabled = True
-        Me.cbx_categoria.Items.AddRange(New Object() {"Comida", "Bebida", "Otros"})
-        Me.cbx_categoria.Location = New System.Drawing.Point(511, 349)
-        Me.cbx_categoria.Name = "cbx_categoria"
-        Me.cbx_categoria.Size = New System.Drawing.Size(181, 21)
-        Me.cbx_categoria.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(563, 315)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 21)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Categoría"
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_nombre.Location = New System.Drawing.Point(509, 243)
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(185, 20)
-        Me.txt_nombre.TabIndex = 5
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(568, 219)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 21)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre"
-        '
-        'txt_codigoProducto
-        '
-        Me.txt_codigoProducto.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txt_codigoProducto.Location = New System.Drawing.Point(509, 147)
-        Me.txt_codigoProducto.Name = "txt_codigoProducto"
-        Me.txt_codigoProducto.Size = New System.Drawing.Size(185, 20)
-        Me.txt_codigoProducto.TabIndex = 4
+        Me.tlp_GestionProductosOnTop.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(570, 123)
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.Label1, 2)
+        Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(513, 114)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 21)
+        Me.Label1.Size = New System.Drawing.Size(178, 30)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Código "
+        Me.Label1.Text = "Código de Cliente"
+        '
+        'txt_codigoCliente
+        '
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.txt_codigoCliente, 2)
+        Me.txt_codigoCliente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_codigoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_codigoCliente.Location = New System.Drawing.Point(304, 147)
+        Me.txt_codigoCliente.Name = "txt_codigoCliente"
+        Me.txt_codigoCliente.Size = New System.Drawing.Size(596, 31)
+        Me.txt_codigoCliente.TabIndex = 4
+        '
+        'txt_nombre
+        '
+        Me.txt_nombre.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_nombre.Location = New System.Drawing.Point(304, 243)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(295, 31)
+        Me.txt_nombre.TabIndex = 5
         '
         'lbl_TituloGestionProductos
         '
         Me.lbl_TituloGestionProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_TituloGestionProductos.AutoSize = True
-        Me.lbl_TituloGestionProductos.Font = New System.Drawing.Font("Yu Gothic UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TituloGestionProductos.Location = New System.Drawing.Point(471, 22)
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionProductos, 2)
+        Me.lbl_TituloGestionProductos.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_TituloGestionProductos.Location = New System.Drawing.Point(454, 18)
         Me.lbl_TituloGestionProductos.Name = "lbl_TituloGestionProductos"
-        Me.lbl_TituloGestionProductos.Size = New System.Drawing.Size(261, 37)
+        Me.lbl_TituloGestionProductos.Size = New System.Drawing.Size(295, 45)
         Me.lbl_TituloGestionProductos.TabIndex = 9
-        Me.lbl_TituloGestionProductos.Text = "Gestión de producto"
+        Me.lbl_TituloGestionProductos.Text = "Gestión de clientes"
         '
-        'pbx_accion
+        'Label5
         '
-        Me.pbx_accion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.pbx_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.pbx_accion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbx_accion.Image = Global.repsun.My.Resources.Resources.Check
-        Me.pbx_accion.Location = New System.Drawing.Point(512, 531)
-        Me.pbx_accion.Name = "pbx_accion"
-        Me.pbx_accion.Padding = New System.Windows.Forms.Padding(20)
-        Me.tlp_GestionProductosOnTop.SetRowSpan(Me.pbx_accion, 2)
-        Me.pbx_accion.Size = New System.Drawing.Size(180, 90)
-        Me.pbx_accion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_accion.TabIndex = 10
-        Me.pbx_accion.TabStop = False
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(407, 210)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(89, 30)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Nombre"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(703, 210)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(98, 30)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Apellidos"
+        '
+        'txt_apellidos
+        '
+        Me.txt_apellidos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_apellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_apellidos.Location = New System.Drawing.Point(605, 243)
+        Me.txt_apellidos.Name = "txt_apellidos"
+        Me.txt_apellidos.Size = New System.Drawing.Size(295, 31)
+        Me.txt_apellidos.TabIndex = 13
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(429, 306)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 30)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Dni"
+        '
+        'txt_dni
+        '
+        Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_dni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_dni.Location = New System.Drawing.Point(304, 339)
+        Me.txt_dni.Name = "txt_dni"
+        Me.txt_dni.Size = New System.Drawing.Size(295, 31)
+        Me.txt_dni.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label3.AutoSize = True
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.Label3, 2)
+        Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(547, 402)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 30)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Fecha Alta"
+        '
+        'dtp_fechaAlta
+        '
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.dtp_fechaAlta, 2)
+        Me.dtp_fechaAlta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtp_fechaAlta.Enabled = False
+        Me.dtp_fechaAlta.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtp_fechaAlta.Location = New System.Drawing.Point(304, 435)
+        Me.dtp_fechaAlta.Name = "dtp_fechaAlta"
+        Me.dtp_fechaAlta.Size = New System.Drawing.Size(596, 35)
+        Me.dtp_fechaAlta.TabIndex = 15
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(721, 306)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(63, 30)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Email"
+        '
+        'txt_email
+        '
+        Me.txt_email.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_email.Location = New System.Drawing.Point(605, 339)
+        Me.txt_email.Name = "txt_email"
+        Me.txt_email.Size = New System.Drawing.Size(295, 31)
+        Me.txt_email.TabIndex = 17
+        '
+        'btn_accion
+        '
+        Me.btn_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(193, Byte), Integer))
+        Me.btn_accion.BackgroundImage = Global.repsun.My.Resources.Resources.Check
+        Me.btn_accion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.btn_accion, 2)
+        Me.btn_accion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_accion.FlatAppearance.BorderColor = System.Drawing.Color.Green
+        Me.btn_accion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_accion.Location = New System.Drawing.Point(304, 531)
+        Me.btn_accion.Name = "btn_accion"
+        Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
+        Me.btn_accion.Size = New System.Drawing.Size(596, 90)
+        Me.btn_accion.TabIndex = 18
+        Me.btn_accion.UseVisualStyleBackColor = False
         '
         'ClientesOnTop
         '
@@ -190,20 +249,23 @@ Partial Class ClientesOnTop
         Me.Text = "ClientesOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
         Me.tlp_GestionProductosOnTop.PerformLayout()
-        CType(Me.pbx_accion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents tlp_GestionProductosOnTop As TableLayoutPanel
-    Friend WithEvents txt_precio As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents cbx_categoria As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txt_nombre As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txt_codigoProducto As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents txt_codigoCliente As TextBox
+    Friend WithEvents txt_nombre As TextBox
     Friend WithEvents lbl_TituloGestionProductos As Label
-    Friend WithEvents pbx_accion As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txt_apellidos As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txt_dni As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents dtp_fechaAlta As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txt_email As TextBox
+    Friend WithEvents btn_accion As Button
 End Class
