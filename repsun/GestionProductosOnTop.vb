@@ -26,8 +26,11 @@ Public Class GestionProductosOnTop
         'Este bloque de código establece el título del formulario según si se está creando un nuevo producto o editando uno existente.
         If booleanCrear Then
             lbl_TituloGestionProductos.Text = "Crear un producto"
+            txt_codigoProducto.Enabled = False
         Else
             lbl_TituloGestionProductos.Text = "Editar un producto"
+            txt_codigoProducto.Enabled = False
+
         End If
     End Sub
 
@@ -39,20 +42,39 @@ Public Class GestionProductosOnTop
     Private Sub pbx_accion_Click(sender As Object, e As EventArgs) Handles pbx_accion.Click
         'Si booleanCrear es True, significa que se está creando un nuevo producto, por lo que se ejecuta esta sección de código.
         If booleanCrear Then
-            Dim ordensql As String = "Insert Into Producto (cod_producto,nombre,categoria,precio) values (@cod,@nom,@cat,@pre)"
-            Dim comando As New OleDbCommand(ordensql, conexion)
-            comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
-            comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
-            comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
-            comando.Parameters.AddWithValue("@pre", txt_precio.Text)
-
-            'Se abre la conexión a la base de datos, se ejecuta el comando y se captura cualquier excepción que se produzca.
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_producto es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = " & GestionProductosOnTop.productoUpdate, conexion)
+            ' Abrimos la conexión a la base de datos.
             conexion.Open()
-            Try
-                comando.ExecuteNonQuery()
-            Catch ex As Exception
-                Registros.GrabarError("Ha ocurrido un error creando el producto. Revise los campos", "Error creando el producto")
-            End Try
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Cerramos la conexión a la base de datos.
+            conexion.Close()
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
+                Dim ordensql As String = "Insert Into Producto (cod_producto,nombre,categoria,precio) values (@cod,@nom,@cat,@pre)"
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
+                comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
+                comando.Parameters.AddWithValue("@pre", txt_precio.Text)
+
+                'Se abre la conexión a la base de datos, se ejecuta el comando y se captura cualquier excepción que se produzca.
+                conexion.Open()
+                Try
+                    comando.ExecuteNonQuery()
+                    Me.Close()
+                Catch ex As Exception
+                    Registros.GrabarError("Ha ocurrido un error creando el producto. Revise los campos", "Error creando el producto")
+                End Try
+            Else
+                ' La variable codigo no existe dentro de la columna cod_producto de la tabla Producto.
+                Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de producto ya existe")
+            End If
+
         Else 'Si booleanCrear es False, significa que se está editando un producto existente, por lo que se ejecuta esta sección de código.
             Dim ordensql As String = "UPDATE Producto set cod_producto=@cod, nombre=@nom, categoria=@cat, precio=@precio where cod=@cod"
             Dim comando As New OleDbCommand(ordensql, conexion)
@@ -65,6 +87,7 @@ Public Class GestionProductosOnTop
             conexion.Open()
             Try
                 comando.ExecuteNonQuery()
+                Me.Close()
             Catch ex As Exception
                 Registros.GrabarError("Ha ocurrido un error creando el producto. Revise los campos", "Error creando el producto")
             End Try

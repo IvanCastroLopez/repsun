@@ -96,6 +96,7 @@ Partial Class GestionProductosOnTop
         '
         Me.cbx_categoria.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cbx_categoria.FormattingEnabled = True
+        Me.cbx_categoria.Items.AddRange(New Object() {"Comida", "Bebida", "Otros"})
         Me.cbx_categoria.Location = New System.Drawing.Point(309, 228)
         Me.cbx_categoria.Name = "cbx_categoria"
         Me.cbx_categoria.Size = New System.Drawing.Size(181, 21)
@@ -165,7 +166,6 @@ Partial Class GestionProductosOnTop
         '
         Me.pbx_accion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.pbx_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.pbx_accion.Image = Global.repsun.My.Resources.Resources.Anadir
         Me.pbx_accion.Location = New System.Drawing.Point(310, 354)
         Me.pbx_accion.Name = "pbx_accion"
         Me.pbx_accion.Padding = New System.Windows.Forms.Padding(20)
