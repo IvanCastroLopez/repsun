@@ -10,7 +10,7 @@ Public Class GestionForm
     Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
     Public gestion_dataset As New DataSet
     Public comandoPublic As New OleDbCommand
-    Public readerPublic As OleDbDataReader
+    Dim readerPublic As OleDbDataReader
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleado")
@@ -30,6 +30,7 @@ Public Class GestionForm
         dgv_clientes.DataMember = "ClienteRepsol"
 
         actualizarDataGridView()
+
     End Sub
 
     Public Sub actualizarDataGridView()
@@ -161,43 +162,71 @@ Public Class GestionForm
     Public Sub tpg_combustible_Enter(sender As Object, e As EventArgs) Handles tpg_combustible.Enter
         Dim queryCombustible As String = "SELECT * FROM combustible WHERE tipo_combustible = @com"
         comandoPublic = New OleDbCommand(queryCombustible, conexion)
-        Dim precioPorLitro As String = readerPublic("precio_por_litro").ToString()
-        Dim cantidadLitros As String = readerPublic("cantidad").ToString()
     End Sub
 
     Private Sub btn_rellenarTanque_Click(sender As Object, e As EventArgs) Handles btn_rellenarTanque.Click
 
     End Sub
 
+
     Private Sub cargarSinPlomo95()
         cbx_tipoCombustible.SelectedIndex = 0
         comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_95")
         conexion.Open()
         readerPublic = comandoPublic.ExecuteReader
-        nud_precioCombustible.Value = readerPublic("precio_por_litro").ToString()
-        'pgb_restanteDeposito.Value
-
+        If readerPublic.Read Then
+            nud_precioCombustible.Value = Decimal.Parse(readerPublic("precio_por_litro").ToString)
+            Dim cantidadL As Decimal = Decimal.Parse(readerPublic("cantidad").ToString)
+            pgb_restanteDeposito.Value = Math.Round(cantidadL, 0, MidpointRounding.ToEven)
+            lbl_restanteLitros.Text = cantidadL & "/10000 L"
+        End If
+        readerPublic.Close()
+        conexion.Close()
     End Sub
 
     Private Sub cargarSinPlomo98()
-        cbx_tipoCombustible.SelectedIndex = 1
+        cbx_tipoCombustible.SelectedIndex = 0
         comandoPublic.Parameters.AddWithValue("@com", "sin_plomo_98")
         conexion.Open()
         readerPublic = comandoPublic.ExecuteReader
+        If readerPublic.Read Then
+            nud_precioCombustible.Value = Decimal.Parse(readerPublic("precio_por_litro").ToString)
+            Dim cantidadL As Decimal = Decimal.Parse(readerPublic("cantidad").ToString)
+            pgb_restanteDeposito.Value = Math.Round(cantidadL, 0, MidpointRounding.ToEven)
+            lbl_restanteLitros.Text = cantidadL & "/10000 L"
+        End If
+        readerPublic.Close()
+        conexion.Close()
     End Sub
 
     Private Sub cargarDiesel()
-        cbx_tipoCombustible.SelectedIndex = 2
+        cbx_tipoCombustible.SelectedIndex = 0
         comandoPublic.Parameters.AddWithValue("@com", "diesel")
         conexion.Open()
         readerPublic = comandoPublic.ExecuteReader
+        If readerPublic.Read Then
+            nud_precioCombustible.Value = Decimal.Parse(readerPublic("precio_por_litro").ToString)
+            Dim cantidadL As Decimal = Decimal.Parse(readerPublic("cantidad").ToString)
+            pgb_restanteDeposito.Value = Math.Round(cantidadL, 0, MidpointRounding.ToEven)
+            lbl_restanteLitros.Text = cantidadL & "/10000 L"
+        End If
+        readerPublic.Close()
+        conexion.Close()
     End Sub
 
     Private Sub cargarDieselPlus()
-        cbx_tipoCombustible.SelectedIndex = 3
+        cbx_tipoCombustible.SelectedIndex = 0
         comandoPublic.Parameters.AddWithValue("@com", "diesel_plus")
         conexion.Open()
         readerPublic = comandoPublic.ExecuteReader
+        If readerPublic.Read Then
+            nud_precioCombustible.Value = Decimal.Parse(readerPublic("precio_por_litro").ToString)
+            Dim cantidadL As Decimal = Decimal.Parse(readerPublic("cantidad").ToString)
+            pgb_restanteDeposito.Value = Math.Round(cantidadL, 0, MidpointRounding.ToEven)
+            lbl_restanteLitros.Text = cantidadL & "/10000 L"
+        End If
+        readerPublic.Close()
+        conexion.Close()
     End Sub
 
     ''' <summary>
