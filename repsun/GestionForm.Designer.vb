@@ -27,12 +27,9 @@ Partial Class GestionForm
         Me.tpg_combustible = New System.Windows.Forms.TabPage()
         Me.tlp_combustible = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cbx_tipoCombustible = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoCombustible = New System.Windows.Forms.Label()
         Me.lbl_precioCombustible = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.lbl_litrosCombustible = New System.Windows.Forms.Label()
+        Me.nud_precioCombustible = New System.Windows.Forms.NumericUpDown()
         Me.tlp_depositosCombustibles = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_diesel = New System.Windows.Forms.Label()
         Me.lbl_dieselPlus = New System.Windows.Forms.Label()
@@ -105,13 +102,18 @@ Partial Class GestionForm
         Me.lbl_Empleados = New System.Windows.Forms.Label()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
         Me.lbl_clientes = New System.Windows.Forms.Label()
+        Me.pgb_restanteDeposito = New System.Windows.Forms.ProgressBar()
+        Me.lbl_restante = New System.Windows.Forms.Label()
+        Me.lbl_euro = New System.Windows.Forms.Label()
+        Me.lbl_restanteLitros = New System.Windows.Forms.Label()
+        Me.btn_rellenarTanque = New System.Windows.Forms.Button()
+        Me.cbx_tipoCombustible = New System.Windows.Forms.ComboBox()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
         Me.tlp_combustible.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nud_precioCombustible, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_depositosCombustibles.SuspendLayout()
         Me.tpg_tienda.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -230,12 +232,15 @@ Partial Class GestionForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.cbx_tipoCombustible, 1, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.lbl_tipoCombustible, 1, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.lbl_precioCombustible, 1, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.NumericUpDown1, 1, 4)
-        Me.TableLayoutPanel3.Controls.Add(Me.NumericUpDown2, 1, 6)
-        Me.TableLayoutPanel3.Controls.Add(Me.lbl_litrosCombustible, 1, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.nud_precioCombustible, 1, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_precioCombustible, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_tipoCombustible, 1, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_restante, 1, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.pgb_restanteDeposito, 1, 7)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_euro, 2, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.lbl_restanteLitros, 2, 7)
+        Me.TableLayoutPanel3.Controls.Add(Me.btn_rellenarTanque, 1, 9)
+        Me.TableLayoutPanel3.Controls.Add(Me.cbx_tipoCombustible, 1, 3)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(356, 159)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(11)
@@ -262,71 +267,44 @@ Partial Class GestionForm
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1939, 1312)
         Me.TableLayoutPanel3.TabIndex = 4
         '
-        'cbx_tipoCombustible
-        '
-        Me.cbx_tipoCombustible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbx_tipoCombustible.FormattingEnabled = True
-        Me.cbx_tipoCombustible.Location = New System.Drawing.Point(390, 147)
-        Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
-        Me.cbx_tipoCombustible.Size = New System.Drawing.Size(575, 53)
-        Me.cbx_tipoCombustible.TabIndex = 0
-        '
         'lbl_tipoCombustible
         '
-        Me.lbl_tipoCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbl_tipoCombustible.AutoSize = True
+        Me.lbl_tipoCombustible.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_tipoCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_tipoCombustible.Location = New System.Drawing.Point(562, 72)
+        Me.lbl_tipoCombustible.Location = New System.Drawing.Point(393, 144)
         Me.lbl_tipoCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_tipoCombustible.Name = "lbl_tipoCombustible"
-        Me.lbl_tipoCombustible.Size = New System.Drawing.Size(230, 50)
+        Me.lbl_tipoCombustible.Size = New System.Drawing.Size(569, 72)
         Me.lbl_tipoCombustible.TabIndex = 10
         Me.lbl_tipoCombustible.Text = "Combustible"
+        Me.lbl_tipoCombustible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbl_precioCombustible
         '
-        Me.lbl_precioCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbl_precioCombustible.AutoSize = True
+        Me.lbl_precioCombustible.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_precioCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_precioCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_precioCombustible.Location = New System.Drawing.Point(616, 216)
+        Me.lbl_precioCombustible.Location = New System.Drawing.Point(393, 288)
         Me.lbl_precioCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_precioCombustible.Name = "lbl_precioCombustible"
-        Me.lbl_precioCombustible.Size = New System.Drawing.Size(122, 50)
+        Me.lbl_precioCombustible.Size = New System.Drawing.Size(569, 72)
         Me.lbl_precioCombustible.TabIndex = 11
         Me.lbl_precioCombustible.Text = "Precio"
+        Me.lbl_precioCombustible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'NumericUpDown1
+        'nud_precioCombustible
         '
-        Me.NumericUpDown1.DecimalPlaces = 4
-        Me.NumericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NumericUpDown1.Location = New System.Drawing.Point(390, 291)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(575, 50)
-        Me.NumericUpDown1.TabIndex = 12
-        '
-        'NumericUpDown2
-        '
-        Me.NumericUpDown2.DecimalPlaces = 2
-        Me.NumericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NumericUpDown2.Location = New System.Drawing.Point(390, 435)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(575, 50)
-        Me.NumericUpDown2.TabIndex = 14
-        '
-        'lbl_litrosCombustible
-        '
-        Me.lbl_litrosCombustible.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl_litrosCombustible.AutoSize = True
-        Me.lbl_litrosCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_litrosCombustible.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_litrosCombustible.Location = New System.Drawing.Point(592, 360)
-        Me.lbl_litrosCombustible.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lbl_litrosCombustible.Name = "lbl_litrosCombustible"
-        Me.lbl_litrosCombustible.Size = New System.Drawing.Size(170, 50)
-        Me.lbl_litrosCombustible.TabIndex = 15
-        Me.lbl_litrosCombustible.Text = "Cantidad"
+        Me.nud_precioCombustible.AutoSize = True
+        Me.nud_precioCombustible.DecimalPlaces = 4
+        Me.nud_precioCombustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.nud_precioCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nud_precioCombustible.Location = New System.Drawing.Point(390, 363)
+        Me.nud_precioCombustible.Name = "nud_precioCombustible"
+        Me.nud_precioCombustible.Size = New System.Drawing.Size(575, 57)
+        Me.nud_precioCombustible.TabIndex = 12
         '
         'tlp_depositosCombustibles
         '
@@ -1388,6 +1366,82 @@ Partial Class GestionForm
         Me.lbl_clientes.TabIndex = 11
         Me.lbl_clientes.Text = "Clientes"
         '
+        'pgb_restanteDeposito
+        '
+        Me.pgb_restanteDeposito.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pgb_restanteDeposito.Location = New System.Drawing.Point(393, 510)
+        Me.pgb_restanteDeposito.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_restanteDeposito.Name = "pgb_restanteDeposito"
+        Me.pgb_restanteDeposito.Size = New System.Drawing.Size(569, 60)
+        Me.pgb_restanteDeposito.TabIndex = 16
+        '
+        'lbl_restante
+        '
+        Me.lbl_restante.AutoSize = True
+        Me.lbl_restante.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_restante.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_restante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_restante.Location = New System.Drawing.Point(393, 432)
+        Me.lbl_restante.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_restante.Name = "lbl_restante"
+        Me.lbl_restante.Size = New System.Drawing.Size(569, 72)
+        Me.lbl_restante.TabIndex = 17
+        Me.lbl_restante.Text = "Restante en el depósito"
+        Me.lbl_restante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_euro
+        '
+        Me.lbl_euro.AutoSize = True
+        Me.lbl_euro.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbl_euro.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_euro.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_euro.Location = New System.Drawing.Point(974, 360)
+        Me.lbl_euro.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_euro.Name = "lbl_euro"
+        Me.lbl_euro.Size = New System.Drawing.Size(43, 72)
+        Me.lbl_euro.TabIndex = 18
+        Me.lbl_euro.Text = "€"
+        Me.lbl_euro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_restanteLitros
+        '
+        Me.lbl_restanteLitros.AutoSize = True
+        Me.lbl_restanteLitros.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbl_restanteLitros.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_restanteLitros.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbl_restanteLitros.Location = New System.Drawing.Point(974, 504)
+        Me.lbl_restanteLitros.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lbl_restanteLitros.Name = "lbl_restanteLitros"
+        Me.lbl_restanteLitros.Size = New System.Drawing.Size(187, 72)
+        Me.lbl_restanteLitros.TabIndex = 20
+        Me.lbl_restanteLitros.Text = "0/10000 L"
+        Me.lbl_restanteLitros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'btn_rellenarTanque
+        '
+        Me.btn_rellenarTanque.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btn_rellenarTanque.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_rellenarTanque.ForeColor = System.Drawing.Color.White
+        Me.btn_rellenarTanque.Location = New System.Drawing.Point(390, 651)
+        Me.btn_rellenarTanque.Name = "btn_rellenarTanque"
+        Me.TableLayoutPanel3.SetRowSpan(Me.btn_rellenarTanque, 2)
+        Me.btn_rellenarTanque.Size = New System.Drawing.Size(575, 138)
+        Me.btn_rellenarTanque.TabIndex = 21
+        Me.btn_rellenarTanque.Text = "Rellenar"
+        Me.btn_rellenarTanque.UseVisualStyleBackColor = False
+        '
+        'cbx_tipoCombustible
+        '
+        Me.cbx_tipoCombustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbx_tipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_tipoCombustible.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.cbx_tipoCombustible.Items.AddRange(New Object() {"Sin Plomo 95", "Sin Plomo 98", "Diesel", "Diesel +"})
+        Me.cbx_tipoCombustible.Location = New System.Drawing.Point(390, 219)
+        Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
+        Me.cbx_tipoCombustible.Size = New System.Drawing.Size(575, 58)
+        Me.cbx_tipoCombustible.TabIndex = 22
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -1405,8 +1459,7 @@ Partial Class GestionForm
         Me.tlp_combustible.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nud_precioCombustible, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlp_depositosCombustibles.ResumeLayout(False)
         Me.tlp_depositosCombustibles.PerformLayout()
         Me.tpg_tienda.ResumeLayout(False)
@@ -1536,10 +1589,13 @@ Partial Class GestionForm
     Friend WithEvents pgb_diesel As ProgressBar
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents lbl_ As Label
-    Friend WithEvents cbx_tipoCombustible As ComboBox
     Friend WithEvents lbl_tipoCombustible As Label
     Friend WithEvents lbl_precioCombustible As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents NumericUpDown2 As NumericUpDown
-    Friend WithEvents lbl_litrosCombustible As Label
+    Friend WithEvents nud_precioCombustible As NumericUpDown
+    Friend WithEvents pgb_restanteDeposito As ProgressBar
+    Friend WithEvents lbl_restante As Label
+    Friend WithEvents lbl_euro As Label
+    Friend WithEvents lbl_restanteLitros As Label
+    Friend WithEvents btn_rellenarTanque As Button
+    Friend WithEvents cbx_tipoCombustible As ComboBox
 End Class
