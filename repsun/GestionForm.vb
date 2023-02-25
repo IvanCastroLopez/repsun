@@ -9,23 +9,6 @@ Public Class GestionForm
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     Public gestion_dataset As New DataSet
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
-        actualizarDataGridView()
-    End Sub
-
-    Public Sub actualizarDataGridView()
-
-        dgv_tienda.DataSource = Nothing
-        dgv_tienda.DataMember = Nothing
-
-        dgv_empleados.DataSource = Nothing
-        dgv_empleados.DataMember = Nothing
-
-        dgv_proveedores.DataSource = Nothing
-        dgv_proveedores.DataMember = Nothing
-
-        dgv_clientes.DataSource = Nothing
-        dgv_clientes.DataMember = Nothing
-
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleado")
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
@@ -42,7 +25,28 @@ Public Class GestionForm
 
         dgv_clientes.DataSource = gestion_dataset
         dgv_clientes.DataMember = "ClienteRepsol"
+        actualizarDataGridView()
     End Sub
+
+    Public Sub actualizarDataGridView()
+
+        gestion_dataset.Tables("Producto").Clear()
+        adaptador_tienda.Fill(gestion_dataset, "Producto")
+
+        gestion_dataset.Tables("Empleado").Clear()
+        adaptador_empleados.Fill(gestion_dataset, "Empleado")
+
+        gestion_dataset.Tables("Proveedor").Clear()
+        adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
+
+        gestion_dataset.Tables("ClienteRepsol").Clear()
+        adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
+
+        ' No es necesario vaciar los DataMembers de los DataGridView
+        ' ya que los DataTables que se asignan están actualizados
+
+    End Sub
+
 
     ' ** BOTONES SALIR **
     Private Sub pbx_close_Click(sender As Object, e As EventArgs) Handles pbx_close.Click
@@ -107,7 +111,9 @@ Public Class GestionForm
         End If
     End Sub
     ' ** BOTONES ELIMINAR **
+    Private Sub pbx_eliminartienda_Click(sender As Object, e As EventArgs) Handles pbx_eliminartienda.Click
 
+    End Sub
     ' ** BOTONES CATEGORÍAS **
     Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
         ' Selecciona la pestaña "Combustible" (índice 0) en el control TabControl.
@@ -133,4 +139,5 @@ Public Class GestionForm
         ' Selecciona la pestaña "Clientes" (índice 4) en el control TabControl.
         tbc_gestion.SelectTab(4)
     End Sub
+
 End Class
