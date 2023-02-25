@@ -10,3 +10,6 @@
 "24/02/2023 0:45:24","El nombre de usuario o la contraseña están mal escritos"
 "24/02/2023 0:45:46","El nombre de usuario o la contraseña están mal escritos"
 "24/02/2023 11:09:53","El nombre de usuario o la contraseña están mal escritos"
+"25/02/2023 18:42:56","Ingrese solo números"
+"25/02/2023 18:43:00","El código introducido no existe en la base de datos"
+"25/02/2023 18:45:02","Ha ocurrido un error creando el producto. Revise los campos"

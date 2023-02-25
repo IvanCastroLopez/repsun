@@ -36,6 +36,7 @@ Public Class GestionForm
     End Sub
 
     Private Sub pbx_salir_Click(sender As Object, e As EventArgs) Handles pbx_salir.Click
+        MenuPrincipalForm.Show()
         Me.Close()
     End Sub
 
