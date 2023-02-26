@@ -71,7 +71,6 @@ Public Class GestionEmpleadosOnTop
                 ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
                 MessageBox.Show("Ya existe un empleado con ese código.")
             Else
-
                 ' Si el resultado es igual a cero, significa que no existe ningún empleado con ese código y se puede crear uno nuevo.
                 ' Creamos un comando que inserta los datos del nuevo empleado en la tabla Empleado
                 Dim ordensql As String = "INSERT INTO Empleado (cod_empleado, dni, nombre, apellidos, email, telefono, rol) VALUES (@cod, @dni, @nom, @ape, @ema, @tfn, @rol)"

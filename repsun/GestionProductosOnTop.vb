@@ -68,7 +68,7 @@ Public Class GestionProductosOnTop
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
-            If resultado > 0 Then
+            If resultado = 0 Then
                 ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
                 Dim ordensql As String = "Insert Into Producto (cod_producto,nombre,categoria,precio) values (@cod,@nom,@cat,@pre)"
                 Dim comando As New OleDbCommand(ordensql, conexion)
@@ -88,18 +88,29 @@ Public Class GestionProductosOnTop
             End If
 
         Else 'Si booleanCrear es False, significa que se está editando un producto existente, por lo que se ejecuta esta sección de código.
-            Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
-            Dim comando As New OleDbCommand(ordensql, conexion)
-            comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
-            comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
-            comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
-            comando.Parameters.AddWithValue("@pre", txt_precio.Text)
-            Try
-                comando.ExecuteNonQuery()
-                Me.Close()
-            Catch ex As Exception
-                Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
-            End Try
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_producto es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", productoUpdate)
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
+                Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
+                comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
+                comando.Parameters.AddWithValue("@pre", txt_precio.Text)
+                Try
+                    comando.ExecuteNonQuery()
+                    Me.Close()
+                Catch ex As Exception
+                    Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
+                End Try
+            End If
         End If
 
     End Sub
