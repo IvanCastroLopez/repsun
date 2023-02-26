@@ -153,13 +153,13 @@ Public Class GestionForm
     ' ** BOTONES ELIMINAR **
     Private Sub pbx_eliminartienda_Click(sender As Object, e As EventArgs) Handles pbx_eliminartienda.Click
         ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del empleado a editar.
-        ' Pasamos los parámetros "Editar empleado" como título del InputBox y una cadena vacía como valor predeterminado.
-        Dim empleadoDelete As Integer = Herramientas.InputBoxNumeros("Introduzca el id del empleado a editar", "Editar empleado")
+        ' Pasamos los parámetros "Eliminar empleado" como título del InputBox y una cadena vacía como valor predeterminado.
+        Dim productoDelete As Integer = Herramientas.InputBoxNumeros("Introduzca el id del producto a eliminar", "Eliminar producto")
 
         ' Creamos una variable para almacenar el resultado de la consulta.
         Dim resultado As Integer
         ' Creamos un comando que selecciona el número de filas donde la columna cod_empleado es igual a la variable empleadoUpdate.
-        Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Empleado WHERE cod_empleado = " & empleadoDelete, conexion)
+        Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = " & productoDelete, conexion)
         ' Abrimos la conexión a la base de datos.
         conexion.Open()
         ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
@@ -169,11 +169,21 @@ Public Class GestionForm
         ' Comprobamos si el resultado es mayor que cero.
         If resultado > 0 Then
             ' La variable empleadoUpdate existe dentro de la columna cod_empleado de la tabla Empleado.
-            ghjknl
-
+            If Herramientas.InputBoxSiNo("¿Quiere eliminar el producto " & productoDelete & "?", "Eliminar") Then
+                Dim ordensql As String = "Delete from Producto where cod_producto = " & productoDelete
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                conexion.Open()
+                Try
+                    comando.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox("Ha ocurrido un error")
+                End Try
+                conexion.Close()
+                actualizarDataGridView()
+            End If
         Else
-            ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
-            Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
+                ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
+                Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
         End If
     End Sub
     ' ** BOTONES CATEGORÍAS **
