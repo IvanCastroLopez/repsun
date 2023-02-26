@@ -151,12 +151,6 @@ Public Class GestionForm
 
 
     ' ** GESTION COMBUSTIBLES **
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-
 
     ' ----
     Public Sub tpg_combustible_Enter(sender As Object, e As EventArgs) Handles tpg_combustible.Enter
