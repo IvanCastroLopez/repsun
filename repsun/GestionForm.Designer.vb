@@ -185,7 +185,7 @@ Partial Class GestionForm
         Me.tbc_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbc_gestion.Font = New System.Drawing.Font("Yu Gothic UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbc_gestion.Location = New System.Drawing.Point(142, 40)
-        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tbc_gestion.Margin = New System.Windows.Forms.Padding(1)
         Me.tbc_gestion.Name = "tbc_gestion"
         Me.tlp_gestion.SetRowSpan(Me.tbc_gestion, 2)
         Me.tbc_gestion.SelectedIndex = 0
@@ -196,9 +196,9 @@ Partial Class GestionForm
         '
         Me.tpg_combustible.Controls.Add(Me.tlp_combustible)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
         Me.tpg_combustible.Name = "tpg_combustible"
-        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tpg_combustible.Padding = New System.Windows.Forms.Padding(1)
         Me.tpg_combustible.Size = New System.Drawing.Size(1261, 803)
         Me.tpg_combustible.TabIndex = 0
         Me.tpg_combustible.Text = "Combustible"
@@ -267,7 +267,7 @@ Partial Class GestionForm
         Me.nud_precioCombustible.Dock = System.Windows.Forms.DockStyle.Fill
         Me.nud_precioCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nud_precioCombustible.Location = New System.Drawing.Point(214, 196)
-        Me.nud_precioCombustible.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.nud_precioCombustible.Margin = New System.Windows.Forms.Padding(1)
         Me.nud_precioCombustible.Name = "nud_precioCombustible"
         Me.nud_precioCombustible.Size = New System.Drawing.Size(317, 36)
         Me.nud_precioCombustible.TabIndex = 12
@@ -351,7 +351,7 @@ Partial Class GestionForm
         Me.btn_rellenarTanque.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_rellenarTanque.ForeColor = System.Drawing.Color.White
         Me.btn_rellenarTanque.Location = New System.Drawing.Point(214, 352)
-        Me.btn_rellenarTanque.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btn_rellenarTanque.Margin = New System.Windows.Forms.Padding(1)
         Me.btn_rellenarTanque.Name = "btn_rellenarTanque"
         Me.TableLayoutPanel3.SetRowSpan(Me.btn_rellenarTanque, 2)
         Me.btn_rellenarTanque.Size = New System.Drawing.Size(317, 76)
@@ -367,7 +367,7 @@ Partial Class GestionForm
         Me.cbx_tipoCombustible.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.cbx_tipoCombustible.Items.AddRange(New Object() {"Sin Plomo 95", "Sin Plomo 98", "Diesel", "Diesel +"})
         Me.cbx_tipoCombustible.Location = New System.Drawing.Point(214, 118)
-        Me.cbx_tipoCombustible.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.cbx_tipoCombustible.Margin = New System.Windows.Forms.Padding(1)
         Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
         Me.cbx_tipoCombustible.Size = New System.Drawing.Size(317, 38)
         Me.cbx_tipoCombustible.TabIndex = 22
@@ -649,7 +649,7 @@ Partial Class GestionForm
         '
         Me.txt_buscarTienda.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_buscarTienda.Location = New System.Drawing.Point(2, 158)
-        Me.txt_buscarTienda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_buscarTienda.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_buscarTienda.Name = "txt_buscarTienda"
         Me.txt_buscarTienda.Size = New System.Drawing.Size(178, 32)
         Me.txt_buscarTienda.TabIndex = 12
@@ -723,7 +723,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.Controls.Add(Me.Label4, 0, 3)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(2, 82)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 18
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
@@ -765,7 +765,7 @@ Partial Class GestionForm
         Me.pbx_editarEmpleados.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_editarEmpleados.Image = Global.repsun.My.Resources.Resources.Modificar
         Me.pbx_editarEmpleados.Location = New System.Drawing.Point(2, 353)
-        Me.pbx_editarEmpleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_editarEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.pbx_editarEmpleados.Name = "pbx_editarEmpleados"
         Me.pbx_editarEmpleados.Size = New System.Drawing.Size(181, 35)
         Me.pbx_editarEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -827,7 +827,7 @@ Partial Class GestionForm
         '
         Me.txt_buscarEmpleado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_buscarEmpleado.Location = New System.Drawing.Point(2, 158)
-        Me.txt_buscarEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_buscarEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_buscarEmpleado.Name = "txt_buscarEmpleado"
         Me.txt_buscarEmpleado.Size = New System.Drawing.Size(181, 32)
         Me.txt_buscarEmpleado.TabIndex = 12
@@ -851,7 +851,7 @@ Partial Class GestionForm
         Me.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_empleados.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_empleados.Location = New System.Drawing.Point(191, 82)
-        Me.dgv_empleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_empleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_empleados.MultiSelect = False
         Me.dgv_empleados.Name = "dgv_empleados"
         Me.dgv_empleados.ReadOnly = True
@@ -902,7 +902,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel7.Controls.Add(Me.Label8, 0, 3)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(2, 82)
-        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 18
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
@@ -944,7 +944,7 @@ Partial Class GestionForm
         Me.pbx_editarProveedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_editarProveedor.Image = Global.repsun.My.Resources.Resources.Modificar
         Me.pbx_editarProveedor.Location = New System.Drawing.Point(2, 353)
-        Me.pbx_editarProveedor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_editarProveedor.Margin = New System.Windows.Forms.Padding(2)
         Me.pbx_editarProveedor.Name = "pbx_editarProveedor"
         Me.pbx_editarProveedor.Size = New System.Drawing.Size(181, 35)
         Me.pbx_editarProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1006,7 +1006,7 @@ Partial Class GestionForm
         '
         Me.txt_buscarProveedores.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_buscarProveedores.Location = New System.Drawing.Point(2, 158)
-        Me.txt_buscarProveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_buscarProveedores.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_buscarProveedores.Name = "txt_buscarProveedores"
         Me.txt_buscarProveedores.Size = New System.Drawing.Size(181, 32)
         Me.txt_buscarProveedores.TabIndex = 12
@@ -1030,7 +1030,7 @@ Partial Class GestionForm
         Me.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_proveedores.Location = New System.Drawing.Point(191, 82)
-        Me.dgv_proveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_proveedores.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_proveedores.MultiSelect = False
         Me.dgv_proveedores.Name = "dgv_proveedores"
         Me.dgv_proveedores.ReadOnly = True
@@ -1081,7 +1081,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel8.Controls.Add(Me.Label16, 0, 3)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(2, 82)
-        Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 18
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555833!))
@@ -1123,7 +1123,7 @@ Partial Class GestionForm
         Me.pbx_editarCliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_editarCliente.Image = Global.repsun.My.Resources.Resources.Modificar
         Me.pbx_editarCliente.Location = New System.Drawing.Point(2, 353)
-        Me.pbx_editarCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pbx_editarCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.pbx_editarCliente.Name = "pbx_editarCliente"
         Me.pbx_editarCliente.Size = New System.Drawing.Size(181, 35)
         Me.pbx_editarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1185,7 +1185,7 @@ Partial Class GestionForm
         '
         Me.txt_buscarCliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_buscarCliente.Location = New System.Drawing.Point(2, 158)
-        Me.txt_buscarCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_buscarCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_buscarCliente.Name = "txt_buscarCliente"
         Me.txt_buscarCliente.Size = New System.Drawing.Size(181, 32)
         Me.txt_buscarCliente.TabIndex = 12
@@ -1209,7 +1209,7 @@ Partial Class GestionForm
         Me.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_clientes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_clientes.Location = New System.Drawing.Point(191, 82)
-        Me.dgv_clientes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_clientes.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_clientes.MultiSelect = False
         Me.dgv_clientes.Name = "dgv_clientes"
         Me.dgv_clientes.ReadOnly = True
