@@ -236,11 +236,11 @@
     <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Tienda.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\0-Default.png" />
-    <Content Include="bin\Debug\Imagenes\MenuVisual\1-Empleado.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\2-Cliente.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\3-Tienda.png" />
-    <Content Include="bin\Debug\Imagenes\MenuVisual\4-Proveedores.png" />
-    <Content Include="bin\Debug\Imagenes\MenuVisual\5-Depositos.png" />
+    <Content Include="bin\Debug\Imagenes\MenuVisual\4-Gestion.png" />
+    <Content Include="bin\Debug\Imagenes\MenuVisual\5-Surtidores.png" />
+    <Content Include="bin\Debug\Imagenes\MenuVisual\Salir.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
     <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
   </ItemGroup>
