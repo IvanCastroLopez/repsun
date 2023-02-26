@@ -1,20 +1,7 @@
 ﻿Public Class MenuPrincipalForm
-    Private Sub btn_surtidores_Click(sender As Object, e As EventArgs) 
+
+    Private Sub btn_surtidores_Click(sender As Object, e As EventArgs) Handles btn_surtidores.Click
         SurtidorOnTop.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btn_salir_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub btn_gestion_Click(sender As Object, e As EventArgs) 
-        GestionForm.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btn_tpv_Click(sender As Object, e As EventArgs) 
-        tpvForm.Show()
         Me.Hide()
     End Sub
 
@@ -22,7 +9,17 @@
 
     End Sub
 
-    Private Sub btn_zonaClientes_Click(sender As Object, e As EventArgs) 
+    Private Sub btn_gestion_Click_1(sender As Object, e As EventArgs) Handles btn_gestion.Click
+        GestionForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_tpv_Click_1(sender As Object, e As EventArgs) Handles btn_tpv.Click
+        tpvForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_zonaClientes_Click_1(sender As Object, e As EventArgs) Handles btn_zonaClientes.Click
         ClientesOnTop.booleanCrear = True
         ClientesOnTop.ShowDialog()
     End Sub
