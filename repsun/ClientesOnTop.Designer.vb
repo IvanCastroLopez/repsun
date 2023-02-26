@@ -105,7 +105,7 @@ Partial Class ClientesOnTop
         Me.txt_codigoCliente.Location = New System.Drawing.Point(304, 147)
         Me.txt_codigoCliente.Name = "txt_codigoCliente"
         Me.txt_codigoCliente.Size = New System.Drawing.Size(596, 31)
-        Me.txt_codigoCliente.TabIndex = 4
+        Me.txt_codigoCliente.TabIndex = 1
         '
         'txt_nombre
         '
@@ -114,7 +114,7 @@ Partial Class ClientesOnTop
         Me.txt_nombre.Location = New System.Drawing.Point(304, 243)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(295, 31)
-        Me.txt_nombre.TabIndex = 5
+        Me.txt_nombre.TabIndex = 2
         '
         'lbl_TituloGestionClientes
         '
@@ -157,7 +157,7 @@ Partial Class ClientesOnTop
         Me.txt_apellidos.Location = New System.Drawing.Point(605, 243)
         Me.txt_apellidos.Name = "txt_apellidos"
         Me.txt_apellidos.Size = New System.Drawing.Size(295, 31)
-        Me.txt_apellidos.TabIndex = 13
+        Me.txt_apellidos.TabIndex = 2
         '
         'Label4
         '
@@ -177,7 +177,7 @@ Partial Class ClientesOnTop
         Me.txt_dni.Location = New System.Drawing.Point(304, 339)
         Me.txt_dni.Name = "txt_dni"
         Me.txt_dni.Size = New System.Drawing.Size(295, 31)
-        Me.txt_dni.TabIndex = 6
+        Me.txt_dni.TabIndex = 3
         '
         'Label3
         '
@@ -220,7 +220,7 @@ Partial Class ClientesOnTop
         Me.txt_email.Location = New System.Drawing.Point(605, 339)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(295, 31)
-        Me.txt_email.TabIndex = 17
+        Me.txt_email.TabIndex = 4
         '
         'btn_accion
         '
@@ -235,7 +235,7 @@ Partial Class ClientesOnTop
         Me.btn_accion.Name = "btn_accion"
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
         Me.btn_accion.Size = New System.Drawing.Size(596, 90)
-        Me.btn_accion.TabIndex = 18
+        Me.btn_accion.TabIndex = 5
         Me.btn_accion.UseVisualStyleBackColor = False
         '
         'ClientesOnTop
@@ -244,7 +244,7 @@ Partial Class ClientesOnTop
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1204, 681)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "ClientesOnTop"
         Me.Text = "ClientesOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
