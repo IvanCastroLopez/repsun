@@ -38,7 +38,11 @@ Partial Class GestionEmpleadosOnTop
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbx_rol = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_nombreUsuario = New System.Windows.Forms.TextBox()
+        Me.txt_contrasena = New System.Windows.Forms.TextBox()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,11 +51,12 @@ Partial Class GestionEmpleadosOnTop
         Me.tlp_GestionProductosOnTop.BackColor = System.Drawing.Color.Transparent
         Me.tlp_GestionProductosOnTop.BackgroundImage = Global.repsun.My.Resources.Resources.Login_Background
         Me.tlp_GestionProductosOnTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.tlp_GestionProductosOnTop.ColumnCount = 4
-        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
-        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
-        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
-        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813!))
+        Me.tlp_GestionProductosOnTop.ColumnCount = 5
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985!))
+        Me.tlp_GestionProductosOnTop.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label1, 1, 2)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_codigoEmpleado, 1, 3)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_nombre, 1, 5)
@@ -59,33 +64,36 @@ Partial Class GestionEmpleadosOnTop
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label5, 1, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label2, 2, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_apellidos, 2, 5)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label4, 1, 6)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_dni, 1, 7)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label6, 2, 6)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_email, 2, 7)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 11)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label3, 1, 8)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_telefono, 1, 9)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label7, 2, 8)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.ComboBox1, 2, 9)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 9)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label4, 3, 4)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_dni, 3, 5)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label3, 1, 6)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_telefono, 1, 7)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label7, 3, 6)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.cbx_rol, 3, 7)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label8, 2, 2)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label9, 3, 2)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_nombreUsuario, 2, 3)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_contrasena, 3, 3)
         Me.tlp_GestionProductosOnTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_GestionProductosOnTop.Location = New System.Drawing.Point(0, 0)
         Me.tlp_GestionProductosOnTop.Name = "tlp_GestionProductosOnTop"
-        Me.tlp_GestionProductosOnTop.RowCount = 14
+        Me.tlp_GestionProductosOnTop.RowCount = 13
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.13948!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.149908!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.149909!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
+        Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142552!))
         Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(1204, 681)
         Me.tlp_GestionProductosOnTop.TabIndex = 3
         '
@@ -93,9 +101,8 @@ Partial Class GestionEmpleadosOnTop
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.Label1, 2)
         Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(494, 114)
+        Me.Label1.Location = New System.Drawing.Point(252, 126)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(215, 30)
         Me.Label1.TabIndex = 0
@@ -103,32 +110,31 @@ Partial Class GestionEmpleadosOnTop
         '
         'txt_codigoEmpleado
         '
-        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.txt_codigoEmpleado, 2)
         Me.txt_codigoEmpleado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_codigoEmpleado.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_codigoEmpleado.Location = New System.Drawing.Point(304, 147)
+        Me.txt_codigoEmpleado.Location = New System.Drawing.Point(243, 159)
         Me.txt_codigoEmpleado.MaxLength = 8
         Me.txt_codigoEmpleado.Name = "txt_codigoEmpleado"
-        Me.txt_codigoEmpleado.Size = New System.Drawing.Size(596, 35)
+        Me.txt_codigoEmpleado.Size = New System.Drawing.Size(234, 35)
         Me.txt_codigoEmpleado.TabIndex = 1
         '
         'txt_nombre
         '
         Me.txt_nombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_nombre.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nombre.Location = New System.Drawing.Point(304, 243)
+        Me.txt_nombre.Location = New System.Drawing.Point(243, 263)
         Me.txt_nombre.MaxLength = 30
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(295, 35)
+        Me.txt_nombre.Size = New System.Drawing.Size(234, 35)
         Me.txt_nombre.TabIndex = 2
         '
         'lbl_TituloGestionEmpleados
         '
         Me.lbl_TituloGestionEmpleados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_TituloGestionEmpleados.AutoSize = True
-        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionEmpleados, 2)
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionEmpleados, 3)
         Me.lbl_TituloGestionEmpleados.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TituloGestionEmpleados.Location = New System.Drawing.Point(430, 18)
+        Me.lbl_TituloGestionEmpleados.Location = New System.Drawing.Point(428, 22)
         Me.lbl_TituloGestionEmpleados.Name = "lbl_TituloGestionEmpleados"
         Me.lbl_TituloGestionEmpleados.Size = New System.Drawing.Size(343, 45)
         Me.lbl_TituloGestionEmpleados.TabIndex = 9
@@ -139,7 +145,7 @@ Partial Class GestionEmpleadosOnTop
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(407, 210)
+        Me.Label5.Location = New System.Drawing.Point(315, 230)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 30)
         Me.Label5.TabIndex = 11
@@ -150,7 +156,7 @@ Partial Class GestionEmpleadosOnTop
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(703, 210)
+        Me.Label2.Location = New System.Drawing.Point(551, 230)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(98, 30)
         Me.Label2.TabIndex = 12
@@ -160,10 +166,10 @@ Partial Class GestionEmpleadosOnTop
         '
         Me.txt_apellidos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_apellidos.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_apellidos.Location = New System.Drawing.Point(605, 243)
+        Me.txt_apellidos.Location = New System.Drawing.Point(483, 263)
         Me.txt_apellidos.MaxLength = 30
         Me.txt_apellidos.Name = "txt_apellidos"
-        Me.txt_apellidos.Size = New System.Drawing.Size(295, 35)
+        Me.txt_apellidos.Size = New System.Drawing.Size(234, 35)
         Me.txt_apellidos.TabIndex = 2
         '
         'Label4
@@ -171,7 +177,7 @@ Partial Class GestionEmpleadosOnTop
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(429, 306)
+        Me.Label4.Location = New System.Drawing.Point(817, 230)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 30)
         Me.Label4.TabIndex = 3
@@ -181,10 +187,10 @@ Partial Class GestionEmpleadosOnTop
         '
         Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_dni.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_dni.Location = New System.Drawing.Point(304, 339)
+        Me.txt_dni.Location = New System.Drawing.Point(723, 263)
         Me.txt_dni.MaxLength = 10
         Me.txt_dni.Name = "txt_dni"
-        Me.txt_dni.Size = New System.Drawing.Size(295, 35)
+        Me.txt_dni.Size = New System.Drawing.Size(234, 35)
         Me.txt_dni.TabIndex = 3
         '
         'Label6
@@ -192,7 +198,7 @@ Partial Class GestionEmpleadosOnTop
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(721, 306)
+        Me.Label6.Location = New System.Drawing.Point(568, 334)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 30)
         Me.Label6.TabIndex = 16
@@ -202,10 +208,10 @@ Partial Class GestionEmpleadosOnTop
         '
         Me.txt_email.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_email.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_email.Location = New System.Drawing.Point(605, 339)
+        Me.txt_email.Location = New System.Drawing.Point(483, 367)
         Me.txt_email.MaxLength = 30
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(295, 35)
+        Me.txt_email.Size = New System.Drawing.Size(234, 35)
         Me.txt_email.TabIndex = 4
         '
         'btn_accion
@@ -213,14 +219,14 @@ Partial Class GestionEmpleadosOnTop
         Me.btn_accion.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(193, Byte), Integer))
         Me.btn_accion.BackgroundImage = Global.repsun.My.Resources.Resources.Check
         Me.btn_accion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.btn_accion, 2)
+        Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.btn_accion, 3)
         Me.btn_accion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_accion.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btn_accion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_accion.Location = New System.Drawing.Point(304, 531)
+        Me.btn_accion.Location = New System.Drawing.Point(243, 471)
         Me.btn_accion.Name = "btn_accion"
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
-        Me.btn_accion.Size = New System.Drawing.Size(596, 90)
+        Me.btn_accion.Size = New System.Drawing.Size(714, 98)
         Me.btn_accion.TabIndex = 5
         Me.btn_accion.UseVisualStyleBackColor = False
         '
@@ -229,7 +235,7 @@ Partial Class GestionEmpleadosOnTop
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(405, 402)
+        Me.Label3.Location = New System.Drawing.Point(314, 334)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(92, 30)
         Me.Label3.TabIndex = 17
@@ -239,9 +245,9 @@ Partial Class GestionEmpleadosOnTop
         '
         Me.txt_telefono.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_telefono.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telefono.Location = New System.Drawing.Point(304, 435)
+        Me.txt_telefono.Location = New System.Drawing.Point(243, 367)
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(295, 35)
+        Me.txt_telefono.Size = New System.Drawing.Size(234, 35)
         Me.txt_telefono.TabIndex = 18
         '
         'Label7
@@ -249,21 +255,64 @@ Partial Class GestionEmpleadosOnTop
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(731, 402)
+        Me.Label7.Location = New System.Drawing.Point(818, 334)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 30)
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Rol"
         '
-        'ComboBox1
+        'cbx_rol
         '
-        Me.ComboBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(605, 435)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(295, 38)
-        Me.ComboBox1.TabIndex = 21
+        Me.cbx_rol.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbx_rol.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_rol.FormattingEnabled = True
+        Me.cbx_rol.Items.AddRange(New Object() {"Encargado", "Empleado", ""})
+        Me.cbx_rol.Location = New System.Drawing.Point(723, 367)
+        Me.cbx_rol.Name = "cbx_rol"
+        Me.cbx_rol.Size = New System.Drawing.Size(234, 38)
+        Me.cbx_rol.TabIndex = 21
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(517, 126)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(165, 30)
+        Me.Label8.TabIndex = 22
+        Me.Label8.Text = "Nombre Usuario"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(781, 126)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(118, 30)
+        Me.Label9.TabIndex = 23
+        Me.Label9.Text = "Contraseña"
+        '
+        'txt_nombreUsuario
+        '
+        Me.txt_nombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_nombreUsuario.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_nombreUsuario.Location = New System.Drawing.Point(483, 159)
+        Me.txt_nombreUsuario.MaxLength = 8
+        Me.txt_nombreUsuario.Name = "txt_nombreUsuario"
+        Me.txt_nombreUsuario.Size = New System.Drawing.Size(234, 35)
+        Me.txt_nombreUsuario.TabIndex = 24
+        '
+        'txt_contrasena
+        '
+        Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_contrasena.Location = New System.Drawing.Point(723, 159)
+        Me.txt_contrasena.MaxLength = 8
+        Me.txt_contrasena.Name = "txt_contrasena"
+        Me.txt_contrasena.Size = New System.Drawing.Size(234, 35)
+        Me.txt_contrasena.TabIndex = 25
         '
         'GestionEmpleadosOnTop
         '
@@ -295,5 +344,9 @@ Partial Class GestionEmpleadosOnTop
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_telefono As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbx_rol As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txt_nombreUsuario As TextBox
+    Friend WithEvents txt_contrasena As TextBox
 End Class

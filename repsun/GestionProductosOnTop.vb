@@ -63,7 +63,8 @@ Public Class GestionProductosOnTop
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna cod_producto es igual a la variable codigo.
-            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = " & GestionProductosOnTop.productoUpdate, conexion)
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Producto WHERE cod_producto = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", productoUpdate)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
