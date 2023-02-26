@@ -155,6 +155,9 @@
     <EmbeddedResource Include="ClientesOnTop.resx">
       <DependentUpon>ClientesOnTop.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpleadosOnTop.resx">
+      <DependentUpon>GestionEmpleadosOnTop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionForm.resx">
       <DependentUpon>GestionForm.vb</DependentUpon>
     </EmbeddedResource>

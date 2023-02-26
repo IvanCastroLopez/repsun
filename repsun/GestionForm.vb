@@ -119,6 +119,37 @@ Public Class GestionForm
             End If
         End If
     End Sub
+
+    Private Sub pbx_editarEmpleados_Click(sender As Object, e As EventArgs) Handles pbx_editarEmpleados.Click
+        ' Establecemos la variable booleanCrear de la clase GestionEmpleadosOnTop en False.
+        GestionEmpleadosOnTop.booleanCrear = False
+
+        ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del empleado a editar.
+        ' Pasamos los parámetros "Editar empleado" como título del InputBox y una cadena vacía como valor predeterminado.
+        GestionEmpleadosOnTop.empleadoUpdate = Herramientas.InputBoxNumeros("Introduzca el id del empleado a editar", "Editar empleado")
+
+        ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionEmpleadosOnTop.
+        If Not GestionEmpleadosOnTop.empleadoUpdate = Nothing Then
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_empleado es igual a la variable empleadoUpdate.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Empleado WHERE cod_empleado = " & GestionEmpleadosOnTop.empleadoUpdate, conexion)
+            ' Abrimos la conexión a la base de datos.
+            conexion.Open()
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Cerramos la conexión a la base de datos.
+            conexion.Close()
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable empleadoUpdate existe dentro de la columna cod_empleado de la tabla Empleado.
+                GestionEmpleadosOnTop.ShowDialog()
+            Else
+                ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
+                Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
+            End If
+        End If
+    End Sub
     ' ** BOTONES ELIMINAR **
     Private Sub pbx_eliminartienda_Click(sender As Object, e As EventArgs) Handles pbx_eliminartienda.Click
 
@@ -151,12 +182,6 @@ Public Class GestionForm
 
 
     ' ** GESTION COMBUSTIBLES **
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-
 
     ' ----
     Public Sub tpg_combustible_Enter(sender As Object, e As EventArgs) Handles tpg_combustible.Enter
@@ -261,5 +286,6 @@ Public Class GestionForm
     Private Sub pgb_dieselPlus_Click(sender As Object, e As EventArgs) Handles pgb_dieselPlus.Click
         cargarDieselPlus()
     End Sub
+
 
 End Class
