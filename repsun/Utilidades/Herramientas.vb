@@ -2,6 +2,26 @@
 
 Public Class Herramientas
 
+    ' ** INPUT BOX SI/NO **
+    ''' <summary>
+    ''' Devuelve un InputBox con opción Si/No.
+    ''' </summary>
+    ''' <param name="prompt">String: El texto que se muestra como mensaje en el InputBox</param>
+    ''' <param name="title">String: El título que se muestra en la barra de título del InputBox.</param>
+    ''' <returns>Boolean: True si el usuario selecciona "Sí", False si el usuario selecciona "No".</returns>
+    Public Function InputBoxSiNo(prompt As String, title As String) As Boolean
+        ' Mostrar el InputBox con las opciones Si/No
+        Dim result As DialogResult = MessageBox.Show(prompt, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        ' Si el usuario selecciona "Sí", devolver True. Si selecciona "No", devolver False.
+        If result = DialogResult.Yes Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
     ' ** INPUT BOX SOLO PARA NÚMEROS **
     ''' <summary>
     ''' Devuelve un InputBox que solo permite la entrada de números.
