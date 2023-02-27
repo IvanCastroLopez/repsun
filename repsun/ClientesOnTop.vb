@@ -68,24 +68,30 @@ Public Class ClientesOnTop
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
-            If resultado > 0 And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarEmail(txt_email.Text) Then
-                ' La variable codigo existe dentro de la columna cod_cliente de la tabla cliente.
-                Dim ordensql As String = "Insert Into ClienteRepsol (cod_cliente,nombre,apellidos,dni,email,fecha_alta) values (@cod,@nom,@ape,@dni,@ema,@dat)"
-                Dim comando As New OleDbCommand(ordensql, conexion)
-                comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
-                comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
-                comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
-                comando.Parameters.AddWithValue("@dni", txt_dni.Text)
-                comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Value)
-                Try
-                    comando.ExecuteNonQuery()
-                    Me.Close()
-                Catch ex As Exception
-                    Registros.GrabarError("Ha ocurrido un error creando el cliente. Revise los campos", "Error creando el cliente")
-                End Try
-                ' Mostramos un mensaje de éxito.
-                MessageBox.Show("Cliente creado con éxito.")
+            If resultado = 0 Then
+                If Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarEmail(txt_email.Text) Then
+                    ' La variable codigo existe dentro de la columna cod_cliente de la tabla cliente.
+                    Dim ordensql As String = "Insert Into ClienteRepsol (cod_cliente,nombre,apellidos,fecha_alta,email,dni) values (@cod,@nom,@ape,@dat,@ema,@dni)"
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
+                    comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                    comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
+                    comando.Parameters.AddWithValue("@dni", txt_dni.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
+                    Try
+                        comando.ExecuteNonQuery()
+                        Me.Close()
+                        ' Mostramos un mensaje de éxito.
+                        MessageBox.Show("Cliente creado con éxito.")
+                    Catch ex As Exception
+                        Registros.GrabarError("Ha ocurrido un error creando el cliente. Llame al técnico responsable del sistema", "Error creando el cliente")
+                    End Try
+                Else
+                    ' Los valores están mal.
+                    Registros.GrabarError("Ha ocurrido un error creando el cliente. Revise los campos", "Error creando el Cleinte")
+
+                End If
             Else
                 ' La variable codigo no existe dentro de la columna cod_cliente de la tabla cliente.
                 Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de cliente ya existe")
@@ -99,7 +105,7 @@ Public Class ClientesOnTop
             comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
             comando.Parameters.AddWithValue("@dni", txt_dni.Text)
             comando.Parameters.AddWithValue("@ema", txt_email.Text)
-            comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Value)
+            comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
             Try
                 comando.ExecuteNonQuery()
                 Me.Close()
