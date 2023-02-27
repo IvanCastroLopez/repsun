@@ -99,7 +99,7 @@ Public Class GestionProductosOnTop
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
                 ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
-                Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
+                Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre, cantidad_litros=0,00 where cod_producto=@cod"
                 Dim comando As New OleDbCommand(ordensql, conexion)
                 comando.Parameters.AddWithValue("@cod", productoUpdate)
                 comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
