@@ -99,15 +99,16 @@ Public Class GestionProductosOnTop
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
                 ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
-                'Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
-                Dim ordensql As String = "UPDATE Producto set nombre=@nom where cod_producto=@cod"
+                Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre where cod_producto=@cod"
                 Dim comando As New OleDbCommand(ordensql, conexion)
-                comando.Parameters.AddWithValue("@cod", txt_codigoProducto.Text)
-                'comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
-                'comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
-                'comando.Parameters.AddWithValue("@pre", txt_precio.Text)
+                comando.Parameters.AddWithValue("@cod", productoUpdate)
+                comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                comando.Parameters.AddWithValue("@cat", cbx_categoria.Text)
+                comando.Parameters.AddWithValue("@pre", txt_precio.Text)
                 Try
-                    comando.ExecuteNonQuery()
+                    Dim res As Integer = comando.ExecuteNonQuery()
+                    MsgBox(productoUpdate)
+                    MsgBox(res)
                     Me.Close()
                 Catch ex As Exception
                     Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
