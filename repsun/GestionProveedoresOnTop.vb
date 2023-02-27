@@ -70,7 +70,7 @@ Public Class GestionProveedoresOnTop
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado = 0 Then
-                If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) Then
+                If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And IsNumeric(txt_telefono.Text) Then
                     ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
                     Dim ordensql As String = "Insert Into Proveedor (nombre,apellidos,nombre_emp,telefono,email) values (@nom,@ape,@emp,@tfn,@ema)"
                     Dim comando As New OleDbCommand(ordensql, conexion)
@@ -107,24 +107,29 @@ Public Class GestionProveedoresOnTop
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
+                If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And IsNumeric(txt_telefono.Text) Then
+
+                Else
+
+                End If
                 ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
                 Dim ordensql As String = "UPDATE proveedor set nombre=@nom, apellidos=@ape, telefono=@tfn, email=@ema where nombre_emp=@emp"
-                Dim comando As New OleDbCommand(ordensql, conexion)
-                comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
-                comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
-                comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
-                comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
-                comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                Try
-                    comando.ExecuteNonQuery()
-                    Me.Close()
-                Catch ex As Exception
-                    Registros.GrabarError("Ha ocurrido un error modificando el proveedor. Revise los campos", "Error modificando el proveedor")
-                End Try
-                ' Mostramos un mensaje de éxito.
-                MessageBox.Show("proveedor modificado con éxito.")
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
+                    comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
+                    comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
+                    comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    Try
+                        comando.ExecuteNonQuery()
+                        Me.Close()
+                    Catch ex As Exception
+                        Registros.GrabarError("Ha ocurrido un error modificando el proveedor. Revise los campos", "Error modificando el proveedor")
+                    End Try
+                    ' Mostramos un mensaje de éxito.
+                    MessageBox.Show("proveedor modificado con éxito.")
+                End If
             End If
-        End If
 
     End Sub
 
