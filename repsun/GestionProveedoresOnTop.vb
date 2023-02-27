@@ -57,6 +57,66 @@ Public Class GestionProveedoresOnTop
 
     'Este sub se ejecuta cuando se hace clic en el botón de acción (pbx_accion).
     Private Sub btn_accion_Click(sender As Object, e As EventArgs) Handles btn_accion.Click
+        'Si booleanCrear es True, significa que se está creando un nuevo proveedor, por lo que se ejecuta esta sección de código.
+        If booleanCrear Then
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", empresaUpdate)
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado = 0 Then
+                ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                Dim ordensql As String = "Insert Into proveedor (nombre_emp,nombre,apellidos,telefono,email) values (@emp,@nom,@ape,@tfn,@ema)"
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
+                comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
+                comando.Parameters.AddWithValue("@ape", TextBox1.Text)
+                comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                Try
+                    comando.ExecuteNonQuery()
+                    Me.Close()
+                Catch ex As Exception
+                    Registros.GrabarError("Ha ocurrido un error creando el proveedor. Revise los campos", "Error creando el proveedor")
+                End Try
+                ' Mostramos un mensaje de éxito.
+                MessageBox.Show("proveedor creado con éxito.")
+            Else
+                ' La variable codigo no existe dentro de la columna cod_proveedor de la tabla proveedor.
+                Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de proveedor ya existe")
+            End If
+
+        Else 'Si booleanCrear es False, significa que se está editando un proveedor existente, por lo que se ejecuta esta sección de código.
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", empresaUpdate)
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                Dim ordensql As String = "UPDATE proveedor set nombre=@nom, apellidos=@ape, telefono=@tfn, email=@ema where nombre_emp=@emp"
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
+                comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
+                comando.Parameters.AddWithValue("@ape", TextBox1.Text)
+                comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                Try
+                    comando.ExecuteNonQuery()
+                    Me.Close()
+                Catch ex As Exception
+                    Registros.GrabarError("Ha ocurrido un error modificando el proveedor. Revise los campos", "Error modificando el proveedor")
+                End Try
+                ' Mostramos un mensaje de éxito.
+                MessageBox.Show("proveedor modificado con éxito.")
+            End If
+        End If
 
     End Sub
 
