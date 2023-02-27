@@ -66,6 +66,7 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 11)
         Me.tlp_GestionProductosOnTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_GestionProductosOnTop.Location = New System.Drawing.Point(0, 0)
+        Me.tlp_GestionProductosOnTop.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.tlp_GestionProductosOnTop.Name = "tlp_GestionProductosOnTop"
         Me.tlp_GestionProductosOnTop.RowCount = 14
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.13948!))
@@ -82,7 +83,7 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
         Me.tlp_GestionProductosOnTop.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.14255!))
-        Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(1204, 681)
+        Me.tlp_GestionProductosOnTop.Size = New System.Drawing.Size(2207, 1257)
         Me.tlp_GestionProductosOnTop.TabIndex = 2
         '
         'Label1
@@ -91,9 +92,10 @@ Partial Class ClientesOnTop
         Me.Label1.AutoSize = True
         Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.Label1, 2)
         Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(513, 114)
+        Me.Label1.Location = New System.Drawing.Point(944, 218)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(178, 30)
+        Me.Label1.Size = New System.Drawing.Size(316, 50)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código de Cliente"
         '
@@ -102,18 +104,20 @@ Partial Class ClientesOnTop
         Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.txt_codigoCliente, 2)
         Me.txt_codigoCliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_codigoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_codigoCliente.Location = New System.Drawing.Point(304, 147)
+        Me.txt_codigoCliente.Location = New System.Drawing.Point(557, 274)
+        Me.txt_codigoCliente.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txt_codigoCliente.Name = "txt_codigoCliente"
-        Me.txt_codigoCliente.Size = New System.Drawing.Size(596, 31)
+        Me.txt_codigoCliente.Size = New System.Drawing.Size(1090, 49)
         Me.txt_codigoCliente.TabIndex = 1
         '
         'txt_nombre
         '
         Me.txt_nombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nombre.Location = New System.Drawing.Point(304, 243)
+        Me.txt_nombre.Location = New System.Drawing.Point(557, 452)
+        Me.txt_nombre.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(295, 31)
+        Me.txt_nombre.Size = New System.Drawing.Size(539, 49)
         Me.txt_nombre.TabIndex = 2
         '
         'lbl_TituloGestionClientes
@@ -122,9 +126,10 @@ Partial Class ClientesOnTop
         Me.lbl_TituloGestionClientes.AutoSize = True
         Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.lbl_TituloGestionClientes, 2)
         Me.lbl_TituloGestionClientes.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TituloGestionClientes.Location = New System.Drawing.Point(454, 18)
+        Me.lbl_TituloGestionClientes.Location = New System.Drawing.Point(845, 39)
+        Me.lbl_TituloGestionClientes.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_TituloGestionClientes.Name = "lbl_TituloGestionClientes"
-        Me.lbl_TituloGestionClientes.Size = New System.Drawing.Size(295, 45)
+        Me.lbl_TituloGestionClientes.Size = New System.Drawing.Size(513, 74)
         Me.lbl_TituloGestionClientes.TabIndex = 9
         Me.lbl_TituloGestionClientes.Text = "Gestión de clientes"
         '
@@ -133,9 +138,10 @@ Partial Class ClientesOnTop
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(407, 210)
+        Me.Label5.Location = New System.Drawing.Point(747, 396)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 30)
+        Me.Label5.Size = New System.Drawing.Size(158, 50)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Nombre"
         '
@@ -144,9 +150,10 @@ Partial Class ClientesOnTop
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(703, 210)
+        Me.Label2.Location = New System.Drawing.Point(1290, 396)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 30)
+        Me.Label2.Size = New System.Drawing.Size(174, 50)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Apellidos"
         '
@@ -154,9 +161,10 @@ Partial Class ClientesOnTop
         '
         Me.txt_apellidos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_apellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_apellidos.Location = New System.Drawing.Point(605, 243)
+        Me.txt_apellidos.Location = New System.Drawing.Point(1108, 452)
+        Me.txt_apellidos.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txt_apellidos.Name = "txt_apellidos"
-        Me.txt_apellidos.Size = New System.Drawing.Size(295, 31)
+        Me.txt_apellidos.Size = New System.Drawing.Size(539, 49)
         Me.txt_apellidos.TabIndex = 2
         '
         'Label4
@@ -164,9 +172,10 @@ Partial Class ClientesOnTop
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(429, 306)
+        Me.Label4.Location = New System.Drawing.Point(787, 574)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(45, 30)
+        Me.Label4.Size = New System.Drawing.Size(78, 50)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Dni"
         '
@@ -174,9 +183,10 @@ Partial Class ClientesOnTop
         '
         Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_dni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_dni.Location = New System.Drawing.Point(304, 339)
+        Me.txt_dni.Location = New System.Drawing.Point(557, 630)
+        Me.txt_dni.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txt_dni.Name = "txt_dni"
-        Me.txt_dni.Size = New System.Drawing.Size(295, 31)
+        Me.txt_dni.Size = New System.Drawing.Size(539, 49)
         Me.txt_dni.TabIndex = 3
         '
         'Label3
@@ -185,9 +195,10 @@ Partial Class ClientesOnTop
         Me.Label3.AutoSize = True
         Me.tlp_GestionProductosOnTop.SetColumnSpan(Me.Label3, 2)
         Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(547, 402)
+        Me.Label3.Location = New System.Drawing.Point(1007, 752)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 30)
+        Me.Label3.Size = New System.Drawing.Size(190, 50)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Fecha Alta"
         '
@@ -197,9 +208,10 @@ Partial Class ClientesOnTop
         Me.dtp_fechaAlta.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtp_fechaAlta.Enabled = False
         Me.dtp_fechaAlta.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtp_fechaAlta.Location = New System.Drawing.Point(304, 435)
+        Me.dtp_fechaAlta.Location = New System.Drawing.Point(557, 808)
+        Me.dtp_fechaAlta.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.dtp_fechaAlta.Name = "dtp_fechaAlta"
-        Me.dtp_fechaAlta.Size = New System.Drawing.Size(596, 35)
+        Me.dtp_fechaAlta.Size = New System.Drawing.Size(1090, 56)
         Me.dtp_fechaAlta.TabIndex = 15
         '
         'Label6
@@ -207,9 +219,10 @@ Partial Class ClientesOnTop
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(721, 306)
+        Me.Label6.Location = New System.Drawing.Point(1322, 574)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 30)
+        Me.Label6.Size = New System.Drawing.Size(110, 50)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Email"
         '
@@ -217,9 +230,10 @@ Partial Class ClientesOnTop
         '
         Me.txt_email.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_email.Location = New System.Drawing.Point(605, 339)
+        Me.txt_email.Location = New System.Drawing.Point(1108, 630)
+        Me.txt_email.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(295, 31)
+        Me.txt_email.Size = New System.Drawing.Size(539, 49)
         Me.txt_email.TabIndex = 4
         '
         'btn_accion
@@ -231,20 +245,22 @@ Partial Class ClientesOnTop
         Me.btn_accion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_accion.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btn_accion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_accion.Location = New System.Drawing.Point(304, 531)
+        Me.btn_accion.Location = New System.Drawing.Point(557, 986)
+        Me.btn_accion.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btn_accion.Name = "btn_accion"
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
-        Me.btn_accion.Size = New System.Drawing.Size(596, 90)
+        Me.btn_accion.Size = New System.Drawing.Size(1090, 166)
         Me.btn_accion.TabIndex = 5
         Me.btn_accion.UseVisualStyleBackColor = False
         '
         'ClientesOnTop
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1204, 681)
+        Me.ClientSize = New System.Drawing.Size(2207, 1257)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "ClientesOnTop"
         Me.Text = "ClientesOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)

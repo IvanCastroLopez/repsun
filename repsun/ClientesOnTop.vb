@@ -35,7 +35,7 @@ Public Class ClientesOnTop
             lbl_TituloGestionclientes.Text = "Editar un cliente"
             txt_codigoCliente.Enabled = False
 
-            Dim query As String = "SELECT * FROM cliente WHERE cod_cliente=@cod"
+            Dim query As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente=@cod"
             Dim comando As New OleDbCommand(query, conexion)
             comando.Parameters.AddWithValue("@cod", clienteUpdate)
             Dim reader As OleDbDataReader = comando.ExecuteReader
@@ -76,9 +76,9 @@ Public Class ClientesOnTop
                     comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
                     comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
                     comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
-                    comando.Parameters.AddWithValue("@dni", txt_dni.Text)
-                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
                     comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    comando.Parameters.AddWithValue("@dni", txt_dni.Text)
                     Try
                         comando.ExecuteNonQuery()
                         Me.Close()
@@ -98,14 +98,14 @@ Public Class ClientesOnTop
             End If
 
         Else 'Si booleanCrear es False, significa que se está editando un cliente existente, por lo que se ejecuta esta sección de código.
-            Dim ordensql As String = "UPDATE ClienteRepsol set nombre=@nom, apellidos=@ape, dni=@dni, email=@ema, fecha_alta=@dat where cod_cliente=@cod"
+            Dim ordensql As String = "UPDATE ClienteRepsol set nombre=@nom, apellidos=@ape, dni=@dni, email=@ema, fecha_alta=@dat WHERE cod_cliente=@cod"
             Dim comando As New OleDbCommand(ordensql, conexion)
-            comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
             comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
             comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
             comando.Parameters.AddWithValue("@dni", txt_dni.Text)
             comando.Parameters.AddWithValue("@ema", txt_email.Text)
             comando.Parameters.AddWithValue("@dat", dtp_fechaAlta.Text)
+            comando.Parameters.AddWithValue("@cod", txt_codigoCliente.Text)
             Try
                 comando.ExecuteNonQuery()
                 Me.Close()
@@ -114,6 +114,7 @@ Public Class ClientesOnTop
             End Try
             ' Mostramos un mensaje de éxito.
             MessageBox.Show("Cliente modificado con éxito.")
+            GestionForm.actualizarDataGridView()
         End If
 
     End Sub

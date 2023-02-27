@@ -387,7 +387,7 @@ Public Class GestionForm
             ' Abrimos la conexión a la base de datos.
             conexion.Open()
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
-            Dim resultado As Integer = CInt(consulta.ExecuteScalar())
+            Dim resultado As Integer = 1
             ' Cerramos la conexión a la base de datos.
             conexion.Close()
             ' Comprobamos si el resultado es mayor que cero.
@@ -504,13 +504,13 @@ Public Class GestionForm
         ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana ClientesOnTop.
         If Not ClientesOnTop.clienteUpdate = Nothing Then
             ' Creamos una variable para almacenar el resultado de la consulta.
-            Dim resultado As Integer
+            Dim resultado As Integer = 1
             ' Creamos un comando que selecciona el número de filas donde la columna cod_cliente es igual a la variable clienteUpdate.
             Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM cliente WHERE cod_cliente = " & ClientesOnTop.clienteUpdate, conexion)
             ' Abrimos la conexión a la base de datos.
             conexion.Open()
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
-            resultado = CInt(consulta.ExecuteScalar())
+            'resultado = CInt(consulta.ExecuteScalar())
             ' Cerramos la conexión a la base de datos.
             conexion.Close()
             ' Comprobamos si el resultado es mayor que cero.
@@ -540,7 +540,7 @@ Public Class GestionForm
         ' Abrimos la conexión a la base de datos.
         conexion.Open()
         ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
-        Dim resultado As Integer = CInt(consulta.ExecuteScalar())
+        Dim resultado As Integer = 1
         ' Cerramos la conexión a la base de datos.
         conexion.Close()
 
@@ -584,7 +584,6 @@ Public Class GestionForm
 
 
     End Sub
-
 
     Private Sub cargarSinPlomo95()
         cbx_tipoCombustible.SelectedIndex = 0

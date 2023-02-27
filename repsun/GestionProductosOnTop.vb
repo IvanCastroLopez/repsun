@@ -103,13 +103,13 @@ Public Class GestionProductosOnTop
             comando2.Parameters.AddWithValue("@codigo", txt_codigoProducto.Text)
 
             Try
-                Dim res As Integer = comando2.ExecuteNonQuery()
-                MessageBox.Show("Producto modificado con éxito.")
+                comando2.ExecuteNonQuery()
                 Me.Close()
             Catch ex As Exception
                 Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
             End Try
             ' Mostramos un mensaje de éxito.
+            MessageBox.Show("Producto modificado con éxito.")
             GestionForm.actualizarDataGridView()
         End If
 
