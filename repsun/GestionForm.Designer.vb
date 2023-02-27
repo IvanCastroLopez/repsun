@@ -717,7 +717,7 @@ Partial Class GestionForm
         Me.tpg_empleados.Location = New System.Drawing.Point(4, 54)
         Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_empleados.Name = "tpg_empleados"
-        Me.tpg_empleados.Size = New System.Drawing.Size(2319, 1495)
+        Me.tpg_empleados.Size = New System.Drawing.Size(2318, 1494)
         Me.tpg_empleados.TabIndex = 2
         Me.tpg_empleados.Text = "Empleados"
         '
@@ -736,7 +736,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(2319, 1495)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(2318, 1494)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -777,7 +777,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(339, 1487)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(339, 1486)
         Me.TableLayoutPanel5.TabIndex = 3
         '
         'pbx_eliminarEmpleados
@@ -880,6 +880,7 @@ Partial Class GestionForm
         'dgv_empleados
         '
         Me.dgv_empleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_empleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_empleados.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.dgv_empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_empleados.Dock = System.Windows.Forms.DockStyle.Fill
@@ -891,7 +892,7 @@ Partial Class GestionForm
         Me.dgv_empleados.RowHeadersWidth = 72
         Me.dgv_empleados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_empleados.Size = New System.Drawing.Size(1964, 1338)
+        Me.dgv_empleados.Size = New System.Drawing.Size(1963, 1337)
         Me.dgv_empleados.TabIndex = 0
         '
         'tpg_proveedores
@@ -901,7 +902,7 @@ Partial Class GestionForm
         Me.tpg_proveedores.Location = New System.Drawing.Point(4, 54)
         Me.tpg_proveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_proveedores.Name = "tpg_proveedores"
-        Me.tpg_proveedores.Size = New System.Drawing.Size(2319, 1495)
+        Me.tpg_proveedores.Size = New System.Drawing.Size(2318, 1494)
         Me.tpg_proveedores.TabIndex = 3
         Me.tpg_proveedores.Text = "Proveedores"
         '
@@ -921,7 +922,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(2319, 1495)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(2318, 1494)
         Me.TableLayoutPanel4.TabIndex = 2
         '
         'TableLayoutPanel7
@@ -962,7 +963,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(339, 1487)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(339, 1486)
         Me.TableLayoutPanel7.TabIndex = 3
         '
         'pbx_eliminarProveedor
@@ -1065,6 +1066,7 @@ Partial Class GestionForm
         'dgv_proveedores
         '
         Me.dgv_proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_proveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_proveedores.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1076,7 +1078,7 @@ Partial Class GestionForm
         Me.dgv_proveedores.RowHeadersWidth = 72
         Me.dgv_proveedores.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_proveedores.Size = New System.Drawing.Size(1964, 1338)
+        Me.dgv_proveedores.Size = New System.Drawing.Size(1963, 1337)
         Me.dgv_proveedores.TabIndex = 0
         '
         'tpg_clientes
@@ -1086,7 +1088,7 @@ Partial Class GestionForm
         Me.tpg_clientes.Location = New System.Drawing.Point(4, 54)
         Me.tpg_clientes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tpg_clientes.Name = "tpg_clientes"
-        Me.tpg_clientes.Size = New System.Drawing.Size(2319, 1495)
+        Me.tpg_clientes.Size = New System.Drawing.Size(2318, 1494)
         Me.tpg_clientes.TabIndex = 4
         Me.tpg_clientes.Text = "Clientes"
         '
@@ -1105,7 +1107,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel6.RowCount = 2
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(2319, 1495)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(2318, 1494)
         Me.TableLayoutPanel6.TabIndex = 2
         '
         'TableLayoutPanel8
@@ -1146,7 +1148,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(339, 1487)
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(339, 1486)
         Me.TableLayoutPanel8.TabIndex = 3
         '
         'pbx_eliminarCliente
@@ -1249,6 +1251,7 @@ Partial Class GestionForm
         'dgv_clientes
         '
         Me.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_clientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_clientes.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1260,7 +1263,7 @@ Partial Class GestionForm
         Me.dgv_clientes.RowHeadersWidth = 72
         Me.dgv_clientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_clientes.Size = New System.Drawing.Size(1964, 1338)
+        Me.dgv_clientes.Size = New System.Drawing.Size(1963, 1337)
         Me.dgv_clientes.TabIndex = 0
         '
         'tlp_categorias
