@@ -108,12 +108,8 @@ Public Class GestionProveedoresOnTop
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
                 If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And IsNumeric(txt_telefono.Text) Then
-
-                Else
-
-                End If
-                ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
-                Dim ordensql As String = "UPDATE proveedor set nombre=@nom, apellidos=@ape, telefono=@tfn, email=@ema where nombre_emp=@emp"
+                    ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
+                    Dim ordensql As String = "UPDATE proveedor set nombre=@nom, apellidos=@ape, telefono=@tfn, email=@ema where nombre_emp=@emp"
                     Dim comando As New OleDbCommand(ordensql, conexion)
                     comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
                     comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
@@ -123,12 +119,16 @@ Public Class GestionProveedoresOnTop
                     Try
                         comando.ExecuteNonQuery()
                         Me.Close()
+                        ' Mostramos un mensaje de éxito.
+                        MessageBox.Show("proveedor modificado con éxito.")
                     Catch ex As Exception
                         Registros.GrabarError("Ha ocurrido un error modificando el proveedor. Revise los campos", "Error modificando el proveedor")
                     End Try
-                    ' Mostramos un mensaje de éxito.
-                    MessageBox.Show("proveedor modificado con éxito.")
                 End If
+            Else
+                Registros.GrabarError("Ha ocurrido un error creando el proveedor. Revise los campos", "Error creando el proveedor")
+            End If
+
             End If
 
     End Sub

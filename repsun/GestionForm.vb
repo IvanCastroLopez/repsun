@@ -346,7 +346,7 @@ Public Class GestionForm
     ''' <param name="sender">Object: txt_buscarProveedores</param>
     ''' <param name="e">EventArgs: TextChanged</param>
     Private Sub txt_buscarproveedores_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarProveedores.TextChanged
-        Dim comando As New OleDbCommand(("Select * from proveedor where nombre LIKE '%" & txt_buscarProveedores.Text & "%'"), conexion)
+        Dim comando As New OleDbCommand(("Select * from proveedor where nombre_emp LIKE '%" & txt_buscarProveedores.Text & "%'"), conexion)
         adaptador_proveedores.SelectCommand = comando
         gestion_dataset.Clear()
         adaptador_proveedores.Fill(gestion_dataset, "proveedor")
@@ -378,18 +378,16 @@ Public Class GestionForm
 
         ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del proveedor a editar.
         ' Pasamos los parámetros "Editar proveedor" como título del InputBox y una cadena vacía como valor predeterminado.
-        GestionProveedoresOnTop.empresaUpdate = Herramientas.InputBoxNumeros("Introduzca el id del proveedor a editar", "Editar proveedor")
+        GestionProveedoresOnTop.empresaUpdate = InputBox("Introduzca la empresa a modificar", "Modificar proveedor")
 
         ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionProveedoresOnTop.
         If Not GestionProveedoresOnTop.empresaUpdate = "" Then
-            ' Creamos una variable para almacenar el resultado de la consulta.
-            Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna nombre_emp es igual a la variable codigo.
             Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE nombre_emp = " & GestionProveedoresOnTop.empresaUpdate, conexion)
             ' Abrimos la conexión a la base de datos.
             conexion.Open()
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
-            resultado = CInt(consulta.ExecuteScalar())
+            Dim resultado As Integer = CInt(consulta.ExecuteScalar())
             ' Cerramos la conexión a la base de datos.
             conexion.Close()
             ' Comprobamos si el resultado es mayor que cero.
@@ -411,7 +409,7 @@ Public Class GestionForm
     ''' <param name="e">EventArgs: Click</param>
     Private Sub pbx_eliminarproveedores_Click(sender As Object, e As EventArgs) Handles pbx_eliminarProveedor.Click
         ' Pedimos al usuario que introduzca el ID del proveedor a eliminar utilizando la función InputBoxNumeros() de la clase Herramientas.
-        Dim proveedorDelete As Integer = Herramientas.InputBoxNumeros("Introduzca la empresa a eliminar", "Eliminar proveedor")
+        Dim proveedorDelete As String = InputBox("Introduzca la empresa a eliminar", "Eliminar proveedor")
 
         ' Creamos un comando que selecciona el número de filas donde la columna nombre_emp es igual a la variable proveedorDelete.
         Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE nombre_emp = @nombre_emp", conexion)
