@@ -34,6 +34,8 @@ Public Class GestionForm
 
     End Sub
 
+
+
     Public Sub actualizarDataGridView()
 
         gestion_dataset.Tables("Producto").Clear()
