@@ -123,6 +123,12 @@
     <Compile Include="RegistrosOnTop.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Surtidores.Designer.vb">
+      <DependentUpon>Surtidores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Surtidores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="tpvForm.Designer.vb">
       <DependentUpon>tpvForm.vb</DependentUpon>
     </Compile>
@@ -196,6 +202,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surtidores.resx">
+      <DependentUpon>Surtidores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SurtidorOnTop.resx">
       <DependentUpon>SurtidorOnTop.vb</DependentUpon>
