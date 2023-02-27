@@ -17,35 +17,40 @@ Public Class LoginForm
     ''' <param name="sender">Botón inicio sesión</param>
     ''' <param name="e">Click</param>
     Private Sub btn_inicioSesion_Click(sender As Object, e As EventArgs) Handles btn_inicioSesion.Click
-        If Validaciones.ValidarNombreUsuario(txt_user.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) Then
-            comando.Parameters.AddWithValue("@usuario", txt_user.Text)
-            comando.Parameters.AddWithValue("@contrasena", txt_contrasena.Text)
-            conexion.Open()
-            Dim reader As OleDbDataReader = comando.ExecuteReader
+        Try
+            If Validaciones.ValidarNombreUsuario(txt_user.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) Then
+                comando.Parameters.AddWithValue("@usuario", txt_user.Text)
+                comando.Parameters.AddWithValue("@contrasena", txt_contrasena.Text)
+                conexion.Open()
+                Dim reader As OleDbDataReader = comando.ExecuteReader
 
-            If reader.Read() Then
-                Dim usuarioBD As String = reader("nombre_usuario").ToString()
-                Dim contrasenaBD As String = reader("contrasena").ToString()
+                If reader.Read() Then
+                    Dim usuarioBD As String = reader("nombre_usuario").ToString()
+                    Dim contrasenaBD As String = reader("contrasena").ToString()
 
-                Registros.GrabarAccesos(usuarioBD, contrasenaBD, True)
-                userConnected = usuarioBD
-                limpiarCampos()
-                MenuPrincipalForm.Show()
-                Me.Hide()
+                    Registros.GrabarAccesos(usuarioBD, contrasenaBD, True)
+                    userConnected = usuarioBD
+                    limpiarCampos()
+                    MenuPrincipalForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Usuario o contraseña incorrectos.")
+                    Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
+                    limpiarCampos()
+                End If
             Else
-                MessageBox.Show("Usuario o contraseña incorrectos.")
+                Registros.GrabarError("El nombre de usuario o la contraseña están mal escritos", "Acceso invalido")
                 Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
                 limpiarCampos()
             End If
-        Else
-            Registros.GrabarError("El nombre de usuario o la contraseña están mal escritos", "Acceso invalido")
-            Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
-            limpiarCampos()
-        End If
+            conexion.Close()
+        Catch ex As Exception
+            Registros.GrabarError("Error iniciando sesión. Inténtelo de nuevo. Si el error persiste llame al técnico responsable del sistema", "Error Inicio Sesión")
+        End Try
+
     End Sub
 
     Private Sub pbx_exit_Click(sender As Object, e As EventArgs) Handles pbx_exit.Click
-        conexion.Close()
         Me.Close()
     End Sub
 

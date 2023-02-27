@@ -5,7 +5,4 @@ Public Class StartForm
         LoginForm.Show()
         Me.Hide()
     End Sub
-
-
-
 End Class

@@ -22,6 +22,7 @@ Partial Class GestionProveedoresOnTop
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionProveedoresOnTop))
         Me.tlp_GestionProductosOnTop = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_nombreProveedorEmpresa = New System.Windows.Forms.TextBox()
@@ -29,7 +30,7 @@ Partial Class GestionProveedoresOnTop
         Me.lbl_TituloGestionProveedores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_accion = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_apellidos = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
@@ -54,7 +55,7 @@ Partial Class GestionProveedoresOnTop
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.lbl_TituloGestionProveedores, 1, 0)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label5, 1, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.btn_accion, 1, 11)
-        Me.tlp_GestionProductosOnTop.Controls.Add(Me.TextBox1, 2, 5)
+        Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_apellidos, 2, 5)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label2, 2, 4)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.Label3, 1, 6)
         Me.tlp_GestionProductosOnTop.Controls.Add(Me.txt_telefono, 1, 7)
@@ -150,18 +151,18 @@ Partial Class GestionProveedoresOnTop
         Me.btn_accion.Name = "btn_accion"
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
         Me.btn_accion.Size = New System.Drawing.Size(596, 90)
-        Me.btn_accion.TabIndex = 12
+        Me.btn_accion.TabIndex = 6
         Me.btn_accion.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'txt_apellidos
         '
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(605, 243)
-        Me.TextBox1.MaxLength = 30
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(295, 31)
-        Me.TextBox1.TabIndex = 13
+        Me.txt_apellidos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_apellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_apellidos.Location = New System.Drawing.Point(605, 243)
+        Me.txt_apellidos.MaxLength = 30
+        Me.txt_apellidos.Name = "txt_apellidos"
+        Me.txt_apellidos.Size = New System.Drawing.Size(295, 31)
+        Me.txt_apellidos.TabIndex = 3
         '
         'Label2
         '
@@ -195,7 +196,7 @@ Partial Class GestionProveedoresOnTop
         Me.txt_telefono.MaxLength = 9
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(596, 31)
-        Me.txt_telefono.TabIndex = 16
+        Me.txt_telefono.TabIndex = 4
         '
         'Label4
         '
@@ -218,7 +219,7 @@ Partial Class GestionProveedoresOnTop
         Me.txt_email.MaxLength = 30
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(596, 31)
-        Me.txt_email.TabIndex = 18
+        Me.txt_email.TabIndex = 5
         '
         'GestionProveedoresOnTop
         '
@@ -226,6 +227,7 @@ Partial Class GestionProveedoresOnTop
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1204, 681)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GestionProveedoresOnTop"
         Me.Text = "GestionProveedoresOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
@@ -241,7 +243,7 @@ Partial Class GestionProveedoresOnTop
     Friend WithEvents lbl_TituloGestionProveedores As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents btn_accion As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_apellidos As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_telefono As TextBox
