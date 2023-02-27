@@ -3,7 +3,7 @@
     Private Sub MenuPrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             imgDefault = Image.FromFile("Imagenes\MenuVisual\0-Default.png")
-            Me.BackgroundImage = imgDefault
+            tlp_layoutBotones.BackgroundImage = imgDefault
             imgCliente = Image.FromFile("Imagenes\MenuVisual\2-Cliente.png")
             imgTienda = Image.FromFile("Imagenes\MenuVisual\3-Tienda.png")
             imgGestion = Image.FromFile("Imagenes\MenuVisual\4-Gestion.png")
@@ -41,36 +41,35 @@
 
 
     '** EFECTO HOVER BOTONES **
-
     Private Sub setDefaultBackground()
-        Me.BackgroundImage = imgDefault
+        tlp_layoutBotones.BackgroundImage = imgDefault
     End Sub
     Private Sub btn_gestion_MouseHover(sender As Object, e As EventArgs) Handles btn_gestion.MouseHover
-        Me.BackgroundImage = imgGestion
+        tlp_layoutBotones.BackgroundImage = imgGestion
     End Sub
     Private Sub btn_gestion_MouseLeave(sender As Object, e As EventArgs) Handles btn_gestion.MouseLeave
         setDefaultBackground()
     End Sub
     Private Sub btn_salir_MouseHover(sender As Object, e As EventArgs) Handles btn_salir.MouseHover
-        Me.BackgroundImage = imgSalir
+        tlp_layoutBotones.BackgroundImage = imgSalir
     End Sub
     Private Sub btn_salir_MouseLeave(sender As Object, e As EventArgs) Handles btn_salir.MouseLeave
         setDefaultBackground()
     End Sub
     Private Sub btn_surtidores_MouseHover(sender As Object, e As EventArgs) Handles btn_surtidores.MouseHover
-        Me.BackgroundImage = imgSurtidores
+        tlp_layoutBotones.BackgroundImage = imgSurtidores
     End Sub
     Private Sub btn_surtidores_MouseLeave(sender As Object, e As EventArgs) Handles btn_surtidores.MouseLeave
         setDefaultBackground()
     End Sub
     Private Sub btn_tpv_MouseHover(sender As Object, e As EventArgs) Handles btn_tpv.MouseHover
-        Me.BackgroundImage = imgTienda
+        tlp_layoutBotones.BackgroundImage = imgTienda
     End Sub
     Private Sub btn_tpv_MouseLeave(sender As Object, e As EventArgs) Handles btn_tpv.MouseLeave
         setDefaultBackground()
     End Sub
     Private Sub btn_zonaClientes_MouseHover(sender As Object, e As EventArgs) Handles btn_zonaClientes.MouseHover
-        Me.BackgroundImage = imgCliente
+        tlp_layoutBotones.BackgroundImage = imgCliente
     End Sub
     Private Sub btn_zonaClientes_MouseLeave(sender As Object, e As EventArgs) Handles btn_zonaClientes.MouseLeave
         setDefaultBackground()
