@@ -73,6 +73,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property amarillo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("amarillo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Anadir() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Anadir", resourceCulture)
@@ -246,6 +256,16 @@ Namespace My.Resources
         Friend ReadOnly Property tpv() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tpv", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property vistaSurtidores() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("vistaSurtidores", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
