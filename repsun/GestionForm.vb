@@ -19,6 +19,7 @@ Public Class GestionForm
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleados")
         adaptador_usuarios.Fill(gestion_dataset, "Usuarios")
+        empleados_usuarios.Fill(gestion_dataset)
 
         gestion_dataset.Relations.Add("empleados_usuarios", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
 
