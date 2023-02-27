@@ -290,7 +290,114 @@ Public Class GestionForm
             Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
         End If
     End Sub
+    ' ** GESTIÓN proveedores **
+    Private Sub txt_buscarproveedores_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarProveedores.TextChanged
+        Dim comando As New OleDbCommand(("Select * from proveedor where nombre LIKE '%" & txt_buscarProveedores.Text & "%'"), conexion)
+        adaptador_proveedores.SelectCommand = comando
+        gestion_dataset.Clear()
+        adaptador_proveedores.Fill(gestion_dataset, "proveedor")
+        dgv_proveedores.DataSource = gestion_dataset
+    End Sub
 
+    ''' <summary>
+    ''' Muestra GestionProveedoresOnTop.
+    ''' </summary>
+    ''' <param name="sender">Object: pbx_crearproveedores</param>
+    ''' <param name="e">EventArgs: Click</param>
+    Private Sub pbx_crearproveedores_Click(sender As Object, e As EventArgs) Handles pbx_crearproveedores.Click
+        ' Establecemos la variable booleanCrear de la clase GestionProveedoresOnTop en True.
+        GestionProveedoresOnTop.booleanCrear = True
+
+        ' Mostramos la ventana GestionProveedoresOnTop.     
+        GestionProveedoresOnTop.ShowDialog()
+        GestionForm.actualizarDataGridView()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra un inputbox pidiendo el id del proveedor a modificar, si el id es válido entonces muestra GestionProveedoresOnTop.
+    ''' </summary>
+    ''' <param name="sender">Object: pbx_editarproveedores</param>
+    ''' <param name="e">EventArgs: Click</param>
+    Private Sub pbx_editarproveedores_Click(sender As Object, e As EventArgs) Handles pbx_editarProveedor.Click
+        ' Establecemos la variable booleanCrear de la clase GestionProveedoresOnTop en False.
+        GestionProveedoresOnTop.booleanCrear = False
+
+        ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del proveedor a editar.
+        ' Pasamos los parámetros "Editar proveedor" como título del InputBox y una cadena vacía como valor predeterminado.
+        GestionProveedoresOnTop.empresaUpdate = Herramientas.InputBoxNumeros("Introduzca el id del proveedor a editar", "Editar proveedor")
+
+        ' Si el usuario no cancela el InputBox (es decir, si el valor devuelto no es una cadena vacía), mostramos la ventana GestionProveedoresOnTop.
+        If Not GestionProveedoresOnTop.empresaUpdate = "" Then
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = " & GestionProveedoresOnTop.empresaUpdate, conexion)
+            ' Abrimos la conexión a la base de datos.
+            conexion.Open()
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Cerramos la conexión a la base de datos.
+            conexion.Close()
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado > 0 Then
+                ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                GestionProveedoresOnTop.ShowDialog()
+            Else
+                ' La variable codigo no existe dentro de la columna cod_proveedor de la tabla proveedor.
+                Registros.GrabarError("El código introducido no existe en la base de datos", "El proveedor seleccionado no existe")
+            End If
+        End If
+    End Sub
+
+
+    ''' <summary>
+    ''' Muestra un inputbox pidiendo el id del proveedor a eliminar, si el id es válido entonces lo elimina.
+    ''' </summary>
+    ''' <param name="sender">Object: pbx_aliminarproveedores</param>
+    ''' <param name="e">EventArgs: Click</param>
+    Private Sub pbx_eliminarproveedores_Click(sender As Object, e As EventArgs) Handles pbx_eliminarproveedores.Click
+        ' Pedimos al usuario que introduzca el ID del proveedor a eliminar utilizando la función InputBoxNumeros() de la clase Herramientas.
+        Dim proveedorDelete As Integer = Herramientas.InputBoxNumeros("Introduzca el id del proveedor a eliminar", "Eliminar proveedor")
+
+        ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable proveedorDelete.
+        Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = @cod_proveedor", conexion)
+        ' Especificamos el valor del parámetro @cod_proveedor utilizando AddWithValue().
+        consulta.Parameters.AddWithValue("@cod_proveedor", proveedorDelete)
+        ' Abrimos la conexión a la base de datos.
+        conexion.Open()
+        ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+        Dim resultado As Integer = CInt(consulta.ExecuteScalar())
+        ' Cerramos la conexión a la base de datos.
+        conexion.Close()
+
+        ' Comprobamos si el resultado es mayor que cero.
+        If resultado > 0 Then
+            ' Preguntamos al usuario si realmente desea eliminar el proveedor utilizando la función InputBoxSiNo() de la clase Herramientas.
+            If Herramientas.InputBoxSiNo("¿Quiere eliminar el proveedor " & proveedorDelete & "?", "Eliminar") Then
+                ' Creamos un comando para eliminar el proveedor.
+                Dim ordensql As String = "DELETE FROM proveedor WHERE cod_proveedor = @cod_proveedor"
+                Dim comando As New OleDbCommand(ordensql, conexion)
+                ' Especificamos el valor del parámetro @cod_proveedor utilizando AddWithValue().
+                comando.Parameters.AddWithValue("@cod_proveedor", proveedorDelete)
+                conexion.Open()
+                Try
+                    ' Ejecutamos el comando para eliminar el proveedor.
+                    comando.ExecuteNonQuery()
+                    ' Actualizamos el DataGridView después de eliminar el proveedor.
+                    actualizarDataGridView()
+                Catch ex As Exception
+                    ' Si se produce un error, mostramos un mensaje de error.
+                    Registros.GrabarError("Ha ocurrido un error eliminando el proveedor seleccionado", "Error eliminando proveedor")
+                Finally
+                    ' Cerramos la conexión a la base de datos.
+                    conexion.Close()
+                End Try
+            End If
+        Else
+            ' Si el proveedor no existe en la base de datos, mostramos un mensaje de error utilizando la función GrabarError() de la clase Registros.
+            Registros.GrabarError("El código introducido no existe en la base de datos", "El proveedor seleccionado no existe")
+        End If
+    End Sub
     ' ** GESTION CLIENTES **
     ''' <summary>
     ''' Al cambiar el texto actualiza el dataGridView con los datos que coincidan
