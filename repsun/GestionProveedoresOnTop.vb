@@ -27,13 +27,15 @@ Public Class GestionProveedoresOnTop
         'Este bloque de código establece el título del formulario según si se está creando un nuevo proveedor o editando uno existente.
         If booleanCrear Then
             lbl_TituloGestionProveedores.Text = "Crear un proveedor"
+            MyBase.Text = "Crear un proveedor"
             txt_nombreProveedorEmpresa.Text = ""
             txt_nombreProveedorRepresentante.Text = ""
-            TextBox1.Text = ""
+            txt_apellidos.Text = ""
             txt_telefono.Text = ""
             txt_email.Text = ""
         Else
             lbl_TituloGestionProveedores.Text = "Editar un proveedor"
+            MyBase.Text = "Editar un proveedor"
 
             Dim query As String = "SELECT * FROM proveedor WHERE nombre_emp = @emp"
             Dim comando As New OleDbCommand(query, conexion)
@@ -43,7 +45,7 @@ Public Class GestionProveedoresOnTop
             If reader.Read Then
                 txt_nombreProveedorEmpresa.Text = reader("nombre_emp").ToString
                 txt_nombreProveedorRepresentante.Text = reader("nombre").ToString
-                TextBox1.Text = reader("apellidos").ToString
+                txt_apellidos.Text = reader("apellidos").ToString
                 txt_telefono.Text = reader("telefono").ToString
                 txt_email.Text = reader("email").ToString
             End If
@@ -62,32 +64,38 @@ Public Class GestionProveedoresOnTop
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
-            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = @cod", conexion)
-            consulta.Parameters.AddWithValue("@cod", empresaUpdate)
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE nombre_emp = @emp", conexion)
+            consulta.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado = 0 Then
-                ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
-                Dim ordensql As String = "Insert Into proveedor (nombre_emp,nombre,apellidos,telefono,email) values (@emp,@nom,@ape,@tfn,@ema)"
-                Dim comando As New OleDbCommand(ordensql, conexion)
-                comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
-                comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
-                comando.Parameters.AddWithValue("@ape", TextBox1.Text)
-                comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
-                comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                Try
-                    comando.ExecuteNonQuery()
-                    Me.Close()
-                Catch ex As Exception
-                    Registros.GrabarError("Ha ocurrido un error creando el proveedor. Revise los campos", "Error creando el proveedor")
-                End Try
-                ' Mostramos un mensaje de éxito.
-                MessageBox.Show("proveedor creado con éxito.")
+                If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) Then
+                    ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                    Dim ordensql As String = "Insert Into Proveedor (nombre,apellidos,nombre_emp,telefono,email) values (@nom,@ape,@emp,@tfn,@ema)"
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
+                    comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
+                    comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
+                    comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    Try
+                        comando.ExecuteNonQuery()
+                        Me.Close()
+                    Catch ex As Exception
+                        Registros.GrabarError("Ha ocurrido un error creando el proveedor. Acuda al técnico", "Error creando el proveedor")
+                    End Try
+                    ' Mostramos un mensaje de éxito.
+                    MessageBox.Show("proveedor creado con éxito.")
+                Else
+                    ' La variable codigo no existe dentro de la columna cod_proveedor de la tabla proveedor.
+                    Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de proveedor ya existe")
+                End If
             Else
-                ' La variable codigo no existe dentro de la columna cod_proveedor de la tabla proveedor.
-                Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de proveedor ya existe")
+                Registros.GrabarError("Ha ocurrido un error creando el proveedor. Revise los campos", "Error creando el proveedor")
+
             End If
+
 
         Else 'Si booleanCrear es False, significa que se está editando un proveedor existente, por lo que se ejecuta esta sección de código.
             ' Creamos una variable para almacenar el resultado de la consulta.
@@ -104,7 +112,7 @@ Public Class GestionProveedoresOnTop
                 Dim comando As New OleDbCommand(ordensql, conexion)
                 comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
                 comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
-                comando.Parameters.AddWithValue("@ape", TextBox1.Text)
+                comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
                 comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
                 comando.Parameters.AddWithValue("@ema", txt_email.Text)
                 Try
