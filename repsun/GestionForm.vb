@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class GestionForm
     Public usuarioConectado As String = LoginForm.userConnected
@@ -56,7 +57,6 @@ Public Class GestionForm
 
     End Sub
 
-
     ' ** BOTONES SALIR **
     Private Sub pbx_close_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -67,12 +67,15 @@ Public Class GestionForm
         Me.Close()
     End Sub
 
-    ' ** BUSQUEDA AVANZADA **
+    ' ** GESTIÓN TIENDA **
     Private Sub txt_buscarTienda_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarTienda.TextChanged
-
+        Dim comando As New OleDbCommand(("Select * from Producto where nombre LIKE '%" & txt_buscarTienda.Text & "%'"), conexion)
+        adaptador_tienda.SelectCommand = comando
+        gestion_dataset.Clear()
+        adaptador_tienda.Fill(gestion_dataset, "Producto")
+        dgv_tienda.DataSource = gestion_dataset
     End Sub
 
-    ' ** BOTONES CREAR **
     ''' <summary>
     ''' Muestra GestionProductosOnTop.
     ''' </summary>
@@ -86,9 +89,6 @@ Public Class GestionForm
         GestionProductosOnTop.ShowDialog()
     End Sub
 
-    ' ** BOTONES BUSCAR **
-
-    ' ** BOTONES EDITAR **
     ''' <summary>
     ''' Muestra un inputbox pidiendo el id del producto a modificar, si el id es válido entonces muestra GestionProductosOnTop.
     ''' </summary>
@@ -155,7 +155,6 @@ Public Class GestionForm
             End If
         End If
     End Sub
-    ' ** BOTONES ELIMINAR **
     Private Sub pbx_eliminartienda_Click(sender As Object, e As EventArgs) Handles pbx_eliminartienda.Click
         ' Llamamos a la función InputBoxNumeros() de la clase Herramientas para pedir al usuario que introduzca el ID del empleado a editar.
         ' Pasamos los parámetros "Eliminar empleado" como título del InputBox y una cadena vacía como valor predeterminado.
@@ -187,10 +186,14 @@ Public Class GestionForm
                 actualizarDataGridView()
             End If
         Else
-                ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
-                Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
+            ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
+            Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
         End If
     End Sub
+
+    ' ** GESTIÓN EMPLELADOS **
+
+
     ' ** BOTONES CATEGORÍAS **
     Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
         ' Selecciona la pestaña "Combustible" (índice 0) en el control TabControl.

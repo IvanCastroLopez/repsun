@@ -661,14 +661,14 @@ Partial Class GestionForm
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(1, 146)
+        Me.Label9.Location = New System.Drawing.Point(1, 151)
         Me.Label9.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 30)
+        Me.Label9.Size = New System.Drawing.Size(173, 25)
         Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Buscar"
+        Me.Label9.Text = "Buscar por nombre"
         '
         'dgv_tienda
         '
@@ -1027,14 +1027,14 @@ Partial Class GestionForm
         '
         Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Yu Gothic UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(1, 146)
+        Me.Label8.Location = New System.Drawing.Point(1, 151)
         Me.Label8.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 30)
+        Me.Label8.Size = New System.Drawing.Size(173, 25)
         Me.Label8.TabIndex = 9
-        Me.Label8.Text = "Buscar"
+        Me.Label8.Text = "Buscar por nombre"
         '
         'dgv_proveedores
         '
