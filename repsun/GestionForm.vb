@@ -304,13 +304,13 @@ Public Class GestionForm
     ''' </summary>
     ''' <param name="sender">Object: pbx_crearproveedores</param>
     ''' <param name="e">EventArgs: Click</param>
-    Private Sub pbx_crearproveedores_Click(sender As Object, e As EventArgs) Handles pbx_crearproveedores.Click
+    Private Sub pbx_crearProveedor_Click(sender As Object, e As EventArgs) Handles pbx_crearProveedor.Click
         ' Establecemos la variable booleanCrear de la clase GestionProveedoresOnTop en True.
         GestionProveedoresOnTop.booleanCrear = True
 
         ' Mostramos la ventana GestionProveedoresOnTop.     
         GestionProveedoresOnTop.ShowDialog()
-        GestionForm.actualizarDataGridView()
+        actualizarDataGridView()
     End Sub
 
     ''' <summary>
@@ -355,7 +355,7 @@ Public Class GestionForm
     ''' </summary>
     ''' <param name="sender">Object: pbx_aliminarproveedores</param>
     ''' <param name="e">EventArgs: Click</param>
-    Private Sub pbx_eliminarproveedores_Click(sender As Object, e As EventArgs) Handles pbx_eliminarproveedores.Click
+    Private Sub pbx_eliminarproveedores_Click(sender As Object, e As EventArgs) Handles pbx_eliminarProveedor.Click
         ' Pedimos al usuario que introduzca el ID del proveedor a eliminar utilizando la función InputBoxNumeros() de la clase Herramientas.
         Dim proveedorDelete As Integer = Herramientas.InputBoxNumeros("Introduzca el id del proveedor a eliminar", "Eliminar proveedor")
 
