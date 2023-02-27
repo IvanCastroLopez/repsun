@@ -30,11 +30,11 @@ Partial Class GestionEmpleadosOnTop
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_apellidos = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_dni = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.btn_accion = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_dni = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -172,27 +172,6 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_apellidos.Size = New System.Drawing.Size(234, 35)
         Me.txt_apellidos.TabIndex = 2
         '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(817, 230)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(45, 30)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Dni"
-        '
-        'txt_dni
-        '
-        Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_dni.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_dni.Location = New System.Drawing.Point(723, 263)
-        Me.txt_dni.MaxLength = 10
-        Me.txt_dni.Name = "txt_dni"
-        Me.txt_dni.Size = New System.Drawing.Size(234, 35)
-        Me.txt_dni.TabIndex = 3
-        '
         'Label6
         '
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -229,6 +208,27 @@ Partial Class GestionEmpleadosOnTop
         Me.btn_accion.Size = New System.Drawing.Size(714, 98)
         Me.btn_accion.TabIndex = 5
         Me.btn_accion.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(817, 230)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 30)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Dni"
+        '
+        'txt_dni
+        '
+        Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_dni.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_dni.Location = New System.Drawing.Point(723, 263)
+        Me.txt_dni.MaxLength = 10
+        Me.txt_dni.Name = "txt_dni"
+        Me.txt_dni.Size = New System.Drawing.Size(234, 35)
+        Me.txt_dni.TabIndex = 3
         '
         'Label3
         '
