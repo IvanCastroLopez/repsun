@@ -196,7 +196,7 @@ Partial Class GestionForm
         Me.tpg_combustible.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.tpg_combustible.Controls.Add(Me.tlp_combustible)
         Me.tpg_combustible.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(2)
+        Me.tpg_combustible.Margin = New System.Windows.Forms.Padding(1)
         Me.tpg_combustible.Name = "tpg_combustible"
         Me.tpg_combustible.Size = New System.Drawing.Size(1261, 803)
         Me.tpg_combustible.TabIndex = 0
@@ -511,7 +511,7 @@ Partial Class GestionForm
         Me.tpg_tienda.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.tpg_tienda.Controls.Add(Me.TableLayoutPanel1)
         Me.tpg_tienda.Location = New System.Drawing.Point(4, 34)
-        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(2)
+        Me.tpg_tienda.Margin = New System.Windows.Forms.Padding(1)
         Me.tpg_tienda.Name = "tpg_tienda"
         Me.tpg_tienda.Size = New System.Drawing.Size(1261, 803)
         Me.tpg_tienda.TabIndex = 1
