@@ -111,14 +111,13 @@ Public Class GestionProductosOnTop
 
             Try
                 Dim res As Integer = comando2.ExecuteNonQuery()
-                MsgBox(res)
+                MessageBox.Show("Producto modificado con éxito.")
                 Me.Close()
             Catch ex As Exception
                 Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
             End Try
             ' Mostramos un mensaje de éxito.
             GestionForm.actualizarDataGridView()
-            MessageBox.Show("Producto modificado con éxito.")
         End If
 
     End Sub

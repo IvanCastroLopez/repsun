@@ -51,7 +51,7 @@ Public Class LoginForm
     End Sub
 
     Private Sub pbx_exit_Click(sender As Object, e As EventArgs) Handles pbx_exit.Click
-        Me.Close()
+        End
     End Sub
 
     Private Sub limpiarCampos()
