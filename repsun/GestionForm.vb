@@ -58,13 +58,18 @@ Public Class GestionForm
 
 
     ' ** BOTONES SALIR **
-    Private Sub pbx_close_Click(sender As Object, e As EventArgs) Handles pbx_close.Click
+    Private Sub pbx_close_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
     Private Sub pbx_salir_Click(sender As Object, e As EventArgs) Handles pbx_salir.Click
         MenuPrincipalForm.Show()
         Me.Close()
+    End Sub
+
+    ' ** BUSQUEDA AVANZADA **
+    Private Sub txt_buscarTienda_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarTienda.TextChanged
+
     End Sub
 
     ' ** BOTONES CREAR **
@@ -318,6 +323,5 @@ Public Class GestionForm
     Private Sub pgb_dieselPlus_Click(sender As Object, e As EventArgs) Handles pgb_dieselPlus.Click
         cargarDieselPlus()
     End Sub
-
 
 End Class
