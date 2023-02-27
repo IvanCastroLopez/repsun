@@ -67,28 +67,39 @@ Public Class GestionEmpleadosOnTop
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
-            If resultado > 0 Then
-                ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
-                MessageBox.Show("Ya existe un empleado con ese código.")
-            Else
-                ' Si el resultado es igual a cero, significa que no existe ningún empleado con ese código y se puede crear uno nuevo.
-                ' Creamos un comando que inserta los datos del nuevo empleado en la tabla Empleado
-                Dim ordensql As String = "INSERT INTO Empleado (cod_empleado, dni, nombre, apellidos, email, telefono, rol) VALUES (@cod, @dni, @nom, @ape, @ema, @tfn, @rol)"
-                Dim comando As New OleDbCommand(ordensql, conexion)
-                comando.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
-                comando.Parameters.AddWithValue("@dni", txt_dni.Text)
-                comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
-                comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
-                comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
-                comando.Parameters.AddWithValue("@rol", cbx_rol.Text)
-                ' Ejecutamos el comando.
-                comando.ExecuteNonQuery()
-                ' Mostramos un mensaje de éxito.
-                MessageBox.Show("Empleado creado con éxito.")
-                ' Cerramos el formulario.
-                Me.Close()
+            If resultado = 0 Then
+                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado) Then
+                    ' Si el resultado es igual a cero, significa que no existe ningún empleado con ese código y se puede crear uno nuevo.
+                    ' Creamos un comando que inserta los datos del nuevo empleado en la tabla Empleado
+                    Dim ordensql As String = "INSERT INTO Empleado (cod_empleado, dni, nombre, apellidos, email, telefono, rol) VALUES (@cod, @dni, @nom, @ape, @ema, @tfn, @rol)"
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    comando.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
+                    comando.Parameters.AddWithValue("@dni", txt_dni.Text)
+                    comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                    comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                    comando.Parameters.AddWithValue("@rol", cbx_rol.Text)
+
+                    Dim ordensql1 As String = "INSERT INTO Usuario (nombre_usuario, admin, cod_empleado, contrasena) VALUES (@nom, @adm, @cod, @pas)"
+                    Dim comando1 As New OleDbCommand(ordensql1, conexion)
+                    comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
+                    comando1.Parameters.AddWithValue("@adm", False)
+                    comando1.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
+                    comando1.Parameters.AddWithValue("@pas", txt_contrasena)
+                    ' Ejecutamos el comando.
+                    comando.ExecuteNonQuery()
+                    ' Mostramos un mensaje de éxito.
+                    MessageBox.Show("Empleado creado con éxito.")
+                    ' Cerramos el formulario.
+                    Me.Close()
+                Else
+                    ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
+                    MessageBox.Show("Ya existe un empleado con ese código.")
+
+                End If
             End If
+
         Else
             ' Si booleanCrear es False, significa que se está actualizando un empleado existente, por lo que se ejecuta esta sección de código.
             ' Creamos un comando que actualiza los datos del empleado seleccionado en la tabla Empleado.
