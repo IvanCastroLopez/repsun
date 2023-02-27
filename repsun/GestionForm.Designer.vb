@@ -66,7 +66,7 @@ Partial Class GestionForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.pbx_crearEmpleados = New System.Windows.Forms.PictureBox()
+        Me.pbx_crearEmpleado = New System.Windows.Forms.PictureBox()
         Me.txt_buscarEmpleado = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgv_empleados = New System.Windows.Forms.DataGridView()
@@ -126,7 +126,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.SuspendLayout()
         CType(Me.pbx_eliminarEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_editarEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_crearEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_crearEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpg_proveedores.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
@@ -724,7 +724,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.Controls.Add(Me.Label1, 0, 10)
         Me.TableLayoutPanel5.Controls.Add(Me.Label2, 0, 12)
         Me.TableLayoutPanel5.Controls.Add(Me.Label3, 0, 8)
-        Me.TableLayoutPanel5.Controls.Add(Me.pbx_crearEmpleados, 0, 7)
+        Me.TableLayoutPanel5.Controls.Add(Me.pbx_crearEmpleado, 0, 7)
         Me.TableLayoutPanel5.Controls.Add(Me.txt_buscarEmpleado, 0, 4)
         Me.TableLayoutPanel5.Controls.Add(Me.Label4, 0, 3)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
@@ -818,17 +818,17 @@ Partial Class GestionForm
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Crear"
         '
-        'pbx_crearEmpleados
+        'pbx_crearEmpleado
         '
-        Me.pbx_crearEmpleados.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_crearEmpleados.Image = Global.repsun.My.Resources.Resources.Anadir
-        Me.pbx_crearEmpleados.Location = New System.Drawing.Point(1, 309)
-        Me.pbx_crearEmpleados.Margin = New System.Windows.Forms.Padding(1)
-        Me.pbx_crearEmpleados.Name = "pbx_crearEmpleados"
-        Me.pbx_crearEmpleados.Size = New System.Drawing.Size(183, 42)
-        Me.pbx_crearEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_crearEmpleados.TabIndex = 0
-        Me.pbx_crearEmpleados.TabStop = False
+        Me.pbx_crearEmpleado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_crearEmpleado.Image = Global.repsun.My.Resources.Resources.Anadir
+        Me.pbx_crearEmpleado.Location = New System.Drawing.Point(1, 309)
+        Me.pbx_crearEmpleado.Margin = New System.Windows.Forms.Padding(1)
+        Me.pbx_crearEmpleado.Name = "pbx_crearEmpleado"
+        Me.pbx_crearEmpleado.Size = New System.Drawing.Size(183, 42)
+        Me.pbx_crearEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_crearEmpleado.TabIndex = 0
+        Me.pbx_crearEmpleado.TabStop = False
         '
         'txt_buscarEmpleado
         '
@@ -1444,7 +1444,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.PerformLayout()
         CType(Me.pbx_eliminarEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_editarEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_crearEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_crearEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_empleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpg_proveedores.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
@@ -1534,7 +1534,7 @@ Partial Class GestionForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents pbx_crearEmpleados As PictureBox
+    Friend WithEvents pbx_crearEmpleado As PictureBox
     Friend WithEvents txt_buscarEmpleado As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dgv_empleados As DataGridView

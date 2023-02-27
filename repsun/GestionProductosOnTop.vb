@@ -82,6 +82,8 @@ Public Class GestionProductosOnTop
                 Catch ex As Exception
                     Registros.GrabarError("Ha ocurrido un error creando el producto. Revise los campos", "Error creando el producto")
                 End Try
+                ' Mostramos un mensaje de éxito.
+                MessageBox.Show("Producto creado con éxito.")
             Else
                 ' La variable codigo no existe dentro de la columna cod_producto de la tabla Producto.
                 Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de producto ya existe")
@@ -110,6 +112,8 @@ Public Class GestionProductosOnTop
                 Catch ex As Exception
                     Registros.GrabarError("Ha ocurrido un error modificando el producto. Revise los campos", "Error modificando el producto")
                 End Try
+                ' Mostramos un mensaje de éxito.
+                MessageBox.Show("Producto modificado con éxito.")
             End If
         End If
 

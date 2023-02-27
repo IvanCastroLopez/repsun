@@ -53,7 +53,6 @@ Public Class ClientesOnTop
 
     Public Sub GestionclientesOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         clienteUpdate = Nothing
-        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
@@ -85,6 +84,8 @@ Public Class ClientesOnTop
                 Catch ex As Exception
                     Registros.GrabarError("Ha ocurrido un error creando el cliente. Revise los campos", "Error creando el cliente")
                 End Try
+                ' Mostramos un mensaje de éxito.
+                MessageBox.Show("Cliente creado con éxito.")
             Else
                 ' La variable codigo no existe dentro de la columna cod_cliente de la tabla cliente.
                 Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de cliente ya existe")
@@ -105,6 +106,8 @@ Public Class ClientesOnTop
             Catch ex As Exception
                 Registros.GrabarError("Ha ocurrido un error modificando el cliente. Revise los campos", "Error modificando el cliente")
             End Try
+            ' Mostramos un mensaje de éxito.
+            MessageBox.Show("Cliente modificado con éxito.")
         End If
 
     End Sub
