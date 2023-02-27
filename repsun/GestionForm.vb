@@ -4,7 +4,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class GestionForm
     Public usuarioConectado As String = LoginForm.userConnected
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
-    Public adaptador_tienda As New OleDbDataAdapter("Select * from Producto", conexion)
+    Public adaptador_tienda As New OleDbDataAdapter("Select cod_producto, nombre, categoria, precio from Producto", conexion)
     Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
     Public adaptador_proveedores As New OleDbDataAdapter("Select * from Proveedor", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
