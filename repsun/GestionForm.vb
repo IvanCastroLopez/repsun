@@ -6,15 +6,22 @@ Public Class GestionForm
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
     Public adaptador_tienda As New OleDbDataAdapter("Select cod_producto, nombre, categoria, precio from Producto", conexion)
     Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
+    Public adaptador_usuarios As New OleDbDataAdapter("Select * from Usuarios", conexion)
+    Public empleados_usuarios As New OleDbDataAdapter("Select empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin from Empleado, Usuarios where empleado.cod_empleado = usuarios.cod_empleado", conexion)
     Public adaptador_proveedores As New OleDbDataAdapter("Select * from Proveedor", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
     Public gestion_dataset As New DataSet
     Public comandoPublic As New OleDbCommand
     Dim readerPublic As OleDbDataReader
+
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         adaptador_tienda.Fill(gestion_dataset, "Producto")
-        adaptador_empleados.Fill(gestion_dataset, "Empleado")
+        adaptador_empleados.Fill(gestion_dataset, "Empleados")
+        adaptador_usuarios.Fill(gestion_dataset, "Usuarios")
+
+        gestion_dataset.Relations.Add("empleados_usuarios", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
+
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
         adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
 
@@ -22,7 +29,7 @@ Public Class GestionForm
         dgv_tienda.DataMember = "Producto"
 
         dgv_empleados.DataSource = gestion_dataset
-        dgv_empleados.DataMember = "Empleado"
+        dgv_empleados.DataMember = "empleados_usuarios"
 
         dgv_proveedores.DataSource = gestion_dataset
         dgv_proveedores.DataMember = "Proveedor"
@@ -30,9 +37,11 @@ Public Class GestionForm
         dgv_clientes.DataSource = gestion_dataset
         dgv_clientes.DataMember = "ClienteRepsol"
 
-        actualizarDataGridView()
+        'Actualizar el DataGridView, suponiendo que existe un método llamado actualizarDataGridView.
+        'actualizarDataGridView()
 
     End Sub
+
 
 
 
@@ -41,8 +50,8 @@ Public Class GestionForm
         gestion_dataset.Tables("Producto").Clear()
         adaptador_tienda.Fill(gestion_dataset, "Producto")
 
-        gestion_dataset.Tables("Empleado").Clear()
-        adaptador_empleados.Fill(gestion_dataset, "Empleado")
+        gestion_dataset.Tables("Empleado, Usuarios").Clear()
+        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
 
         gestion_dataset.Tables("Proveedor").Clear()
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
