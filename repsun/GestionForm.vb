@@ -163,7 +163,7 @@ Public Class GestionForm
                     actualizarDataGridView()
                 Catch ex As Exception
                     ' Si se produce un error, mostramos un mensaje de error.
-                    MsgBox("Ha ocurrido un error")
+                    Registros.GrabarError("Ha ocurrido un error eliminando el producto seleccionado", "Error eliminando producto")
                 Finally
                     ' Cerramos la conexión a la base de datos.
                     conexion.Close()
@@ -262,30 +262,35 @@ Public Class GestionForm
         If resultado > 0 Then
             ' Preguntamos al usuario si realmente desea eliminar el empleado utilizando la función InputBoxSiNo() de la clase Herramientas.
             If Herramientas.InputBoxSiNo("¿Quiere eliminar el empleado " & empleadoDelete & "?", "Eliminar") Then
-                ' Creamos un comando para eliminar el empleado.
-                Dim ordensql As String = "DELETE FROM empleado WHERE cod_empleado = @cod_empleado"
-                Dim comando As New OleDbCommand(ordensql, conexion)
-                ' Especificamos el valor del parámetro @cod_empleado utilizando AddWithValue().
-                comando.Parameters.AddWithValue("@cod_empleado", empleadoDelete)
-                conexion.Open()
-                Try
-                    ' Ejecutamos el comando para eliminar el empleado.
-                    comando.ExecuteNonQuery()
-                    ' Actualizamos el DataGridView después de eliminar el empleado.
-                    actualizarDataGridView()
-                Catch ex As Exception
-                    ' Si se produce un error, mostramos un mensaje de error.
-                    MsgBox("Ha ocurrido un error")
-                Finally
-                    ' Cerramos la conexión a la base de datos.
-                    conexion.Close()
-                End Try
+                If Not empleadoDelete = 0 Then
+                    ' Creamos un comando para eliminar el empleado.
+                    Dim ordensql As String = "DELETE FROM empleado WHERE cod_empleado = @cod_empleado"
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    ' Especificamos el valor del parámetro @cod_empleado utilizando AddWithValue().
+                    comando.Parameters.AddWithValue("@cod_empleado", empleadoDelete)
+                    conexion.Open()
+                    Try
+                        ' Ejecutamos el comando para eliminar el empleado.
+                        comando.ExecuteNonQuery()
+                        ' Actualizamos el DataGridView después de eliminar el empleado.
+                        actualizarDataGridView()
+                    Catch ex As Exception
+                        ' Si se produce un error, mostramos un mensaje de error.
+                        Registros.GrabarError("Ha ocurrido un error eliminando el empleado seleccionado", "Error eliminando empleado")
+                    Finally
+                        ' Cerramos la conexión a la base de datos.
+                        conexion.Close()
+                    End Try
+                Else
+                    Registros.GrabarError("Intento de eliminar el administrador", "Error eliminando")
+                End If
             End If
         Else
             ' Si el empleado no existe en la base de datos, mostramos un mensaje de error utilizando la función GrabarError() de la clase Registros.
             Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
         End If
     End Sub
+
     ' ** GESTION CLIENTES **
     ''' <summary>
     ''' Al cambiar el texto actualiza el dataGridView con los datos que coincidan
