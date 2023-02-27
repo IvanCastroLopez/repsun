@@ -22,6 +22,7 @@ Partial Class GestionForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionForm))
         Me.tlp_gestion = New System.Windows.Forms.TableLayoutPanel()
         Me.tbc_gestion = New System.Windows.Forms.TabControl()
         Me.tpg_combustible = New System.Windows.Forms.TabPage()
@@ -107,6 +108,9 @@ Partial Class GestionForm
         Me.lbl_Empleados = New System.Windows.Forms.Label()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
         Me.lbl_clientes = New System.Windows.Forms.Label()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.tsb_registroAccesos = New System.Windows.Forms.ToolStripButton()
+        Me.tsb_registroErrores = New System.Windows.Forms.ToolStripButton()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
@@ -150,6 +154,7 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_gestion
@@ -161,6 +166,7 @@ Partial Class GestionForm
         Me.tlp_gestion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.362419!))
         Me.tlp_gestion.Controls.Add(Me.tbc_gestion, 0, 1)
         Me.tlp_gestion.Controls.Add(Me.tlp_categorias, 0, 0)
+        Me.tlp_gestion.Controls.Add(Me.ToolStrip1, 1, 0)
         Me.tlp_gestion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_gestion.Location = New System.Drawing.Point(0, 0)
         Me.tlp_gestion.Margin = New System.Windows.Forms.Padding(6)
@@ -1453,6 +1459,35 @@ Partial Class GestionForm
         Me.lbl_clientes.TabIndex = 11
         Me.lbl_clientes.Text = "Clientes"
         '
+        'ToolStrip1
+        '
+        Me.tlp_gestion.SetColumnSpan(Me.ToolStrip1, 2)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_registroAccesos, Me.tsb_registroErrores})
+        Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.ToolStrip1.Location = New System.Drawing.Point(105, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(953, 22)
+        Me.ToolStrip1.TabIndex = 5
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'tsb_registroAccesos
+        '
+        Me.tsb_registroAccesos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.tsb_registroAccesos.Image = CType(resources.GetObject("tsb_registroAccesos.Image"), System.Drawing.Image)
+        Me.tsb_registroAccesos.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_registroAccesos.Name = "tsb_registroAccesos"
+        Me.tsb_registroAccesos.Size = New System.Drawing.Size(54, 19)
+        Me.tsb_registroAccesos.Text = "Accesos"
+        '
+        'tsb_registroErrores
+        '
+        Me.tsb_registroErrores.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.tsb_registroErrores.Image = CType(resources.GetObject("tsb_registroErrores.Image"), System.Drawing.Image)
+        Me.tsb_registroErrores.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_registroErrores.Name = "tsb_registroErrores"
+        Me.tsb_registroErrores.Size = New System.Drawing.Size(47, 23)
+        Me.tsb_registroErrores.Text = "Errores"
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -1465,6 +1500,7 @@ Partial Class GestionForm
         Me.Text = "GestionForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_gestion.ResumeLayout(False)
+        Me.tlp_gestion.PerformLayout()
         Me.tbc_gestion.ResumeLayout(False)
         Me.tpg_combustible.ResumeLayout(False)
         Me.tlp_combustible.ResumeLayout(False)
@@ -1514,6 +1550,8 @@ Partial Class GestionForm
         CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1603,4 +1641,7 @@ Partial Class GestionForm
     Friend WithEvents txt_buscarCliente As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents dgv_clientes As DataGridView
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents tsb_registroAccesos As ToolStripButton
+    Friend WithEvents tsb_registroErrores As ToolStripButton
 End Class

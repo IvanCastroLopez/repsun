@@ -126,7 +126,7 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_nombre.MaxLength = 30
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(234, 35)
-        Me.txt_nombre.TabIndex = 2
+        Me.txt_nombre.TabIndex = 4
         '
         'lbl_TituloGestionEmpleados
         '
@@ -170,7 +170,7 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_apellidos.MaxLength = 30
         Me.txt_apellidos.Name = "txt_apellidos"
         Me.txt_apellidos.Size = New System.Drawing.Size(234, 35)
-        Me.txt_apellidos.TabIndex = 2
+        Me.txt_apellidos.TabIndex = 5
         '
         'Label6
         '
@@ -191,7 +191,7 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_email.MaxLength = 30
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(234, 35)
-        Me.txt_email.TabIndex = 4
+        Me.txt_email.TabIndex = 8
         '
         'btn_accion
         '
@@ -206,7 +206,7 @@ Partial Class GestionEmpleadosOnTop
         Me.btn_accion.Name = "btn_accion"
         Me.tlp_GestionProductosOnTop.SetRowSpan(Me.btn_accion, 2)
         Me.btn_accion.Size = New System.Drawing.Size(714, 98)
-        Me.btn_accion.TabIndex = 5
+        Me.btn_accion.TabIndex = 10
         Me.btn_accion.UseVisualStyleBackColor = False
         '
         'Label4
@@ -228,7 +228,7 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_dni.MaxLength = 10
         Me.txt_dni.Name = "txt_dni"
         Me.txt_dni.Size = New System.Drawing.Size(234, 35)
-        Me.txt_dni.TabIndex = 3
+        Me.txt_dni.TabIndex = 6
         '
         'Label3
         '
@@ -246,9 +246,10 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_telefono.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_telefono.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telefono.Location = New System.Drawing.Point(243, 367)
+        Me.txt_telefono.MaxLength = 9
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(234, 35)
-        Me.txt_telefono.TabIndex = 18
+        Me.txt_telefono.TabIndex = 7
         '
         'Label7
         '
@@ -270,7 +271,7 @@ Partial Class GestionEmpleadosOnTop
         Me.cbx_rol.Location = New System.Drawing.Point(723, 367)
         Me.cbx_rol.Name = "cbx_rol"
         Me.cbx_rol.Size = New System.Drawing.Size(234, 38)
-        Me.cbx_rol.TabIndex = 21
+        Me.cbx_rol.TabIndex = 9
         '
         'Label8
         '
@@ -299,20 +300,20 @@ Partial Class GestionEmpleadosOnTop
         Me.txt_nombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_nombreUsuario.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nombreUsuario.Location = New System.Drawing.Point(483, 159)
-        Me.txt_nombreUsuario.MaxLength = 8
+        Me.txt_nombreUsuario.MaxLength = 30
         Me.txt_nombreUsuario.Name = "txt_nombreUsuario"
         Me.txt_nombreUsuario.Size = New System.Drawing.Size(234, 35)
-        Me.txt_nombreUsuario.TabIndex = 24
+        Me.txt_nombreUsuario.TabIndex = 2
         '
         'txt_contrasena
         '
         Me.txt_contrasena.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_contrasena.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_contrasena.Location = New System.Drawing.Point(723, 159)
-        Me.txt_contrasena.MaxLength = 8
+        Me.txt_contrasena.MaxLength = 10
         Me.txt_contrasena.Name = "txt_contrasena"
         Me.txt_contrasena.Size = New System.Drawing.Size(234, 35)
-        Me.txt_contrasena.TabIndex = 25
+        Me.txt_contrasena.TabIndex = 3
         '
         'GestionEmpleadosOnTop
         '

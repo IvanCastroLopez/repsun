@@ -19,7 +19,7 @@ Public Class GestionForm
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleados")
         adaptador_usuarios.Fill(gestion_dataset, "Usuarios")
-        empleados_usuarios.Fill(gestion_dataset)
+        empleados_usuarios.Fill(gestion_dataset, "relacion")
 
         gestion_dataset.Relations.Add("empleados_usuarios", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
 
@@ -30,7 +30,8 @@ Public Class GestionForm
         dgv_tienda.DataMember = "Producto"
 
         dgv_empleados.DataSource = gestion_dataset
-        dgv_empleados.DataMember = "empleados_usuarios"
+        dgv_empleados.DataMember = "relacion"
+
 
         dgv_proveedores.DataSource = gestion_dataset
         dgv_proveedores.DataMember = "Proveedor"
@@ -714,4 +715,14 @@ Public Class GestionForm
         tbc_gestion.SelectTab(4)
     End Sub
 
+    ' ** BOTONES TOOLSTRIPMENU **
+    Private Sub tsb_registroAccesos_Click(sender As Object, e As EventArgs) Handles tsb_registroAccesos.Click
+        RegistrosOnTop.errores = False
+        RegistrosOnTop.ShowDialog()
+    End Sub
+
+    Private Sub tsb_registroErrores_Click(sender As Object, e As EventArgs) Handles tsb_registroErrores.Click
+        RegistrosOnTop.errores = True
+        RegistrosOnTop.ShowDialog()
+    End Sub
 End Class
