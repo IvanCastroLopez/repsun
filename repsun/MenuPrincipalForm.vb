@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub btn_surtidores_Click(sender As Object, e As EventArgs) Handles btn_surtidores.Click
-        SurtidorOnTop.Show()
+        Surtidores.Show()
         Me.Hide()
     End Sub
 

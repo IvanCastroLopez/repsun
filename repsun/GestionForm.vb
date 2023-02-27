@@ -560,7 +560,7 @@ Public Class GestionForm
             ' Preguntamos al usuario si realmente desea eliminar el cliente utilizando la función InputBoxSiNo() de la clase Herramientas.
             If Herramientas.InputBoxSiNo("¿Quiere eliminar el cliente " & clienteDelete & "?", "Eliminar") Then
                 ' Creamos un comando para eliminar el cliente.
-                Dim ordensql As String = "DELETE FROM cliente WHERE cod_cliente = @cod_cliente"
+                Dim ordensql As String = "DELETE FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
                 Dim comando As New OleDbCommand(ordensql, conexion)
                 ' Especificamos el valor del parámetro @cod_cliente utilizando AddWithValue().
                 comando.Parameters.AddWithValue("@cod_cliente", clienteDelete)

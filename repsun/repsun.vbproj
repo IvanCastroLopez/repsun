@@ -123,6 +123,12 @@
     <Compile Include="RegistrosOnTop.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Surtidores.Designer.vb">
+      <DependentUpon>Surtidores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Surtidores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="tpvForm.Designer.vb">
       <DependentUpon>tpvForm.vb</DependentUpon>
     </Compile>
@@ -197,6 +203,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Surtidores.resx">
+      <DependentUpon>Surtidores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SurtidorOnTop.resx">
       <DependentUpon>SurtidorOnTop.vb</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +268,15 @@
     <Content Include="bin\Debug\Imagenes\MenuVisual\4-Gestion.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\5-Surtidores.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\Salir.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\amarillo.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\azul.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\cyan.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\gris.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\naranja.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\negro.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\rojo.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\verde.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\vistaSurtidores.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
     <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
   </ItemGroup>
