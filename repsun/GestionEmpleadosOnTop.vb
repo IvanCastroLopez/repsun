@@ -88,28 +88,61 @@ Public Class GestionEmpleadosOnTop
                     comando1.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
                     comando1.Parameters.AddWithValue("@pas", txt_contrasena)
                     ' Ejecutamos el comando.
-                    comando.ExecuteNonQuery()
-                    ' Mostramos un mensaje de éxito.
-                    MessageBox.Show("Empleado creado con éxito.")
-                    ' Cerramos el formulario.
-                    Me.Close()
+                    Try
+                        comando.ExecuteNonQuery()
+                        comando1.ExecuteNonQuery()
+                        ' Mostramos un mensaje de éxito.
+                        MessageBox.Show("Empleado creado con éxito.")
+                        ' Cerramos el formulario.
+                        Me.Close()
+                    Catch ex As Exception
+                        Registros.GrabarError("Ha ocurrido un error creando el empleado. Llame al técnico responsable del sistema", "Error creando el empleado")
+                    End Try
                 Else
-                    ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
-                    MessageBox.Show("Ya existe un empleado con ese código.")
+                    Registros.GrabarError("Ha ocurrido un error creando el empleado. Revise los campos", "Error creando el empleado")
 
                 End If
+            Else
+                ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
+                Registros.GrabarError("Ya existe un empleado con ese código", "Error creando el empleado")
             End If
 
         Else
-            ' Si booleanCrear es False, significa que se está actualizando un empleado existente, por lo que se ejecuta esta sección de código.
-            ' Creamos un comando que actualiza los datos del empleado seleccionado en la tabla Empleado.
-            ' Dim actualizar As New OleDbCommand("UPDATE Empleado SET nombre = '" & txt_nombre.Text & "', apellido = '" & txt_apellido.Text & "', edad = " & txt_edad.Text & ", salario = " & txt_salario.Text & " WHERE cod_empleado = " & GestionEmpleados.empleadoUpdate, conexion)
-            ' Ejecutamos el comando.
-            ' actualizar.ExecuteNonQuery()
-            ' Mostramos un mensaje de éxito.
-            MessageBox.Show("Empleado actualizado con éxito.")
-            ' Cerramos el formulario.
-            Me.Close()
+            ' Creamos una variable para almacenar el resultado de la consulta.
+            Dim resultado As Integer
+            ' Creamos un comando que selecciona el número de filas donde la columna cod_empleado es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Empleado WHERE cod_empleado = @cod", conexion)
+            consulta.Parameters.AddWithValue("@cod", empleadoUpdate)
+            ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
+            resultado = CInt(consulta.ExecuteScalar())
+            ' Comprobamos si el resultado es mayor que cero.
+            If resultado = 0 Then
+                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado) Then
+                    ' Si booleanCrear es False, significa que se está actualizando un empleado existente, por lo que se ejecuta esta sección de código.
+                    ' Creamos un comando que actualiza los datos del empleado seleccionado en la tabla Empleado.
+                    Dim ordensql As String = "UPDATE Empleado set dni=@dni, nombre=@nom, apellido=@ape, email=@ema, telefono=@tfn, rol=@rol where cod_empleado=@cod"
+                    Dim comando As New OleDbCommand(ordensql, conexion)
+                    comando.Parameters.AddWithValue("@dni", txt_dni.Text)
+                    comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
+                    comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
+                    comando.Parameters.AddWithValue("@ema", txt_email.Text)
+                    comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                    comando.Parameters.AddWithValue("@rol", cbx_rol.Text)
+                    comando.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
+
+                    Dim ordensql1 As String = "UPDATE Usuario set nombre_usuario=@nom, admin=@adm, contrasena=@pas where cod_empleado=@cod"
+                    Dim comando1 As New OleDbCommand(ordensql1, conexion)
+                    comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
+                    comando1.Parameters.AddWithValue("@adm", False)
+                    comando1.Parameters.AddWithValue("@pas", txt_contrasena)
+                    comando1.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
+                Else
+                    Registros.GrabarError("Ha ocurrido un error creando el empleado. Revise los campos", "Error creando el empleado")
+                End If
+            Else
+                Registros.GrabarError("No existe ningún empleado con ese código", "Error modificando el empleado")
+            End If
+
         End If
     End Sub
 
