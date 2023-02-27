@@ -52,6 +52,7 @@ Public Class GestionProductosOnTop
 
     Public Sub GestionProductosOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         productoUpdate = Nothing
+        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
