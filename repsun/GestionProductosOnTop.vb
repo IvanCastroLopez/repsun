@@ -95,19 +95,12 @@ Public Class GestionProductosOnTop
             Dim ordensql As String = "UPDATE Producto set nombre=@nom, categoria=@cat, precio=@pre, cantidad_litros=@cant WHERE cod_producto=@codigo"
             Dim comando2 As New OleDbCommand(ordensql, conexion)
 
-            Dim codigo As Integer = Integer.Parse(txt_codigoProducto.Text)
-            Dim nombre As String = txt_nombre.Text
-            Dim categoria As String = cbx_categoria.Text
-            Dim precio As Decimal = Decimal.Parse(txt_precio.Text)
             Dim cantidad As Decimal = 0.00
-            comando2.Parameters.AddWithValue("@nom", nombre)
-            comando2.Parameters.AddWithValue("@cat", categoria)
-            comando2.Parameters.AddWithValue("@pre", precio)
+            comando2.Parameters.AddWithValue("@nom", txt_nombre.Text)
+            comando2.Parameters.AddWithValue("@cat", cbx_categoria.Text)
+            comando2.Parameters.AddWithValue("@pre", txt_precio.Text)
             comando2.Parameters.AddWithValue("@cant", cantidad)
-            comando2.Parameters.AddWithValue("@codigo", codigo)
-
-            Dim str As String = codigo & nombre & categoria & precio & cantidad
-            MsgBox(str)
+            comando2.Parameters.AddWithValue("@codigo", txt_codigoProducto.Text)
 
             Try
                 Dim res As Integer = comando2.ExecuteNonQuery()
