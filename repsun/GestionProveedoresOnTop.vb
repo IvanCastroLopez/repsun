@@ -63,7 +63,7 @@ Public Class GestionProveedoresOnTop
         If booleanCrear Then
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
-            ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
+            ' Creamos un comando que selecciona el número de filas donde la columna nombre_emp es igual a la variable codigo.
             Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE nombre_emp = @emp", conexion)
             consulta.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
@@ -71,7 +71,7 @@ Public Class GestionProveedoresOnTop
             ' Comprobamos si el resultado es mayor que cero.
             If resultado = 0 Then
                 If Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) And Validaciones.ValidarNombre(txt_nombreProveedorRepresentante.Text) Then
-                    ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                    ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
                     Dim ordensql As String = "Insert Into Proveedor (nombre,apellidos,nombre_emp,telefono,email) values (@nom,@ape,@emp,@tfn,@ema)"
                     Dim comando As New OleDbCommand(ordensql, conexion)
                     comando.Parameters.AddWithValue("@nom", txt_nombreProveedorRepresentante.Text)
@@ -81,14 +81,14 @@ Public Class GestionProveedoresOnTop
                     comando.Parameters.AddWithValue("@ema", txt_email.Text)
                     Try
                         comando.ExecuteNonQuery()
+                        ' Mostramos un mensaje de éxito.
+                        MessageBox.Show("proveedor creado con éxito.")
                         Me.Close()
                     Catch ex As Exception
-                        Registros.GrabarError("Ha ocurrido un error creando el proveedor. Acuda al técnico", "Error creando el proveedor")
+                        Registros.GrabarError("Ha ocurrido un error creando el proveedor. Llame al técnico responsable del sistema", "Error creando el proveedor")
                     End Try
-                    ' Mostramos un mensaje de éxito.
-                    MessageBox.Show("proveedor creado con éxito.")
                 Else
-                    ' La variable codigo no existe dentro de la columna cod_proveedor de la tabla proveedor.
+                    ' La variable codigo no existe dentro de la columna nombre_emp de la tabla proveedor.
                     Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de proveedor ya existe")
                 End If
             Else
@@ -100,14 +100,14 @@ Public Class GestionProveedoresOnTop
         Else 'Si booleanCrear es False, significa que se está editando un proveedor existente, por lo que se ejecuta esta sección de código.
             ' Creamos una variable para almacenar el resultado de la consulta.
             Dim resultado As Integer
-            ' Creamos un comando que selecciona el número de filas donde la columna cod_proveedor es igual a la variable codigo.
-            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE cod_proveedor = @cod", conexion)
+            ' Creamos un comando que selecciona el número de filas donde la columna nombre_emp es igual a la variable codigo.
+            Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM proveedor WHERE nombre_emp = @cod", conexion)
             consulta.Parameters.AddWithValue("@cod", empresaUpdate)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
-                ' La variable codigo existe dentro de la columna cod_proveedor de la tabla proveedor.
+                ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
                 Dim ordensql As String = "UPDATE proveedor set nombre=@nom, apellidos=@ape, telefono=@tfn, email=@ema where nombre_emp=@emp"
                 Dim comando As New OleDbCommand(ordensql, conexion)
                 comando.Parameters.AddWithValue("@emp", txt_nombreProveedorEmpresa.Text)
