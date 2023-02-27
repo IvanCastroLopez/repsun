@@ -63,12 +63,12 @@ Public Class GestionEmpleadosOnTop
             Dim resultado As Integer
             ' Creamos un comando que selecciona el número de filas donde la columna cod_empleado es igual a la variable codigo.
             Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Empleado WHERE cod_empleado = @cod", conexion)
-            consulta.Parameters.AddWithValue("@cod", empleadoUpdate)
+            consulta.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = 0
             ' Comprobamos si el resultado es mayor que cero.
             If resultado = 0 Then
-                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado) Then
+                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado.Text) Then
                     ' Si el resultado es igual a cero, significa que no existe ningún empleado con ese código y se puede crear uno nuevo.
                     ' Creamos un comando que inserta los datos del nuevo empleado en la tabla Empleado
                     Dim ordensql As String = "INSERT INTO Empleado (cod_empleado, dni, nombre, apellidos, email, telefono, rol) VALUES (@cod, @dni, @nom, @ape, @ema, @tfn, @rol)"
@@ -116,7 +116,7 @@ Public Class GestionEmpleadosOnTop
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
-            If resultado = 0 Then
+            If resultado > 0 Then
                 If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado) Then
                     ' Si booleanCrear es False, significa que se está actualizando un empleado existente, por lo que se ejecuta esta sección de código.
                     ' Creamos un comando que actualiza los datos del empleado seleccionado en la tabla Empleado.
