@@ -45,7 +45,11 @@ Public Class Herramientas
             If IsNumeric(input) Then
                 ' Si el valor es un número válido, actualizamos la variable isNum para salir del bucle.
                 isNum = True
+            ElseIf input = "" Then
+                'closed
+                Exit Function
             Else
+
                 ' Si el valor no es un número válido, mostramos un mensaje de error al usuario y volvemos a pedir un valor.
                 Registros.GrabarError("Ingrese solo números", "Error de entrada")
             End If

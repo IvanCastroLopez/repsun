@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrosOnTop.Designer.vb">
+      <DependentUpon>RegistrosOnTop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosOnTop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="tpvForm.Designer.vb">
       <DependentUpon>tpvForm.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipalForm.resx">
       <DependentUpon>MenuPrincipalForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrosOnTop.resx">
+      <DependentUpon>RegistrosOnTop.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.vb</DependentUpon>
