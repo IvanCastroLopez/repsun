@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Surtidores
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,10 @@ Partial Class Surtidores
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Surtidores))
         Me.tlp_posicionCoches = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_salir = New System.Windows.Forms.PictureBox()
         Me.pbx_coche1 = New System.Windows.Forms.PictureBox()
@@ -30,6 +31,7 @@ Partial Class Surtidores
         Me.pbx_coche3 = New System.Windows.Forms.PictureBox()
         Me.pbx_coche4 = New System.Windows.Forms.PictureBox()
         Me.tmr_timer = New System.Windows.Forms.Timer(Me.components)
+        Me.nic_surtidores = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.tlp_posicionCoches.SuspendLayout()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_coche1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +132,14 @@ Partial Class Surtidores
         '
         Me.tmr_timer.Interval = 1000
         '
+        'nic_surtidores
+        '
+        Me.nic_surtidores.BalloonTipText = "Hay un nuevo coche esperando en los surtidores"
+        Me.nic_surtidores.BalloonTipTitle = "Nuevo coche"
+        Me.nic_surtidores.Icon = CType(resources.GetObject("nic_surtidores.Icon"), System.Drawing.Icon)
+        Me.nic_surtidores.Text = "Nuevo coche"
+        Me.nic_surtidores.Visible = True
+        '
         'Surtidores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -161,4 +171,5 @@ Partial Class Surtidores
     Friend WithEvents pbx_coche3 As PictureBox
     Friend WithEvents pbx_coche4 As PictureBox
     Friend WithEvents tmr_timer As Timer
+    Friend WithEvents nic_surtidores As NotifyIcon
 End Class

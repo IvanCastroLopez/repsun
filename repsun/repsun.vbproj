@@ -274,6 +274,7 @@
     <Content Include="bin\Debug\Imagenes\Surtidores\gris.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\naranja.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\negro.png" />
+    <Content Include="bin\Debug\Imagenes\Surtidores\notify_icon.ico" />
     <Content Include="bin\Debug\Imagenes\Surtidores\rojo.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\verde.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\vistaSurtidores.png" />
