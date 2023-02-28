@@ -423,6 +423,8 @@ Partial Class tpvForm
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(210, 3)
         Me.Button1.Name = "Button1"
@@ -435,6 +437,8 @@ Partial Class tpvForm
         '
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(417, 3)
         Me.Button2.Name = "Button2"
@@ -515,6 +519,7 @@ Partial Class tpvForm
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
@@ -712,6 +717,8 @@ Partial Class tpvForm
         'tpg_comida
         '
         Me.tpg_comida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_comida.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_comida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.tpg_comida.Location = New System.Drawing.Point(4, 46)
         Me.tpg_comida.Name = "tpg_comida"
         Me.tpg_comida.Padding = New System.Windows.Forms.Padding(3)
@@ -722,6 +729,8 @@ Partial Class tpvForm
         'tpg_bebida
         '
         Me.tpg_bebida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_bebida.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_bebida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.tpg_bebida.Location = New System.Drawing.Point(4, 46)
         Me.tpg_bebida.Name = "tpg_bebida"
         Me.tpg_bebida.Padding = New System.Windows.Forms.Padding(3)
@@ -731,12 +740,14 @@ Partial Class tpvForm
         '
         'tpg_otros
         '
+        Me.tpg_otros.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_otros.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_otros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.tpg_otros.Location = New System.Drawing.Point(4, 46)
         Me.tpg_otros.Name = "tpg_otros"
         Me.tpg_otros.Size = New System.Drawing.Size(1241, 756)
         Me.tpg_otros.TabIndex = 2
         Me.tpg_otros.Text = "Otros"
-        Me.tpg_otros.UseVisualStyleBackColor = True
         '
         'tpvForm
         '
