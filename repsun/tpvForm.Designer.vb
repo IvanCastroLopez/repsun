@@ -26,22 +26,22 @@ Partial Class tpvForm
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tlp_caja = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_teclado = New System.Windows.Forms.TableLayoutPanel()
-        Me.btn_teclado_0 = New System.Windows.Forms.Button()
-        Me.btn_teclado_9 = New System.Windows.Forms.Button()
-        Me.btn_teclado_8 = New System.Windows.Forms.Button()
-        Me.btn_teclado_7 = New System.Windows.Forms.Button()
+        Me.btn_0 = New System.Windows.Forms.Button()
+        Me.btn_9 = New System.Windows.Forms.Button()
+        Me.btn_8 = New System.Windows.Forms.Button()
+        Me.btn_7 = New System.Windows.Forms.Button()
         Me.btn_teclado_cobrar = New System.Windows.Forms.Button()
-        Me.btn_teclado_coma = New System.Windows.Forms.Button()
-        Me.btn_teclado_6 = New System.Windows.Forms.Button()
-        Me.btn_teclado_5 = New System.Windows.Forms.Button()
-        Me.btn_teclado_4 = New System.Windows.Forms.Button()
-        Me.btn_teclado_restar = New System.Windows.Forms.Button()
-        Me.btn_tecladoExacto = New System.Windows.Forms.Button()
-        Me.btn_teclado_3 = New System.Windows.Forms.Button()
+        Me.btn_coma = New System.Windows.Forms.Button()
+        Me.btn_6 = New System.Windows.Forms.Button()
+        Me.btn_5 = New System.Windows.Forms.Button()
+        Me.btn_4 = New System.Windows.Forms.Button()
+        Me.btn_atras = New System.Windows.Forms.Button()
+        Me.btn_exacto = New System.Windows.Forms.Button()
+        Me.btn_3 = New System.Windows.Forms.Button()
         Me.btn_1 = New System.Windows.Forms.Button()
         Me.txt_introducido = New System.Windows.Forms.TextBox()
         Me.lbl_introducido = New System.Windows.Forms.Label()
-        Me.btn_teclado_2 = New System.Windows.Forms.Button()
+        Me.btn_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btn_eliminarTodo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -156,22 +156,22 @@ Partial Class tpvForm
         Me.tlp_teclado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.86793!))
         Me.tlp_teclado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.86793!))
         Me.tlp_teclado.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.5283!))
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_0, 3, 4)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_9, 2, 4)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_8, 1, 4)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_7, 0, 4)
+        Me.tlp_teclado.Controls.Add(Me.btn_0, 3, 4)
+        Me.tlp_teclado.Controls.Add(Me.btn_9, 2, 4)
+        Me.tlp_teclado.Controls.Add(Me.btn_8, 1, 4)
+        Me.tlp_teclado.Controls.Add(Me.btn_7, 0, 4)
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_cobrar, 4, 3)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_coma, 3, 3)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_6, 2, 3)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_5, 1, 3)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_4, 0, 3)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_restar, 4, 2)
-        Me.tlp_teclado.Controls.Add(Me.btn_tecladoExacto, 3, 2)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_3, 2, 2)
+        Me.tlp_teclado.Controls.Add(Me.btn_coma, 3, 3)
+        Me.tlp_teclado.Controls.Add(Me.btn_6, 2, 3)
+        Me.tlp_teclado.Controls.Add(Me.btn_5, 1, 3)
+        Me.tlp_teclado.Controls.Add(Me.btn_4, 0, 3)
+        Me.tlp_teclado.Controls.Add(Me.btn_atras, 4, 2)
+        Me.tlp_teclado.Controls.Add(Me.btn_exacto, 3, 2)
+        Me.tlp_teclado.Controls.Add(Me.btn_3, 2, 2)
         Me.tlp_teclado.Controls.Add(Me.btn_1, 0, 2)
         Me.tlp_teclado.Controls.Add(Me.txt_introducido, 0, 1)
         Me.tlp_teclado.Controls.Add(Me.lbl_introducido, 0, 0)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_2, 1, 2)
+        Me.tlp_teclado.Controls.Add(Me.btn_2, 1, 2)
         Me.tlp_teclado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_teclado.Location = New System.Drawing.Point(3, 624)
         Me.tlp_teclado.Name = "tlp_teclado"
@@ -184,61 +184,61 @@ Partial Class tpvForm
         Me.tlp_teclado.Size = New System.Drawing.Size(623, 408)
         Me.tlp_teclado.TabIndex = 0
         '
-        'btn_teclado_0
+        'btn_0
         '
-        Me.btn_teclado_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_0.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_0.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_0.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_0.Location = New System.Drawing.Point(354, 308)
-        Me.btn_teclado_0.Name = "btn_teclado_0"
-        Me.btn_teclado_0.Size = New System.Drawing.Size(111, 97)
-        Me.btn_teclado_0.TabIndex = 14
-        Me.btn_teclado_0.Text = "0"
-        Me.btn_teclado_0.UseVisualStyleBackColor = False
+        Me.btn_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_0.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_0.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_0.ForeColor = System.Drawing.Color.White
+        Me.btn_0.Location = New System.Drawing.Point(354, 308)
+        Me.btn_0.Name = "btn_0"
+        Me.btn_0.Size = New System.Drawing.Size(111, 97)
+        Me.btn_0.TabIndex = 14
+        Me.btn_0.Text = "0"
+        Me.btn_0.UseVisualStyleBackColor = False
         '
-        'btn_teclado_9
+        'btn_9
         '
-        Me.btn_teclado_9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_9.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_9.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_9.Location = New System.Drawing.Point(237, 308)
-        Me.btn_teclado_9.Name = "btn_teclado_9"
-        Me.btn_teclado_9.Size = New System.Drawing.Size(111, 97)
-        Me.btn_teclado_9.TabIndex = 13
-        Me.btn_teclado_9.Text = "9"
-        Me.btn_teclado_9.UseVisualStyleBackColor = False
+        Me.btn_9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_9.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_9.ForeColor = System.Drawing.Color.White
+        Me.btn_9.Location = New System.Drawing.Point(237, 308)
+        Me.btn_9.Name = "btn_9"
+        Me.btn_9.Size = New System.Drawing.Size(111, 97)
+        Me.btn_9.TabIndex = 13
+        Me.btn_9.Text = "9"
+        Me.btn_9.UseVisualStyleBackColor = False
         '
-        'btn_teclado_8
+        'btn_8
         '
-        Me.btn_teclado_8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_8.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_8.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_8.Location = New System.Drawing.Point(120, 308)
-        Me.btn_teclado_8.Name = "btn_teclado_8"
-        Me.btn_teclado_8.Size = New System.Drawing.Size(111, 97)
-        Me.btn_teclado_8.TabIndex = 12
-        Me.btn_teclado_8.Text = "8"
-        Me.btn_teclado_8.UseVisualStyleBackColor = False
+        Me.btn_8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_8.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_8.ForeColor = System.Drawing.Color.White
+        Me.btn_8.Location = New System.Drawing.Point(120, 308)
+        Me.btn_8.Name = "btn_8"
+        Me.btn_8.Size = New System.Drawing.Size(111, 97)
+        Me.btn_8.TabIndex = 12
+        Me.btn_8.Text = "8"
+        Me.btn_8.UseVisualStyleBackColor = False
         '
-        'btn_teclado_7
+        'btn_7
         '
-        Me.btn_teclado_7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_7.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_7.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_7.Location = New System.Drawing.Point(3, 308)
-        Me.btn_teclado_7.Name = "btn_teclado_7"
-        Me.btn_teclado_7.Size = New System.Drawing.Size(111, 97)
-        Me.btn_teclado_7.TabIndex = 11
-        Me.btn_teclado_7.Text = "7"
-        Me.btn_teclado_7.UseVisualStyleBackColor = False
+        Me.btn_7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_7.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_7.ForeColor = System.Drawing.Color.White
+        Me.btn_7.Location = New System.Drawing.Point(3, 308)
+        Me.btn_7.Name = "btn_7"
+        Me.btn_7.Size = New System.Drawing.Size(111, 97)
+        Me.btn_7.TabIndex = 11
+        Me.btn_7.Text = "7"
+        Me.btn_7.UseVisualStyleBackColor = False
         '
         'btn_teclado_cobrar
         '
@@ -255,103 +255,103 @@ Partial Class tpvForm
         Me.btn_teclado_cobrar.Text = "Cobrar"
         Me.btn_teclado_cobrar.UseVisualStyleBackColor = False
         '
-        'btn_teclado_coma
+        'btn_coma
         '
-        Me.btn_teclado_coma.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_coma.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_coma.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_coma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_coma.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_coma.Location = New System.Drawing.Point(354, 206)
-        Me.btn_teclado_coma.Name = "btn_teclado_coma"
-        Me.btn_teclado_coma.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_coma.TabIndex = 9
-        Me.btn_teclado_coma.Text = ","
-        Me.btn_teclado_coma.UseVisualStyleBackColor = False
+        Me.btn_coma.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_coma.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_coma.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_coma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_coma.ForeColor = System.Drawing.Color.White
+        Me.btn_coma.Location = New System.Drawing.Point(354, 206)
+        Me.btn_coma.Name = "btn_coma"
+        Me.btn_coma.Size = New System.Drawing.Size(111, 96)
+        Me.btn_coma.TabIndex = 9
+        Me.btn_coma.Text = ","
+        Me.btn_coma.UseVisualStyleBackColor = False
         '
-        'btn_teclado_6
+        'btn_6
         '
-        Me.btn_teclado_6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_6.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_6.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_6.Location = New System.Drawing.Point(237, 206)
-        Me.btn_teclado_6.Name = "btn_teclado_6"
-        Me.btn_teclado_6.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_6.TabIndex = 8
-        Me.btn_teclado_6.Text = "6"
-        Me.btn_teclado_6.UseVisualStyleBackColor = False
+        Me.btn_6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_6.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_6.ForeColor = System.Drawing.Color.White
+        Me.btn_6.Location = New System.Drawing.Point(237, 206)
+        Me.btn_6.Name = "btn_6"
+        Me.btn_6.Size = New System.Drawing.Size(111, 96)
+        Me.btn_6.TabIndex = 8
+        Me.btn_6.Text = "6"
+        Me.btn_6.UseVisualStyleBackColor = False
         '
-        'btn_teclado_5
+        'btn_5
         '
-        Me.btn_teclado_5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_5.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_5.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_5.Location = New System.Drawing.Point(120, 206)
-        Me.btn_teclado_5.Name = "btn_teclado_5"
-        Me.btn_teclado_5.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_5.TabIndex = 7
-        Me.btn_teclado_5.Text = "5"
-        Me.btn_teclado_5.UseVisualStyleBackColor = False
+        Me.btn_5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_5.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_5.ForeColor = System.Drawing.Color.White
+        Me.btn_5.Location = New System.Drawing.Point(120, 206)
+        Me.btn_5.Name = "btn_5"
+        Me.btn_5.Size = New System.Drawing.Size(111, 96)
+        Me.btn_5.TabIndex = 7
+        Me.btn_5.Text = "5"
+        Me.btn_5.UseVisualStyleBackColor = False
         '
-        'btn_teclado_4
+        'btn_4
         '
-        Me.btn_teclado_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_4.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_4.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_4.Location = New System.Drawing.Point(3, 206)
-        Me.btn_teclado_4.Name = "btn_teclado_4"
-        Me.btn_teclado_4.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_4.TabIndex = 6
-        Me.btn_teclado_4.Text = "4"
-        Me.btn_teclado_4.UseVisualStyleBackColor = False
+        Me.btn_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_4.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_4.ForeColor = System.Drawing.Color.White
+        Me.btn_4.Location = New System.Drawing.Point(3, 206)
+        Me.btn_4.Name = "btn_4"
+        Me.btn_4.Size = New System.Drawing.Size(111, 96)
+        Me.btn_4.TabIndex = 6
+        Me.btn_4.Text = "4"
+        Me.btn_4.UseVisualStyleBackColor = False
         '
-        'btn_teclado_restar
+        'btn_atras
         '
-        Me.btn_teclado_restar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_restar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_restar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_restar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_restar.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_restar.Location = New System.Drawing.Point(471, 104)
-        Me.btn_teclado_restar.Name = "btn_teclado_restar"
-        Me.btn_teclado_restar.Size = New System.Drawing.Size(149, 96)
-        Me.btn_teclado_restar.TabIndex = 5
-        Me.btn_teclado_restar.Text = "<---"
-        Me.btn_teclado_restar.UseVisualStyleBackColor = False
+        Me.btn_atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_atras.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_atras.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_atras.ForeColor = System.Drawing.Color.White
+        Me.btn_atras.Location = New System.Drawing.Point(471, 104)
+        Me.btn_atras.Name = "btn_atras"
+        Me.btn_atras.Size = New System.Drawing.Size(149, 96)
+        Me.btn_atras.TabIndex = 5
+        Me.btn_atras.Text = "<---"
+        Me.btn_atras.UseVisualStyleBackColor = False
         '
-        'btn_tecladoExacto
+        'btn_exacto
         '
-        Me.btn_tecladoExacto.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_tecladoExacto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_tecladoExacto.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_tecladoExacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tecladoExacto.ForeColor = System.Drawing.Color.White
-        Me.btn_tecladoExacto.Location = New System.Drawing.Point(354, 104)
-        Me.btn_tecladoExacto.Name = "btn_tecladoExacto"
-        Me.btn_tecladoExacto.Size = New System.Drawing.Size(111, 96)
-        Me.btn_tecladoExacto.TabIndex = 4
-        Me.btn_tecladoExacto.Text = "Exacto"
-        Me.btn_tecladoExacto.UseVisualStyleBackColor = False
+        Me.btn_exacto.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_exacto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_exacto.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_exacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_exacto.ForeColor = System.Drawing.Color.White
+        Me.btn_exacto.Location = New System.Drawing.Point(354, 104)
+        Me.btn_exacto.Name = "btn_exacto"
+        Me.btn_exacto.Size = New System.Drawing.Size(111, 96)
+        Me.btn_exacto.TabIndex = 4
+        Me.btn_exacto.Text = "Exacto"
+        Me.btn_exacto.UseVisualStyleBackColor = False
         '
-        'btn_teclado_3
+        'btn_3
         '
-        Me.btn_teclado_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_3.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_3.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_3.Location = New System.Drawing.Point(237, 104)
-        Me.btn_teclado_3.Name = "btn_teclado_3"
-        Me.btn_teclado_3.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_3.TabIndex = 3
-        Me.btn_teclado_3.Text = "3"
-        Me.btn_teclado_3.UseVisualStyleBackColor = False
+        Me.btn_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_3.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_3.ForeColor = System.Drawing.Color.White
+        Me.btn_3.Location = New System.Drawing.Point(237, 104)
+        Me.btn_3.Name = "btn_3"
+        Me.btn_3.Size = New System.Drawing.Size(111, 96)
+        Me.btn_3.TabIndex = 3
+        Me.btn_3.Text = "3"
+        Me.btn_3.UseVisualStyleBackColor = False
         '
         'btn_1
         '
@@ -391,19 +391,19 @@ Partial Class tpvForm
         Me.lbl_introducido.TabIndex = 1
         Me.lbl_introducido.Text = "Introducido:"
         '
-        'btn_teclado_2
+        'btn_2
         '
-        Me.btn_teclado_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_2.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_2.Location = New System.Drawing.Point(120, 104)
-        Me.btn_teclado_2.Name = "btn_teclado_2"
-        Me.btn_teclado_2.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_2.TabIndex = 2
-        Me.btn_teclado_2.Text = "2"
-        Me.btn_teclado_2.UseVisualStyleBackColor = False
+        Me.btn_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_2.ForeColor = System.Drawing.Color.White
+        Me.btn_2.Location = New System.Drawing.Point(120, 104)
+        Me.btn_2.Name = "btn_2"
+        Me.btn_2.Size = New System.Drawing.Size(111, 96)
+        Me.btn_2.TabIndex = 2
+        Me.btn_2.Text = "2"
+        Me.btn_2.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel2
         '
@@ -902,22 +902,22 @@ Partial Class tpvForm
     Friend WithEvents tlp_tpv As TableLayoutPanel
     Friend WithEvents tlp_caja As TableLayoutPanel
     Friend WithEvents tlp_teclado As TableLayoutPanel
-    Friend WithEvents btn_teclado_0 As Button
-    Friend WithEvents btn_teclado_9 As Button
-    Friend WithEvents btn_teclado_8 As Button
-    Friend WithEvents btn_teclado_7 As Button
+    Friend WithEvents btn_0 As Button
+    Friend WithEvents btn_9 As Button
+    Friend WithEvents btn_8 As Button
+    Friend WithEvents btn_7 As Button
     Friend WithEvents btn_teclado_cobrar As Button
-    Friend WithEvents btn_teclado_coma As Button
-    Friend WithEvents btn_teclado_6 As Button
-    Friend WithEvents btn_teclado_5 As Button
-    Friend WithEvents btn_teclado_4 As Button
-    Friend WithEvents btn_teclado_restar As Button
-    Friend WithEvents btn_tecladoExacto As Button
-    Friend WithEvents btn_teclado_3 As Button
+    Friend WithEvents btn_coma As Button
+    Friend WithEvents btn_6 As Button
+    Friend WithEvents btn_5 As Button
+    Friend WithEvents btn_4 As Button
+    Friend WithEvents btn_atras As Button
+    Friend WithEvents btn_exacto As Button
+    Friend WithEvents btn_3 As Button
     Friend WithEvents btn_1 As Button
     Friend WithEvents txt_introducido As TextBox
     Friend WithEvents lbl_introducido As Label
-    Friend WithEvents btn_teclado_2 As Button
+    Friend WithEvents btn_2 As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
