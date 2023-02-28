@@ -181,29 +181,7 @@ Public Class GestionForm
     End Sub
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ' ** GESTIÓN EMPLELADOS **
+    ' ** GESTIÓN EMPLEADOS **
     ''' <summary>
     ''' Al cambiar el texto actualiza el dataGridView con los datos que coincidan
     ''' </summary>
@@ -228,8 +206,12 @@ Public Class GestionForm
         ' Mostramos la ventana GestionEmpleadosOnTop.
         GestionEmpleadosOnTop.ShowDialog()
 
+        'gestion_dataset.Tables("relacion").Clear()
+        'adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+
         gestion_dataset.Tables("relacion").Clear()
-        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+        adaptador_empleados.Fill(gestion_dataset, "relacion")
+
     End Sub
 
     ''' <summary>
