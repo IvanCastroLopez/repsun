@@ -122,7 +122,10 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub nic_surtidores_Click(sender As Object, e As EventArgs) Handles nic_surtidores.Click
-
+        Me.Visible = True
+        Me.WindowState = FormWindowState.Normal
+        Me.ShowInTaskbar = True
+        Me.nic_surtidores.Visible = False
     End Sub
 
 
