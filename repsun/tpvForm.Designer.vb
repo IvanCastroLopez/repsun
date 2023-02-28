@@ -23,6 +23,7 @@ Partial Class tpvForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.tlp_tpv = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tlp_caja = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_teclado = New System.Windows.Forms.TableLayoutPanel()
         Me.btn_teclado_0 = New System.Windows.Forms.Button()
@@ -37,14 +38,16 @@ Partial Class tpvForm
         Me.btn_teclado_restar = New System.Windows.Forms.Button()
         Me.btn_tecladoExacto = New System.Windows.Forms.Button()
         Me.btn_teclado_3 = New System.Windows.Forms.Button()
-        Me.btn_teclado_1 = New System.Windows.Forms.Button()
+        Me.btn_1 = New System.Windows.Forms.Button()
         Me.txt_introducido = New System.Windows.Forms.TextBox()
         Me.lbl_introducido = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btn_eliminarTodo = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.dgv_combustible = New System.Windows.Forms.DataGridView()
         Me.dgv_carrito = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.lbl_totalSinImpuestos = New System.Windows.Forms.Label()
         Me.lbl_impuestos = New System.Windows.Forms.Label()
         Me.lbl_Total = New System.Windows.Forms.Label()
@@ -71,13 +74,13 @@ Partial Class tpvForm
         Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
         Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.dgv_combustible = New System.Windows.Forms.DataGridView()
         Me.tlp_tpv.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -95,9 +98,6 @@ Partial Class tpvForm
         Me.tpg_comida.SuspendLayout()
         Me.tpg_bebida.SuspendLayout()
         Me.tpg_otros.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -117,6 +117,18 @@ Partial Class tpvForm
         Me.tlp_tpv.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334!))
         Me.tlp_tpv.Size = New System.Drawing.Size(1904, 1041)
         Me.tlp_tpv.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 167)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'tlp_caja
         '
@@ -156,7 +168,7 @@ Partial Class tpvForm
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_restar, 4, 2)
         Me.tlp_teclado.Controls.Add(Me.btn_tecladoExacto, 3, 2)
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_3, 2, 2)
-        Me.tlp_teclado.Controls.Add(Me.btn_teclado_1, 0, 2)
+        Me.tlp_teclado.Controls.Add(Me.btn_1, 0, 2)
         Me.tlp_teclado.Controls.Add(Me.txt_introducido, 0, 1)
         Me.tlp_teclado.Controls.Add(Me.lbl_introducido, 0, 0)
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_2, 1, 2)
@@ -341,19 +353,19 @@ Partial Class tpvForm
         Me.btn_teclado_3.Text = "3"
         Me.btn_teclado_3.UseVisualStyleBackColor = False
         '
-        'btn_teclado_1
+        'btn_1
         '
-        Me.btn_teclado_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_teclado_1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_teclado_1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_teclado_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_teclado_1.ForeColor = System.Drawing.Color.White
-        Me.btn_teclado_1.Location = New System.Drawing.Point(3, 104)
-        Me.btn_teclado_1.Name = "btn_teclado_1"
-        Me.btn_teclado_1.Size = New System.Drawing.Size(111, 96)
-        Me.btn_teclado_1.TabIndex = 0
-        Me.btn_teclado_1.Text = "1"
-        Me.btn_teclado_1.UseVisualStyleBackColor = False
+        Me.btn_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_1.ForeColor = System.Drawing.Color.White
+        Me.btn_1.Location = New System.Drawing.Point(3, 104)
+        Me.btn_1.Name = "btn_1"
+        Me.btn_1.Size = New System.Drawing.Size(111, 96)
+        Me.btn_1.TabIndex = 0
+        Me.btn_1.Text = "1"
+        Me.btn_1.UseVisualStyleBackColor = False
         '
         'txt_introducido
         '
@@ -399,9 +411,9 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Button1, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminarTodo, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button2, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminar, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_totalSinImpuestos, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_impuestos, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_Total, 0, 5)
@@ -419,6 +431,43 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
         Me.TableLayoutPanel2.TabIndex = 1
         '
+        'btn_eliminarTodo
+        '
+        Me.btn_eliminarTodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_eliminarTodo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_eliminarTodo.FlatAppearance.BorderSize = 0
+        Me.btn_eliminarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_eliminarTodo.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminarTodo.Location = New System.Drawing.Point(210, 3)
+        Me.btn_eliminarTodo.Name = "btn_eliminarTodo"
+        Me.btn_eliminarTodo.Size = New System.Drawing.Size(201, 70)
+        Me.btn_eliminarTodo.TabIndex = 1
+        Me.btn_eliminarTodo.Text = "Eliminar todo"
+        Me.btn_eliminarTodo.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Panel1, 3)
+        Me.Panel1.Controls.Add(Me.dgv_combustible)
+        Me.Panel1.Controls.Add(Me.dgv_carrito)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 79)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(617, 301)
+        Me.Panel1.TabIndex = 3
+        '
+        'dgv_combustible
+        '
+        Me.dgv_combustible.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_combustible.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.dgv_combustible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_combustible.ColumnHeadersVisible = False
+        Me.dgv_combustible.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_combustible.Location = New System.Drawing.Point(0, 269)
+        Me.dgv_combustible.Name = "dgv_combustible"
+        Me.dgv_combustible.Size = New System.Drawing.Size(617, 32)
+        Me.dgv_combustible.TabIndex = 1
+        '
         'dgv_carrito
         '
         Me.dgv_carrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -430,33 +479,19 @@ Partial Class tpvForm
         Me.dgv_carrito.Size = New System.Drawing.Size(617, 301)
         Me.dgv_carrito.TabIndex = 0
         '
-        'Button1
+        'btn_eliminar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(210, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(201, 70)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Eliminar todo"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(417, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(203, 70)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Eliminar"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_eliminar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_eliminar.FlatAppearance.BorderSize = 0
+        Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_eliminar.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminar.Location = New System.Drawing.Point(417, 3)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(203, 70)
+        Me.btn_eliminar.TabIndex = 2
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = False
         '
         'lbl_totalSinImpuestos
         '
@@ -820,41 +855,6 @@ Partial Class tpvForm
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
-        'Panel1
-        '
-        Me.TableLayoutPanel2.SetColumnSpan(Me.Panel1, 3)
-        Me.Panel1.Controls.Add(Me.dgv_combustible)
-        Me.Panel1.Controls.Add(Me.dgv_carrito)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 79)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(617, 301)
-        Me.Panel1.TabIndex = 3
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(173, 167)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
-        'dgv_combustible
-        '
-        Me.dgv_combustible.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgv_combustible.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.dgv_combustible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_combustible.ColumnHeadersVisible = False
-        Me.dgv_combustible.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgv_combustible.Location = New System.Drawing.Point(0, 269)
-        Me.dgv_combustible.Name = "dgv_combustible"
-        Me.dgv_combustible.Size = New System.Drawing.Size(617, 32)
-        Me.dgv_combustible.TabIndex = 1
-        '
         'tpvForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -866,11 +866,14 @@ Partial Class tpvForm
         Me.Text = "tpvForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_tpv.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlp_caja.ResumeLayout(False)
         Me.tlp_teclado.ResumeLayout(False)
         Me.tlp_teclado.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -892,9 +895,6 @@ Partial Class tpvForm
         Me.tpg_comida.ResumeLayout(False)
         Me.tpg_bebida.ResumeLayout(False)
         Me.tpg_otros.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -914,7 +914,7 @@ Partial Class tpvForm
     Friend WithEvents btn_teclado_restar As Button
     Friend WithEvents btn_tecladoExacto As Button
     Friend WithEvents btn_teclado_3 As Button
-    Friend WithEvents btn_teclado_1 As Button
+    Friend WithEvents btn_1 As Button
     Friend WithEvents txt_introducido As TextBox
     Friend WithEvents lbl_introducido As Label
     Friend WithEvents btn_teclado_2 As Button
@@ -927,8 +927,8 @@ Partial Class tpvForm
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents dgv_carrito As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btn_eliminarTodo As Button
+    Friend WithEvents btn_eliminar As Button
     Friend WithEvents lbl_totalSinImpuestos As Label
     Friend WithEvents lbl_impuestos As Label
     Friend WithEvents lbl_Total As Label
