@@ -96,6 +96,9 @@ Partial Class GestionForm
         Me.Label16 = New System.Windows.Forms.Label()
         Me.dgv_clientes = New System.Windows.Forms.DataGridView()
         Me.tlp_categorias = New System.Windows.Forms.TableLayoutPanel()
+        Me.btn_proveedores = New System.Windows.Forms.Button()
+        Me.btn_empleados = New System.Windows.Forms.Button()
+        Me.btn_tienda = New System.Windows.Forms.Button()
         Me.pbx_icon = New System.Windows.Forms.PictureBox()
         Me.pbx_salir = New System.Windows.Forms.PictureBox()
         Me.lbl_combustible = New System.Windows.Forms.Label()
@@ -103,14 +106,11 @@ Partial Class GestionForm
         Me.lbl_Empleados = New System.Windows.Forms.Label()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
         Me.lbl_clientes = New System.Windows.Forms.Label()
+        Me.btn_combustible = New System.Windows.Forms.Button()
+        Me.btn_clientes = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsb_registroAccesos = New System.Windows.Forms.ToolStripButton()
         Me.tsb_registroErrores = New System.Windows.Forms.ToolStripButton()
-        Me.btn_combustible = New System.Windows.Forms.Button()
-        Me.btn_tienda = New System.Windows.Forms.Button()
-        Me.btn_empleados = New System.Windows.Forms.Button()
-        Me.btn_proveedores = New System.Windows.Forms.Button()
-        Me.btn_clientes = New System.Windows.Forms.Button()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
@@ -1298,6 +1298,48 @@ Partial Class GestionForm
         Me.tlp_categorias.Size = New System.Drawing.Size(93, 584)
         Me.tlp_categorias.TabIndex = 0
         '
+        'btn_proveedores
+        '
+        Me.btn_proveedores.BackgroundImage = Global.repsun.My.Resources.Resources.Proveedores
+        Me.btn_proveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_proveedores.FlatAppearance.BorderSize = 0
+        Me.btn_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_proveedores.Location = New System.Drawing.Point(6, 376)
+        Me.btn_proveedores.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_proveedores.Name = "btn_proveedores"
+        Me.btn_proveedores.Size = New System.Drawing.Size(81, 29)
+        Me.btn_proveedores.TabIndex = 13
+        Me.btn_proveedores.UseVisualStyleBackColor = True
+        '
+        'btn_empleados
+        '
+        Me.btn_empleados.BackgroundImage = Global.repsun.My.Resources.Resources.Empleados
+        Me.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_empleados.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_empleados.FlatAppearance.BorderSize = 0
+        Me.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_empleados.Location = New System.Drawing.Point(6, 294)
+        Me.btn_empleados.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_empleados.Name = "btn_empleados"
+        Me.btn_empleados.Size = New System.Drawing.Size(81, 29)
+        Me.btn_empleados.TabIndex = 13
+        Me.btn_empleados.UseVisualStyleBackColor = True
+        '
+        'btn_tienda
+        '
+        Me.btn_tienda.BackgroundImage = Global.repsun.My.Resources.Resources.Tienda
+        Me.btn_tienda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_tienda.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_tienda.FlatAppearance.BorderSize = 0
+        Me.btn_tienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tienda.Location = New System.Drawing.Point(6, 212)
+        Me.btn_tienda.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_tienda.Name = "btn_tienda"
+        Me.btn_tienda.Size = New System.Drawing.Size(81, 29)
+        Me.btn_tienda.TabIndex = 13
+        Me.btn_tienda.UseVisualStyleBackColor = True
+        '
         'pbx_icon
         '
         Me.pbx_icon.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1382,6 +1424,34 @@ Partial Class GestionForm
         Me.lbl_clientes.TabIndex = 11
         Me.lbl_clientes.Text = "Clientes"
         '
+        'btn_combustible
+        '
+        Me.btn_combustible.BackgroundImage = Global.repsun.My.Resources.Resources.Combustible
+        Me.btn_combustible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_combustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_combustible.FlatAppearance.BorderSize = 0
+        Me.btn_combustible.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_combustible.Location = New System.Drawing.Point(6, 130)
+        Me.btn_combustible.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_combustible.Name = "btn_combustible"
+        Me.btn_combustible.Size = New System.Drawing.Size(81, 29)
+        Me.btn_combustible.TabIndex = 12
+        Me.btn_combustible.UseVisualStyleBackColor = True
+        '
+        'btn_clientes
+        '
+        Me.btn_clientes.BackgroundImage = Global.repsun.My.Resources.Resources.Clientes
+        Me.btn_clientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_clientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_clientes.FlatAppearance.BorderSize = 0
+        Me.btn_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_clientes.Location = New System.Drawing.Point(6, 458)
+        Me.btn_clientes.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_clientes.Name = "btn_clientes"
+        Me.btn_clientes.Size = New System.Drawing.Size(81, 29)
+        Me.btn_clientes.TabIndex = 14
+        Me.btn_clientes.UseVisualStyleBackColor = True
+        '
         'ToolStrip1
         '
         Me.tlp_gestion.SetColumnSpan(Me.ToolStrip1, 2)
@@ -1410,76 +1480,6 @@ Partial Class GestionForm
         Me.tsb_registroErrores.Name = "tsb_registroErrores"
         Me.tsb_registroErrores.Size = New System.Drawing.Size(47, 19)
         Me.tsb_registroErrores.Text = "Errores"
-        '
-        'btn_combustible
-        '
-        Me.btn_combustible.BackgroundImage = Global.repsun.My.Resources.Resources.Combustible
-        Me.btn_combustible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_combustible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_combustible.FlatAppearance.BorderSize = 0
-        Me.btn_combustible.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_combustible.Location = New System.Drawing.Point(6, 130)
-        Me.btn_combustible.Margin = New System.Windows.Forms.Padding(6)
-        Me.btn_combustible.Name = "btn_combustible"
-        Me.btn_combustible.Size = New System.Drawing.Size(81, 29)
-        Me.btn_combustible.TabIndex = 12
-        Me.btn_combustible.UseVisualStyleBackColor = True
-        '
-        'btn_tienda
-        '
-        Me.btn_tienda.BackgroundImage = Global.repsun.My.Resources.Resources.Tienda
-        Me.btn_tienda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_tienda.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_tienda.FlatAppearance.BorderSize = 0
-        Me.btn_tienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tienda.Location = New System.Drawing.Point(6, 212)
-        Me.btn_tienda.Margin = New System.Windows.Forms.Padding(6)
-        Me.btn_tienda.Name = "btn_tienda"
-        Me.btn_tienda.Size = New System.Drawing.Size(81, 29)
-        Me.btn_tienda.TabIndex = 13
-        Me.btn_tienda.UseVisualStyleBackColor = True
-        '
-        'btn_empleados
-        '
-        Me.btn_empleados.BackgroundImage = Global.repsun.My.Resources.Resources.Empleados
-        Me.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_empleados.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_empleados.FlatAppearance.BorderSize = 0
-        Me.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_empleados.Location = New System.Drawing.Point(6, 294)
-        Me.btn_empleados.Margin = New System.Windows.Forms.Padding(6)
-        Me.btn_empleados.Name = "btn_empleados"
-        Me.btn_empleados.Size = New System.Drawing.Size(81, 29)
-        Me.btn_empleados.TabIndex = 13
-        Me.btn_empleados.UseVisualStyleBackColor = True
-        '
-        'btn_proveedores
-        '
-        Me.btn_proveedores.BackgroundImage = Global.repsun.My.Resources.Resources.Proveedores
-        Me.btn_proveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_proveedores.FlatAppearance.BorderSize = 0
-        Me.btn_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_proveedores.Location = New System.Drawing.Point(6, 376)
-        Me.btn_proveedores.Margin = New System.Windows.Forms.Padding(6)
-        Me.btn_proveedores.Name = "btn_proveedores"
-        Me.btn_proveedores.Size = New System.Drawing.Size(81, 29)
-        Me.btn_proveedores.TabIndex = 13
-        Me.btn_proveedores.UseVisualStyleBackColor = True
-        '
-        'btn_clientes
-        '
-        Me.btn_clientes.BackgroundImage = Global.repsun.My.Resources.Resources.Clientes
-        Me.btn_clientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_clientes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_clientes.FlatAppearance.BorderSize = 0
-        Me.btn_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_clientes.Location = New System.Drawing.Point(6, 458)
-        Me.btn_clientes.Margin = New System.Windows.Forms.Padding(6)
-        Me.btn_clientes.Name = "btn_clientes"
-        Me.btn_clientes.Size = New System.Drawing.Size(81, 29)
-        Me.btn_clientes.TabIndex = 14
-        Me.btn_clientes.UseVisualStyleBackColor = True
         '
         'GestionForm
         '

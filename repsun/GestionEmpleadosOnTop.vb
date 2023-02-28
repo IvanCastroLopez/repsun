@@ -51,7 +51,6 @@ Public Class GestionEmpleadosOnTop
 
     Public Sub GestionEmpleados_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         empleadoUpdate = Nothing
-        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
