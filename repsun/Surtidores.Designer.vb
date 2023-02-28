@@ -82,6 +82,7 @@ Partial Class Surtidores
         '
         Me.pbx_coche1.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_coche1.Enabled = False
         Me.pbx_coche1.Location = New System.Drawing.Point(287, 104)
         Me.pbx_coche1.Name = "pbx_coche1"
         Me.pbx_coche1.Size = New System.Drawing.Size(562, 298)
@@ -93,6 +94,7 @@ Partial Class Surtidores
         '
         Me.pbx_coche2.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_coche2.Enabled = False
         Me.pbx_coche2.Location = New System.Drawing.Point(1044, 104)
         Me.pbx_coche2.Name = "pbx_coche2"
         Me.pbx_coche2.Size = New System.Drawing.Size(562, 298)
@@ -104,6 +106,7 @@ Partial Class Surtidores
         '
         Me.pbx_coche3.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_coche3.Enabled = False
         Me.pbx_coche3.Location = New System.Drawing.Point(287, 611)
         Me.pbx_coche3.Name = "pbx_coche3"
         Me.pbx_coche3.Size = New System.Drawing.Size(562, 298)
@@ -115,12 +118,17 @@ Partial Class Surtidores
         '
         Me.pbx_coche4.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_coche4.Enabled = False
         Me.pbx_coche4.Location = New System.Drawing.Point(1044, 611)
         Me.pbx_coche4.Name = "pbx_coche4"
         Me.pbx_coche4.Size = New System.Drawing.Size(562, 298)
         Me.pbx_coche4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_coche4.TabIndex = 4
         Me.pbx_coche4.TabStop = False
+        '
+        'tmr_timer
+        '
+        Me.tmr_timer.Interval = 1000
         '
         'Surtidores
         '
