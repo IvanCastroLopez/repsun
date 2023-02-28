@@ -52,7 +52,6 @@ Public Class GestionProductosOnTop
 
     Public Sub GestionProductosOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         productoUpdate = Nothing
-        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
@@ -111,7 +110,6 @@ Public Class GestionProductosOnTop
             End Try
             ' Mostramos un mensaje de éxito.
             MessageBox.Show("Producto modificado con éxito.")
-            GestionForm.actualizarDataGridView()
         End If
 
     End Sub

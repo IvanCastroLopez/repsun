@@ -114,7 +114,6 @@ Public Class ClientesOnTop
             End Try
             ' Mostramos un mensaje de éxito.
             MessageBox.Show("Cliente modificado con éxito.")
-            GestionForm.actualizarDataGridView()
         End If
 
     End Sub

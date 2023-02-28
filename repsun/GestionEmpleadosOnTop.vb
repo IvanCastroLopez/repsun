@@ -51,7 +51,6 @@ Public Class GestionEmpleadosOnTop
 
     Public Sub GestionEmpleados_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         empleadoUpdate = Nothing
-        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
@@ -65,7 +64,7 @@ Public Class GestionEmpleadosOnTop
             Dim consulta As New OleDbCommand("SELECT COUNT(*) FROM Empleado WHERE cod_empleado = @cod", conexion)
             consulta.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
             ' Ejecutamos el comando y almacenamos el resultado en la variable resultado.
-            resultado = 0
+            resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado = 0 Then
                 If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado.Text) Then

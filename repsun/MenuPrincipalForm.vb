@@ -1,4 +1,12 @@
-﻿Public Class MenuPrincipalForm
+﻿Imports System.Data.OleDb
+
+Public Class MenuPrincipalForm
+    Public usuarioConectado As String = LoginForm.userConnected
+    Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
+    Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
+    Public adaptador_usuarios As New OleDbDataAdapter("Select * from Usuarios", conexion)
+    Public midataset As New DataSet
+
     Public imgDefault, imgCliente, imgTienda, imgGestion, imgSurtidores, imgSalir As Image
     Private Sub MenuPrincipalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -11,6 +19,38 @@
             imgSalir = Image.FromFile("Imagenes\MenuVisual\Salir.png")
         Catch ex As Exception
             Registros.GrabarError("Hubo un problema al cargar las imagenes", "Error Imagenes")
+        End Try
+
+        ' Comprobando roles
+        Try
+            Dim rol As String
+            Dim query As String = "SELECT e.rol FROM Empleado e INNER JOIN Usuarios u ON e.cod_empleado = u.cod_empleado WHERE u.nombre_usuario = @nom"
+            Dim comando As New OleDbCommand(query, conexion)
+            comando.Parameters.AddWithValue("@nom", usuarioConectado)
+            Dim reader As OleDbDataReader = comando.ExecuteReader
+            ' Cambio de todos los editText
+            If reader.Read Then
+                rol = reader("rol").ToString()
+            End If
+
+            If rol = "Encargado" Then
+                btn_gestion.Enabled = True
+                btn_zonaClientes.Enabled = True
+                btn_surtidores.Enabled = True
+                btn_tpv.Enabled = True
+            ElseIf rol = "Empleado" Then
+                btn_gestion.Enabled = False
+                btn_zonaClientes.Enabled = True
+                btn_surtidores.Enabled = True
+                btn_tpv.Enabled = True
+            ElseIf rol = "Mantenimiento" Then
+                btn_gestion.Enabled = True
+                btn_zonaClientes.Enabled = False
+                btn_surtidores.Enabled = False
+                btn_tpv.Enabled = False
+            End If
+        Catch ex As Exception
+
         End Try
     End Sub
 

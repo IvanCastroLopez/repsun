@@ -277,6 +277,10 @@
     <Content Include="bin\Debug\Imagenes\Surtidores\rojo.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\verde.png" />
     <Content Include="bin\Debug\Imagenes\Surtidores\vistaSurtidores.png" />
+    <Content Include="bin\Debug\Imagenes\TPV\Combustibles\diesel-a-plus.png" />
+    <Content Include="bin\Debug\Imagenes\TPV\Combustibles\diesel-a.png" />
+    <Content Include="bin\Debug\Imagenes\TPV\Combustibles\sin-plomo-95.png" />
+    <Content Include="bin\Debug\Imagenes\TPV\Combustibles\sin-plomo-98.png" />
     <Content Include="bin\Debug\registros\accesos\RegistroAccesos.txt" />
     <Content Include="bin\Debug\registros\errores\RegistroErrores.txt" />
   </ItemGroup>

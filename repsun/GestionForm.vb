@@ -7,7 +7,7 @@ Public Class GestionForm
     Public adaptador_tienda As New OleDbDataAdapter("Select cod_producto, nombre, categoria, precio from Producto", conexion)
     Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
     Public adaptador_usuarios As New OleDbDataAdapter("Select * from Usuarios", conexion)
-    Public empleados_usuarios As New OleDbDataAdapter("Select empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin from Empleado, Usuarios where empleado.cod_empleado = usuarios.cod_empleado", conexion)
+    Public relacion As New OleDbDataAdapter("Select empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin from Empleado, Usuarios where empleado.cod_empleado = usuarios.cod_empleado", conexion)
     Public adaptador_proveedores As New OleDbDataAdapter("Select * from Proveedor", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
@@ -19,9 +19,9 @@ Public Class GestionForm
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleados")
         adaptador_usuarios.Fill(gestion_dataset, "Usuarios")
-        empleados_usuarios.Fill(gestion_dataset, "relacion")
+        relacion.Fill(gestion_dataset, "relacion")
 
-        gestion_dataset.Relations.Add("empleados_usuarios", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
+        gestion_dataset.Relations.Add("relacion", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
 
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
         adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
@@ -46,25 +46,6 @@ Public Class GestionForm
 
 
 
-
-    Public Sub actualizarDataGridView()
-
-        gestion_dataset.Tables("Producto").Clear()
-        adaptador_tienda.Fill(gestion_dataset, "Producto")
-
-        gestion_dataset.Tables("Empleado, Usuarios").Clear()
-        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
-
-        gestion_dataset.Tables("Proveedor").Clear()
-        adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
-
-        gestion_dataset.Tables("ClienteRepsol").Clear()
-        adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
-
-        ' No es necesario vaciar los DataMembers de los DataGridView
-        ' ya que los DataTables que se asignan están actualizados
-
-    End Sub
 
     Public Sub actualizarAjusesCombustible()
 
@@ -100,6 +81,10 @@ Public Class GestionForm
 
         ' Mostramos la ventana GestionProductosOnTop.
         GestionProductosOnTop.ShowDialog()
+
+        ' Las siguientes líneas de código se ejecutarán después de que se cierre el formulario GestionProductosOnTop.
+        gestion_dataset.Tables("Producto").Clear()
+        adaptador_tienda.Fill(gestion_dataset, "Producto")
     End Sub
 
     ''' <summary>
@@ -131,6 +116,11 @@ Public Class GestionForm
             If resultado > 0 Then
                 ' La variable codigo existe dentro de la columna cod_producto de la tabla Producto.
                 GestionProductosOnTop.ShowDialog()
+
+
+                ' Las siguientes líneas de código se ejecutarán después de que se cierre el formulario GestionProductosOnTop.
+                gestion_dataset.Tables("Producto").Clear()
+                adaptador_tienda.Fill(gestion_dataset, "Producto")
             Else
                 ' La variable codigo no existe dentro de la columna cod_producto de la tabla Producto.
                 Registros.GrabarError("El código introducido no existe en la base de datos", "El producto seleccionado no existe")
@@ -173,7 +163,9 @@ Public Class GestionForm
                     ' Ejecutamos el comando para eliminar el producto.
                     comando.ExecuteNonQuery()
                     ' Actualizamos el DataGridView después de eliminar el producto.
-                    actualizarDataGridView()
+
+                    gestion_dataset.Tables("Producto").Clear()
+                    adaptador_tienda.Fill(gestion_dataset, "Producto")
                 Catch ex As Exception
                     ' Si se produce un error, mostramos un mensaje de error.
                     Registros.GrabarError("Ha ocurrido un error eliminando el producto seleccionado", "Error eliminando producto")
@@ -235,6 +227,9 @@ Public Class GestionForm
         GestionEmpleadosOnTop.booleanCrear = True
         ' Mostramos la ventana GestionEmpleadosOnTop.
         GestionEmpleadosOnTop.ShowDialog()
+
+        gestion_dataset.Tables("relacion").Clear()
+        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
     End Sub
 
     ''' <summary>
@@ -266,6 +261,9 @@ Public Class GestionForm
             If resultado > 0 Then
                 ' La variable empleadoUpdate existe dentro de la columna cod_empleado de la tabla Empleado.
                 GestionEmpleadosOnTop.ShowDialog()
+
+                gestion_dataset.Tables("relacion").Clear()
+                adaptador_empleados.Fill(gestion_dataset, "relacion")
             Else
                 ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
                 Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
@@ -313,7 +311,9 @@ Public Class GestionForm
                         comando1.ExecuteNonQuery()
                         comando.ExecuteNonQuery()
                         ' Actualizamos el DataGridView después de eliminar el empleado.
-                        actualizarDataGridView()
+
+                        gestion_dataset.Tables("relacion").Clear()
+                        adaptador_empleados.Fill(gestion_dataset, "relacion")
                     Catch ex As Exception
                         ' Si se produce un error, mostramos un mensaje de error.
                         Registros.GrabarError("Ha ocurrido un error eliminando el empleado seleccionado", "Error eliminando empleado")
@@ -375,7 +375,8 @@ Public Class GestionForm
 
         ' Mostramos la ventana GestionProveedoresOnTop.     
         GestionProveedoresOnTop.ShowDialog()
-        actualizarDataGridView()
+        gestion_dataset.Tables("Proveedor").Clear()
+        adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
     End Sub
 
     ''' <summary>
@@ -405,6 +406,8 @@ Public Class GestionForm
             If resultado > 0 Then
                 ' La variable codigo existe dentro de la columna nombre_emp de la tabla proveedor.
                 GestionProveedoresOnTop.ShowDialog()
+                gestion_dataset.Tables("Proveedor").Clear()
+                adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
             Else
                 ' La variable codigo no existe dentro de la columna nombre_emp de la tabla proveedor.
                 Registros.GrabarError("El código introducido no existe en la base de datos", "El proveedor seleccionado no existe")
@@ -447,7 +450,8 @@ Public Class GestionForm
                     ' Ejecutamos el comando para eliminar el proveedor.
                     comando.ExecuteNonQuery()
                     ' Actualizamos el DataGridView después de eliminar el proveedor.
-                    actualizarDataGridView()
+                    gestion_dataset.Tables("Proveedor").Clear()
+                    adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
                 Catch ex As Exception
                     ' Si se produce un error, mostramos un mensaje de error.
                     Registros.GrabarError("Ha ocurrido un error eliminando el proveedor seleccionado", "Error eliminando proveedor")
@@ -496,7 +500,8 @@ Public Class GestionForm
         ClientesOnTop.booleanCrear = True
         ' Mostramos la ventana GestionEmpleadosOnTop.
         ClientesOnTop.ShowDialog()
-        actualizarDataGridView()
+        gestion_dataset.Tables("ClienteRepsol").Clear()
+        adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
     End Sub
 
     ''' <summary>
@@ -528,6 +533,8 @@ Public Class GestionForm
             If resultado > 0 Then
                 ' La variable clienteUpdate existe dentro de la columna cod_cliente de la tabla cliente.
                 ClientesOnTop.ShowDialog()
+                gestion_dataset.Tables("ClienteRepsol").Clear()
+                adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
             Else
                 ' La variable clienteUpdate no existe dentro de la columna cod_cliente de la tabla cliente.
                 Registros.GrabarError("El código introducido no existe en la base de datos", "El cliente seleccionado no existe")
@@ -569,7 +576,8 @@ Public Class GestionForm
                     ' Ejecutamos el comando para eliminar el cliente.
                     comando.ExecuteNonQuery()
                     ' Actualizamos el DataGridView después de eliminar el cliente.
-                    actualizarDataGridView()
+                    gestion_dataset.Tables("ClienteRepsol").Clear()
+                    adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
                 Catch ex As Exception
                     ' Si se produce un error, mostramos un mensaje de error.
                     MsgBox("Ha ocurrido un error")
@@ -690,30 +698,30 @@ Public Class GestionForm
     End Sub
 
     ' ** BOTONES CATEGORÍAS **
-    Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
+    Private Sub btn_combustible_Click(sender As Object, e As EventArgs) Handles btn_combustible.Click
         ' Selecciona la pestaña "Combustible" (índice 0) en el control TabControl.
         tbc_gestion.SelectTab(0)
     End Sub
-
-    Private Sub pbx_tienda_Click(sender As Object, e As EventArgs) Handles pbx_tienda.Click
+    Private Sub btn_tienda_Click(sender As Object, e As EventArgs) Handles btn_tienda.Click
         ' Selecciona la pestaña "Tienda" (índice 1) en el control TabControl.
         tbc_gestion.SelectTab(1)
     End Sub
 
-    Private Sub pbx_empleados_Click(sender As Object, e As EventArgs) Handles pbx_empleados.Click
+    Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
         ' Selecciona la pestaña "Empleados" (índice 2) en el control TabControl.
         tbc_gestion.SelectTab(2)
     End Sub
 
-    Private Sub pbx_proveedores_Click(sender As Object, e As EventArgs) Handles pbx_proveedores.Click
+    Private Sub btn_proveedores_Click(sender As Object, e As EventArgs) Handles btn_proveedores.Click
         ' Selecciona la pestaña "Proveedores" (índice 3) en el control TabControl.
         tbc_gestion.SelectTab(3)
     End Sub
 
-    Private Sub pbx_clientes_Click(sender As Object, e As EventArgs) Handles pbx_clientes.Click
+    Private Sub btn_clientes_Click(sender As Object, e As EventArgs) Handles btn_clientes.Click
         ' Selecciona la pestaña "Clientes" (índice 4) en el control TabControl.
         tbc_gestion.SelectTab(4)
     End Sub
+
 
     ' ** BOTONES TOOLSTRIPMENU **
     Private Sub tsb_registroAccesos_Click(sender As Object, e As EventArgs) Handles tsb_registroAccesos.Click

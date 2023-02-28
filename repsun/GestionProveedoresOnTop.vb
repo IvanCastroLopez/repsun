@@ -54,7 +54,6 @@ Public Class GestionProveedoresOnTop
 
     Public Sub GestionProveedoresOnTop_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         empresaUpdate = ""
-        GestionForm.actualizarDataGridView()
         conexion.Close()
     End Sub
 
@@ -88,7 +87,6 @@ Public Class GestionProveedoresOnTop
                     End Try
                     ' Mostramos un mensaje de éxito.
                     MessageBox.Show("proveedor creado con éxito.")
-                    GestionForm.actualizarDataGridView()
                 Else
                     ' La variable codigo no existe dentro de la columna nombre_emp de la tabla proveedor.
                     Registros.GrabarError("El código introducido ya existe en la base de datos", "El codigo de proveedor ya existe")

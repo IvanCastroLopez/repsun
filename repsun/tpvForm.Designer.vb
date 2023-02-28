@@ -41,20 +41,59 @@ Partial Class tpvForm
         Me.txt_introducido = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.dgv_carrito = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_Total = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_sp95 = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_sp98 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pbx_diesela = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_diesela_plus = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.tbc_tienda = New System.Windows.Forms.TabControl()
+        Me.tpg_comida = New System.Windows.Forms.TabPage()
+        Me.tlp_Comida = New System.Windows.Forms.TableLayoutPanel()
+        Me.tpg_bebida = New System.Windows.Forms.TabPage()
+        Me.tpg_otros = New System.Windows.Forms.TabPage()
+        Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
+        CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel5.SuspendLayout()
+        CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel6.SuspendLayout()
+        CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
+        Me.tbc_tienda.SuspendLayout()
+        Me.tpg_comida.SuspendLayout()
+        Me.tpg_bebida.SuspendLayout()
+        Me.tpg_otros.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -81,6 +120,7 @@ Partial Class tpvForm
         Me.tlp_caja.ColumnCount = 1
         Me.tlp_caja.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_caja.Controls.Add(Me.tlp_teclado, 0, 1)
+        Me.tlp_caja.Controls.Add(Me.TableLayoutPanel2, 0, 0)
         Me.tlp_caja.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_caja.Location = New System.Drawing.Point(1272, 3)
         Me.tlp_caja.Name = "tlp_caja"
@@ -349,6 +389,103 @@ Partial Class tpvForm
         Me.btn_teclado_2.Text = "2"
         Me.btn_teclado_2.UseVisualStyleBackColor = False
         '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 3
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.Controls.Add(Me.dgv_carrito, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Button1, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Button2, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_Total, 0, 5)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 6
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.5!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
+        Me.TableLayoutPanel2.TabIndex = 1
+        '
+        'dgv_carrito
+        '
+        Me.dgv_carrito.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.dgv_carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_carrito, 3)
+        Me.dgv_carrito.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_carrito.Location = New System.Drawing.Point(3, 79)
+        Me.dgv_carrito.Name = "dgv_carrito"
+        Me.dgv_carrito.Size = New System.Drawing.Size(617, 301)
+        Me.dgv_carrito.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(210, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(201, 70)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Eliminar todo"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(417, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(203, 70)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Eliminar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Label2, 3)
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 383)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(190, 30)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Total sin impuestos"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Label3, 3)
+        Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 444)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(114, 30)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Impuestos:"
+        '
+        'lbl_Total
+        '
+        Me.lbl_Total.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.lbl_Total, 3)
+        Me.lbl_Total.Font = New System.Drawing.Font("Yu Gothic UI", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Total.Location = New System.Drawing.Point(3, 520)
+        Me.lbl_Total.Name = "lbl_Total"
+        Me.lbl_Total.Size = New System.Drawing.Size(92, 40)
+        Me.lbl_Total.TabIndex = 6
+        Me.lbl_Total.Text = "Total: "
+        '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -378,6 +515,7 @@ Partial Class tpvForm
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TabPage1.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 46)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -385,11 +523,198 @@ Partial Class tpvForm
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Combustible"
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TableLayoutPanel1.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TableLayoutPanel1.ColumnCount = 5
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 3, 3)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 5
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1249, 806)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.pbx_sp95, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 1)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(116, 76)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 2
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel4.TabIndex = 2
+        '
+        'pbx_sp95
+        '
+        Me.pbx_sp95.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.pbx_sp95.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp95.Image = Global.repsun.My.Resources.Resources.sin_plomo_95
+        Me.pbx_sp95.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_sp95.Name = "pbx_sp95"
+        Me.pbx_sp95.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp95.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_sp95.TabIndex = 0
+        Me.pbx_sp95.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(135, 229)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(178, 37)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Sin plomo 95"
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel3.ColumnCount = 1
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.pbx_sp98, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label4, 0, 1)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(683, 76)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel3.TabIndex = 0
+        '
+        'pbx_sp98
+        '
+        Me.pbx_sp98.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.pbx_sp98.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp98.Image = Global.repsun.My.Resources.Resources.sin_plomo_98
+        Me.pbx_sp98.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_sp98.Name = "pbx_sp98"
+        Me.pbx_sp98.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp98.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_sp98.TabIndex = 0
+        Me.pbx_sp98.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(135, 229)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(178, 37)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Sin plomo 98"
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel5.ColumnCount = 1
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.Label6, 0, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.pbx_diesela, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(116, 442)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 2
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel5.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(179, 229)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(90, 37)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Diesel"
+        '
+        'pbx_diesela
+        '
+        Me.pbx_diesela.BackColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.pbx_diesela.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela.Image = Global.repsun.My.Resources.Resources.diesel_a
+        Me.pbx_diesela.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_diesela.Name = "pbx_diesela"
+        Me.pbx_diesela.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_diesela.TabIndex = 0
+        Me.pbx_diesela.TabStop = False
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel6.ColumnCount = 1
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.pbx_diesela_plus, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label7, 0, 1)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(683, 442)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel6.TabIndex = 4
+        '
+        'pbx_diesela_plus
+        '
+        Me.pbx_diesela_plus.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.pbx_diesela_plus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela_plus.Image = Global.repsun.My.Resources.Resources.diesel_a_plus
+        Me.pbx_diesela_plus.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_diesela_plus.Name = "pbx_diesela_plus"
+        Me.pbx_diesela_plus.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela_plus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_diesela_plus.TabIndex = 0
+        Me.pbx_diesela_plus.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Location = New System.Drawing.Point(166, 229)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(116, 37)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Diesel +"
+        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.TabPage2.Controls.Add(Me.TabControl2)
+        Me.TabPage2.Controls.Add(Me.tbc_tienda)
         Me.TabPage2.Location = New System.Drawing.Point(4, 46)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -397,36 +722,110 @@ Partial Class tpvForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Tienda"
         '
-        'TabControl2
+        'tbc_tienda
         '
-        Me.TabControl2.Controls.Add(Me.TabPage3)
-        Me.TabControl2.Controls.Add(Me.TabPage4)
-        Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl2.Location = New System.Drawing.Point(3, 3)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1249, 806)
-        Me.TabControl2.TabIndex = 0
+        Me.tbc_tienda.Controls.Add(Me.tpg_comida)
+        Me.tbc_tienda.Controls.Add(Me.tpg_bebida)
+        Me.tbc_tienda.Controls.Add(Me.tpg_otros)
+        Me.tbc_tienda.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbc_tienda.Location = New System.Drawing.Point(3, 3)
+        Me.tbc_tienda.Name = "tbc_tienda"
+        Me.tbc_tienda.SelectedIndex = 0
+        Me.tbc_tienda.Size = New System.Drawing.Size(1249, 806)
+        Me.tbc_tienda.TabIndex = 0
         '
-        'TabPage3
+        'tpg_comida
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage3.Location = New System.Drawing.Point(4, 46)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1241, 756)
-        Me.TabPage3.TabIndex = 0
-        Me.TabPage3.Text = "TabPage3"
+        Me.tpg_comida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_comida.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_comida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tpg_comida.Controls.Add(Me.tlp_Comida)
+        Me.tpg_comida.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_comida.Name = "tpg_comida"
+        Me.tpg_comida.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_comida.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_comida.TabIndex = 0
+        Me.tpg_comida.Text = "Comida"
         '
-        'TabPage4
+        'tlp_Comida
         '
-        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage4.Location = New System.Drawing.Point(4, 46)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1241, 756)
-        Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "TabPage4"
+        Me.tlp_Comida.AutoScroll = True
+        Me.tlp_Comida.ColumnCount = 5
+        Me.tlp_Comida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Comida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Comida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Comida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Comida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Comida.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_Comida.Location = New System.Drawing.Point(3, 3)
+        Me.tlp_Comida.Name = "tlp_Comida"
+        Me.tlp_Comida.RowCount = 1
+        Me.tlp_Comida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_Comida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 750.0!))
+        Me.tlp_Comida.Size = New System.Drawing.Size(1235, 750)
+        Me.tlp_Comida.TabIndex = 0
+        '
+        'tpg_bebida
+        '
+        Me.tpg_bebida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_bebida.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_bebida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tpg_bebida.Controls.Add(Me.tlp_Bebida)
+        Me.tpg_bebida.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_bebida.Name = "tpg_bebida"
+        Me.tpg_bebida.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_bebida.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_bebida.TabIndex = 1
+        Me.tpg_bebida.Text = "Bebida"
+        '
+        'tpg_otros
+        '
+        Me.tpg_otros.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_otros.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_otros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tpg_otros.Controls.Add(Me.tlp_Otros)
+        Me.tpg_otros.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_otros.Name = "tpg_otros"
+        Me.tpg_otros.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_otros.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_otros.TabIndex = 2
+        Me.tpg_otros.Text = "Otros"
+        '
+        'tlp_Bebida
+        '
+        Me.tlp_Bebida.AutoScroll = True
+        Me.tlp_Bebida.ColumnCount = 5
+        Me.tlp_Bebida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Bebida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Bebida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Bebida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Bebida.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Bebida.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_Bebida.Location = New System.Drawing.Point(3, 3)
+        Me.tlp_Bebida.Name = "tlp_Bebida"
+        Me.tlp_Bebida.RowCount = 1
+        Me.tlp_Bebida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_Bebida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 750.0!))
+        Me.tlp_Bebida.Size = New System.Drawing.Size(1235, 750)
+        Me.tlp_Bebida.TabIndex = 1
+        '
+        'tlp_Otros
+        '
+        Me.tlp_Otros.AutoScroll = True
+        Me.tlp_Otros.ColumnCount = 5
+        Me.tlp_Otros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Otros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Otros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Otros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Otros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlp_Otros.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlp_Otros.Location = New System.Drawing.Point(3, 3)
+        Me.tlp_Otros.Name = "tlp_Otros"
+        Me.tlp_Otros.RowCount = 1
+        Me.tlp_Otros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_Otros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 750.0!))
+        Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
+        Me.tlp_Otros.TabIndex = 2
         '
         'tpvForm
         '
@@ -442,10 +841,30 @@ Partial Class tpvForm
         Me.tlp_caja.ResumeLayout(False)
         Me.tlp_teclado.ResumeLayout(False)
         Me.tlp_teclado.PerformLayout()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
+        CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel5.PerformLayout()
+        CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
+        CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        Me.TabControl2.ResumeLayout(False)
+        Me.tbc_tienda.ResumeLayout(False)
+        Me.tpg_comida.ResumeLayout(False)
+        Me.tpg_bebida.ResumeLayout(False)
+        Me.tpg_otros.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -473,7 +892,31 @@ Partial Class tpvForm
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents tbc_tienda As TabControl
+    Friend WithEvents tpg_comida As TabPage
+    Friend WithEvents tpg_bebida As TabPage
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents dgv_carrito As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_Total As Label
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents pbx_sp95 As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents pbx_sp98 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents pbx_diesela As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents pbx_diesela_plus As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents tpg_otros As TabPage
+    Friend WithEvents tlp_Comida As TableLayoutPanel
+    Friend WithEvents tlp_Bebida As TableLayoutPanel
+    Friend WithEvents tlp_Otros As TableLayoutPanel
 End Class
