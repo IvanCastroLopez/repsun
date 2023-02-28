@@ -1,6 +1,7 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.Data.OleDb
 Imports System.Data.SqlClient
+Imports System.Security
 
 Public Class tpvForm
     ' Aquí se establece la conexión a la base de datos mediante el proveedor Microsoft.ACE.OLEDB.12.0 y se especifica la ubicación de la base de datos.
@@ -18,6 +19,8 @@ Public Class tpvForm
 
     Public cod_cesta As New Integer
 
+    Public total As New Decimal
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CrearTLP("Comida")
         CrearTLP("Bebida")
@@ -27,10 +30,18 @@ Public Class tpvForm
         adaptador_cesta.Fill(gestion_dataset, "CestaCompra")
 
         ' Configuramos el DataGridView con las columnas de cantidad, código, nombre y precio.
-        dgv_carrito.Columns.Add("Cantidad", "Cantidad o l")
-        dgv_carrito.Columns.Add("Codigo", "Código")
+        dgv_carrito.Columns.Add("Cantidad", "Cantidad")
+        dgv_carrito.Columns.Add("cod_producto", "")
+        dgv_carrito.Columns.Add("Nombre", "Nombre")
         dgv_carrito.Columns.Add("Total", "Total")
         dgv_carrito.Columns.Add("Precio por Litro", "Precio ud o l")
+        dgv_carrito.Columns.Add("cod_producto", "")
+        dgv_carrito.Columns("cod_producto").Visible = False
+
+        dgv_combustible.Columns.Add("Cantidad", "Cantidad")
+        dgv_combustible.Columns.Add("Nombre", "Nombre")
+        dgv_combustible.Columns.Add("PrecioPorLitro", "Precio/Litro")
+        dgv_combustible.Columns.Add("PrecioTotal", "Precio Total")
 
         ' Configuramos las propiedades del DataGridView.
         dgv_carrito.AutoResizeColumns()
@@ -186,18 +197,16 @@ Public Class tpvForm
                 carrito.Rows.Add(nuevaFila)
             End If
 
-            ' Actualizar el DataGridView con los datos de la cesta
             dgv_carrito.Rows.Clear()
+
 
             For Each filaCesta As DataRow In carrito.Rows
                 Dim filaProducto As DataRow = ObtenerProductoPorCodigo(filaCesta("cod_producto"))
-
                 If filaProducto IsNot Nothing Then
-                    dgv_carrito.Rows.Add({filaCesta("cantidad"), filaCesta("cod_producto"), filaProducto("nombre"), filaCesta("precio_por_litro")})
+                    dgv_carrito.Rows.Add({filaCesta("cantidad"), filaProducto("cod_producto"), filaProducto("nombre"), filaCesta("total"), filaCesta("precio_por_litro")})
                 End If
             Next
-        Else
-            MessageBox.Show("El código del producto no existe.")
+
         End If
 
         actualizarCampos(ObtenerTotalCarrito())
@@ -213,6 +222,7 @@ Public Class tpvForm
             totalCarrito += CDec(fila("cantidad")) * CDec(fila("precio_por_litro"))
         Next
 
+        totalCarrito += total
         Return totalCarrito
     End Function
 
@@ -225,49 +235,85 @@ Public Class tpvForm
         lbl_totalSinImpuestos.Text = "Total sin impuestos: " & Math.Round(totalSinImpuestos, 2) & "€"
     End Function
 
+    Dim combustible As Boolean = False
     Private Sub pbx_sp95_Click(sender As Object, e As EventArgs) Handles pbx_sp95.Click, pbx_sp98.Click, pbx_diesela.Click, pbx_diesela_plus.Click
-        If sender.Equals(pbx_sp95) Then
-            ' Mostrar el InputBox
+        Dim producto As String = ""
+        Dim precio As Decimal = 0
+        Dim cantidad As Integer = 0
+        Dim preciolitro As Decimal = 0
+        If combustible Then
+            MsgBox("Ya hay un combustible dentro de la venta")
+            Exit Sub
+        ElseIf sender.Equals(pbx_sp95) Then
+            ' Obtener el precio y la cantidad de combustible
             Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.sin_plomo_95)
-
             If valores IsNot Nothing Then
                 Dim dinero As Decimal = valores.Item1
-                Dim combustible As String = valores.Item2
-            Else
-
+                Dim combustible As Decimal = valores.Item2
+                ' Calcular el precio por litro
+                precio = dinero
+                preciolitro = dinero / combustible
+                producto = "Gasolina sin plomo 95"
+                cantidad = Math.Round(combustible, 0)
+                combustible = True
             End If
-        ElseIf sender = pbx_sp98 Then
-            ' Mostrar el InputBox
+        ElseIf sender.Equals(pbx_sp98) Then
+            ' Obtener el precio y la cantidad de combustible
             Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.sin_plomo_98)
-
             If valores IsNot Nothing Then
                 Dim dinero As Decimal = valores.Item1
-                Dim combustible As String = valores.Item2
-            Else
-
+                Dim combustible As Decimal = valores.Item2
+                ' Calcular el precio por litro
+                precio = dinero
+                preciolitro = dinero / combustible
+                producto = "Gasolina sin plomo 98"
+                cantidad = Math.Round(combustible, 0)
+                combustible = True
             End If
-        ElseIf sender = pbx_diesela Then
-            ' Mostrar el InputBox
+        ElseIf sender.Equals(pbx_diesela) Then
+            ' Obtener el precio y la cantidad de combustible
             Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.diesel)
-
             If valores IsNot Nothing Then
                 Dim dinero As Decimal = valores.Item1
-                Dim combustible As String = valores.Item2
-            Else
-
+                Dim combustible As Decimal = valores.Item2
+                ' Calcular el precio por litro
+                precio = dinero
+                preciolitro = dinero / combustible
+                producto = "Diesel A"
+                cantidad = Math.Round(combustible, 0)
+                combustible = True
             End If
-        ElseIf sender = pbx_diesela_plus Then
-            ' Mostrar el InputBox
+        ElseIf sender.Equals(pbx_diesela_plus) Then
+            ' Obtener el precio y la cantidad de combustible
             Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.diesel_plus)
-
             If valores IsNot Nothing Then
                 Dim dinero As Decimal = valores.Item1
-                Dim combustible As String = valores.Item2
-            Else
-
+                Dim combustible As Decimal = valores.Item2
+                ' Calcular el precio por litro
+                precio = dinero
+                preciolitro = dinero / combustible
+                producto = "Diesel A+"
+                cantidad = Math.Round(combustible, 0)
+                combustible = True
             End If
         End If
+        If producto <> "" And precio > 0 Then
+            ' Crear una nueva fila con el producto y el precio por litro
+            Dim nuevaFila As DataGridViewRow = New DataGridViewRow()
+            nuevaFila.CreateCells(dgv_combustible)
+            nuevaFila.Cells(0).Value = cantidad
+            nuevaFila.Cells(1).Value = producto
+            nuevaFila.Cells(2).Value = precio.ToString("C")
+            nuevaFila.Cells(3).Value = Math.Round(preciolitro, 4).ToString
+            ' Agregar la fila al dgv
+            dgv_combustible.Rows.Add(nuevaFila)
+
+            total += precio
+        End If
+
+        actualizarCampos(ObtenerTotalCarrito())
     End Sub
+
 
     Function ObtenerValoresDineroCombustible(tipoCombustible As Herramientas.tipoCombustible) As Tuple(Of Decimal, Decimal)
         Dim dinero As Decimal
@@ -363,5 +409,64 @@ Public Class tpvForm
         Return Nothing
     End Function
 
+    ' ** ELIMINAR ** 
+    Private Sub btn_eliminarTodo_Click(sender As Object, e As EventArgs) Handles btn_eliminarTodo.Click
+        dgv_carrito.Rows.Clear()
+        carrito.Clear()
+        total = 0
+        dgv_combustible.Rows.Clear()
 
+        actualizarCampos(ObtenerTotalCarrito())
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        ' Verificar si hay una fila seleccionada en el DataGridView
+        If dgv_carrito.SelectedRows.Count > 0 Then
+            ' Obtener la fila seleccionada
+            Dim filaSeleccionada As DataGridViewRow = dgv_carrito.SelectedRows(0)
+
+            ' Obtener el código de producto de la fila seleccionada
+            Dim codigoProducto As Integer = CInt(filaSeleccionada.Cells("cod_producto").Value)
+
+            ' Eliminar la fila del DataGridView
+            dgv_carrito.Rows.Remove(filaSeleccionada)
+
+            ' Eliminar la fila del DataTable
+            For Each filaCesta As DataRow In carrito.Rows
+                If CInt(filaCesta("cod_producto")) = codigoProducto Then
+                    filaCesta.Delete()
+                    Exit For
+                End If
+            Next
+
+            ' Actualizar los totales
+            actualizarCampos(ObtenerTotalCarrito())
+        Else
+            MessageBox.Show("Seleccione una fila para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    ' ** CAJA **
+    ' *** TECLADO VIRTUAL ***
+    ' TECLADO NUMÉRICO
+    Private Sub btn_teclado_Click(sender As Object, e As EventArgs) Handles btn_0.Click, btn_1.Click, btn_2.Click, btn_3.Click, btn_4.Click, btn_5.Click, btn_6.Click, btn_7.Click, btn_8.Click, btn_9.Click, btn_coma.Click
+        txt_introducido.Text = txt_introducido.Text & sender.text
+    End Sub
+
+    ' BOTÓN EXACTO
+    Private Sub btn_exacto_Click(sender As Object, e As EventArgs) Handles btn_exacto.Click
+        txt_introducido.Text = Math.Round(ObtenerTotalCarrito(), 2)
+    End Sub
+
+    ' BOTÓN BORRAR
+    Private Sub btn_atras_Click(sender As Object, e As EventArgs) Handles btn_atras.Click
+        If txt_introducido.Text <> "" Then
+            txt_introducido.Text = txt_introducido.Text.Remove(txt_introducido.Text.Length - 1)
+        End If
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        MenuPrincipalForm.Show()
+        Me.Hide()
+    End Sub
 End Class
