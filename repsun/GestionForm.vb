@@ -206,8 +206,12 @@ Public Class GestionForm
         ' Mostramos la ventana GestionEmpleadosOnTop.
         GestionEmpleadosOnTop.ShowDialog()
 
+        'gestion_dataset.Tables("relacion").Clear()
+        'adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+
         gestion_dataset.Tables("relacion").Clear()
-        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+        adaptador_empleados.Fill(gestion_dataset, "relacion")
+
     End Sub
 
     ''' <summary>

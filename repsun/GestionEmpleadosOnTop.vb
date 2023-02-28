@@ -85,7 +85,7 @@ Public Class GestionEmpleadosOnTop
                     Dim comando1 As New OleDbCommand(ordensql1, conexion)
                     comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
                     comando1.Parameters.AddWithValue("@adm", False)
-                    comando1.Parameters.AddWithValue("@cod", Int32.Parse(txt_codigoEmpleado.Text))
+                    comando1.Parameters.AddWithValue("@cod", Integer.Parse(txt_codigoEmpleado.Text))
                     comando1.Parameters.AddWithValue("@pas", txt_contrasena.Text)
 
                     ' Ejecutamos el comando.
