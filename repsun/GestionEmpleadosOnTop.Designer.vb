@@ -265,9 +265,10 @@ Partial Class GestionEmpleadosOnTop
         'cbx_rol
         '
         Me.cbx_rol.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbx_rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_rol.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbx_rol.FormattingEnabled = True
-        Me.cbx_rol.Items.AddRange(New Object() {"Encargado", "Empleado", ""})
+        Me.cbx_rol.Items.AddRange(New Object() {"Encargado", "Empleado", "Mantenimiento"})
         Me.cbx_rol.Location = New System.Drawing.Point(723, 367)
         Me.cbx_rol.Name = "cbx_rol"
         Me.cbx_rol.Size = New System.Drawing.Size(234, 38)
