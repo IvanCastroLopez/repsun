@@ -465,8 +465,30 @@ Public Class tpvForm
         End If
     End Sub
 
+    ' BOTON SALIR
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         MenuPrincipalForm.Show()
         Me.Hide()
     End Sub
+
+    ' BOTON COBRAR
+    Private Sub btn_teclado_cobrar_Click(sender As Object, e As EventArgs) Handles btn_teclado_cobrar.Click
+        If Integer.Parse(txt_introducido.Text) >= Math.Round(ObtenerTotalCarrito(), 2) Then
+            Dim resultado As DialogResult = MessageBox.Show("Seleccione una opción de pago:", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+
+            If resultado = DialogResult.Yes Then
+                ' Acción para el botón "Tarjeta"
+                MsgBox("Pago con tarjeta seleccionado.")
+            ElseIf resultado = DialogResult.No Then
+                ' Acción para el botón "Efectivo"
+                MsgBox("Pago en efectivo seleccionado.")
+            ElseIf resultado = DialogResult.Cancel Then
+                ' Acción para el botón "Cancelar"
+                MsgBox("Pago cancelado.")
+            End If
+        Else
+            Registros.GrabarError("Dinero insuficiente", "No cobrar")
+        End If
+    End Sub
+
 End Class
