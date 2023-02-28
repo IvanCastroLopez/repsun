@@ -42,7 +42,7 @@ Partial Class tpvForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.dgv_total = New System.Windows.Forms.DataGridView()
+        Me.dgv_carrito = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -76,7 +76,7 @@ Partial Class tpvForm
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.dgv_total, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -395,7 +395,7 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.dgv_total, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.dgv_carrito, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Button2, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 2)
@@ -414,16 +414,16 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
         Me.TableLayoutPanel2.TabIndex = 1
         '
-        'dgv_total
+        'dgv_carrito
         '
-        Me.dgv_total.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.dgv_total.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_total, 3)
-        Me.dgv_total.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_total.Location = New System.Drawing.Point(3, 79)
-        Me.dgv_total.Name = "dgv_total"
-        Me.dgv_total.Size = New System.Drawing.Size(617, 301)
-        Me.dgv_total.TabIndex = 0
+        Me.dgv_carrito.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.dgv_carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_carrito, 3)
+        Me.dgv_carrito.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_carrito.Location = New System.Drawing.Point(3, 79)
+        Me.dgv_carrito.Name = "dgv_carrito"
+        Me.dgv_carrito.Size = New System.Drawing.Size(617, 301)
+        Me.dgv_carrito.TabIndex = 0
         '
         'Button1
         '
@@ -843,7 +843,7 @@ Partial Class tpvForm
         Me.tlp_teclado.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.dgv_total, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -897,7 +897,7 @@ Partial Class tpvForm
     Friend WithEvents tpg_bebida As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents dgv_total As DataGridView
+    Friend WithEvents dgv_carrito As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
