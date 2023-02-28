@@ -690,30 +690,30 @@ Public Class GestionForm
     End Sub
 
     ' ** BOTONES CATEGORÍAS **
-    Private Sub pbx_combustible_Click(sender As Object, e As EventArgs) Handles pbx_combustible.Click
+    Private Sub btn_combustible_Click(sender As Object, e As EventArgs) Handles btn_combustible.Click
         ' Selecciona la pestaña "Combustible" (índice 0) en el control TabControl.
         tbc_gestion.SelectTab(0)
     End Sub
-
-    Private Sub pbx_tienda_Click(sender As Object, e As EventArgs) Handles pbx_tienda.Click
+    Private Sub btn_tienda_Click(sender As Object, e As EventArgs) Handles btn_tienda.Click
         ' Selecciona la pestaña "Tienda" (índice 1) en el control TabControl.
         tbc_gestion.SelectTab(1)
     End Sub
 
-    Private Sub pbx_empleados_Click(sender As Object, e As EventArgs) Handles pbx_empleados.Click
+    Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
         ' Selecciona la pestaña "Empleados" (índice 2) en el control TabControl.
         tbc_gestion.SelectTab(2)
     End Sub
 
-    Private Sub pbx_proveedores_Click(sender As Object, e As EventArgs) Handles pbx_proveedores.Click
+    Private Sub btn_proveedores_Click(sender As Object, e As EventArgs) Handles btn_proveedores.Click
         ' Selecciona la pestaña "Proveedores" (índice 3) en el control TabControl.
         tbc_gestion.SelectTab(3)
     End Sub
 
-    Private Sub pbx_clientes_Click(sender As Object, e As EventArgs) Handles pbx_clientes.Click
+    Private Sub btn_clientes_Click(sender As Object, e As EventArgs) Handles btn_clientes.Click
         ' Selecciona la pestaña "Clientes" (índice 4) en el control TabControl.
         tbc_gestion.SelectTab(4)
     End Sub
+
 
     ' ** BOTONES TOOLSTRIPMENU **
     Private Sub tsb_registroAccesos_Click(sender As Object, e As EventArgs) Handles tsb_registroAccesos.Click

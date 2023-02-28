@@ -181,4 +181,16 @@
   <data name="amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\Surtidores\amarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diesel_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\tpv\combustibles\diesel-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diesel_a_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\tpv\combustibles\diesel-a-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin_plomo_95" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\tpv\combustibles\sin-plomo-95.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sin_plomo_98" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\debug\imagenes\tpv\combustibles\sin-plomo-98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

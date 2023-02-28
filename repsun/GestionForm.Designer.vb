@@ -97,11 +97,6 @@ Partial Class GestionForm
         Me.dgv_clientes = New System.Windows.Forms.DataGridView()
         Me.tlp_categorias = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_icon = New System.Windows.Forms.PictureBox()
-        Me.pbx_combustible = New System.Windows.Forms.PictureBox()
-        Me.pbx_tienda = New System.Windows.Forms.PictureBox()
-        Me.pbx_empleados = New System.Windows.Forms.PictureBox()
-        Me.pbx_proveedores = New System.Windows.Forms.PictureBox()
-        Me.pbx_clientes = New System.Windows.Forms.PictureBox()
         Me.pbx_salir = New System.Windows.Forms.PictureBox()
         Me.lbl_combustible = New System.Windows.Forms.Label()
         Me.lbl_tienda = New System.Windows.Forms.Label()
@@ -111,6 +106,11 @@ Partial Class GestionForm
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsb_registroAccesos = New System.Windows.Forms.ToolStripButton()
         Me.tsb_registroErrores = New System.Windows.Forms.ToolStripButton()
+        Me.btn_combustible = New System.Windows.Forms.Button()
+        Me.btn_tienda = New System.Windows.Forms.Button()
+        Me.btn_empleados = New System.Windows.Forms.Button()
+        Me.btn_proveedores = New System.Windows.Forms.Button()
+        Me.btn_clientes = New System.Windows.Forms.Button()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
@@ -148,11 +148,6 @@ Partial Class GestionForm
         CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_categorias.SuspendLayout()
         CType(Me.pbx_icon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -224,6 +219,7 @@ Partial Class GestionForm
         Me.tlp_combustible.RowCount = 2
         Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
+        Me.tlp_combustible.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tlp_combustible.Size = New System.Drawing.Size(941, 528)
         Me.tlp_combustible.TabIndex = 1
         '
@@ -384,6 +380,7 @@ Partial Class GestionForm
         'tlp_depositosCombustibles
         '
         Me.tlp_depositosCombustibles.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tlp_depositosCombustibles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.tlp_depositosCombustibles.ColumnCount = 1
         Me.tlp_depositosCombustibles.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_depositosCombustibles.Controls.Add(Me.lbl_diesel, 0, 10)
@@ -1267,18 +1264,18 @@ Partial Class GestionForm
         '
         Me.tlp_categorias.ColumnCount = 1
         Me.tlp_categorias.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlp_categorias.Controls.Add(Me.btn_proveedores, 0, 8)
+        Me.tlp_categorias.Controls.Add(Me.btn_empleados, 0, 6)
+        Me.tlp_categorias.Controls.Add(Me.btn_tienda, 0, 4)
         Me.tlp_categorias.Controls.Add(Me.pbx_icon, 0, 0)
-        Me.tlp_categorias.Controls.Add(Me.pbx_combustible, 0, 2)
-        Me.tlp_categorias.Controls.Add(Me.pbx_tienda, 0, 4)
-        Me.tlp_categorias.Controls.Add(Me.pbx_empleados, 0, 6)
-        Me.tlp_categorias.Controls.Add(Me.pbx_proveedores, 0, 8)
-        Me.tlp_categorias.Controls.Add(Me.pbx_clientes, 0, 10)
         Me.tlp_categorias.Controls.Add(Me.pbx_salir, 0, 12)
         Me.tlp_categorias.Controls.Add(Me.lbl_combustible, 0, 3)
         Me.tlp_categorias.Controls.Add(Me.lbl_tienda, 0, 5)
         Me.tlp_categorias.Controls.Add(Me.lbl_Empleados, 0, 7)
         Me.tlp_categorias.Controls.Add(Me.lbl_proveedores, 0, 9)
         Me.tlp_categorias.Controls.Add(Me.lbl_clientes, 0, 11)
+        Me.tlp_categorias.Controls.Add(Me.btn_combustible, 0, 2)
+        Me.tlp_categorias.Controls.Add(Me.btn_clientes, 0, 10)
         Me.tlp_categorias.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_categorias.Location = New System.Drawing.Point(6, 6)
         Me.tlp_categorias.Margin = New System.Windows.Forms.Padding(6)
@@ -1312,66 +1309,6 @@ Partial Class GestionForm
         Me.pbx_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_icon.TabIndex = 0
         Me.pbx_icon.TabStop = False
-        '
-        'pbx_combustible
-        '
-        Me.pbx_combustible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_combustible.Image = Global.repsun.My.Resources.Resources.Combustible
-        Me.pbx_combustible.Location = New System.Drawing.Point(6, 130)
-        Me.pbx_combustible.Margin = New System.Windows.Forms.Padding(6)
-        Me.pbx_combustible.Name = "pbx_combustible"
-        Me.pbx_combustible.Size = New System.Drawing.Size(81, 29)
-        Me.pbx_combustible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_combustible.TabIndex = 1
-        Me.pbx_combustible.TabStop = False
-        '
-        'pbx_tienda
-        '
-        Me.pbx_tienda.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_tienda.Image = Global.repsun.My.Resources.Resources.Tienda
-        Me.pbx_tienda.Location = New System.Drawing.Point(6, 212)
-        Me.pbx_tienda.Margin = New System.Windows.Forms.Padding(6)
-        Me.pbx_tienda.Name = "pbx_tienda"
-        Me.pbx_tienda.Size = New System.Drawing.Size(81, 29)
-        Me.pbx_tienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_tienda.TabIndex = 2
-        Me.pbx_tienda.TabStop = False
-        '
-        'pbx_empleados
-        '
-        Me.pbx_empleados.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_empleados.Image = Global.repsun.My.Resources.Resources.Empleados
-        Me.pbx_empleados.Location = New System.Drawing.Point(6, 294)
-        Me.pbx_empleados.Margin = New System.Windows.Forms.Padding(6)
-        Me.pbx_empleados.Name = "pbx_empleados"
-        Me.pbx_empleados.Size = New System.Drawing.Size(81, 29)
-        Me.pbx_empleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_empleados.TabIndex = 3
-        Me.pbx_empleados.TabStop = False
-        '
-        'pbx_proveedores
-        '
-        Me.pbx_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_proveedores.Image = Global.repsun.My.Resources.Resources.Proveedores
-        Me.pbx_proveedores.Location = New System.Drawing.Point(6, 376)
-        Me.pbx_proveedores.Margin = New System.Windows.Forms.Padding(6)
-        Me.pbx_proveedores.Name = "pbx_proveedores"
-        Me.pbx_proveedores.Size = New System.Drawing.Size(81, 29)
-        Me.pbx_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_proveedores.TabIndex = 4
-        Me.pbx_proveedores.TabStop = False
-        '
-        'pbx_clientes
-        '
-        Me.pbx_clientes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_clientes.Image = Global.repsun.My.Resources.Resources.Clientes
-        Me.pbx_clientes.Location = New System.Drawing.Point(6, 458)
-        Me.pbx_clientes.Margin = New System.Windows.Forms.Padding(6)
-        Me.pbx_clientes.Name = "pbx_clientes"
-        Me.pbx_clientes.Size = New System.Drawing.Size(81, 29)
-        Me.pbx_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_clientes.TabIndex = 5
-        Me.pbx_clientes.TabStop = False
         '
         'pbx_salir
         '
@@ -1474,6 +1411,76 @@ Partial Class GestionForm
         Me.tsb_registroErrores.Size = New System.Drawing.Size(47, 19)
         Me.tsb_registroErrores.Text = "Errores"
         '
+        'btn_combustible
+        '
+        Me.btn_combustible.BackgroundImage = Global.repsun.My.Resources.Resources.Combustible
+        Me.btn_combustible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_combustible.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_combustible.FlatAppearance.BorderSize = 0
+        Me.btn_combustible.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_combustible.Location = New System.Drawing.Point(6, 130)
+        Me.btn_combustible.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_combustible.Name = "btn_combustible"
+        Me.btn_combustible.Size = New System.Drawing.Size(81, 29)
+        Me.btn_combustible.TabIndex = 12
+        Me.btn_combustible.UseVisualStyleBackColor = True
+        '
+        'btn_tienda
+        '
+        Me.btn_tienda.BackgroundImage = Global.repsun.My.Resources.Resources.Tienda
+        Me.btn_tienda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_tienda.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_tienda.FlatAppearance.BorderSize = 0
+        Me.btn_tienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tienda.Location = New System.Drawing.Point(6, 212)
+        Me.btn_tienda.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_tienda.Name = "btn_tienda"
+        Me.btn_tienda.Size = New System.Drawing.Size(81, 29)
+        Me.btn_tienda.TabIndex = 13
+        Me.btn_tienda.UseVisualStyleBackColor = True
+        '
+        'btn_empleados
+        '
+        Me.btn_empleados.BackgroundImage = Global.repsun.My.Resources.Resources.Empleados
+        Me.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_empleados.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_empleados.FlatAppearance.BorderSize = 0
+        Me.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_empleados.Location = New System.Drawing.Point(6, 294)
+        Me.btn_empleados.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_empleados.Name = "btn_empleados"
+        Me.btn_empleados.Size = New System.Drawing.Size(81, 29)
+        Me.btn_empleados.TabIndex = 13
+        Me.btn_empleados.UseVisualStyleBackColor = True
+        '
+        'btn_proveedores
+        '
+        Me.btn_proveedores.BackgroundImage = Global.repsun.My.Resources.Resources.Proveedores
+        Me.btn_proveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_proveedores.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_proveedores.FlatAppearance.BorderSize = 0
+        Me.btn_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_proveedores.Location = New System.Drawing.Point(6, 376)
+        Me.btn_proveedores.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_proveedores.Name = "btn_proveedores"
+        Me.btn_proveedores.Size = New System.Drawing.Size(81, 29)
+        Me.btn_proveedores.TabIndex = 13
+        Me.btn_proveedores.UseVisualStyleBackColor = True
+        '
+        'btn_clientes
+        '
+        Me.btn_clientes.BackgroundImage = Global.repsun.My.Resources.Resources.Clientes
+        Me.btn_clientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_clientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_clientes.FlatAppearance.BorderSize = 0
+        Me.btn_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_clientes.Location = New System.Drawing.Point(6, 458)
+        Me.btn_clientes.Margin = New System.Windows.Forms.Padding(6)
+        Me.btn_clientes.Name = "btn_clientes"
+        Me.btn_clientes.Size = New System.Drawing.Size(81, 29)
+        Me.btn_clientes.TabIndex = 14
+        Me.btn_clientes.UseVisualStyleBackColor = True
+        '
         'GestionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1530,11 +1537,6 @@ Partial Class GestionForm
         Me.tlp_categorias.ResumeLayout(False)
         Me.tlp_categorias.PerformLayout()
         CType(Me.pbx_icon, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_combustible, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_tienda, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_empleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -1561,11 +1563,6 @@ Partial Class GestionForm
     Friend WithEvents tpg_clientes As TabPage
     Friend WithEvents tlp_categorias As TableLayoutPanel
     Friend WithEvents pbx_icon As PictureBox
-    Friend WithEvents pbx_combustible As PictureBox
-    Friend WithEvents pbx_tienda As PictureBox
-    Friend WithEvents pbx_empleados As PictureBox
-    Friend WithEvents pbx_proveedores As PictureBox
-    Friend WithEvents pbx_clientes As PictureBox
     Friend WithEvents pbx_salir As PictureBox
     Friend WithEvents lbl_combustible As Label
     Friend WithEvents lbl_tienda As Label
@@ -1630,4 +1627,9 @@ Partial Class GestionForm
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents tsb_registroAccesos As ToolStripButton
     Friend WithEvents tsb_registroErrores As ToolStripButton
+    Friend WithEvents btn_combustible As Button
+    Friend WithEvents btn_proveedores As Button
+    Friend WithEvents btn_empleados As Button
+    Friend WithEvents btn_tienda As Button
+    Friend WithEvents btn_clientes As Button
 End Class

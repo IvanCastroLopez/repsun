@@ -52,22 +52,23 @@ Partial Class tpvForm
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.pbx_sp98 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_sp95 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_sp98 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.pbx_diesela = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.pbx_diesela = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.pbx_diesela_plus = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.tpg_comida = New System.Windows.Forms.TabPage()
+        Me.tpg_bebida = New System.Windows.Forms.TabPage()
+        Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
@@ -77,16 +78,16 @@ Partial Class tpvForm
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -536,48 +537,42 @@ Partial Class tpvForm
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1249, 806)
         Me.TableLayoutPanel1.TabIndex = 0
         '
-        'TabPage2
+        'TableLayoutPanel4
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.TabPage2.Controls.Add(Me.TabControl2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 46)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1255, 812)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Tienda"
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.pbx_sp95, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 1)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(116, 76)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 2
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel4.TabIndex = 2
         '
-        'TabControl2
+        'pbx_sp95
         '
-        Me.TabControl2.Controls.Add(Me.TabPage3)
-        Me.TabControl2.Controls.Add(Me.TabPage4)
-        Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl2.Location = New System.Drawing.Point(3, 3)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1249, 806)
-        Me.TabControl2.TabIndex = 0
+        Me.pbx_sp95.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.pbx_sp95.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp95.Image = Global.repsun.My.Resources.Resources.sin_plomo_95
+        Me.pbx_sp95.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_sp95.Name = "pbx_sp95"
+        Me.pbx_sp95.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp95.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_sp95.TabIndex = 0
+        Me.pbx_sp95.TabStop = False
         '
-        'TabPage3
+        'Label5
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage3.Location = New System.Drawing.Point(4, 46)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1241, 756)
-        Me.TabPage3.TabIndex = 0
-        Me.TabPage3.Text = "TabPage3"
-        '
-        'TabPage4
-        '
-        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage4.Location = New System.Drawing.Point(4, 46)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1241, 756)
-        Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "TabPage4"
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 229)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(178, 37)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Sin plomo 95"
         '
         'TableLayoutPanel3
         '
@@ -597,10 +592,13 @@ Partial Class tpvForm
         '
         'pbx_sp98
         '
+        Me.pbx_sp98.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.pbx_sp98.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp98.Image = Global.repsun.My.Resources.Resources.sin_plomo_98
         Me.pbx_sp98.Location = New System.Drawing.Point(3, 3)
         Me.pbx_sp98.Name = "pbx_sp98"
         Me.pbx_sp98.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp98.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_sp98.TabIndex = 0
         Me.pbx_sp98.TabStop = False
         '
@@ -612,40 +610,6 @@ Partial Class tpvForm
         Me.Label4.Size = New System.Drawing.Size(178, 37)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Sin plomo 98"
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.pbx_sp95, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 1)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(116, 76)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 2
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(448, 287)
-        Me.TableLayoutPanel4.TabIndex = 2
-        '
-        'pbx_sp95
-        '
-        Me.pbx_sp95.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_sp95.Location = New System.Drawing.Point(3, 3)
-        Me.pbx_sp95.Name = "pbx_sp95"
-        Me.pbx_sp95.Size = New System.Drawing.Size(442, 223)
-        Me.pbx_sp95.TabIndex = 0
-        Me.pbx_sp95.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 229)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(178, 37)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Sin plomo 95"
         '
         'TableLayoutPanel5
         '
@@ -663,15 +627,6 @@ Partial Class tpvForm
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(448, 287)
         Me.TableLayoutPanel5.TabIndex = 3
         '
-        'pbx_diesela
-        '
-        Me.pbx_diesela.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbx_diesela.Location = New System.Drawing.Point(3, 3)
-        Me.pbx_diesela.Name = "pbx_diesela"
-        Me.pbx_diesela.Size = New System.Drawing.Size(442, 223)
-        Me.pbx_diesela.TabIndex = 0
-        Me.pbx_diesela.TabStop = False
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -680,6 +635,18 @@ Partial Class tpvForm
         Me.Label6.Size = New System.Drawing.Size(90, 37)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Diesel"
+        '
+        'pbx_diesela
+        '
+        Me.pbx_diesela.BackColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.pbx_diesela.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela.Image = Global.repsun.My.Resources.Resources.diesel_a
+        Me.pbx_diesela.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_diesela.Name = "pbx_diesela"
+        Me.pbx_diesela.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_diesela.TabIndex = 0
+        Me.pbx_diesela.TabStop = False
         '
         'TableLayoutPanel6
         '
@@ -699,10 +666,13 @@ Partial Class tpvForm
         '
         'pbx_diesela_plus
         '
+        Me.pbx_diesela_plus.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.pbx_diesela_plus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela_plus.Image = Global.repsun.My.Resources.Resources.diesel_a_plus
         Me.pbx_diesela_plus.Location = New System.Drawing.Point(3, 3)
         Me.pbx_diesela_plus.Name = "pbx_diesela_plus"
         Me.pbx_diesela_plus.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela_plus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_diesela_plus.TabIndex = 0
         Me.pbx_diesela_plus.TabStop = False
         '
@@ -714,6 +684,59 @@ Partial Class tpvForm
         Me.Label7.Size = New System.Drawing.Size(116, 37)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Diesel +"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.TabPage2.Controls.Add(Me.TabControl2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 46)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1255, 812)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Tienda"
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.tpg_comida)
+        Me.TabControl2.Controls.Add(Me.tpg_bebida)
+        Me.TabControl2.Controls.Add(Me.tpg_otros)
+        Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl2.Location = New System.Drawing.Point(3, 3)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(1249, 806)
+        Me.TabControl2.TabIndex = 0
+        '
+        'tpg_comida
+        '
+        Me.tpg_comida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_comida.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_comida.Name = "tpg_comida"
+        Me.tpg_comida.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_comida.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_comida.TabIndex = 0
+        Me.tpg_comida.Text = "Comida"
+        '
+        'tpg_bebida
+        '
+        Me.tpg_bebida.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_bebida.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_bebida.Name = "tpg_bebida"
+        Me.tpg_bebida.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_bebida.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_bebida.TabIndex = 1
+        Me.tpg_bebida.Text = "Bebida"
+        '
+        'tpg_otros
+        '
+        Me.tpg_otros.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_otros.Name = "tpg_otros"
+        Me.tpg_otros.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_otros.TabIndex = 2
+        Me.tpg_otros.Text = "Otros"
+        Me.tpg_otros.UseVisualStyleBackColor = True
         '
         'tpvForm
         '
@@ -736,20 +759,20 @@ Partial Class tpvForm
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabControl2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
-        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
         CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel6.PerformLayout()
         CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -778,8 +801,8 @@ Partial Class tpvForm
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents tpg_comida As TabPage
+    Friend WithEvents tpg_bebida As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents dgv_total As DataGridView
@@ -800,4 +823,5 @@ Partial Class tpvForm
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents pbx_diesela_plus As PictureBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents tpg_otros As TabPage
 End Class
