@@ -74,6 +74,7 @@ Partial Class tpvForm
         Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
         Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tlp_tpv.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_caja.SuspendLayout()
@@ -98,6 +99,7 @@ Partial Class tpvForm
         Me.tpg_comida.SuspendLayout()
         Me.tpg_bebida.SuspendLayout()
         Me.tpg_otros.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -411,12 +413,13 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminarTodo, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminar, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_totalSinImpuestos, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_impuestos, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_Total, 0, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminarTodo, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btn_eliminar, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.PictureBox2, 2, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -438,7 +441,7 @@ Partial Class tpvForm
         Me.btn_eliminarTodo.FlatAppearance.BorderSize = 0
         Me.btn_eliminarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_eliminarTodo.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminarTodo.Location = New System.Drawing.Point(210, 3)
+        Me.btn_eliminarTodo.Location = New System.Drawing.Point(3, 3)
         Me.btn_eliminarTodo.Name = "btn_eliminarTodo"
         Me.btn_eliminarTodo.Size = New System.Drawing.Size(201, 70)
         Me.btn_eliminarTodo.TabIndex = 1
@@ -486,9 +489,9 @@ Partial Class tpvForm
         Me.btn_eliminar.FlatAppearance.BorderSize = 0
         Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_eliminar.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar.Location = New System.Drawing.Point(417, 3)
+        Me.btn_eliminar.Location = New System.Drawing.Point(210, 3)
         Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(203, 70)
+        Me.btn_eliminar.Size = New System.Drawing.Size(201, 70)
         Me.btn_eliminar.TabIndex = 2
         Me.btn_eliminar.Text = "Eliminar"
         Me.btn_eliminar.UseVisualStyleBackColor = False
@@ -855,6 +858,17 @@ Partial Class tpvForm
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Salir
+        Me.PictureBox2.Location = New System.Drawing.Point(520, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 70)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
         'tpvForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -895,6 +909,7 @@ Partial Class tpvForm
         Me.tpg_comida.ResumeLayout(False)
         Me.tpg_bebida.ResumeLayout(False)
         Me.tpg_otros.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -951,4 +966,5 @@ Partial Class tpvForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents dgv_combustible As DataGridView
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

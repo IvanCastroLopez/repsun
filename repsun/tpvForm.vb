@@ -447,6 +447,26 @@ Public Class tpvForm
     End Sub
 
     ' ** CAJA **
+    ' *** TECLADO VIRTUAL ***
+    ' TECLADO NUMÉRICO
+    Private Sub btn_teclado_Click(sender As Object, e As EventArgs) Handles btn_0.Click, btn_1.Click, btn_2.Click, btn_3.Click, btn_4.Click, btn_5.Click, btn_6.Click, btn_7.Click, btn_8.Click, btn_9.Click, btn_coma.Click
+        txt_introducido.Text = txt_introducido.Text & sender.text
+    End Sub
 
+    ' BOTÓN EXACTO
+    Private Sub btn_exacto_Click(sender As Object, e As EventArgs) Handles btn_exacto.Click
+        txt_introducido.Text = Math.Round(ObtenerTotalCarrito(), 2)
+    End Sub
 
+    ' BOTÓN BORRAR
+    Private Sub btn_atras_Click(sender As Object, e As EventArgs) Handles btn_atras.Click
+        If txt_introducido.Text <> "" Then
+            txt_introducido.Text = txt_introducido.Text.Remove(txt_introducido.Text.Length - 1)
+        End If
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        MenuPrincipalForm.Show()
+        Me.Hide()
+    End Sub
 End Class
