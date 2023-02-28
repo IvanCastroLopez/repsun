@@ -121,6 +121,7 @@ Partial Class GestionProductosOnTop
         'cbx_categoria
         '
         Me.cbx_categoria.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbx_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_categoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbx_categoria.FormattingEnabled = True
         Me.cbx_categoria.Items.AddRange(New Object() {"Comida", "Bebida", "Otros"})
