@@ -721,7 +721,7 @@ Partial Class GestionForm
         Me.tpg_empleados.Location = New System.Drawing.Point(4, 54)
         Me.tpg_empleados.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tpg_empleados.Name = "tpg_empleados"
-        Me.tpg_empleados.Size = New System.Drawing.Size(1732, 987)
+        Me.tpg_empleados.Size = New System.Drawing.Size(1731, 986)
         Me.tpg_empleados.TabIndex = 2
         Me.tpg_empleados.Text = "Empleados"
         '
@@ -740,7 +740,7 @@ Partial Class GestionForm
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1732, 987)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1731, 986)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -781,17 +781,17 @@ Partial Class GestionForm
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555278!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(245, 973)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(245, 972)
         Me.TableLayoutPanel5.TabIndex = 3
         '
         'pbx_eliminarEmpleados
         '
         Me.pbx_eliminarEmpleados.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_eliminarEmpleados.Image = Global.repsun.My.Resources.Resources.Eliminar
-        Me.pbx_eliminarEmpleados.Location = New System.Drawing.Point(4, 598)
+        Me.pbx_eliminarEmpleados.Location = New System.Drawing.Point(4, 596)
         Me.pbx_eliminarEmpleados.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbx_eliminarEmpleados.Name = "pbx_eliminarEmpleados"
-        Me.pbx_eliminarEmpleados.Size = New System.Drawing.Size(237, 46)
+        Me.pbx_eliminarEmpleados.Size = New System.Drawing.Size(237, 45)
         Me.pbx_eliminarEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_eliminarEmpleados.TabIndex = 3
         Me.pbx_eliminarEmpleados.TabStop = False
@@ -803,7 +803,7 @@ Partial Class GestionForm
         Me.pbx_editarEmpleados.Location = New System.Drawing.Point(7, 493)
         Me.pbx_editarEmpleados.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
         Me.pbx_editarEmpleados.Name = "pbx_editarEmpleados"
-        Me.pbx_editarEmpleados.Size = New System.Drawing.Size(231, 40)
+        Me.pbx_editarEmpleados.Size = New System.Drawing.Size(231, 39)
         Me.pbx_editarEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_editarEmpleados.TabIndex = 2
         Me.pbx_editarEmpleados.TabStop = False
@@ -814,7 +814,7 @@ Partial Class GestionForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(64, 540)
+        Me.Label1.Location = New System.Drawing.Point(64, 539)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(117, 50)
@@ -827,7 +827,7 @@ Partial Class GestionForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(46, 648)
+        Me.Label2.Location = New System.Drawing.Point(46, 645)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(153, 50)
@@ -896,7 +896,7 @@ Partial Class GestionForm
         Me.dgv_empleados.RowHeadersWidth = 72
         Me.dgv_empleados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_empleados.Size = New System.Drawing.Size(1459, 875)
+        Me.dgv_empleados.Size = New System.Drawing.Size(1458, 874)
         Me.dgv_empleados.TabIndex = 0
         '
         'tpg_proveedores

@@ -85,7 +85,7 @@ Public Class GestionEmpleadosOnTop
                     comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
                     comando1.Parameters.AddWithValue("@adm", False)
                     comando1.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
-                    comando1.Parameters.AddWithValue("@pas", txt_contrasena)
+                    comando1.Parameters.AddWithValue("@pas", txt_contrasena.Text)
                     ' Ejecutamos el comando.
                     Try
                         comando.ExecuteNonQuery()
@@ -95,11 +95,12 @@ Public Class GestionEmpleadosOnTop
                         ' Cerramos el formulario.
                         Me.Close()
                     Catch ex As Exception
+                        MsgBox(ex.Message)
                         Registros.GrabarError("Ha ocurrido un error creando el empleado. Llame al técnico responsable del sistema", "Error creando el empleado")
                     End Try
                 Else
                     Registros.GrabarError("Ha ocurrido un error creando el empleado. Revise los campos", "Error creando el empleado")
-
+                    Me.Refresh()
                 End If
             Else
                 ' Si el resultado es mayor que cero, significa que ya existe un empleado con ese código y no se puede crear otro con el mismo código.
@@ -133,7 +134,7 @@ Public Class GestionEmpleadosOnTop
                     Dim comando1 As New OleDbCommand(ordensql1, conexion)
                     comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
                     comando1.Parameters.AddWithValue("@adm", False)
-                    comando1.Parameters.AddWithValue("@pas", txt_contrasena)
+                    comando1.Parameters.AddWithValue("@pas", txt_contrasena.Text)
                     comando1.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
                 Else
                     Registros.GrabarError("Ha ocurrido un error creando el empleado. Revise los campos", "Error creando el empleado")
