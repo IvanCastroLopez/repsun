@@ -13,6 +13,8 @@ Public Class tpvForm
     ' Creamos un objeto DataTable para almacenar los productos del carrito.
     Public carrito As New DataTable
 
+    Private productos As DataTable
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CrearTLP("Comida")
         CrearTLP("Bebida")
@@ -21,23 +23,26 @@ Public Class tpvForm
         ' Configuramos el DataGridView con las columnas de cantidad, código, nombre y precio.
         dgv_carrito.Columns.Add("Cantidad", "Cantidad")
         dgv_carrito.Columns.Add("Codigo", "Código")
-        dgv_carrito.Columns.Add("Nombre", "Nombre")
-        dgv_carrito.Columns.Add("Precio", "Precio")
+        dgv_carrito.Columns.Add("Total", "Total")
+        dgv_carrito.Columns.Add("Precio por Litro", "Precio por Litro")
 
         ' Configuramos las propiedades del DataGridView.
         dgv_carrito.AutoResizeColumns()
         dgv_carrito.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
         ' Configuramos el objeto DataTable carrito.
+        carrito.Columns.Add("Cod_cesta", GetType(Integer))
         carrito.Columns.Add("Codigo", GetType(Integer))
-        carrito.Columns.Add("Nombre", GetType(String))
-        carrito.Columns.Add("Precio", GetType(Decimal))
         carrito.Columns.Add("Cantidad", GetType(Integer))
-        carrito.PrimaryKey = New DataColumn() {carrito.Columns("Codigo")}
+        carrito.Columns.Add("Total", GetType(Decimal))
+        carrito.Columns.Add("Precio_por_litro", GetType(Decimal))
 
         ' Configuramos el estilo de las filas del DataGridView.
         dgv_carrito.RowsDefaultCellStyle.BackColor = Color.White
         dgv_carrito.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
+
+        ' Configuramos la clave primaria del DataTable carrito.
+        carrito.PrimaryKey = New DataColumn() {carrito.Columns("Cod_cesta")}
     End Sub
 
 
@@ -121,61 +126,52 @@ Public Class tpvForm
 
 
     ' ** CARRITO DE COMPRA **
-    Private Function ObtenerProductoPorCodigo(codigo As Integer) As DataRow
-        Dim productos As DataTable = gestion_dataset.Tables("Producto")
-        Dim producto As DataRow = Nothing
 
-        For Each row As DataRow In productos.Rows
-            If row("cod_producto") = codigo Then
-                producto = row
-                Exit For
-            End If
-        Next
-
-        Return producto
-    End Function
 
     Private Sub AgregarProducto(codigo As Integer)
+        ' Creamos el objeto DataTable productos
         Dim productos As DataTable = gestion_dataset.Tables("Producto")
+        ' Establecemos la clave principal en la columna "cod_producto"
+        productos.PrimaryKey = New DataColumn() {productos.Columns("cod_producto")}
 
-        productos.PrimaryKey = {productos.Columns("cod_producto")}
+        Dim cesta As DataTable = gestion_dataset.Tables("CestaCompra")
 
         ' Buscamos el producto en la tabla
         Dim productoFila As DataRow = productos.Rows.Find(codigo)
 
         If productoFila IsNot Nothing Then
-            ' Si el producto ya existe, incrementamos la cantidad
-            Dim cantidad As Integer = productoFila("cantidad")
-            productoFila("cantidad") = cantidad + 1
+            ' Si el producto ya existe, incrementamos la cantidad y actualizamos el total
+            Dim cantidad As Integer = 0
+            Dim precio As Decimal = 0
 
-            ' Buscamos la fila correspondiente en el DataGridView y actualizamos la cantidad
+            Dim cestaFila As DataRow = cesta.Rows.Find(codigo)
+
+            If cestaFila IsNot Nothing Then
+                cantidad = cestaFila("cantidad")
+                precio = cestaFila("precio_por_litro")
+                cestaFila("cantidad") = cantidad + 1
+                cestaFila("total") = (cantidad + 1) * precio
+            Else
+                cantidad = 1
+                precio = productoFila("precio")
+                Dim newRow As DataRow = cesta.NewRow()
+                newRow("cod_producto") = codigo
+                newRow("cantidad") = 1
+                newRow("precio_por_litro") = precio
+                newRow("total") = precio
+                cesta.Rows.Add(newRow)
+            End If
+
+            ' Buscamos la fila correspondiente en el DataGridView y actualizamos la cantidad y el total
             For Each row As DataGridViewRow In dgv_carrito.Rows
                 If row.Cells("codigo").Value = codigo Then
-                    row.Cells("cantidad").Value = cantidad + 1
+                    row.Cells("cantidad").Value = cantidad
+                    row.Cells("total").Value = cantidad * precio
                     Exit Sub
                 End If
             Next
         Else
-            ' Si el producto no existe, lo añadimos a la tabla
-            productoFila = productos.NewRow()
-            productoFila("cod_producto") = codigo
-            productoFila("cantidad") = 1
-
-            Dim productoInfo As DataRow = ObtenerProductoPorCodigo(codigo)
-
-            If productoInfo IsNot Nothing Then
-                productoFila("nombre") = productoInfo("nombre").ToString()
-                productoFila("precio") = productoInfo("precio")
-            End If
-
-            productos.Rows.Add(productoFila)
-
-            ' Añadimos una nueva fila al DataGridView
-            Dim newRow As Integer = dgv_carrito.Rows.Add()
-            dgv_carrito.Rows(newRow).Cells("cantidad").Value = 1
-            dgv_carrito.Rows(newRow).Cells("codigo").Value = codigo
-            dgv_carrito.Rows(newRow).Cells("nombre").Value = productoFila("nombre")
-            dgv_carrito.Rows(newRow).Cells("precio").Value = productoFila("precio")
+            MessageBox.Show("El código del producto no existe")
         End If
     End Sub
 End Class
