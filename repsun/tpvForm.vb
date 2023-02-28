@@ -473,8 +473,8 @@ Public Class tpvForm
 
     ' BOTON COBRAR
     Private Sub btn_teclado_cobrar_Click(sender As Object, e As EventArgs) Handles btn_teclado_cobrar.Click
-        If Integer.Parse(txt_introducido.Text) >= Math.Round(ObtenerTotalCarrito(), 2) Then
-            Dim resultado As DialogResult = MessageBox.Show("Seleccione una opción de pago:", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+        If txt_introducido.Text >= Math.Round(ObtenerTotalCarrito(), 2) Then
+            Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
                 ' Acción para el botón "Tarjeta"
