@@ -138,6 +138,8 @@ Public Class tpvForm
     Private Sub AgregarProducto(codigo As Integer)
         Dim productos As DataTable = gestion_dataset.Tables("Producto")
 
+        productos.PrimaryKey = {productos.Columns("cod_producto")}
+
         ' Buscamos el producto en la tabla
         Dim productoFila As DataRow = productos.Rows.Find(codigo)
 
