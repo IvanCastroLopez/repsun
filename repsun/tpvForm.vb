@@ -201,4 +201,21 @@ Public Class tpvForm
         End If
     End Sub
 
+    Private Function ObtenerTotalCarrito() As Decimal
+        Dim totalCarrito As Decimal = 0
+
+        For Each fila As DataRow In carrito.Rows
+            totalCarrito += CDec(fila("cantidad")) * CDec(fila("precio_por_litro"))
+        Next
+
+        Return totalCarrito
+    End Function
+
+    Private Function actualizarCampos(Total As Decimal)
+        Dim impuestos As Decimal = Total * 0.21
+        Dim totalSinImpuestos As Decimal = Total - impuestos
+
+
+    End Function
+
 End Class
