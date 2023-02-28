@@ -8,7 +8,7 @@ Public Class tpvForm
 
     'Aquí se crea un adaptador de datos OleDbDataAdapter para seleccionar todos los datos de la tabla "Producto" de la base de datos.
     Public adaptador_tienda As New OleDbDataAdapter("Select * from Producto", conexion)
-    Dim adaptador_cesta As New OleDbDataAdapter("SELECT * FROM CestaCompra", conexion)
+    Public adaptador_cesta As New OleDbDataAdapter("SELECT * FROM CestaCompra", conexion)
 
     'Aquí se crea un objeto DataSet llamado "gestion_dataset".
     Public gestion_dataset As New DataSet
@@ -16,16 +16,21 @@ Public Class tpvForm
     ' Creamos un objeto DataTable para almacenar los productos del carrito.
     Public carrito As New DataTable
 
+    Public cod_cesta As New Integer
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CrearTLP("Comida")
         CrearTLP("Bebida")
         CrearTLP("Otros")
 
+        adaptador_tienda.Fill(gestion_dataset, "Producto")
+        adaptador_cesta.Fill(gestion_dataset, "CestaCompra")
+
         ' Configuramos el DataGridView con las columnas de cantidad, código, nombre y precio.
-        dgv_carrito.Columns.Add("Cantidad", "Cantidad")
+        dgv_carrito.Columns.Add("Cantidad", "Cantidad o l")
         dgv_carrito.Columns.Add("Codigo", "Código")
         dgv_carrito.Columns.Add("Total", "Total")
-        dgv_carrito.Columns.Add("Precio por Litro", "Precio por Litro")
+        dgv_carrito.Columns.Add("Precio por Litro", "Precio ud o l")
 
         ' Configuramos las propiedades del DataGridView.
         dgv_carrito.AutoResizeColumns()
@@ -33,7 +38,7 @@ Public Class tpvForm
 
         ' Configuramos el objeto DataTable carrito.
         carrito.Columns.Add("Cod_cesta", GetType(Integer))
-        carrito.Columns.Add("Codigo", GetType(Integer))
+        carrito.Columns.Add("Cod_producto", GetType(Integer))
         carrito.Columns.Add("Cantidad", GetType(Integer))
         carrito.Columns.Add("Total", GetType(Decimal))
         carrito.Columns.Add("Precio_por_litro", GetType(Decimal))
@@ -127,6 +132,7 @@ Public Class tpvForm
 
 
     ' ** CARRITO DE COMPRA **
+
     Private Function ObtenerProductoPorCodigo(codigo As Integer) As DataRow
         Dim producto As DataRow = Nothing
 
@@ -157,15 +163,13 @@ Public Class tpvForm
     End Function
 
 
-
     Private Sub agregarProducto(codigo As Integer)
         ' Buscar el producto en la base de datos
         Dim producto As DataRow = ObtenerProductoPorCodigo(codigo)
 
         If producto IsNot Nothing Then
             ' Buscar si el producto ya está en la cesta
-            Dim cesta As DataTable = gestion_dataset.Tables("CestaCompra")
-            Dim cestaFila As DataRow = cesta.Rows.Find(codigo)
+            Dim cestaFila As DataRow = carrito.Rows.Find(codigo)
 
             If cestaFila IsNot Nothing Then
                 ' Si el producto ya está en la cesta, actualizar la cantidad, el precio y el total
@@ -173,20 +177,20 @@ Public Class tpvForm
                 cestaFila("total") = CDec(cestaFila("cantidad")) * CDec(cestaFila("precio_por_litro"))
             Else
                 ' Si el producto no está en la cesta, añadir una nueva fila
-                Dim nuevaFila As DataRow = cesta.NewRow()
+                Dim nuevaFila As DataRow = carrito.NewRow()
                 nuevaFila("cod_cesta") = codigo
                 nuevaFila("cod_producto") = codigo
                 nuevaFila("cantidad") = 1
                 nuevaFila("total") = producto("precio")
                 nuevaFila("precio_por_litro") = producto("precio")
-                cesta.Rows.Add(nuevaFila)
+                carrito.Rows.Add(nuevaFila)
             End If
 
             ' Actualizar el DataGridView con los datos de la cesta
             dgv_carrito.Rows.Clear()
 
-            For Each filaCesta As DataRow In cesta.Rows
-                Dim filaProducto As DataRow = gestion_dataset.Tables("Producto").Rows.Find(filaCesta("cod_producto"))
+            For Each filaCesta As DataRow In carrito.Rows
+                Dim filaProducto As DataRow = ObtenerProductoPorCodigo(filaCesta("cod_producto"))
 
                 If filaProducto IsNot Nothing Then
                     dgv_carrito.Rows.Add({filaCesta("cantidad"), filaCesta("cod_producto"), filaProducto("nombre"), filaCesta("precio_por_litro")})
@@ -196,6 +200,5 @@ Public Class tpvForm
             MessageBox.Show("El código del producto no existe.")
         End If
     End Sub
-
 
 End Class

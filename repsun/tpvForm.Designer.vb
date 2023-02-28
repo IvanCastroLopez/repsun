@@ -69,8 +69,8 @@ Partial Class tpvForm
         Me.tpg_comida = New System.Windows.Forms.TabPage()
         Me.tlp_Comida = New System.Windows.Forms.TableLayoutPanel()
         Me.tpg_bebida = New System.Windows.Forms.TabPage()
-        Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
+        Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
@@ -416,6 +416,7 @@ Partial Class tpvForm
         '
         'dgv_carrito
         '
+        Me.dgv_carrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_carrito.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.dgv_carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_carrito, 3)
@@ -778,19 +779,6 @@ Partial Class tpvForm
         Me.tpg_bebida.TabIndex = 1
         Me.tpg_bebida.Text = "Bebida"
         '
-        'tpg_otros
-        '
-        Me.tpg_otros.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.tpg_otros.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
-        Me.tpg_otros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.tpg_otros.Controls.Add(Me.tlp_Otros)
-        Me.tpg_otros.Location = New System.Drawing.Point(4, 46)
-        Me.tpg_otros.Name = "tpg_otros"
-        Me.tpg_otros.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpg_otros.Size = New System.Drawing.Size(1241, 756)
-        Me.tpg_otros.TabIndex = 2
-        Me.tpg_otros.Text = "Otros"
-        '
         'tlp_Bebida
         '
         Me.tlp_Bebida.AutoScroll = True
@@ -805,9 +793,22 @@ Partial Class tpvForm
         Me.tlp_Bebida.Name = "tlp_Bebida"
         Me.tlp_Bebida.RowCount = 1
         Me.tlp_Bebida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_Bebida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 750.0!))
+        Me.tlp_Bebida.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 774.0!))
         Me.tlp_Bebida.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Bebida.TabIndex = 1
+        '
+        'tpg_otros
+        '
+        Me.tpg_otros.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.tpg_otros.BackgroundImage = Global.repsun.My.Resources.Resources.tpv
+        Me.tpg_otros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tpg_otros.Controls.Add(Me.tlp_Otros)
+        Me.tpg_otros.Location = New System.Drawing.Point(4, 46)
+        Me.tpg_otros.Name = "tpg_otros"
+        Me.tpg_otros.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpg_otros.Size = New System.Drawing.Size(1241, 756)
+        Me.tpg_otros.TabIndex = 2
+        Me.tpg_otros.Text = "Otros"
         '
         'tlp_Otros
         '
@@ -823,7 +824,7 @@ Partial Class tpvForm
         Me.tlp_Otros.Name = "tlp_Otros"
         Me.tlp_Otros.RowCount = 1
         Me.tlp_Otros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_Otros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 750.0!))
+        Me.tlp_Otros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 774.0!))
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
