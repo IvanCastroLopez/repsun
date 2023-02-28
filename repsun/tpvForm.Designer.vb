@@ -42,7 +42,7 @@ Partial Class tpvForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_total = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,33 +52,41 @@ Partial Class tpvForm
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.tlp_botón_combustible_sinPlomo98 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.pbx_sp98 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pbx_sp95 = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_diesela = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbx_diesela_plus = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_total, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.tlp_botón_combustible_sinPlomo98.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
+        CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
+        CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel6.SuspendLayout()
+        CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -380,7 +388,7 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.DataGridView1, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.dgv_total, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Button2, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 2)
@@ -399,16 +407,16 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
         Me.TableLayoutPanel2.TabIndex = 1
         '
-        'DataGridView1
+        'dgv_total
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TableLayoutPanel2.SetColumnSpan(Me.DataGridView1, 3)
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 79)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(617, 301)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgv_total.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.dgv_total.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_total, 3)
+        Me.dgv_total.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_total.Location = New System.Drawing.Point(3, 79)
+        Me.dgv_total.Name = "dgv_total"
+        Me.dgv_total.Size = New System.Drawing.Size(617, 301)
+        Me.dgv_total.TabIndex = 0
         '
         'Button1
         '
@@ -512,10 +520,10 @@ Partial Class tpvForm
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 3, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.tlp_botón_combustible_sinPlomo98, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 3, 3)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -527,30 +535,6 @@ Partial Class tpvForm
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1249, 806)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'tlp_botón_combustible_sinPlomo98
-        '
-        Me.tlp_botón_combustible_sinPlomo98.ColumnCount = 1
-        Me.tlp_botón_combustible_sinPlomo98.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlp_botón_combustible_sinPlomo98.Controls.Add(Me.Label4, 0, 1)
-        Me.tlp_botón_combustible_sinPlomo98.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_botón_combustible_sinPlomo98.Location = New System.Drawing.Point(683, 76)
-        Me.tlp_botón_combustible_sinPlomo98.Name = "tlp_botón_combustible_sinPlomo98"
-        Me.tlp_botón_combustible_sinPlomo98.RowCount = 2
-        Me.tlp_botón_combustible_sinPlomo98.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.tlp_botón_combustible_sinPlomo98.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlp_botón_combustible_sinPlomo98.Size = New System.Drawing.Size(448, 287)
-        Me.tlp_botón_combustible_sinPlomo98.TabIndex = 0
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Location = New System.Drawing.Point(3, 229)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(442, 58)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Sin plomo 98"
         '
         'TabPage2
         '
@@ -599,75 +583,137 @@ Partial Class tpvForm
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.pbx_sp98, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(116, 76)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(683, 76)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(448, 287)
-        Me.TableLayoutPanel3.TabIndex = 1
+        Me.TableLayoutPanel3.TabIndex = 0
         '
-        'Label5
+        'pbx_sp98
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Location = New System.Drawing.Point(3, 229)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(442, 58)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Sin plomo 98"
+        Me.pbx_sp98.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp98.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_sp98.Name = "pbx_sp98"
+        Me.pbx_sp98.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp98.TabIndex = 0
+        Me.pbx_sp98.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 229)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(178, 37)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Sin plomo 98"
         '
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Label6, 0, 1)
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.pbx_sp95, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(116, 442)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(116, 76)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(448, 287)
         Me.TableLayoutPanel4.TabIndex = 2
         '
-        'Label6
+        'pbx_sp95
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label6.Location = New System.Drawing.Point(3, 229)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(442, 58)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Sin plomo 98"
+        Me.pbx_sp95.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_sp95.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_sp95.Name = "pbx_sp95"
+        Me.pbx_sp95.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_sp95.TabIndex = 0
+        Me.pbx_sp95.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 229)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(178, 37)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Sin plomo 95"
         '
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Label7, 0, 1)
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.Label6, 0, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.pbx_diesela, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(683, 442)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(116, 442)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(448, 287)
-        Me.TableLayoutPanel5.TabIndex = 2
+        Me.TableLayoutPanel5.TabIndex = 3
+        '
+        'pbx_diesela
+        '
+        Me.pbx_diesela.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_diesela.Name = "pbx_diesela"
+        Me.pbx_diesela.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela.TabIndex = 0
+        Me.pbx_diesela.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 229)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(90, 37)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Diesel"
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 1
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.pbx_diesela_plus, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label7, 0, 1)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(683, 442)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(448, 287)
+        Me.TableLayoutPanel6.TabIndex = 4
+        '
+        'pbx_diesela_plus
+        '
+        Me.pbx_diesela_plus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbx_diesela_plus.Location = New System.Drawing.Point(3, 3)
+        Me.pbx_diesela_plus.Name = "pbx_diesela_plus"
+        Me.pbx_diesela_plus.Size = New System.Drawing.Size(442, 223)
+        Me.pbx_diesela_plus.TabIndex = 0
+        Me.pbx_diesela_plus.TabStop = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Location = New System.Drawing.Point(3, 229)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(442, 58)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Sin plomo 98"
+        Me.Label7.Size = New System.Drawing.Size(116, 37)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Diesel +"
         '
         'tpvForm
         '
@@ -685,21 +731,25 @@ Partial Class tpvForm
         Me.tlp_teclado.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_total, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.tlp_botón_combustible_sinPlomo98.ResumeLayout(False)
-        Me.tlp_botón_combustible_sinPlomo98.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.pbx_sp98, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
+        CType(Me.pbx_sp95, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
+        CType(Me.pbx_diesela, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
+        CType(Me.pbx_diesela_plus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -732,18 +782,22 @@ Partial Class tpvForm
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_total As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lbl_Total As Label
-    Friend WithEvents tlp_botón_combustible_sinPlomo98 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents pbx_sp95 As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents pbx_sp98 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents pbx_diesela As PictureBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents pbx_diesela_plus As PictureBox
+    Friend WithEvents Label7 As Label
 End Class
