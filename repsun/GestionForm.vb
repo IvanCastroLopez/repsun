@@ -7,7 +7,7 @@ Public Class GestionForm
     Public adaptador_tienda As New OleDbDataAdapter("Select cod_producto, nombre, categoria, precio from Producto", conexion)
     Public adaptador_empleados As New OleDbDataAdapter("Select * from Empleado", conexion)
     Public adaptador_usuarios As New OleDbDataAdapter("Select * from Usuarios", conexion)
-    Public empleados_usuarios As New OleDbDataAdapter("Select empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin from Empleado, Usuarios where empleado.cod_empleado = usuarios.cod_empleado", conexion)
+    Public relacion As New OleDbDataAdapter("Select empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin from Empleado, Usuarios where empleado.cod_empleado = usuarios.cod_empleado", conexion)
     Public adaptador_proveedores As New OleDbDataAdapter("Select * from Proveedor", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
@@ -19,9 +19,9 @@ Public Class GestionForm
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleados")
         adaptador_usuarios.Fill(gestion_dataset, "Usuarios")
-        empleados_usuarios.Fill(gestion_dataset, "relacion")
+        relacion.Fill(gestion_dataset, "relacion")
 
-        gestion_dataset.Relations.Add("empleados_usuarios", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
+        gestion_dataset.Relations.Add("relacion", gestion_dataset.Tables("Empleados").Columns("cod_empleado"), gestion_dataset.Tables("Usuarios").Columns("cod_empleado"))
 
         adaptador_proveedores.Fill(gestion_dataset, "Proveedor")
         adaptador_clientes.Fill(gestion_dataset, "ClienteRepsol")
@@ -228,7 +228,7 @@ Public Class GestionForm
         ' Mostramos la ventana GestionEmpleadosOnTop.
         GestionEmpleadosOnTop.ShowDialog()
 
-        gestion_dataset.Tables("Empleado, Usuarios").Clear()
+        gestion_dataset.Tables("relacion").Clear()
         adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
     End Sub
 
@@ -262,8 +262,8 @@ Public Class GestionForm
                 ' La variable empleadoUpdate existe dentro de la columna cod_empleado de la tabla Empleado.
                 GestionEmpleadosOnTop.ShowDialog()
 
-                gestion_dataset.Tables("Empleado, Usuarios").Clear()
-                adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+                gestion_dataset.Tables("relacion").Clear()
+                adaptador_empleados.Fill(gestion_dataset, "relacion")
             Else
                 ' La variable empleadoUpdate no existe dentro de la columna cod_empleado de la tabla Empleado.
                 Registros.GrabarError("El código introducido no existe en la base de datos", "El empleado seleccionado no existe")
@@ -312,8 +312,8 @@ Public Class GestionForm
                         comando.ExecuteNonQuery()
                         ' Actualizamos el DataGridView después de eliminar el empleado.
 
-                        gestion_dataset.Tables("Empleado, Usuarios").Clear()
-                        adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
+                        gestion_dataset.Tables("relacion").Clear()
+                        adaptador_empleados.Fill(gestion_dataset, "relacion")
                     Catch ex As Exception
                         ' Si se produce un error, mostramos un mensaje de error.
                         Registros.GrabarError("Ha ocurrido un error eliminando el empleado seleccionado", "Error eliminando empleado")
