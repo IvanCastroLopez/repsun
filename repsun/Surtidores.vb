@@ -16,31 +16,112 @@
         imgCocheVerde = Image.FromFile("Imagenes\Surtidores\verde.png")
         imagenesCoches = {imgCocheAmarillo, imgCocheAzul, imgCocheCyan, imgCocheGris, imgCocheNaranja, imgCocheNegro, imgCocheRojo, imgCocheVerde}
 
-        cocheAleatorio()
+        tiempoAleatorio()
+        tmr_timer.Enabled = True
     End Sub
 
+    ''' <summary>
+    ''' Boton para salir de la ventana de surtidores
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub pbx_salir_Click(sender As Object, e As EventArgs) Handles pbx_salir.Click
         MenuPrincipalForm.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
-    Function cocheAleatorio()
+    ''' <summary>
+    ''' Cambia el tiempo que tarda el timer en dispararse, en un rango de entre 5 y 30 segundos
+    ''' </summary>
+    Private Sub tiempoAleatorio()
+        Dim aleatorio As New Random()
+        'Dim numeroAleatorio As Integer = aleatorio.Next(5, 31)
+        Dim numeroAleatorio As Integer = aleatorio.Next(5, 20)
+        tmr_timer.Interval = numeroAleatorio * 1000
+    End Sub
+
+    ''' <summary>
+    ''' Cada vez que se dispare el timer creara un nuevo coche
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub tmr_timer_Tick(sender As Object, e As EventArgs) Handles tmr_timer.Tick
+        aparcarCoche() 'Crea un nuevo coche
+        tiempoAleatorio() 'Cambia el tiempo de dispararse
+    End Sub
+
+    Private Sub aparcarCoche()
+        Dim aleatorio As New Random()
+        Dim numeroAleatorio As Integer = aleatorio.Next(1, 5)
+        Select Case numeroAleatorio
+            Case 1
+                If pbx_coche1.Enabled = False Then
+                    pbx_coche1.Enabled = True
+                    pbx_coche1.Image = generarCoche()
+                    nic_surtidores.ShowBalloonTip(5000)
+                Else
+                    tiempoAleatorio()
+                End If
+            Case 2
+                If pbx_coche2.Enabled = False Then
+                    pbx_coche2.Enabled = True
+                    pbx_coche2.Image = generarCoche()
+                    nic_surtidores.ShowBalloonTip(5000)
+                Else
+                    tiempoAleatorio()
+                End If
+            Case 3
+                If pbx_coche3.Enabled = False Then
+                    pbx_coche3.Enabled = True
+                    pbx_coche3.Image = generarCoche()
+                    nic_surtidores.ShowBalloonTip(5000)
+                Else
+                    tiempoAleatorio()
+                End If
+            Case 4
+                If pbx_coche4.Enabled = False Then
+                    pbx_coche4.Enabled = True
+                    pbx_coche4.Image = generarCoche()
+                    nic_surtidores.ShowBalloonTip(5000)
+                Else
+                    tiempoAleatorio()
+                End If
+            Case Else
+                MsgBox("No existe la posicion " & numeroAleatorio)
+        End Select
+    End Sub
+
+    Function generarCoche() As Image
         Dim randomIndex As Integer = New Random().Next(0, 8)
-
-
-        pbx_coche1.Image = imagenesCoches(randomIndex)
+        Return imagenesCoches(randomIndex)
     End Function
-
-    Function posicionAleatoria()
-
-
-    End Function
-
-    Private Sub colocarCoche()
-
-    End Sub
 
     Private Sub quitarCoche()
+
+    End Sub
+
+    Private Sub pbx_coche1_Click(sender As Object, e As EventArgs) Handles pbx_coche1.Click
+        SurtidorOnTop.Show()
+    End Sub
+
+    Private Sub pbx_coche2_Click(sender As Object, e As EventArgs) Handles pbx_coche2.Click
+        SurtidorOnTop.Show()
+    End Sub
+
+    Private Sub pbx_coche3_Click(sender As Object, e As EventArgs) Handles pbx_coche3.Click
+        SurtidorOnTop.Show()
+    End Sub
+
+    Private Sub pbx_coche4_Click(sender As Object, e As EventArgs) Handles pbx_coche4.Click
+        SurtidorOnTop.Show()
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub nic_surtidores_Click(sender As Object, e As EventArgs) Handles nic_surtidores.Click
 
     End Sub
 
