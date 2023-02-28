@@ -39,16 +39,15 @@ Partial Class tpvForm
         Me.btn_teclado_3 = New System.Windows.Forms.Button()
         Me.btn_teclado_1 = New System.Windows.Forms.Button()
         Me.txt_introducido = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_introducido = New System.Windows.Forms.Label()
         Me.btn_teclado_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgv_carrito = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_totalSinImpuestos = New System.Windows.Forms.Label()
+        Me.lbl_impuestos = New System.Windows.Forms.Label()
         Me.lbl_Total = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -72,12 +71,14 @@ Partial Class tpvForm
         Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
         Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dgv_combustible = New System.Windows.Forms.DataGridView()
         Me.tlp_tpv.SuspendLayout()
         Me.tlp_caja.SuspendLayout()
         Me.tlp_teclado.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -94,6 +95,9 @@ Partial Class tpvForm
         Me.tpg_comida.SuspendLayout()
         Me.tpg_bebida.SuspendLayout()
         Me.tpg_otros.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -102,8 +106,8 @@ Partial Class tpvForm
         Me.tlp_tpv.ColumnCount = 2
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666!))
         Me.tlp_tpv.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.tlp_tpv.Controls.Add(Me.tlp_caja, 1, 0)
         Me.tlp_tpv.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.tlp_tpv.Controls.Add(Me.tlp_caja, 1, 0)
         Me.tlp_tpv.Controls.Add(Me.TabControl1, 0, 1)
         Me.tlp_tpv.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_tpv.Location = New System.Drawing.Point(0, 0)
@@ -154,7 +158,7 @@ Partial Class tpvForm
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_3, 2, 2)
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_1, 0, 2)
         Me.tlp_teclado.Controls.Add(Me.txt_introducido, 0, 1)
-        Me.tlp_teclado.Controls.Add(Me.Label1, 0, 0)
+        Me.tlp_teclado.Controls.Add(Me.lbl_introducido, 0, 0)
         Me.tlp_teclado.Controls.Add(Me.btn_teclado_2, 1, 2)
         Me.tlp_teclado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_teclado.Location = New System.Drawing.Point(3, 624)
@@ -362,18 +366,18 @@ Partial Class tpvForm
         Me.txt_introducido.Size = New System.Drawing.Size(563, 50)
         Me.txt_introducido.TabIndex = 0
         '
-        'Label1
+        'lbl_introducido
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.tlp_teclado.SetColumnSpan(Me.Label1, 5)
-        Me.Label1.Font = New System.Drawing.Font("Yu Gothic UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(30, 3)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(30, 0, 3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(161, 37)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Introducido:"
+        Me.lbl_introducido.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbl_introducido.AutoSize = True
+        Me.tlp_teclado.SetColumnSpan(Me.lbl_introducido, 5)
+        Me.lbl_introducido.Font = New System.Drawing.Font("Yu Gothic UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_introducido.Location = New System.Drawing.Point(30, 3)
+        Me.lbl_introducido.Margin = New System.Windows.Forms.Padding(30, 0, 3, 0)
+        Me.lbl_introducido.Name = "lbl_introducido"
+        Me.lbl_introducido.Size = New System.Drawing.Size(161, 37)
+        Me.lbl_introducido.TabIndex = 1
+        Me.lbl_introducido.Text = "Introducido:"
         '
         'btn_teclado_2
         '
@@ -395,11 +399,11 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.dgv_carrito, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Button1, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Button2, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_totalSinImpuestos, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.lbl_impuestos, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_Total, 0, 5)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -411,6 +415,7 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.5!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
         Me.TableLayoutPanel2.TabIndex = 1
         '
@@ -419,9 +424,8 @@ Partial Class tpvForm
         Me.dgv_carrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_carrito.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.dgv_carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TableLayoutPanel2.SetColumnSpan(Me.dgv_carrito, 3)
         Me.dgv_carrito.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgv_carrito.Location = New System.Drawing.Point(3, 79)
+        Me.dgv_carrito.Location = New System.Drawing.Point(0, 0)
         Me.dgv_carrito.Name = "dgv_carrito"
         Me.dgv_carrito.Size = New System.Drawing.Size(617, 301)
         Me.dgv_carrito.TabIndex = 0
@@ -454,27 +458,27 @@ Partial Class tpvForm
         Me.Button2.Text = "Eliminar"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Label2
+        'lbl_totalSinImpuestos
         '
-        Me.Label2.AutoSize = True
-        Me.TableLayoutPanel2.SetColumnSpan(Me.Label2, 3)
-        Me.Label2.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 383)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(190, 30)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Total sin impuestos"
+        Me.lbl_totalSinImpuestos.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.lbl_totalSinImpuestos, 3)
+        Me.lbl_totalSinImpuestos.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_totalSinImpuestos.Location = New System.Drawing.Point(3, 383)
+        Me.lbl_totalSinImpuestos.Name = "lbl_totalSinImpuestos"
+        Me.lbl_totalSinImpuestos.Size = New System.Drawing.Size(190, 30)
+        Me.lbl_totalSinImpuestos.TabIndex = 3
+        Me.lbl_totalSinImpuestos.Text = "Total sin impuestos"
         '
-        'Label3
+        'lbl_impuestos
         '
-        Me.Label3.AutoSize = True
-        Me.TableLayoutPanel2.SetColumnSpan(Me.Label3, 3)
-        Me.Label3.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(3, 444)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(114, 30)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Impuestos:"
+        Me.lbl_impuestos.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.lbl_impuestos, 3)
+        Me.lbl_impuestos.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_impuestos.Location = New System.Drawing.Point(3, 444)
+        Me.lbl_impuestos.Name = "lbl_impuestos"
+        Me.lbl_impuestos.Size = New System.Drawing.Size(114, 30)
+        Me.lbl_impuestos.TabIndex = 4
+        Me.lbl_impuestos.Text = "Impuestos:"
         '
         'lbl_Total
         '
@@ -486,18 +490,6 @@ Partial Class tpvForm
         Me.lbl_Total.Size = New System.Drawing.Size(92, 40)
         Me.lbl_Total.TabIndex = 6
         Me.lbl_Total.Text = "Total: "
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(173, 167)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'TabControl1
         '
@@ -828,6 +820,41 @@ Partial Class tpvForm
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
+        'Panel1
+        '
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Panel1, 3)
+        Me.Panel1.Controls.Add(Me.dgv_combustible)
+        Me.Panel1.Controls.Add(Me.dgv_carrito)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 79)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(617, 301)
+        Me.Panel1.TabIndex = 3
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.repsun.My.Resources.Resources.LogoTransparente_1
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 167)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'dgv_combustible
+        '
+        Me.dgv_combustible.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_combustible.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.dgv_combustible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_combustible.ColumnHeadersVisible = False
+        Me.dgv_combustible.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgv_combustible.Location = New System.Drawing.Point(0, 269)
+        Me.dgv_combustible.Name = "dgv_combustible"
+        Me.dgv_combustible.Size = New System.Drawing.Size(617, 32)
+        Me.dgv_combustible.TabIndex = 1
+        '
         'tpvForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -845,7 +872,6 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -866,6 +892,9 @@ Partial Class tpvForm
         Me.tpg_comida.ResumeLayout(False)
         Me.tpg_bebida.ResumeLayout(False)
         Me.tpg_otros.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -887,9 +916,8 @@ Partial Class tpvForm
     Friend WithEvents btn_teclado_3 As Button
     Friend WithEvents btn_teclado_1 As Button
     Friend WithEvents txt_introducido As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_introducido As Label
     Friend WithEvents btn_teclado_2 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -901,8 +929,8 @@ Partial Class tpvForm
     Friend WithEvents dgv_carrito As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_totalSinImpuestos As Label
+    Friend WithEvents lbl_impuestos As Label
     Friend WithEvents lbl_Total As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents pbx_sp95 As PictureBox
@@ -920,4 +948,7 @@ Partial Class tpvForm
     Friend WithEvents tlp_Comida As TableLayoutPanel
     Friend WithEvents tlp_Bebida As TableLayoutPanel
     Friend WithEvents tlp_Otros As TableLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents dgv_combustible As DataGridView
 End Class
