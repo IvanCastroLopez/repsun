@@ -181,29 +181,7 @@ Public Class GestionForm
     End Sub
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ' ** GESTIÓN EMPLELADOS **
+    ' ** GESTIÓN EMPLEADOS **
     ''' <summary>
     ''' Al cambiar el texto actualiza el dataGridView con los datos que coincidan
     ''' </summary>
