@@ -83,16 +83,24 @@ Public Class Herramientas
         conexion.Open()
 
         ' Se ejecuta el comando y se obtiene un data reader con los datos del combustible.
+        ' Se ejecuta el comando y se obtiene un data reader con los datos del combustible.
         Dim res As OleDbDataReader = comando.ExecuteReader
 
-        ' Se obtiene el precio por litro del combustible deseado.
-        Dim precioPorLitro As Decimal = res("precio_por_litro")
+        ' Se mueve el cursor al primer registro.
+        If res.Read() Then
+            ' Se obtiene el precio por litro del combustible deseado.
+            Dim precioPorLitro As Decimal = res("precio_por_litro")
 
-        ' Se cierra la conexión a la base de datos.
-        conexion.Close()
+            ' Se cierra la conexión a la base de datos.
+            conexion.Close()
 
-        ' Devolver el precio de los litros introducidos.
-        Return litros * precioPorLitro
+            ' Devolver el precio de los litros introducidos.
+            Return Math.Round((litros * precioPorLitro), 4)
+        Else
+            ' No se encontró el combustible deseado.
+            conexion.Close()
+            Throw New Exception("No se encontró el combustible deseado.")
+        End If
     End Function
 
     '** CAMBIO PRECIOS/LITROS
@@ -121,14 +129,21 @@ Public Class Herramientas
         ' Se ejecuta el comando y se obtiene un data reader con los datos del combustible.
         Dim res As OleDbDataReader = comando.ExecuteReader
 
-        ' Se obtiene el precio por litro del combustible deseado.
-        Dim precioPorLitro As Decimal = res("precio_por_litro")
+        ' Se comprueba si hay al menos una fila en el resultado.
+        If res.Read() Then
+            ' Se obtiene el precio por litro del combustible deseado.
+            Dim precioPorLitro As Decimal = res("precio_por_litro")
 
-        ' Se cierra la conexión a la base de datos.
-        conexion.Close()
+            ' Se cierra la conexión a la base de datos.
+            conexion.Close()
 
-        ' Devolver el litro equivalente al dinero introducido.
-        Return dinero / precioPorLitro
+            ' Devolver el litro equivalente al dinero introducido.
+            Return Math.Round((dinero / precioPorLitro), 4)
+        Else
+            ' No se encontró ningún registro.
+            Throw New ArgumentException("No se encontró ningún combustible con el tipo indicado.")
+        End If
+
     End Function
 
     ' Enumeración que define los diferentes tipos de combustibles

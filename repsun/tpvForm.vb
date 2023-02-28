@@ -199,8 +199,13 @@ Public Class tpvForm
         Else
             MessageBox.Show("El código del producto no existe.")
         End If
+
+        actualizarCampos(ObtenerTotalCarrito())
     End Sub
 
+
+
+    ' ** TOTAL **
     Private Function ObtenerTotalCarrito() As Decimal
         Dim totalCarrito As Decimal = 0
 
@@ -215,7 +220,148 @@ Public Class tpvForm
         Dim impuestos As Decimal = Total * 0.21
         Dim totalSinImpuestos As Decimal = Total - impuestos
 
-
+        lbl_Total.Text = "Total: " & Math.Round(Total, 2) & "€"
+        lbl_impuestos.Text = "Impuestos: " & Math.Round(impuestos, 2) & "€"
+        lbl_totalSinImpuestos.Text = "Total sin impuestos: " & Math.Round(totalSinImpuestos, 2) & "€"
     End Function
+
+    Private Sub pbx_sp95_Click(sender As Object, e As EventArgs) Handles pbx_sp95.Click, pbx_sp98.Click, pbx_diesela.Click, pbx_diesela_plus.Click
+        If sender.Equals(pbx_sp95) Then
+            ' Mostrar el InputBox
+            Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.sin_plomo_95)
+
+            If valores IsNot Nothing Then
+                Dim dinero As Decimal = valores.Item1
+                Dim combustible As String = valores.Item2
+            Else
+
+            End If
+        ElseIf sender = pbx_sp98 Then
+            ' Mostrar el InputBox
+            Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.sin_plomo_98)
+
+            If valores IsNot Nothing Then
+                Dim dinero As Decimal = valores.Item1
+                Dim combustible As String = valores.Item2
+            Else
+
+            End If
+        ElseIf sender = pbx_diesela Then
+            ' Mostrar el InputBox
+            Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.diesel)
+
+            If valores IsNot Nothing Then
+                Dim dinero As Decimal = valores.Item1
+                Dim combustible As String = valores.Item2
+            Else
+
+            End If
+        ElseIf sender = pbx_diesela_plus Then
+            ' Mostrar el InputBox
+            Dim valores As Tuple(Of Decimal, Decimal) = ObtenerValoresDineroCombustible(Herramientas.tipoCombustible.diesel_plus)
+
+            If valores IsNot Nothing Then
+                Dim dinero As Decimal = valores.Item1
+                Dim combustible As String = valores.Item2
+            Else
+
+            End If
+        End If
+    End Sub
+
+    Function ObtenerValoresDineroCombustible(tipoCombustible As Herramientas.tipoCombustible) As Tuple(Of Decimal, Decimal)
+        Dim dinero As Decimal
+        Dim combustible As Decimal
+
+        Dim inputBoxForm As New Form()
+        inputBoxForm.FormBorderStyle = FormBorderStyle.FixedDialog
+        inputBoxForm.MaximizeBox = False
+        inputBoxForm.MinimizeBox = False
+        inputBoxForm.StartPosition = FormStartPosition.CenterScreen
+        inputBoxForm.Width = 300
+        inputBoxForm.Height = 200
+
+        Dim dineroLabel As New Label()
+        dineroLabel.AutoSize = True
+        dineroLabel.Text = "Dinero:"
+        dineroLabel.Font = New Font(dineroLabel.Font.FontFamily, 12)
+        dineroLabel.Location = New Point(20, 20)
+
+        Dim dineroTextBox As New TextBox()
+        dineroTextBox.Location = New Point(110, 20)
+        dineroTextBox.Width = 150
+        dineroTextBox.Font = New Font(dineroTextBox.Font.FontFamily, 12)
+
+        Dim combustibleLabel As New Label()
+        combustibleLabel.AutoSize = True
+        combustibleLabel.Text = "Combustible:"
+        combustibleLabel.Font = New Font(combustibleLabel.Font.FontFamily, 10)
+        combustibleLabel.Location = New Point(20, 60)
+
+        Dim combustibleTextBox As New TextBox()
+        combustibleTextBox.Location = New Point(110, 60)
+        combustibleTextBox.Width = 150
+        combustibleTextBox.Font = New Font(combustibleTextBox.Font.FontFamily, 12)
+
+        Dim aceptarButton As New Button()
+        aceptarButton.Text = "Aceptar"
+        aceptarButton.Font = New Font(aceptarButton.Font.FontFamily, 10)
+        aceptarButton.DialogResult = DialogResult.OK
+        aceptarButton.Location = New Point(20, 100)
+
+        Dim cancelarButton As New Button()
+        cancelarButton.Text = "Cancelar"
+        cancelarButton.Font = New Font(cancelarButton.Font.FontFamily, 10)
+        cancelarButton.DialogResult = DialogResult.Cancel
+        cancelarButton.Location = New Point(180, 100)
+
+        AddHandler aceptarButton.Click, Sub()
+                                            If Decimal.TryParse(dineroTextBox.Text, dinero) AndAlso Decimal.TryParse(combustibleTextBox.Text, combustible) Then
+                                                inputBoxForm.DialogResult = DialogResult.OK
+                                                inputBoxForm.Close()
+                                            Else
+                                                MessageBox.Show("Los valores introducidos no son válidos.")
+                                            End If
+                                        End Sub
+
+        AddHandler cancelarButton.Click, Sub()
+                                             inputBoxForm.DialogResult = DialogResult.Cancel
+                                             inputBoxForm.Close()
+                                         End Sub
+
+        AddHandler dineroTextBox.LostFocus, Sub()
+                                                If Decimal.TryParse(dineroTextBox.Text, dinero) Then
+                                                    combustibleTextBox.Text = Herramientas.CambioPrecioLitros(dineroTextBox.Text, tipoCombustible)
+                                                ElseIf dineroTextBox.Text = "" Then
+
+                                                Else
+                                                    MessageBox.Show("Los valores introducidos no son válidos.")
+                                                End If
+                                            End Sub
+
+        AddHandler combustibleTextBox.LostFocus, Sub()
+                                                     If Decimal.TryParse(combustibleTextBox.Text, dinero) Then
+                                                         dineroTextBox.Text = Herramientas.CambioLitrosPrecio(combustibleTextBox.Text, tipoCombustible)
+                                                     ElseIf combustibleTextBox.Text = "" Then
+
+                                                     Else
+                                                         MessageBox.Show("Los valores introducidos no son válidos.")
+                                                     End If
+                                                 End Sub
+
+        inputBoxForm.Controls.Add(dineroLabel)
+        inputBoxForm.Controls.Add(dineroTextBox)
+        inputBoxForm.Controls.Add(combustibleLabel)
+        inputBoxForm.Controls.Add(combustibleTextBox)
+        inputBoxForm.Controls.Add(aceptarButton)
+        inputBoxForm.Controls.Add(cancelarButton)
+
+        While inputBoxForm.ShowDialog() = DialogResult.OK
+            Return Tuple.Create(dinero, combustible)
+        End While
+
+        Return Nothing
+    End Function
+
 
 End Class
