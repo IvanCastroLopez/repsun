@@ -33,9 +33,21 @@ Public Class MenuPrincipalForm
                 rol = reader("rol").ToString()
             End If
 
-            If rol = "admin" Then
-
-            ElseIf AccessibleRole = "mantenimiento" Then
+            If rol = "Encargado" Then
+                btn_gestion.Enabled = True
+                btn_zonaClientes.Enabled = True
+                btn_surtidores.Enabled = True
+                btn_tpv.Enabled = True
+            ElseIf rol = "Empleado" Then
+                btn_gestion.Enabled = False
+                btn_zonaClientes.Enabled = True
+                btn_surtidores.Enabled = True
+                btn_tpv.Enabled = True
+            ElseIf rol = "Mantenimiento" Then
+                btn_gestion.Enabled = True
+                btn_zonaClientes.Enabled = False
+                btn_surtidores.Enabled = False
+                btn_tpv.Enabled = False
             End If
         Catch ex As Exception
 
