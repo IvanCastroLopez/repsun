@@ -39,6 +39,7 @@ Public Class LoginForm
                     MessageBox.Show("Usuario o contraseña incorrectos.")
                     Registros.GrabarAccesos(txt_user.Text, txt_contrasena.Text, False)
                     limpiarCampos()
+                    Me.Refresh()
                 End If
             Else
                 Registros.GrabarError("El nombre de usuario o la contraseña están mal escritos", "Acceso invalido")
@@ -72,6 +73,7 @@ Public Class LoginForm
     End Sub
 
     Private Sub txt_user_LostFocus(sender As Object, e As EventArgs) Handles txt_user.LostFocus
+        txt_user.Text = txt_user.Text.Trim
         If txt_user.Text = "" Then
             txt_user.Text = "nombre.apellido1"
             txt_user.ForeColor = Color.Gray
@@ -103,22 +105,6 @@ Public Class LoginForm
         comprobarCamposVacios()
     End Sub
 
-    'Private Sub tlp_login_Validating(sender As Object, e As CancelEventArgs) Handles tlp_login.Validating
-    '    If DirectCast(sender, TextBox).Text.Length > 0 Then
-    '        'Me.err_errorProvider.SetError(sender, "")
-    '    Else
-    '        Me.err_errorProvider.SetError(sender, "Ingresa una usuario para continuar")
-    '    End If
-    'End Sub
-
-    'Private Sub txt_contrasena_Validating(sender As Object, e As CancelEventArgs) Handles txt_contrasena.Validating
-    '    If DirectCast(sender, TextBox).Text.Length > 0 Then
-    '        'Me.err_errorProvider.SetError(sender, "")
-    '    Else
-    '        Me.err_errorProvider.SetError(sender, "Ingresa una contraseña para continuar")
-    '    End If
-    'End Sub
-
     Private Sub comprobarCamposVacios()
         txt_user.Text = txt_user.Text.Trim
         txt_contrasena.Text = txt_contrasena.Text.Trim
@@ -126,6 +112,8 @@ Public Class LoginForm
             Me.err_errorProvider.SetError(txt_user, "Ingresa una usuario para continuar")
         ElseIf txt_contrasena.Text.Length = 0 Then
             Me.err_errorProvider.SetError(txt_contrasena, "Ingresa una contraseña para continuar")
+        ElseIf txt_user.Text.Length > 0 And txt_contrasena.Text.Length > 0 Then
+            Me.err_errorProvider.Clear()
         End If
     End Sub
 End Class
