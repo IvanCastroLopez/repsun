@@ -34,17 +34,29 @@ Public Class GestionEmpleadosOnTop
         Else
             lbl_TituloGestionEmpleados.Text = "Editar un empleado"
             txt_codigoEmpleado.Enabled = False
-
             Dim query As String = "SELECT * FROM Empleado WHERE cod_empleado=@cod"
             Dim comando As New OleDbCommand(query, conexion)
             comando.Parameters.AddWithValue("@cod", empleadoUpdate)
+
             Dim reader As OleDbDataReader = comando.ExecuteReader
             ' Cambio de todos los editText
             If reader.Read Then
                 txt_codigoEmpleado.Text = empleadoUpdate
-                txt_dni.Text = reader("dni").ToString()
                 txt_nombre.Text = reader("nombre").ToString()
                 txt_apellidos.Text = reader("apellidos").ToString()
+                txt_dni.Text = reader("dni").ToString()
+                txt_telefono.Text = reader("telefono").ToString
+                txt_email.Text = reader("email").ToString
+                cbx_rol.Text = reader("rol").ToString
+            End If
+            Dim query2 As String = "SELECT * FROM Usuarios WHERE cod_empleado=@cod"
+            Dim comando2 As New OleDbCommand(query2, conexion)
+            comando2.Parameters.AddWithValue("@cod", empleadoUpdate)
+
+            Dim reader2 As OleDbDataReader = comando2.ExecuteReader
+            If reader2.Read Then
+                txt_nombreUsuario.Text = reader2("nombre_usuario").ToString
+                txt_contrasena.Text = reader2("contrasena").ToString
             End If
         End If
     End Sub
@@ -118,20 +130,20 @@ Public Class GestionEmpleadosOnTop
             resultado = CInt(consulta.ExecuteScalar())
             ' Comprobamos si el resultado es mayor que cero.
             If resultado > 0 Then
-                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado) Then
+                If Validaciones.ValidarNombreUsuario(txt_nombreUsuario.Text) And Validaciones.ValidarContrasena(txt_contrasena.Text) And Validaciones.ValidarEmail(txt_email.Text) And Validaciones.ValidarDni(txt_dni.Text) And Validaciones.ValidarNombre(txt_nombre.Text) And Validaciones.ValidarNombre(txt_apellidos.Text) And IsNumeric(txt_telefono.Text) And IsNumeric(txt_codigoEmpleado.Text) Then
                     ' Si booleanCrear es False, significa que se está actualizando un empleado existente, por lo que se ejecuta esta sección de código.
                     ' Creamos un comando que actualiza los datos del empleado seleccionado en la tabla Empleado.
-                    Dim ordensql As String = "UPDATE Empleado set dni=@dni, nombre=@nom, apellido=@ape, email=@ema, telefono=@tfn, rol=@rol where cod_empleado=@cod"
+                    Dim ordensql As String = "UPDATE Empleado set dni=@dni, nombre=@nom, apellidos=@ape, email=@ema, telefono=@tfn, rol=@rol where cod_empleado=@cod"
                     Dim comando As New OleDbCommand(ordensql, conexion)
                     comando.Parameters.AddWithValue("@dni", txt_dni.Text)
                     comando.Parameters.AddWithValue("@nom", txt_nombre.Text)
                     comando.Parameters.AddWithValue("@ape", txt_apellidos.Text)
                     comando.Parameters.AddWithValue("@ema", txt_email.Text)
-                    comando.Parameters.AddWithValue("@tfn", txt_telefono.Text)
+                    comando.Parameters.AddWithValue("@tfn", Integer.Parse(txt_telefono.Text))
                     comando.Parameters.AddWithValue("@rol", cbx_rol.Text)
-                    comando.Parameters.AddWithValue("@cod", txt_codigoEmpleado.Text)
+                    comando.Parameters.AddWithValue("@cod", Integer.Parse(txt_codigoEmpleado.Text))
 
-                    Dim ordensql1 As String = "UPDATE Usuario set nombre_usuario=@nom, admin=@adm, contrasena=@pas where cod_empleado=@cod"
+                    Dim ordensql1 As String = "UPDATE Usuarios set nombre_usuario=@nom, admin=@adm, contrasena=@pas where cod_empleado=@cod"
                     Dim comando1 As New OleDbCommand(ordensql1, conexion)
                     comando1.Parameters.AddWithValue("@nom", txt_nombreUsuario.Text)
                     comando1.Parameters.AddWithValue("@adm", False)
@@ -147,6 +159,7 @@ Public Class GestionEmpleadosOnTop
                         ' Cerramos el formulario.
                         Me.Close()
                     Catch ex As Exception
+                        MsgBox(ex.Message)
                         Registros.GrabarError("Ha ocurrido un error creando el empleado. Llame al técnico responsable del sistema", "Error creando el empleado")
                     End Try
                 Else

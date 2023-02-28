@@ -190,6 +190,7 @@ Public Class GestionForm
     Private Sub txt_buscarEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarEmpleado.TextChanged
         Dim comando As New OleDbCommand(("SELECT * FROM empleados WHERE nombre LIKE '%" & txt_buscarEmpleado.Text & "%'"), conexion)
         adaptador_empleados.SelectCommand = comando
+
         gestion_dataset.Clear()
         adaptador_empleados.Fill(gestion_dataset, "empleados")
         dgv_empleados.DataSource = gestion_dataset
@@ -206,11 +207,10 @@ Public Class GestionForm
         ' Mostramos la ventana GestionEmpleadosOnTop.
         GestionEmpleadosOnTop.ShowDialog()
 
-        'gestion_dataset.Tables("relacion").Clear()
-        'adaptador_empleados.Fill(gestion_dataset, "Empleado, Usuarios")
-
         gestion_dataset.Tables("relacion").Clear()
         adaptador_empleados.Fill(gestion_dataset, "relacion")
+        dgv_empleados.DataSource = gestion_dataset
+
 
     End Sub
 
@@ -243,7 +243,6 @@ Public Class GestionForm
             If resultado > 0 Then
                 ' La variable empleadoUpdate existe dentro de la columna cod_empleado de la tabla Empleado.
                 GestionEmpleadosOnTop.ShowDialog()
-
                 gestion_dataset.Tables("relacion").Clear()
                 adaptador_empleados.Fill(gestion_dataset, "relacion")
             Else
