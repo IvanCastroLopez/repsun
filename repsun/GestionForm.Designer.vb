@@ -321,6 +321,7 @@ Partial Class GestionForm
         Me.pgb_restanteDeposito.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_restanteDeposito.Location = New System.Drawing.Point(163, 181)
         Me.pgb_restanteDeposito.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_restanteDeposito.Maximum = 10000
         Me.pgb_restanteDeposito.Name = "pgb_restanteDeposito"
         Me.pgb_restanteDeposito.Size = New System.Drawing.Size(224, 13)
         Me.pgb_restanteDeposito.TabIndex = 16
@@ -462,6 +463,7 @@ Partial Class GestionForm
         Me.pgb_sinPlomo95.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_sinPlomo95.Location = New System.Drawing.Point(6, 146)
         Me.pgb_sinPlomo95.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_sinPlomo95.Maximum = 10000
         Me.pgb_sinPlomo95.Name = "pgb_sinPlomo95"
         Me.pgb_sinPlomo95.Size = New System.Drawing.Size(121, 16)
         Me.pgb_sinPlomo95.TabIndex = 12
@@ -471,6 +473,7 @@ Partial Class GestionForm
         Me.pgb_sinPlomo98.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_sinPlomo98.Location = New System.Drawing.Point(6, 202)
         Me.pgb_sinPlomo98.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_sinPlomo98.Maximum = 10000
         Me.pgb_sinPlomo98.Name = "pgb_sinPlomo98"
         Me.pgb_sinPlomo98.Size = New System.Drawing.Size(121, 16)
         Me.pgb_sinPlomo98.TabIndex = 13
@@ -480,6 +483,7 @@ Partial Class GestionForm
         Me.pgb_dieselPlus.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_dieselPlus.Location = New System.Drawing.Point(6, 314)
         Me.pgb_dieselPlus.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_dieselPlus.Maximum = 10000
         Me.pgb_dieselPlus.Name = "pgb_dieselPlus"
         Me.pgb_dieselPlus.Size = New System.Drawing.Size(121, 16)
         Me.pgb_dieselPlus.TabIndex = 14
@@ -489,6 +493,7 @@ Partial Class GestionForm
         Me.pgb_diesel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_diesel.Location = New System.Drawing.Point(6, 258)
         Me.pgb_diesel.Margin = New System.Windows.Forms.Padding(6)
+        Me.pgb_diesel.Maximum = 10000
         Me.pgb_diesel.Name = "pgb_diesel"
         Me.pgb_diesel.Size = New System.Drawing.Size(121, 16)
         Me.pgb_diesel.TabIndex = 15
