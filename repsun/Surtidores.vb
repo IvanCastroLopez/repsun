@@ -16,8 +16,9 @@
         imgCocheVerde = Image.FromFile("Imagenes\Surtidores\verde.png")
         imagenesCoches = {imgCocheAmarillo, imgCocheAzul, imgCocheCyan, imgCocheGris, imgCocheNaranja, imgCocheNegro, imgCocheRojo, imgCocheVerde}
 
+        chk_estadoSimulador.Checked = False
         tiempoAleatorio()
-        tmr_timer.Enabled = True
+        tmr_timer.Enabled = False
     End Sub
 
     ''' <summary>
@@ -29,6 +30,8 @@
         MenuPrincipalForm.Show()
         Me.Hide()
     End Sub
+
+
 
     ''' <summary>
     ''' Cambia el tiempo que tarda el timer en dispararse, en un rango de entre 5 y 30 segundos
@@ -91,13 +94,38 @@
         End Select
     End Sub
 
+    Private Sub chk_estadoSimulador_CheckedChanged(sender As Object, e As EventArgs) Handles chk_estadoSimulador.CheckedChanged
+        If chk_estadoSimulador.Checked = True Then
+            chk_estadoSimulador.Text = "Simulador ON"
+            tmr_timer.Enabled = True
+        Else
+            chk_estadoSimulador.Text = "Simulador OFF"
+            tmr_timer.Enabled = False
+        End If
+    End Sub
+
     Function generarCoche() As Image
         Dim randomIndex As Integer = New Random().Next(0, 8)
         Return imagenesCoches(randomIndex)
     End Function
 
+    Private Sub btn_vaciarCoches_Click(sender As Object, e As EventArgs) Handles btn_vaciarCoches.Click
+        vaciarCoches()
+    End Sub
+
     Private Sub quitarCoche()
 
+    End Sub
+
+    Private Sub vaciarCoches()
+        pbx_coche1.Image = Nothing
+        pbx_coche2.Image = Nothing
+        pbx_coche3.Image = Nothing
+        pbx_coche4.Image = Nothing
+        pbx_coche1.Enabled = False
+        pbx_coche2.Enabled = False
+        pbx_coche3.Enabled = False
+        pbx_coche4.Enabled = False
     End Sub
 
     Private Sub pbx_coche1_Click(sender As Object, e As EventArgs) Handles pbx_coche1.Click
@@ -127,6 +155,7 @@
         Me.ShowInTaskbar = True
         Me.nic_surtidores.Visible = False
     End Sub
+
 
 
 End Class
