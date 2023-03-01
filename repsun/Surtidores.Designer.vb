@@ -30,10 +30,10 @@ Partial Class Surtidores
         Me.pbx_coche2 = New System.Windows.Forms.PictureBox()
         Me.pbx_coche3 = New System.Windows.Forms.PictureBox()
         Me.pbx_coche4 = New System.Windows.Forms.PictureBox()
+        Me.btn_vaciarCoches = New System.Windows.Forms.Button()
+        Me.chk_estadoSimulador = New System.Windows.Forms.CheckBox()
         Me.tmr_timer = New System.Windows.Forms.Timer(Me.components)
         Me.nic_surtidores = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.chk_estadoSimulador = New System.Windows.Forms.CheckBox()
-        Me.btn_vaciarCoches = New System.Windows.Forms.Button()
         Me.tlp_posicionCoches.SuspendLayout()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_coche1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +61,7 @@ Partial Class Surtidores
         Me.tlp_posicionCoches.Controls.Add(Me.chk_estadoSimulador, 1, 0)
         Me.tlp_posicionCoches.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_posicionCoches.Location = New System.Drawing.Point(0, 0)
+        Me.tlp_posicionCoches.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tlp_posicionCoches.Name = "tlp_posicionCoches"
         Me.tlp_posicionCoches.RowCount = 5
         Me.tlp_posicionCoches.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
@@ -68,18 +69,18 @@ Partial Class Surtidores
         Me.tlp_posicionCoches.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.tlp_posicionCoches.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
         Me.tlp_posicionCoches.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlp_posicionCoches.Size = New System.Drawing.Size(1896, 1016)
+        Me.tlp_posicionCoches.Size = New System.Drawing.Size(1034, 550)
         Me.tlp_posicionCoches.TabIndex = 0
         '
         'pbx_salir
         '
         Me.pbx_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pbx_salir.BackColor = System.Drawing.Color.Transparent
-        Me.pbx_salir.Image = Global.repsun.My.Resources.Resources.Close
-        Me.pbx_salir.Location = New System.Drawing.Point(1781, 15)
-        Me.pbx_salir.Margin = New System.Windows.Forms.Padding(15)
+        Me.pbx_salir.Image = Global.repsun.My.Resources.Resources.Close_white
+        Me.pbx_salir.Location = New System.Drawing.Point(971, 8)
+        Me.pbx_salir.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.pbx_salir.Name = "pbx_salir"
-        Me.pbx_salir.Size = New System.Drawing.Size(100, 71)
+        Me.pbx_salir.Size = New System.Drawing.Size(55, 38)
         Me.pbx_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_salir.TabIndex = 0
         Me.pbx_salir.TabStop = False
@@ -89,9 +90,10 @@ Partial Class Surtidores
         Me.pbx_coche1.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_coche1.Enabled = False
-        Me.pbx_coche1.Location = New System.Drawing.Point(287, 104)
+        Me.pbx_coche1.Location = New System.Drawing.Point(157, 57)
+        Me.pbx_coche1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_coche1.Name = "pbx_coche1"
-        Me.pbx_coche1.Size = New System.Drawing.Size(562, 298)
+        Me.pbx_coche1.Size = New System.Drawing.Size(306, 161)
         Me.pbx_coche1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_coche1.TabIndex = 1
         Me.pbx_coche1.TabStop = False
@@ -101,9 +103,10 @@ Partial Class Surtidores
         Me.pbx_coche2.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_coche2.Enabled = False
-        Me.pbx_coche2.Location = New System.Drawing.Point(1044, 104)
+        Me.pbx_coche2.Location = New System.Drawing.Point(570, 57)
+        Me.pbx_coche2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_coche2.Name = "pbx_coche2"
-        Me.pbx_coche2.Size = New System.Drawing.Size(562, 298)
+        Me.pbx_coche2.Size = New System.Drawing.Size(306, 161)
         Me.pbx_coche2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_coche2.TabIndex = 2
         Me.pbx_coche2.TabStop = False
@@ -113,9 +116,10 @@ Partial Class Surtidores
         Me.pbx_coche3.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_coche3.Enabled = False
-        Me.pbx_coche3.Location = New System.Drawing.Point(287, 611)
+        Me.pbx_coche3.Location = New System.Drawing.Point(157, 332)
+        Me.pbx_coche3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_coche3.Name = "pbx_coche3"
-        Me.pbx_coche3.Size = New System.Drawing.Size(562, 298)
+        Me.pbx_coche3.Size = New System.Drawing.Size(306, 161)
         Me.pbx_coche3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_coche3.TabIndex = 3
         Me.pbx_coche3.TabStop = False
@@ -125,12 +129,42 @@ Partial Class Surtidores
         Me.pbx_coche4.BackColor = System.Drawing.Color.Transparent
         Me.pbx_coche4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbx_coche4.Enabled = False
-        Me.pbx_coche4.Location = New System.Drawing.Point(1044, 611)
+        Me.pbx_coche4.Location = New System.Drawing.Point(570, 332)
+        Me.pbx_coche4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbx_coche4.Name = "pbx_coche4"
-        Me.pbx_coche4.Size = New System.Drawing.Size(562, 298)
+        Me.pbx_coche4.Size = New System.Drawing.Size(306, 161)
         Me.pbx_coche4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_coche4.TabIndex = 4
         Me.pbx_coche4.TabStop = False
+        '
+        'btn_vaciarCoches
+        '
+        Me.btn_vaciarCoches.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_vaciarCoches.AutoSize = True
+        Me.btn_vaciarCoches.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_vaciarCoches.Location = New System.Drawing.Point(579, 11)
+        Me.btn_vaciarCoches.Margin = New System.Windows.Forms.Padding(11, 11, 11, 11)
+        Me.btn_vaciarCoches.Name = "btn_vaciarCoches"
+        Me.btn_vaciarCoches.Size = New System.Drawing.Size(125, 33)
+        Me.btn_vaciarCoches.TabIndex = 6
+        Me.btn_vaciarCoches.Text = "Quitar coches"
+        Me.btn_vaciarCoches.UseVisualStyleBackColor = True
+        '
+        'chk_estadoSimulador
+        '
+        Me.chk_estadoSimulador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chk_estadoSimulador.Appearance = System.Windows.Forms.Appearance.Button
+        Me.chk_estadoSimulador.AutoSize = True
+        Me.chk_estadoSimulador.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chk_estadoSimulador.Location = New System.Drawing.Point(362, 11)
+        Me.chk_estadoSimulador.Margin = New System.Windows.Forms.Padding(11, 11, 11, 11)
+        Me.chk_estadoSimulador.Name = "chk_estadoSimulador"
+        Me.chk_estadoSimulador.Size = New System.Drawing.Size(92, 33)
+        Me.chk_estadoSimulador.TabIndex = 5
+        Me.chk_estadoSimulador.Text = "Simulador OFF"
+        Me.chk_estadoSimulador.UseVisualStyleBackColor = True
         '
         'tmr_timer
         '
@@ -144,45 +178,17 @@ Partial Class Surtidores
         Me.nic_surtidores.Text = "Nuevo coche"
         Me.nic_surtidores.Visible = True
         '
-        'chk_estadoSimulador
-        '
-        Me.chk_estadoSimulador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.chk_estadoSimulador.Appearance = System.Windows.Forms.Appearance.Button
-        Me.chk_estadoSimulador.AutoSize = True
-        Me.chk_estadoSimulador.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_estadoSimulador.Location = New System.Drawing.Point(677, 20)
-        Me.chk_estadoSimulador.Margin = New System.Windows.Forms.Padding(20)
-        Me.chk_estadoSimulador.Name = "chk_estadoSimulador"
-        Me.chk_estadoSimulador.Size = New System.Drawing.Size(155, 61)
-        Me.chk_estadoSimulador.TabIndex = 5
-        Me.chk_estadoSimulador.Text = "Simulador OFF"
-        Me.chk_estadoSimulador.UseVisualStyleBackColor = True
-        '
-        'btn_vaciarCoches
-        '
-        Me.btn_vaciarCoches.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_vaciarCoches.AutoSize = True
-        Me.btn_vaciarCoches.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_vaciarCoches.Location = New System.Drawing.Point(1061, 20)
-        Me.btn_vaciarCoches.Margin = New System.Windows.Forms.Padding(20)
-        Me.btn_vaciarCoches.Name = "btn_vaciarCoches"
-        Me.btn_vaciarCoches.Size = New System.Drawing.Size(229, 61)
-        Me.btn_vaciarCoches.TabIndex = 6
-        Me.btn_vaciarCoches.Text = "Quitar coches"
-        Me.btn_vaciarCoches.UseVisualStyleBackColor = True
-        '
         'Surtidores
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.repsun.My.Resources.Resources.vistaSurtidores
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(1896, 1016)
+        Me.ClientSize = New System.Drawing.Size(1034, 550)
         Me.Controls.Add(Me.tlp_posicionCoches)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Surtidores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Surtidores"

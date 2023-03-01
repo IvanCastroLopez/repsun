@@ -255,6 +255,7 @@
     <Content Include="bin\Debug\Imagenes\Iconos\Buscar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Check.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Clientes.png" />
+    <Content Include="bin\Debug\Imagenes\Iconos\Close_white.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Combustible.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Eliminar.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Empleados.png" />
