@@ -491,10 +491,10 @@ Public Class tpvForm
             Else
                 If ExisteClienteRepsol(userInput) Then
                     Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
-                    Dim queryCliente2 As String = "SELECT * FROM CleinteRepsol WHERE cod_cliente = @cod_cliente"
+                    Dim queryCliente2 As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
                     Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
                     comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
-                    Dim comandoCliente2 As New OleDbCommand(queryCliente, conexion)
+                    Dim comandoCliente2 As New OleDbCommand(queryCliente2, conexion)
                     comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
                     Dim readerPublicCliente As OleDbDataReader
                     conexion.Open()

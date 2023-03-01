@@ -24,16 +24,11 @@ Partial Class SurtidorOnTop
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SurtidorOnTop))
         Me.tlp_surtidorGeneral = New System.Windows.Forms.TableLayoutPanel()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.cbx_tipoCombustible = New System.Windows.Forms.ComboBox()
         Me.txt_precioTotal = New System.Windows.Forms.TextBox()
         Me.txt_litros = New System.Windows.Forms.TextBox()
         Me.tlp_surtidorGeneral.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +40,6 @@ Partial Class SurtidorOnTop
         Me.tlp_surtidorGeneral.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.38536!))
         Me.tlp_surtidorGeneral.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.61464!))
         Me.tlp_surtidorGeneral.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 696.0!))
-        Me.tlp_surtidorGeneral.Controls.Add(Me.SplitContainer1, 1, 2)
         Me.tlp_surtidorGeneral.Controls.Add(Me.TableLayoutPanel1, 1, 1)
         Me.tlp_surtidorGeneral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_surtidorGeneral.Location = New System.Drawing.Point(0, 0)
@@ -57,33 +51,6 @@ Partial Class SurtidorOnTop
         Me.tlp_surtidorGeneral.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 203.0!))
         Me.tlp_surtidorGeneral.Size = New System.Drawing.Size(2150, 1170)
         Me.tlp_surtidorGeneral.TabIndex = 0
-        '
-        'SplitContainer1
-        '
-        Me.SplitContainer1.BackColor = System.Drawing.Color.Transparent
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(736, 829)
-        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(4)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.ProgressBar1)
-        Me.SplitContainer1.Panel1.Padding = New System.Windows.Forms.Padding(17, 42, 34, 17)
-        Me.SplitContainer1.Size = New System.Drawing.Size(713, 133)
-        Me.SplitContainer1.SplitterDistance = 546
-        Me.SplitContainer1.SplitterWidth = 6
-        Me.SplitContainer1.TabIndex = 0
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProgressBar1.Location = New System.Drawing.Point(17, 42)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(495, 74)
-        Me.ProgressBar1.TabIndex = 0
-        Me.ProgressBar1.UseWaitCursor = True
         '
         'TableLayoutPanel1
         '
@@ -117,6 +84,8 @@ Partial Class SurtidorOnTop
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbx_tipoCombustible.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.TableLayoutPanel1.SetColumnSpan(Me.cbx_tipoCombustible, 2)
+        Me.cbx_tipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_tipoCombustible.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbx_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 9.857143!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbx_tipoCombustible.ForeColor = System.Drawing.Color.White
         Me.cbx_tipoCombustible.FormattingEnabled = True
@@ -137,7 +106,7 @@ Partial Class SurtidorOnTop
         Me.txt_precioTotal.ForeColor = System.Drawing.Color.White
         Me.txt_precioTotal.Location = New System.Drawing.Point(295, 171)
         Me.txt_precioTotal.Name = "txt_precioTotal"
-        Me.txt_precioTotal.Size = New System.Drawing.Size(564, 54)
+        Me.txt_precioTotal.Size = New System.Drawing.Size(322, 31)
         Me.txt_precioTotal.TabIndex = 1
         Me.txt_precioTotal.Text = "00,00"
         '
@@ -152,7 +121,7 @@ Partial Class SurtidorOnTop
         Me.txt_litros.ForeColor = System.Drawing.Color.White
         Me.txt_litros.Location = New System.Drawing.Point(295, 271)
         Me.txt_litros.Name = "txt_litros"
-        Me.txt_litros.Size = New System.Drawing.Size(564, 54)
+        Me.txt_litros.Size = New System.Drawing.Size(322, 31)
         Me.txt_litros.TabIndex = 2
         Me.txt_litros.Text = "00,00"
         '
@@ -175,9 +144,6 @@ Partial Class SurtidorOnTop
         Me.Text = "Surtidor"
         Me.TopMost = True
         Me.tlp_surtidorGeneral.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -185,8 +151,6 @@ Partial Class SurtidorOnTop
     End Sub
 
     Friend WithEvents tlp_surtidorGeneral As TableLayoutPanel
-    Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents cbx_tipoCombustible As ComboBox
     Friend WithEvents txt_precioTotal As TextBox
