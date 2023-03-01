@@ -515,6 +515,9 @@ Public Class tpvForm
                 tarjeta = True
                 AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
                 PrintDocument1.Print()
+
+                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket2
+                PrintDocument1.Print()
             ElseIf resultado = DialogResult.No Then
                 ' Acción para el botón "Efectivo"
                 MsgBox("Pago en efectivo seleccionado.")
@@ -672,6 +675,127 @@ Public Class tpvForm
 
     End Sub
 
+    Private Sub PrintTicket2(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
+
+        Dim introducido As Integer = txt_introducido.Text
+        Dim devolucion As Integer = txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)
+        ' Fuente que usaremos en el ticket (Usaremos Courier new ya que todos los caracteres miden lo mismo)
+        Dim printFont As System.Drawing.Font = New Font("Courier New", 12, FontStyle.Regular)
+        ' Dim printFont As System.Drawing.Font = New Font("Arial", 9, FontStyle.Italic)
+
+        ' creamos variables que nos ayudarán a la impresión del ticket.
+        Dim topMargin As Double = ev.MarginBounds.Top
+        Dim yPos As Double = 0
+        Dim tab As String = "    "
+
+        ' imprime la imagen
+        ' ev.Graphics.DrawImage(Image.FromFile(".\Imagenes\Logo\LogoTicketRepsun.png"), x espacio, y espacio, ancho, alto)
+        ev.Graphics.DrawImage(Image.FromFile(".\Imagenes\Logo\LogoTicketRepsun.png"), 195, 50, 200, 113)
+
+        yPos += 160
+        ' Imprime la cabecera
+        ev.Graphics.DrawString("Autovía A-6", printFont, Brushes.Black, 240, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("pk: 7,800 Madrid", printFont, Brushes.Black, 210, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("Repsun A6 SL", printFont, Brushes.Black, 230, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("CIF: B85989903", printFont, Brushes.Black, 220, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("FACTURA SIMPLIFICADA", printFont, Brushes.Black, 190, yPos)
+        yPos += 30
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 30
+        ev.Graphics.DrawString(Now, printFont, Brushes.Black, 200, yPos)
+        yPos += 30
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 20
+
+        ' Imprime los articulos
+        For Each filaCesta As DataRow In carrito.Rows
+            Dim filaProducto As DataRow = ObtenerProductoPorCodigo(filaCesta("cod_producto"))
+            If filaProducto IsNot Nothing Then
+                ev.Graphics.DrawString(filaCesta("cantidad").ToString(), printFont, Brushes.Black, 130, yPos)
+                ev.Graphics.DrawString(filaProducto("nombre").ToString(), printFont, Brushes.Black, 160, yPos)
+                ev.Graphics.DrawString(filaCesta("precio_por_litro").ToString(), printFont, Brushes.Black, 370, yPos)
+                Dim precioTotal As Decimal = filaCesta("total")
+                If precioTotal >= 10 Then
+                    ev.Graphics.DrawString(precioTotal.ToString("N2"), printFont, Brushes.Black, 420, yPos)
+                Else
+                    ev.Graphics.DrawString(precioTotal.ToString("N2"), printFont, Brushes.Black, 430, yPos)
+                End If
+                yPos += 20
+            End If
+        Next
+        yPos += 20
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+
+        yPos += 30
+        If Not cliente Then
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            yPos += 30
+        Else
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            yPos += 30
+        End If
+
+        ev.Graphics.DrawString("IVA INCLUIDO", New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 380, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("Base Imp", printFont, Brushes.Black, 140, yPos)
+        ev.Graphics.DrawString("%IVA", printFont, Brushes.Black, 300, yPos)
+        ev.Graphics.DrawString("IVA", printFont, Brushes.Black, 440, yPos)
+        yPos += 20
+
+
+        Dim impuestos As Decimal = ObtenerTotalCarrito() * 0.21
+
+        ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito() - impuestos).ToString, printFont, Brushes.Black, 150, yPos)
+        ev.Graphics.DrawString("21,00", printFont, Brushes.Black, 300, yPos)
+        ev.Graphics.DrawString(Math.Round(impuestos, 2).ToString, printFont, Brushes.Black, 430, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("Forma de pago", printFont, Brushes.Black, 230, yPos)
+        yPos += 20
+
+        If tarjeta Then
+
+            ev.Graphics.DrawString("Tarjeta: ", printFont, Brushes.Black, 130, yPos)
+        Else
+            ev.Graphics.DrawString("Efectivo: ", printFont, Brushes.Black, 130, yPos)
+        End If
+        If introducido >= 10 Then
+            ev.Graphics.DrawString(txt_introducido.Text, printFont, Brushes.Black, 420, yPos)
+        Else
+            ev.Graphics.DrawString(txt_introducido.Text, printFont, Brushes.Black, 430, yPos)
+        End If
+        yPos += 20
+
+        If Not tarjeta Then
+            ev.Graphics.DrawString("Devolucion: ", printFont, Brushes.Black, 130, yPos)
+            If devolucion >= 10 Then
+                ev.Graphics.DrawString((txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)), printFont, Brushes.Black, 420, yPos)
+            Else
+                ev.Graphics.DrawString((txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)), printFont, Brushes.Black, 430, yPos)
+            End If
+            yPos += 40
+        End If
+
+        If cliente Then
+            ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 130, yPos)
+            yPos += 20
+        End If
+        ev.Graphics.DrawString("INCLUIDA BONIFICACION", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 140, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("R.D. LEY 6/2022", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 160, yPos)
+
+        ev.HasMorePages = False
+
+    End Sub
+
     Public Function ExisteClienteRepsol(ByVal cod_cliente As Integer) As Boolean
         Dim existe As Boolean = False
         Dim query As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
@@ -687,5 +811,6 @@ Public Class tpvForm
         conexion.Close()
         Return existe
     End Function
+
 
 End Class

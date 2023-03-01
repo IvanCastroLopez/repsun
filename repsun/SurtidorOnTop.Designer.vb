@@ -31,6 +31,7 @@ Partial Class SurtidorOnTop
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.pgb_gasolinaSurtidor = New System.Windows.Forms.ProgressBar()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.tlp_surtidorGeneral.SuspendLayout()
         Me.tlp_pantallaSurtidor.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -209,4 +210,5 @@ Partial Class SurtidorOnTop
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents pgb_gasolinaSurtidor As ProgressBar
     Friend WithEvents Button1 As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

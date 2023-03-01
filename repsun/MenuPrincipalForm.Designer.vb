@@ -28,6 +28,7 @@ Partial Class MenuPrincipalForm
         Me.btn_surtidores = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.tlp_layoutBotones = New System.Windows.Forms.TableLayoutPanel()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.tlp_layoutBotones.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,7 +39,7 @@ Partial Class MenuPrincipalForm
         Me.btn_tpv.BackColor = System.Drawing.Color.White
         Me.btn_tpv.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_tpv.Location = New System.Drawing.Point(577, 249)
-        Me.btn_tpv.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_tpv.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_tpv.Name = "btn_tpv"
         Me.btn_tpv.Size = New System.Drawing.Size(127, 40)
         Me.btn_tpv.TabIndex = 4
@@ -52,7 +53,7 @@ Partial Class MenuPrincipalForm
         Me.btn_gestion.BackColor = System.Drawing.Color.White
         Me.btn_gestion.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_gestion.Location = New System.Drawing.Point(420, 365)
-        Me.btn_gestion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_gestion.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_gestion.Name = "btn_gestion"
         Me.btn_gestion.Size = New System.Drawing.Size(119, 40)
         Me.btn_gestion.TabIndex = 5
@@ -66,7 +67,7 @@ Partial Class MenuPrincipalForm
         Me.btn_zonaClientes.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btn_zonaClientes.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_zonaClientes.Location = New System.Drawing.Point(734, 293)
-        Me.btn_zonaClientes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_zonaClientes.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_zonaClientes.Name = "btn_zonaClientes"
         Me.btn_zonaClientes.Size = New System.Drawing.Size(153, 54)
         Me.btn_zonaClientes.TabIndex = 6
@@ -80,7 +81,7 @@ Partial Class MenuPrincipalForm
         Me.btn_surtidores.BackColor = System.Drawing.Color.White
         Me.btn_surtidores.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_surtidores.Location = New System.Drawing.Point(891, 191)
-        Me.btn_surtidores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_surtidores.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_surtidores.Name = "btn_surtidores"
         Me.btn_surtidores.Size = New System.Drawing.Size(153, 40)
         Me.btn_surtidores.TabIndex = 7
@@ -94,7 +95,7 @@ Partial Class MenuPrincipalForm
         Me.btn_salir.BackColor = System.Drawing.Color.White
         Me.btn_salir.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 15.85714!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_salir.Location = New System.Drawing.Point(596, 481)
-        Me.btn_salir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_salir.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(134, 40)
         Me.btn_salir.TabIndex = 8
@@ -119,7 +120,7 @@ Partial Class MenuPrincipalForm
         Me.tlp_layoutBotones.Controls.Add(Me.btn_salir, 2, 6)
         Me.tlp_layoutBotones.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_layoutBotones.Location = New System.Drawing.Point(0, 0)
-        Me.tlp_layoutBotones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tlp_layoutBotones.Margin = New System.Windows.Forms.Padding(2)
         Me.tlp_layoutBotones.Name = "tlp_layoutBotones"
         Me.tlp_layoutBotones.RowCount = 8
         Me.tlp_layoutBotones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
@@ -133,6 +134,10 @@ Partial Class MenuPrincipalForm
         Me.tlp_layoutBotones.Size = New System.Drawing.Size(1047, 585)
         Me.tlp_layoutBotones.TabIndex = 9
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = ".\Debug\Repsun_Ayuda.chm"
+        '
         'MenuPrincipalForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -143,7 +148,7 @@ Partial Class MenuPrincipalForm
         Me.Controls.Add(Me.tlp_layoutBotones)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MenuPrincipalForm"
         Me.Text = "MenuPrincipalForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -159,4 +164,5 @@ Partial Class MenuPrincipalForm
     Friend WithEvents btn_surtidores As Button
     Friend WithEvents btn_salir As Button
     Friend WithEvents tlp_layoutBotones As TableLayoutPanel
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

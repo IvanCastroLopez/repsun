@@ -76,6 +76,7 @@ Partial Class tpvForm
         Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.tlp_tpv.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_caja.SuspendLayout()
@@ -872,6 +873,10 @@ Partial Class tpvForm
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = ".\Debug\Repsun_Ayuda.chm"
+        '
         'tpvForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -971,4 +976,5 @@ Partial Class tpvForm
     Friend WithEvents dgv_combustible As DataGridView
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
