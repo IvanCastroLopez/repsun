@@ -29,6 +29,7 @@
     Private Sub pbx_salir_Click(sender As Object, e As EventArgs) Handles pbx_salir.Click
         MenuPrincipalForm.Show()
         Me.Hide()
+        SurtidorOnTop.Close()
     End Sub
 
 
