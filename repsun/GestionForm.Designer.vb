@@ -111,6 +111,7 @@ Partial Class GestionForm
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsb_registroAccesos = New System.Windows.Forms.ToolStripButton()
         Me.tsb_registroErrores = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.tlp_gestion.SuspendLayout()
         Me.tbc_gestion.SuspendLayout()
         Me.tpg_combustible.SuspendLayout()
@@ -1456,7 +1457,7 @@ Partial Class GestionForm
         '
         Me.tlp_gestion.SetColumnSpan(Me.ToolStrip1, 2)
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(28, 28)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_registroAccesos, Me.tsb_registroErrores})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_registroAccesos, Me.tsb_registroErrores, Me.ToolStripButton1})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.ToolStrip1.Location = New System.Drawing.Point(105, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -1482,6 +1483,15 @@ Partial Class GestionForm
         Me.tsb_registroErrores.Name = "tsb_registroErrores"
         Me.tsb_registroErrores.Size = New System.Drawing.Size(47, 19)
         Me.tsb_registroErrores.Text = "Errores"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(46, 19)
+        Me.ToolStripButton1.Text = "Policía"
         '
         'GestionForm
         '
@@ -1634,4 +1644,5 @@ Partial Class GestionForm
     Friend WithEvents btn_empleados As Button
     Friend WithEvents btn_tienda As Button
     Friend WithEvents btn_clientes As Button
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

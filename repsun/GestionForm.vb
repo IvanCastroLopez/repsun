@@ -714,4 +714,10 @@ Public Class GestionForm
         RegistrosOnTop.errores = True
         RegistrosOnTop.ShowDialog()
     End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim url As String = "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi5g-C7yLn9AhVewAIHHfofDZ8QFnoECAwQAQ&url=https%3A%2F%2Fwww.madrid.es%2Fportales%2Fmunimadrid%2Fes%2FInicio%2FAyuntamiento%2FEmergencias-y-Seguridad%2FPolicia-Municipal-de-Madrid%3Fvgnextfmt%3Ddefault%26vgnextoid%3D1b5abbc29b9ac310VgnVCM2000000c205a0aRCRD%26vgnextchannel%3Dd11c9ad016e07010VgnVCM100000dc0ca8c0RCRD&usg=AOvVaw1_iPxFitUnhZ83vZORBXgI"
+        System.Diagnostics.Process.Start(url)
+
+    End Sub
 End Class
