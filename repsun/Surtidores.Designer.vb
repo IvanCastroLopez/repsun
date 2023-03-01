@@ -32,6 +32,8 @@ Partial Class Surtidores
         Me.pbx_coche4 = New System.Windows.Forms.PictureBox()
         Me.tmr_timer = New System.Windows.Forms.Timer(Me.components)
         Me.nic_surtidores = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.chk_estadoSimulador = New System.Windows.Forms.CheckBox()
+        Me.btn_vaciarCoches = New System.Windows.Forms.Button()
         Me.tlp_posicionCoches.SuspendLayout()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx_coche1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +57,8 @@ Partial Class Surtidores
         Me.tlp_posicionCoches.Controls.Add(Me.pbx_coche2, 3, 1)
         Me.tlp_posicionCoches.Controls.Add(Me.pbx_coche3, 1, 3)
         Me.tlp_posicionCoches.Controls.Add(Me.pbx_coche4, 3, 3)
+        Me.tlp_posicionCoches.Controls.Add(Me.btn_vaciarCoches, 3, 0)
+        Me.tlp_posicionCoches.Controls.Add(Me.chk_estadoSimulador, 1, 0)
         Me.tlp_posicionCoches.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_posicionCoches.Location = New System.Drawing.Point(0, 0)
         Me.tlp_posicionCoches.Name = "tlp_posicionCoches"
@@ -140,6 +144,35 @@ Partial Class Surtidores
         Me.nic_surtidores.Text = "Nuevo coche"
         Me.nic_surtidores.Visible = True
         '
+        'chk_estadoSimulador
+        '
+        Me.chk_estadoSimulador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chk_estadoSimulador.Appearance = System.Windows.Forms.Appearance.Button
+        Me.chk_estadoSimulador.AutoSize = True
+        Me.chk_estadoSimulador.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chk_estadoSimulador.Location = New System.Drawing.Point(677, 20)
+        Me.chk_estadoSimulador.Margin = New System.Windows.Forms.Padding(20)
+        Me.chk_estadoSimulador.Name = "chk_estadoSimulador"
+        Me.chk_estadoSimulador.Size = New System.Drawing.Size(155, 61)
+        Me.chk_estadoSimulador.TabIndex = 5
+        Me.chk_estadoSimulador.Text = "Simulador OFF"
+        Me.chk_estadoSimulador.UseVisualStyleBackColor = True
+        '
+        'btn_vaciarCoches
+        '
+        Me.btn_vaciarCoches.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_vaciarCoches.AutoSize = True
+        Me.btn_vaciarCoches.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 8.142858!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_vaciarCoches.Location = New System.Drawing.Point(1061, 20)
+        Me.btn_vaciarCoches.Margin = New System.Windows.Forms.Padding(20)
+        Me.btn_vaciarCoches.Name = "btn_vaciarCoches"
+        Me.btn_vaciarCoches.Size = New System.Drawing.Size(229, 61)
+        Me.btn_vaciarCoches.TabIndex = 6
+        Me.btn_vaciarCoches.Text = "Quitar coches"
+        Me.btn_vaciarCoches.UseVisualStyleBackColor = True
+        '
         'Surtidores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
@@ -155,6 +188,7 @@ Partial Class Surtidores
         Me.Text = "Surtidores"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_posicionCoches.ResumeLayout(False)
+        Me.tlp_posicionCoches.PerformLayout()
         CType(Me.pbx_salir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_coche1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx_coche2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -172,4 +206,6 @@ Partial Class Surtidores
     Friend WithEvents pbx_coche4 As PictureBox
     Friend WithEvents tmr_timer As Timer
     Friend WithEvents nic_surtidores As NotifyIcon
+    Friend WithEvents chk_estadoSimulador As CheckBox
+    Friend WithEvents btn_vaciarCoches As Button
 End Class
