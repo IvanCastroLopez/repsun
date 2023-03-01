@@ -117,13 +117,13 @@ Partial Class SurtidorOnTop
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbx_tipoCombustible.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.TableLayoutPanel1.SetColumnSpan(Me.cbx_tipoCombustible, 2)
-        Me.cbx_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_tipoCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 9.857143!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbx_tipoCombustible.ForeColor = System.Drawing.Color.White
         Me.cbx_tipoCombustible.FormattingEnabled = True
         Me.cbx_tipoCombustible.Items.AddRange(New Object() {"Sin Plomo 95", "Sin Plomo 98", "Diesel", "Diesel +"})
         Me.cbx_tipoCombustible.Location = New System.Drawing.Point(110, 71)
         Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
-        Me.cbx_tipoCombustible.Size = New System.Drawing.Size(887, 65)
+        Me.cbx_tipoCombustible.Size = New System.Drawing.Size(887, 39)
         Me.cbx_tipoCombustible.TabIndex = 0
         '
         'txt_precioTotal
@@ -133,11 +133,11 @@ Partial Class SurtidorOnTop
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_precioTotal.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_precioTotal.Font = New System.Drawing.Font("Yu Gothic UI", 9.857143!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_precioTotal.ForeColor = System.Drawing.Color.White
         Me.txt_precioTotal.Location = New System.Drawing.Point(295, 171)
         Me.txt_precioTotal.Name = "txt_precioTotal"
-        Me.txt_precioTotal.Size = New System.Drawing.Size(564, 98)
+        Me.txt_precioTotal.Size = New System.Drawing.Size(564, 54)
         Me.txt_precioTotal.TabIndex = 1
         Me.txt_precioTotal.Text = "00,00"
         '
@@ -148,11 +148,11 @@ Partial Class SurtidorOnTop
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_litros.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.txt_litros.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_litros.Font = New System.Drawing.Font("Yu Gothic UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_litros.Font = New System.Drawing.Font("Yu Gothic UI", 9.857143!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_litros.ForeColor = System.Drawing.Color.White
         Me.txt_litros.Location = New System.Drawing.Point(295, 271)
         Me.txt_litros.Name = "txt_litros"
-        Me.txt_litros.Size = New System.Drawing.Size(564, 98)
+        Me.txt_litros.Size = New System.Drawing.Size(564, 54)
         Me.txt_litros.TabIndex = 2
         Me.txt_litros.Text = "00,00"
         '
