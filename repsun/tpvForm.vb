@@ -600,7 +600,7 @@ Public Class tpvForm
             ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
-            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
             yPos += 30
         End If
 
@@ -661,12 +661,12 @@ Public Class tpvForm
         yPos += 40
 
         If cliente Then
-            ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
+            ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 130, yPos)
             yPos += 20
         End If
-        ev.Graphics.DrawString("INCLUIDA BONIFICACION", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
+        ev.Graphics.DrawString("INCLUIDA BONIFICACION", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 140, yPos)
         yPos += 20
-        ev.Graphics.DrawString("R.D. LEY 6/2022", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 150, yPos)
+        ev.Graphics.DrawString("R.D. LEY 6/2022", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 160, yPos)
 
         ev.HasMorePages = False
 
