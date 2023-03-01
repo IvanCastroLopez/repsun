@@ -1,6 +1,7 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.Data.OleDb
 Imports System.Data.SqlClient
+Imports System.Drawing.Printing
 Imports System.Security
 
 Public Class tpvForm
@@ -10,7 +11,7 @@ Public Class tpvForm
     'Aquí se crea un adaptador de datos OleDbDataAdapter para seleccionar todos los datos de la tabla "Producto" de la base de datos.
     Public adaptador_tienda As New OleDbDataAdapter("Select * from Producto", conexion)
     Public adaptador_cesta As New OleDbDataAdapter("SELECT * FROM CestaCompra", conexion)
-
+    Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
     'Aquí se crea un objeto DataSet llamado "gestion_dataset".
     Public gestion_dataset As New DataSet
 
@@ -35,7 +36,6 @@ Public Class tpvForm
         dgv_carrito.Columns.Add("Nombre", "Nombre")
         dgv_carrito.Columns.Add("Total", "Total")
         dgv_carrito.Columns.Add("Precio por Litro", "Precio ud o l")
-        dgv_carrito.Columns.Add("cod_producto", "")
         dgv_carrito.Columns("cod_producto").Visible = False
 
         dgv_combustible.Columns.Add("Cantidad", "Cantidad")
@@ -54,12 +54,13 @@ Public Class tpvForm
         carrito.Columns.Add("Total", GetType(Decimal))
         carrito.Columns.Add("Precio_por_litro", GetType(Decimal))
 
+        ' Configuramos la clave primaria del DataTable carrito.
+        carrito.PrimaryKey = New DataColumn() {carrito.Columns("Cod_cesta")}
+
         ' Configuramos el estilo de las filas del DataGridView.
         dgv_carrito.RowsDefaultCellStyle.BackColor = Color.White
         dgv_carrito.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
 
-        ' Configuramos la clave primaria del DataTable carrito.
-        carrito.PrimaryKey = New DataColumn() {carrito.Columns("Cod_cesta")}
     End Sub
 
 
@@ -450,7 +451,9 @@ Public Class tpvForm
     ' *** TECLADO VIRTUAL ***
     ' TECLADO NUMÉRICO
     Private Sub btn_teclado_Click(sender As Object, e As EventArgs) Handles btn_0.Click, btn_1.Click, btn_2.Click, btn_3.Click, btn_4.Click, btn_5.Click, btn_6.Click, btn_7.Click, btn_8.Click, btn_9.Click, btn_coma.Click
-        txt_introducido.Text = txt_introducido.Text & sender.text
+        If txt_introducido.Text.Length < 6 Then
+            txt_introducido.Text = txt_introducido.Text & sender.text
+        End If
     End Sub
 
     ' BOTÓN EXACTO
@@ -471,17 +474,54 @@ Public Class tpvForm
         Me.Hide()
     End Sub
 
+    Dim tarjeta As Boolean = False
+    Dim cliente As Boolean = True
+    Dim codCliente As String
+    Dim nombreCliente As String
+
     ' BOTON COBRAR
     Private Sub btn_teclado_cobrar_Click(sender As Object, e As EventArgs) Handles btn_teclado_cobrar.Click
         If txt_introducido.Text >= Math.Round(ObtenerTotalCarrito(), 2) Then
+            Dim userInput As String = String.Empty
+
+            userInput = InputBox("Por favor ingrese un valor:", "InputBox con botones de aceptar y cancelar")
+
+            If userInput = String.Empty Then
+                ' El usuario hizo clic en Cancelar
+            Else
+                If ExisteClienteRepsol(userInput) Then
+                    Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+                    Dim queryCliente2 As String = "SELECT * FROM CleinteRepsol WHERE cod_cliente = @cod_cliente"
+                    Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
+                    comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
+                    Dim comandoCliente2 As New OleDbCommand(queryCliente, conexion)
+                    comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
+                    Dim readerPublicCliente As OleDbDataReader
+                    conexion.Open()
+                    readerPublicCliente = comandoCliente2.ExecuteReader
+                    If readerPublicCliente.Read Then
+                        codCliente = userInput
+                        nombreCliente = readerPublicCliente("nombre")
+                    End If
+                    readerPublicCliente.Close()
+                    conexion.Close()
+                End If
+            End If
             Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
                 ' Acción para el botón "Tarjeta"
                 MsgBox("Pago con tarjeta seleccionado.")
+                tarjeta = True
+                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+                PrintDocument1.Print()
             ElseIf resultado = DialogResult.No Then
                 ' Acción para el botón "Efectivo"
                 MsgBox("Pago en efectivo seleccionado.")
+                tarjeta = False
+                MsgBox("Devolver: " & (txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)))
+                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+                PrintDocument1.Print()
             ElseIf resultado = DialogResult.Cancel Then
                 ' Acción para el botón "Cancelar"
                 MsgBox("Pago cancelado.")
@@ -490,5 +530,160 @@ Public Class tpvForm
             Registros.GrabarError("Dinero insuficiente", "No cobrar")
         End If
     End Sub
+
+
+
+
+
+
+
+
+
+
+    Private Sub PrintTicket(ByVal sender As Object, ByVal ev As PrintPageEventArgs)
+
+        Dim introducido As Integer = txt_introducido.Text
+        Dim devolucion As Integer = txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)
+        ' Fuente que usaremos en el ticket (Usaremos Courier new ya que todos los caracteres miden lo mismo)
+        Dim printFont As System.Drawing.Font = New Font("Courier New", 12, FontStyle.Regular)
+        ' Dim printFont As System.Drawing.Font = New Font("Arial", 9, FontStyle.Italic)
+
+        ' creamos variables que nos ayudarán a la impresión del ticket.
+        Dim topMargin As Double = ev.MarginBounds.Top
+        Dim yPos As Double = 0
+        Dim tab As String = "    "
+
+        ' imprime la imagen
+        ' ev.Graphics.DrawImage(Image.FromFile(".\Imagenes\Logo\LogoTicketRepsun.png"), x espacio, y espacio, ancho, alto)
+        ev.Graphics.DrawImage(Image.FromFile(".\Imagenes\Logo\LogoTicketRepsun.png"), 195, 50, 200, 113)
+
+        yPos += 160
+        ' Imprime la cabecera
+        ev.Graphics.DrawString("Autovía A-6", printFont, Brushes.Black, 240, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("pk: 7,800 Madrid", printFont, Brushes.Black, 210, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("Repsun A6 SL", printFont, Brushes.Black, 230, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("CIF: B85989903", printFont, Brushes.Black, 220, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("FACTURA SIMPLIFICADA", printFont, Brushes.Black, 190, yPos)
+        yPos += 30
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 30
+        ev.Graphics.DrawString(Now, printFont, Brushes.Black, 200, yPos)
+        yPos += 30
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 20
+
+        ' Imprime los articulos
+        For Each filaCesta As DataRow In carrito.Rows
+            Dim filaProducto As DataRow = ObtenerProductoPorCodigo(filaCesta("cod_producto"))
+            If filaProducto IsNot Nothing Then
+                ev.Graphics.DrawString(filaCesta("cantidad").ToString(), printFont, Brushes.Black, 130, yPos)
+                ev.Graphics.DrawString(filaProducto("nombre").ToString(), printFont, Brushes.Black, 160, yPos)
+                ev.Graphics.DrawString(filaCesta("precio_por_litro").ToString(), printFont, Brushes.Black, 370, yPos)
+                Dim precioTotal As Decimal = filaCesta("total")
+                If precioTotal >= 10 Then
+                    ev.Graphics.DrawString(precioTotal.ToString("N2"), printFont, Brushes.Black, 420, yPos)
+                Else
+                    ev.Graphics.DrawString(precioTotal.ToString("N2"), printFont, Brushes.Black, 430, yPos)
+                End If
+                yPos += 20
+            End If
+        Next
+        yPos += 20
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+
+        yPos += 30
+        If Not cliente Then
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            yPos += 30
+        Else
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            yPos += 30
+        End If
+
+        ev.Graphics.DrawString("IVA INCLUIDO", New Font("Courier New", 9, FontStyle.Regular), Brushes.Black, 380, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("Base Imp", printFont, Brushes.Black, 140, yPos)
+        ev.Graphics.DrawString("%IVA", printFont, Brushes.Black, 300, yPos)
+        ev.Graphics.DrawString("IVA", printFont, Brushes.Black, 440, yPos)
+        yPos += 20
+
+
+        Dim impuestos As Decimal = ObtenerTotalCarrito() * 0.21
+
+        ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito() - impuestos).ToString, printFont, Brushes.Black, 150, yPos)
+        ev.Graphics.DrawString("21,00", printFont, Brushes.Black, 300, yPos)
+        ev.Graphics.DrawString(Math.Round(impuestos, 2).ToString, printFont, Brushes.Black, 430, yPos)
+        yPos += 20
+
+        ev.Graphics.DrawString("Forma de pago", printFont, Brushes.Black, 230, yPos)
+        yPos += 20
+
+        If tarjeta Then
+
+            ev.Graphics.DrawString("Tarjeta: ", printFont, Brushes.Black, 130, yPos)
+        Else
+            ev.Graphics.DrawString("Efectivo: ", printFont, Brushes.Black, 130, yPos)
+        End If
+        If introducido >= 10 Then
+            ev.Graphics.DrawString(txt_introducido.Text, printFont, Brushes.Black, 420, yPos)
+        Else
+            ev.Graphics.DrawString(txt_introducido.Text, printFont, Brushes.Black, 430, yPos)
+        End If
+        yPos += 20
+
+        If Not tarjeta Then
+            ev.Graphics.DrawString("Devolucion: ", printFont, Brushes.Black, 130, yPos)
+            If devolucion >= 10 Then
+                ev.Graphics.DrawString((txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)), printFont, Brushes.Black, 420, yPos)
+            Else
+                ev.Graphics.DrawString((txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)), printFont, Brushes.Black, 430, yPos)
+            End If
+            yPos += 40
+        End If
+
+        yPos += 40
+        If tarjeta Then
+            ev.Graphics.DrawString("Firme aquí:", printFont, Brushes.Black, 130, yPos)
+            yPos += 20
+        End If
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 80
+
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 40
+
+        ev.Graphics.DrawString("CONSERVE SU TICKET", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("HASTA RETIRAR SU PRODUCTO", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 150, yPos)
+        yPos += 20
+        ev.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 170, yPos)
+
+        ev.HasMorePages = False
+
+    End Sub
+
+    Public Function ExisteClienteRepsol(ByVal cod_cliente As Integer) As Boolean
+        Dim existe As Boolean = False
+        Dim query As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+        conexion.Open()
+
+        Using cmd As New OleDbCommand(query, conexion)
+            cmd.Parameters.AddWithValue("@cod_cliente", cod_cliente)
+            Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+            If count > 0 Then
+                existe = True
+            End If
+        End Using
+        conexion.Close()
+        Return existe
+    End Function
 
 End Class
