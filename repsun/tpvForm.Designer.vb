@@ -43,14 +43,15 @@ Partial Class tpvForm
         Me.lbl_introducido = New System.Windows.Forms.Label()
         Me.btn_2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btn_eliminarTodo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgv_combustible = New System.Windows.Forms.DataGridView()
         Me.dgv_carrito = New System.Windows.Forms.DataGridView()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.lbl_totalSinImpuestos = New System.Windows.Forms.Label()
         Me.lbl_impuestos = New System.Windows.Forms.Label()
         Me.lbl_Total = New System.Windows.Forms.Label()
+        Me.btn_eliminarTodo = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -74,7 +75,7 @@ Partial Class tpvForm
         Me.tlp_Bebida = New System.Windows.Forms.TableLayoutPanel()
         Me.tpg_otros = New System.Windows.Forms.TabPage()
         Me.tlp_Otros = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.tlp_tpv.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlp_caja.SuspendLayout()
@@ -83,6 +84,7 @@ Partial Class tpvForm
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -99,7 +101,6 @@ Partial Class tpvForm
         Me.tpg_comida.SuspendLayout()
         Me.tpg_bebida.SuspendLayout()
         Me.tpg_otros.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlp_tpv
@@ -373,9 +374,11 @@ Partial Class tpvForm
         '
         Me.tlp_teclado.SetColumnSpan(Me.txt_introducido, 5)
         Me.txt_introducido.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_introducido.Enabled = False
         Me.txt_introducido.Font = New System.Drawing.Font("Yu Gothic UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_introducido.Location = New System.Drawing.Point(30, 43)
         Me.txt_introducido.Margin = New System.Windows.Forms.Padding(30, 3, 30, 3)
+        Me.txt_introducido.MaxLength = 6
         Me.txt_introducido.Name = "txt_introducido"
         Me.txt_introducido.Size = New System.Drawing.Size(563, 50)
         Me.txt_introducido.TabIndex = 0
@@ -434,20 +437,6 @@ Partial Class tpvForm
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(623, 615)
         Me.TableLayoutPanel2.TabIndex = 1
         '
-        'btn_eliminarTodo
-        '
-        Me.btn_eliminarTodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_eliminarTodo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_eliminarTodo.FlatAppearance.BorderSize = 0
-        Me.btn_eliminarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_eliminarTodo.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminarTodo.Location = New System.Drawing.Point(3, 3)
-        Me.btn_eliminarTodo.Name = "btn_eliminarTodo"
-        Me.btn_eliminarTodo.Size = New System.Drawing.Size(201, 70)
-        Me.btn_eliminarTodo.TabIndex = 1
-        Me.btn_eliminarTodo.Text = "Eliminar todo"
-        Me.btn_eliminarTodo.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.TableLayoutPanel2.SetColumnSpan(Me.Panel1, 3)
@@ -482,20 +471,6 @@ Partial Class tpvForm
         Me.dgv_carrito.Size = New System.Drawing.Size(617, 301)
         Me.dgv_carrito.TabIndex = 0
         '
-        'btn_eliminar
-        '
-        Me.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.btn_eliminar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_eliminar.FlatAppearance.BorderSize = 0
-        Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_eliminar.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar.Location = New System.Drawing.Point(210, 3)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(201, 70)
-        Me.btn_eliminar.TabIndex = 2
-        Me.btn_eliminar.Text = "Eliminar"
-        Me.btn_eliminar.UseVisualStyleBackColor = False
-        '
         'lbl_totalSinImpuestos
         '
         Me.lbl_totalSinImpuestos.AutoSize = True
@@ -528,6 +503,45 @@ Partial Class tpvForm
         Me.lbl_Total.Size = New System.Drawing.Size(92, 40)
         Me.lbl_Total.TabIndex = 6
         Me.lbl_Total.Text = "Total: "
+        '
+        'btn_eliminarTodo
+        '
+        Me.btn_eliminarTodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_eliminarTodo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_eliminarTodo.FlatAppearance.BorderSize = 0
+        Me.btn_eliminarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_eliminarTodo.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminarTodo.Location = New System.Drawing.Point(3, 3)
+        Me.btn_eliminarTodo.Name = "btn_eliminarTodo"
+        Me.btn_eliminarTodo.Size = New System.Drawing.Size(201, 70)
+        Me.btn_eliminarTodo.TabIndex = 1
+        Me.btn_eliminarTodo.Text = "Eliminar todo"
+        Me.btn_eliminarTodo.UseVisualStyleBackColor = False
+        '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.btn_eliminar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_eliminar.FlatAppearance.BorderSize = 0
+        Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_eliminar.Font = New System.Drawing.Font("Yu Gothic UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminar.Location = New System.Drawing.Point(210, 3)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(201, 70)
+        Me.btn_eliminar.TabIndex = 2
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Salir
+        Me.PictureBox2.Location = New System.Drawing.Point(520, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 70)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
         '
         'TabControl1
         '
@@ -858,17 +872,6 @@ Partial Class tpvForm
         Me.tlp_Otros.Size = New System.Drawing.Size(1235, 750)
         Me.tlp_Otros.TabIndex = 2
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Image = Global.repsun.My.Resources.Resources.Salir
-        Me.PictureBox2.Location = New System.Drawing.Point(520, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 70)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
         'tpvForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -889,6 +892,7 @@ Partial Class tpvForm
         Me.Panel1.ResumeLayout(False)
         CType(Me.dgv_combustible, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_carrito, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -909,7 +913,6 @@ Partial Class tpvForm
         Me.tpg_comida.ResumeLayout(False)
         Me.tpg_bebida.ResumeLayout(False)
         Me.tpg_otros.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -967,4 +970,5 @@ Partial Class tpvForm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents dgv_combustible As DataGridView
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
