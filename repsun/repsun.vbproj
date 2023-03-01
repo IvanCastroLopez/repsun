@@ -262,6 +262,7 @@
     <Content Include="bin\Debug\Imagenes\Iconos\Proveedores.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Salir.png" />
     <Content Include="bin\Debug\Imagenes\Iconos\Tienda.png" />
+    <Content Include="bin\Debug\Imagenes\Logo\LogoTicketRepsun.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\0-Default.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\2-Cliente.png" />
     <Content Include="bin\Debug\Imagenes\MenuVisual\3-Tienda.png" />
