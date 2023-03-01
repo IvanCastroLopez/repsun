@@ -103,6 +103,7 @@ Partial Class ClientesOnTop
         Me.txt_codigoCliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_codigoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_codigoCliente.Location = New System.Drawing.Point(265, 125)
+        Me.txt_codigoCliente.MaxLength = 30
         Me.txt_codigoCliente.Name = "txt_codigoCliente"
         Me.txt_codigoCliente.Size = New System.Drawing.Size(518, 31)
         Me.txt_codigoCliente.TabIndex = 1
@@ -112,6 +113,7 @@ Partial Class ClientesOnTop
         Me.txt_nombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nombre.Location = New System.Drawing.Point(265, 207)
+        Me.txt_nombre.MaxLength = 30
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(256, 31)
         Me.txt_nombre.TabIndex = 2
@@ -155,6 +157,7 @@ Partial Class ClientesOnTop
         Me.txt_apellidos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_apellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_apellidos.Location = New System.Drawing.Point(527, 207)
+        Me.txt_apellidos.MaxLength = 30
         Me.txt_apellidos.Name = "txt_apellidos"
         Me.txt_apellidos.Size = New System.Drawing.Size(256, 31)
         Me.txt_apellidos.TabIndex = 2
@@ -175,6 +178,7 @@ Partial Class ClientesOnTop
         Me.txt_dni.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_dni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_dni.Location = New System.Drawing.Point(265, 289)
+        Me.txt_dni.MaxLength = 10
         Me.txt_dni.Name = "txt_dni"
         Me.txt_dni.Size = New System.Drawing.Size(256, 31)
         Me.txt_dni.TabIndex = 3
@@ -218,6 +222,7 @@ Partial Class ClientesOnTop
         Me.txt_email.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Location = New System.Drawing.Point(527, 289)
+        Me.txt_email.MaxLength = 30
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(256, 31)
         Me.txt_email.TabIndex = 4

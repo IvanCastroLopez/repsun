@@ -94,6 +94,7 @@ Partial Class GestionProductosOnTop
         Me.txt_codigoProducto.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_codigoProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_codigoProducto.Location = New System.Drawing.Point(352, 125)
+        Me.txt_codigoProducto.MaxLength = 8
         Me.txt_codigoProducto.Name = "txt_codigoProducto"
         Me.txt_codigoProducto.Size = New System.Drawing.Size(343, 31)
         Me.txt_codigoProducto.TabIndex = 1
@@ -103,6 +104,7 @@ Partial Class GestionProductosOnTop
         Me.txt_nombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nombre.Location = New System.Drawing.Point(352, 207)
+        Me.txt_nombre.MaxLength = 30
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(343, 31)
         Me.txt_nombre.TabIndex = 2
@@ -135,6 +137,7 @@ Partial Class GestionProductosOnTop
         Me.txt_precio.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_precio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_precio.Location = New System.Drawing.Point(352, 371)
+        Me.txt_precio.MaxLength = 6
         Me.txt_precio.Name = "txt_precio"
         Me.txt_precio.Size = New System.Drawing.Size(343, 31)
         Me.txt_precio.TabIndex = 4

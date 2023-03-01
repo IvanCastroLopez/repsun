@@ -80,7 +80,7 @@ Partial Class LoginForm
         Me.err_errorProvider.SetIconPadding(Me.txt_user, 5)
         Me.txt_user.Location = New System.Drawing.Point(4, 98)
         Me.txt_user.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txt_user.MaxLength = 30
+        Me.txt_user.MaxLength = 20
         Me.txt_user.Name = "txt_user"
         Me.txt_user.Size = New System.Drawing.Size(526, 44)
         Me.txt_user.TabIndex = 1

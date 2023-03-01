@@ -116,6 +116,7 @@ Partial Class SurtidorOnTop
         Me.txt_precioTotal.ForeColor = System.Drawing.Color.White
         Me.txt_precioTotal.Location = New System.Drawing.Point(161, 94)
         Me.txt_precioTotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_precioTotal.MaxLength = 5
         Me.txt_precioTotal.Name = "txt_precioTotal"
         Me.txt_precioTotal.Size = New System.Drawing.Size(174, 22)
         Me.txt_precioTotal.TabIndex = 1
@@ -132,6 +133,7 @@ Partial Class SurtidorOnTop
         Me.txt_litros.ForeColor = System.Drawing.Color.White
         Me.txt_litros.Location = New System.Drawing.Point(161, 149)
         Me.txt_litros.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_litros.MaxLength = 5
         Me.txt_litros.Name = "txt_litros"
         Me.txt_litros.Size = New System.Drawing.Size(174, 22)
         Me.txt_litros.TabIndex = 2
