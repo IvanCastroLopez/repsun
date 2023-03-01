@@ -12,8 +12,9 @@ Public Class GestionForm
     Public adaptador_combustibles As New OleDbDataAdapter("Select * from Combustible", conexion)
     Public gestion_dataset As New DataSet
     Public comandoPublic As New OleDbCommand
-    Dim readerPublic As OleDbDataReader
 
+    Public precio_SinPlomo95, precio_SinPLomo98, precio_Diesel, precio_DieselPlus As Decimal
+    Public cantidad_SinPlomo95, cantidad_SinPLomo98, cantidad_Diesel, cantidad_DieselPlus As Decimal
     Private Sub GestionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_empleados.Fill(gestion_dataset, "Empleados")
@@ -571,9 +572,6 @@ Public Class GestionForm
     End Sub
 
     ' ** GESTION COMBUSTIBLES **
-    Dim precio_SinPlomo95, precio_SinPLomo98, precio_Diesel, precio_DieselPlus As Decimal
-    Dim cantidad_SinPlomo95, cantidad_SinPLomo98, cantidad_Diesel, cantidad_DieselPlus As Decimal
-
     Public Sub cargarDatosCombustible()
         Dim query As String = "SELECT * FROM combustible WHERE tipo_combustible = @com"
         Dim comando As New OleDbCommand(query, conexion)
@@ -583,24 +581,79 @@ Public Class GestionForm
             comando.Parameters.AddWithValue("@com", combustible)
             Dim reader As OleDbDataReader = comando.ExecuteReader()
             If reader.Read Then
-                Select Case combustible
-                    Case "sin_plomo_95"
-                        precio_SinPlomo95 = reader("precio_por_litro")
-                        cantidad_SinPlomo95 = reader("cantidad")
-                    Case "sin_plomo_98"
-                        precio_SinPLomo98 = reader("precio_por_litro")
-                        cantidad_SinPLomo98 = reader("cantidad")
-                    Case "diesel"
-                        precio_Diesel = reader("precio_por_litro")
-                        cantidad_Diesel = reader("cantidad")
-                    Case "diesel_plus"
-                        precio_DieselPlus = reader("precio_por_litro")
-                        cantidad_DieselPlus = reader("cantidad")
-                End Select
+                If combustible = "sin_plomo_95" Then
+                    precio_SinPlomo95 = reader("precio_por_litro")
+                    cantidad_SinPlomo95 = reader("cantidad")
+                ElseIf combustible = "sin_plomo_98" Then
+                    precio_SinPLomo98 = reader("precio_por_litro")
+                    cantidad_SinPLomo98 = reader("cantidad")
+                ElseIf combustible = "diesel" Then
+                    precio_Diesel = reader("precio_por_litro")
+                    cantidad_Diesel = reader("cantidad")
+                ElseIf combustible = "diesel_plus" Then
+                    precio_DieselPlus = reader("precio_por_litro")
+                    cantidad_DieselPlus = reader("cantidad")
+
+                End If
+                'Select Case combustible
+                '    Case "sin_plomo_95"
+                '        precio_SinPlomo95 = reader("precio_por_litro")
+                '        cantidad_SinPlomo95 = reader("cantidad")
+                '    Case "sin_plomo_98"
+                '        precio_SinPLomo98 = reader("precio_por_litro")
+                '        cantidad_SinPLomo98 = reader("cantidad")
+                '    Case "diesel"
+                '        precio_Diesel = reader("precio_por_litro")
+                '        cantidad_Diesel = reader("cantidad")
+                '    Case "diesel_plus"
+                '        precio_DieselPlus = reader("precio_por_litro")
+                '        cantidad_DieselPlus = reader("cantidad")
+                'End Select
             End If
             reader.Close()
         Next
         conexion.Close()
+        pgb_sinPlomo95.Value = Math.Round(cantidad_SinPlomo95, 0, MidpointRounding.ToEven)
+        pgb_sinPlomo98.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
+        pgb_diesel.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
+        pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
+    End Sub
+
+    Public Sub actualizarBDCombustibles()
+        Dim query As String = "UPDATE Combustible set precio_por_litro=@pre, cantidad=@can where tipo_combustible = @com"
+        Dim comando As New OleDbCommand(query, conexion)
+        Dim combustibles As String() = {"sin_plomo_95", "sin_plomo_98", "diesel", "diesel_plus"}
+        conexion.Open()
+        For Each combustible As String In combustibles
+            Select Case combustible
+                Case "sin_plomo_95"
+                    MsgBox(Math.Round(precio_SinPlomo95, 3))
+                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_SinPlomo95, 3))
+                    comando.Parameters.AddWithValue("@can", cantidad_SinPlomo95)
+                    comando.Parameters.AddWithValue("@com", combustible)
+                Case "sin_plomo_98"
+                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_SinPLomo98, 3))
+                    comando.Parameters.AddWithValue("@can", cantidad_SinPLomo98)
+                    comando.Parameters.AddWithValue("@com", combustible)
+                Case "diesel"
+                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_Diesel, 3))
+                    comando.Parameters.AddWithValue("@can", cantidad_Diesel)
+                    comando.Parameters.AddWithValue("@com", combustible)
+                Case "diesel_plus"
+                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_DieselPlus, 3))
+                    comando.Parameters.AddWithValue("@can", cantidad_DieselPlus)
+                    comando.Parameters.AddWithValue("@com", combustible)
+            End Select
+            Try
+                comando.ExecuteNonQuery()
+                Me.Close()
+            Catch ex As Exception
+                'MsgBox(ex.Message)
+                MsgBox("Ha ocurrido un error modificando el combustible")
+            End Try
+        Next
+        conexion.Close()
+
     End Sub
 
     Private Sub btn_rellenarTanque_Click(sender As Object, e As EventArgs) Handles btn_rellenarTanque.Click
@@ -611,67 +664,63 @@ Public Class GestionForm
             Case 0
                 If (cantidad + cantidad_SinPlomo95) <= 10000 Then
                     cantidad_SinPlomo95 = cantidad + cantidad_SinPlomo95
-                    'Guardar el valor den la base de datos -----------------------------
-                    Me.Refresh()
                 Else
                     MsgBox("No puedes superar la capacidad de 10000L")
                 End If
             Case 1
                 If (cantidad + cantidad_SinPLomo98) <= 10000 Then
                     cantidad_SinPLomo98 = cantidad + cantidad_SinPLomo98
-                    Me.Refresh()
                 Else
                     MsgBox("No puedes superar la capacidad de 10000L")
                 End If
             Case 2
                 If (cantidad + cantidad_Diesel) <= 10000 Then
                     cantidad_Diesel = cantidad + cantidad_Diesel
-                    Me.Refresh()
                 Else
                     MsgBox("No puedes superar la capacidad de 10000L")
                 End If
             Case 3
                 If (cantidad + cantidad_DieselPlus) <= 10000 Then
                     cantidad_DieselPlus = cantidad + cantidad_DieselPlus
-                    Me.Refresh()
                 Else
                     MsgBox("No puedes superar la capacidad de 10000L")
                 End If
             Case Else
                 MsgBox("Primero debes seleccionar el tanque de combustible que deseas rellenar")
-
         End Select
         pgb_sinPlomo95.Value = Math.Round(cantidad_SinPLomo95, 0, MidpointRounding.ToEven)
         pgb_sinPlomo98.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
         pgb_diesel.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
         pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
+        actualizarBDCombustibles()
+        Me.Refresh()
 
     End Sub
 
     Private Sub cargarSinPlomo95()
         cbx_tipoCombustible.SelectedIndex = 0
-        nud_precioCombustible.Value = Decimal.Parse(precio_SinPLomo95.ToString)
+        nud_precioCombustible.Value = Decimal.Parse(precio_SinPlomo95)
         pgb_restanteDeposito.Value = Math.Round(cantidad_SinPLomo95, 0, MidpointRounding.ToEven)
         lbl_restanteLitros.Text = cantidad_SinPLomo95 & "/10000 L"
     End Sub
 
     Private Sub cargarSinPlomo98()
         cbx_tipoCombustible.SelectedIndex = 1
-        nud_precioCombustible.Value = Decimal.Parse(precio_SinPLomo98.ToString)
+        nud_precioCombustible.Value = Decimal.Parse(precio_SinPLomo98)
         pgb_restanteDeposito.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
         lbl_restanteLitros.Text = cantidad_SinPLomo98 & "/10000 L"
     End Sub
 
     Private Sub cargarDiesel()
         cbx_tipoCombustible.SelectedIndex = 2
-        nud_precioCombustible.Value = Decimal.Parse(precio_Diesel.ToString)
+        nud_precioCombustible.Value = Decimal.Parse(precio_Diesel)
         pgb_restanteDeposito.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
         lbl_restanteLitros.Text = cantidad_Diesel & "/10000 L"
     End Sub
 
     Private Sub cargarDieselPlus()
         cbx_tipoCombustible.SelectedIndex = 3
-        nud_precioCombustible.Value = Decimal.Parse(precio_DieselPlus.ToString)
+        nud_precioCombustible.Value = Decimal.Parse(precio_DieselPlus)
         pgb_restanteDeposito.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
         lbl_restanteLitros.Text = cantidad_DieselPlus & "/10000 L"
     End Sub
