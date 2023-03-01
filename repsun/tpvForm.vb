@@ -484,7 +484,7 @@ Public Class tpvForm
         If txt_introducido.Text >= Math.Round(ObtenerTotalCarrito(), 2) Then
             Dim userInput As String = String.Empty
 
-            userInput = InputBox("Por favor ingrese un valor:", "InputBox con botones de aceptar y cancelar")
+            userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
 
             If userInput = String.Empty Then
                 ' El usuario hizo clic en Cancelar
@@ -660,11 +660,13 @@ Public Class tpvForm
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
         yPos += 40
 
-        ev.Graphics.DrawString("CONSERVE SU TICKET", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
+        If cliente Then
+            ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
+            yPos += 20
+        End If
+        ev.Graphics.DrawString("INCLUIDA BONIFICACION", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 180, yPos)
         yPos += 20
-        ev.Graphics.DrawString("HASTA RETIRAR SU PRODUCTO", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 150, yPos)
-        yPos += 20
-        ev.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 170, yPos)
+        ev.Graphics.DrawString("R.D. LEY 6/2022", New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 150, yPos)
 
         ev.HasMorePages = False
 
