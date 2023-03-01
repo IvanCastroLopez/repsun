@@ -84,6 +84,7 @@ Public Class ClientesOnTop
                         Me.Close()
                         ' Mostramos un mensaje de éxito.
                         MessageBox.Show("Cliente creado con éxito.")
+                        ImprimirTarjeta(txt_codigoCliente.Text, txt_nombre.Text, txt_apellidos.Text, txt_dni.Text, txt_email.Text, dtp_fechaAlta.Text)
                     Catch ex As Exception
                         Registros.GrabarError("Ha ocurrido un error creando el cliente. Llame al técnico responsable del sistema", "Error creando el cliente")
                     End Try
@@ -118,6 +119,39 @@ Public Class ClientesOnTop
 
     End Sub
 
+    Private Sub ImprimirTarjeta(ByVal codigoCliente As String, ByVal nombre As String, ByVal apellidos As String, ByVal dni As String, ByVal email As String, ByVal fechaAlta As Date)
+        ' Crear un objeto PrintDocument
+        Dim pd As New Printing.PrintDocument()
+
+        ' Establecer el controlador de eventos PrintPage para imprimir la página
+        AddHandler pd.PrintPage, Sub(sender As Object, e As Printing.PrintPageEventArgs)
+                                     ' Definir la fuente y el tamaño de letra
+                                     Dim font As New Font("Arial", 12)
+
+                                     ' Definir la posición de la primera línea de texto
+                                     Dim yPos As Integer = 100
+
+                                     ' Imprimir los datos del cliente en la tarjeta
+                                     e.Graphics.DrawString("Código de cliente: " & codigoCliente, font, Brushes.Black, New Point(50, yPos))
+                                     yPos += 20
+                                     e.Graphics.DrawString("Nombre: " & nombre, font, Brushes.Black, New Point(50, yPos))
+                                     yPos += 20
+                                     e.Graphics.DrawString("Apellidos: " & apellidos, font, Brushes.Black, New Point(50, yPos))
+                                     yPos += 20
+                                     e.Graphics.DrawString("DNI: " & dni, font, Brushes.Black, New Point(50, yPos))
+                                     yPos += 20
+                                     e.Graphics.DrawString("Email: " & email, font, Brushes.Black, New Point(50, yPos))
+                                     yPos += 20
+                                     e.Graphics.DrawString("Fecha de alta: " & fechaAlta.ToShortDateString(), font, Brushes.Black, New Point(50, yPos))
+                                 End Sub
+
+        ' Mostrar el cuadro de diálogo de impresión
+        Dim printDialog As New PrintDialog()
+        If printDialog.ShowDialog() = DialogResult.OK Then
+            pd.PrinterSettings = printDialog.PrinterSettings
+            pd.Print()
+        End If
+    End Sub
 
 End Class
 ' ⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑⓑ

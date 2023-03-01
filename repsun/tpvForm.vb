@@ -237,11 +237,11 @@ Public Class tpvForm
     End Function
 
     Dim combustible As Boolean = False
+    Dim producto As String = ""
+    Dim precio As Decimal = 0
+    Dim cantidad As Integer = 0
+    Dim preciolitro As Decimal = 0
     Private Sub pbx_sp95_Click(sender As Object, e As EventArgs) Handles pbx_sp95.Click, pbx_sp98.Click, pbx_diesela.Click, pbx_diesela_plus.Click
-        Dim producto As String = ""
-        Dim precio As Decimal = 0
-        Dim cantidad As Integer = 0
-        Dim preciolitro As Decimal = 0
         If combustible Then
             MsgBox("Ya hay un combustible dentro de la venta")
             Exit Sub
@@ -595,6 +595,11 @@ Public Class tpvForm
                 yPos += 20
             End If
         Next
+
+        ev.Graphics.DrawString(Math.Round(cantidad, 2).ToString, printFont, Brushes.Black, 130, yPos)
+        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(Math.Round(preciolitro, 2).ToString, printFont, Brushes.Black, 370, yPos)
+        ev.Graphics.DrawString(Math.Round(precio, 2).ToString, printFont, Brushes.Black, 420, yPos)
         yPos += 20
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
 
@@ -727,6 +732,12 @@ Public Class tpvForm
                 yPos += 20
             End If
         Next
+
+        ev.Graphics.DrawString(Math.Round(cantidad, 2).ToString, printFont, Brushes.Black, 130, yPos)
+        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(Math.Round(preciolitro, 2).ToString, printFont, Brushes.Black, 370, yPos)
+        ev.Graphics.DrawString(Math.Round(precio, 2).ToString, printFont, Brushes.Black, 420, yPos)
+
         yPos += 20
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
 
