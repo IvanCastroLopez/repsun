@@ -768,6 +768,13 @@ Public Class GestionForm
         tbc_gestion.SelectTab(1)
     End Sub
 
+    Public MiReporte As Object
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Dim MyForm As New VisorInformes
+        MiReporte = New CrystalReport1
+        MyForm.Show()
+    End Sub
+
     Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
         ' Selecciona la pestaña "Empleados" (índice 2) en el control TabControl.
         tbc_gestion.SelectTab(2)
