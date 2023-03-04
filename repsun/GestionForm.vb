@@ -310,25 +310,6 @@ Public Class GestionForm
         End If
     End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ' ** GESTIÓN PROVEEDORES **
     ''' <summary>
     ''' Al cambiar el texto actualiza el dataGridView con los datos que coincidan
@@ -573,85 +554,64 @@ Public Class GestionForm
 
     ' ** GESTION COMBUSTIBLES **
     Public Sub cargarDatosCombustible()
-        Dim query As String = "SELECT * FROM combustible WHERE tipo_combustible = @com"
+        Dim query As String = "SELECT * FROM combustible"
         Dim comando As New OleDbCommand(query, conexion)
-        Dim combustibles As String() = {"sin_plomo_95", "sin_plomo_98", "diesel", "diesel_plus"}
+        'Dim combustibles As String() = {"sin_plomo_95", "sin_plomo_98", "diesel", "diesel_plus"}
         conexion.Open()
-        For Each combustible As String In combustibles
-            comando.Parameters.AddWithValue("@com", combustible)
-            Dim reader As OleDbDataReader = comando.ExecuteReader()
-            If reader.Read Then
-                If combustible = "sin_plomo_95" Then
-                    precio_SinPlomo95 = reader("precio_por_litro")
-                    cantidad_SinPlomo95 = reader("cantidad")
-                ElseIf combustible = "sin_plomo_98" Then
-                    precio_SinPLomo98 = reader("precio_por_litro")
-                    cantidad_SinPLomo98 = reader("cantidad")
-                ElseIf combustible = "diesel" Then
-                    precio_Diesel = reader("precio_por_litro")
-                    cantidad_Diesel = reader("cantidad")
-                ElseIf combustible = "diesel_plus" Then
-                    precio_DieselPlus = reader("precio_por_litro")
-                    cantidad_DieselPlus = reader("cantidad")
 
-                End If
-                'Select Case combustible
-                '    Case "sin_plomo_95"
-                '        precio_SinPlomo95 = reader("precio_por_litro")
-                '        cantidad_SinPlomo95 = reader("cantidad")
-                '    Case "sin_plomo_98"
-                '        precio_SinPLomo98 = reader("precio_por_litro")
-                '        cantidad_SinPLomo98 = reader("cantidad")
-                '    Case "diesel"
-                '        precio_Diesel = reader("precio_por_litro")
-                '        cantidad_Diesel = reader("cantidad")
-                '    Case "diesel_plus"
-                '        precio_DieselPlus = reader("precio_por_litro")
-                '        cantidad_DieselPlus = reader("cantidad")
-                'End Select
+        Dim reader As OleDbDataReader = comando.ExecuteReader()
+
+        While reader.Read()
+            Dim combustible = reader.GetString(0)
+            If combustible = "sin_plomo_95" Then
+                precio_SinPlomo95 = reader.GetDecimal(1)
+                cantidad_SinPlomo95 = reader.GetDecimal(2)
+            ElseIf combustible = "sin_plomo_98" Then
+                precio_SinPLomo98 = reader.GetDecimal(1)
+                cantidad_SinPLomo98 = reader.GetDecimal(2)
+            ElseIf combustible = "diesel" Then
+                precio_Diesel = reader.GetDecimal(1)
+                cantidad_Diesel = reader.GetDecimal(2)
+            ElseIf combustible = "diesel_plus" Then
+                precio_DieselPlus = reader.GetDecimal(1)
+                cantidad_DieselPlus = reader.GetDecimal(2)
             End If
-            reader.Close()
-        Next
+        End While
+
+        reader.Close()
         conexion.Close()
+
         pgb_sinPlomo95.Value = Math.Round(cantidad_SinPlomo95, 0, MidpointRounding.ToEven)
         pgb_sinPlomo98.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
         pgb_diesel.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
         pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
     End Sub
 
-    Public Sub actualizarBDCombustibles()
-        Dim query As String = "UPDATE Combustible set precio_por_litro=@pre, cantidad=@can where tipo_combustible = @com"
+    Public Sub actualizarCantidadBDCombustibles()
+        Dim query As String = "UPDATE Combustible set cantidad=@can WHERE tipo_combustible = @com"
         Dim comando As New OleDbCommand(query, conexion)
-        Dim combustibles As String() = {"sin_plomo_95", "sin_plomo_98", "diesel", "diesel_plus"}
         conexion.Open()
-        For Each combustible As String In combustibles
-            Select Case combustible
-                Case "sin_plomo_95"
-                    MsgBox(Math.Round(precio_SinPlomo95, 3))
-                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_SinPlomo95, 3))
-                    comando.Parameters.AddWithValue("@can", cantidad_SinPlomo95)
-                    comando.Parameters.AddWithValue("@com", combustible)
-                Case "sin_plomo_98"
-                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_SinPLomo98, 3))
-                    comando.Parameters.AddWithValue("@can", cantidad_SinPLomo98)
-                    comando.Parameters.AddWithValue("@com", combustible)
-                Case "diesel"
-                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_Diesel, 3))
-                    comando.Parameters.AddWithValue("@can", cantidad_Diesel)
-                    comando.Parameters.AddWithValue("@com", combustible)
-                Case "diesel_plus"
-                    comando.Parameters.AddWithValue("@pre", Math.Round(precio_DieselPlus, 3))
-                    comando.Parameters.AddWithValue("@can", cantidad_DieselPlus)
-                    comando.Parameters.AddWithValue("@com", combustible)
-            End Select
-            Try
-                comando.ExecuteNonQuery()
-                Me.Close()
-            Catch ex As Exception
-                'MsgBox(ex.Message)
-                MsgBox("Ha ocurrido un error modificando el combustible")
-            End Try
-        Next
+        Dim combustible = cbx_tipoCombustible.SelectedIndex
+        Select Case combustible
+            Case 0
+                comando.Parameters.AddWithValue("@can", cantidad_SinPlomo95.ToString)
+                comando.Parameters.AddWithValue("@com", "sin_plomo_95")
+            Case 1
+                comando.Parameters.AddWithValue("@can", cantidad_SinPLomo98.ToString)
+                comando.Parameters.AddWithValue("@com", "sin_plomo_98")
+            Case 2
+                comando.Parameters.AddWithValue("@can", cantidad_Diesel.ToString)
+                comando.Parameters.AddWithValue("@com", "diesel")
+            Case 3
+                comando.Parameters.AddWithValue("@can", cantidad_DieselPlus.ToString)
+                comando.Parameters.AddWithValue("@com", "diesel_plus")
+        End Select
+        Try
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MsgBox("Ha ocurrido un error modificando la cantidad del combustible")
+        End Try
         conexion.Close()
 
     End Sub
@@ -692,9 +652,31 @@ Public Class GestionForm
         pgb_sinPlomo98.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
         pgb_diesel.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
         pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
-        actualizarBDCombustibles()
+        actualizarCantidadBDCombustibles()
         Me.Refresh()
 
+    End Sub
+
+    Private Sub actualizarPrecioBDCombustible()
+        Dim query As String = "UPDATE Combustible set precio_por_litro=@pre WHERE tipo_combustible = @com"
+        Dim comando As New OleDbCommand(query, conexion)
+        Dim combustibles As String() = {"sin_plomo_95", "sin_plomo_98", "diesel", "diesel_plus"}
+        conexion.Open()
+        Dim indice As Integer = cbx_tipoCombustible.SelectedIndex
+        comando.Parameters.AddWithValue("@pre", Decimal.Round(nud_precioCombustible.Value, 4).ToString)
+        comando.Parameters.AddWithValue("@com", combustibles(indice))
+        Try
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MsgBox("Ha ocurrido un error modificando el precio del combustible")
+        End Try
+        conexion.Close()
+        Me.Refresh()
+    End Sub
+
+    Private Sub nud_precioCombustible_LostFocus(sender As Object, e As EventArgs) Handles nud_precioCombustible.LostFocus
+        actualizarPrecioBDCombustible()
     End Sub
 
     Private Sub cargarSinPlomo95()
@@ -769,11 +751,11 @@ Public Class GestionForm
     End Sub
 
     Public MiReporte As Object
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
-        Dim MyForm As New VisorInformes
-        MiReporte = New CrystalReport1
-        MyForm.Show()
-    End Sub
+    'Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+    '    Dim MyForm As New VisorInformes
+    '    MiReporte = New CrystalReport1
+    '    MyForm.Show()
+    'End Sub
 
     Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
         ' Selecciona la pestaña "Empleados" (índice 2) en el control TabControl.

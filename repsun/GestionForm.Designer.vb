@@ -272,6 +272,7 @@ Partial Class GestionForm
         Me.nud_precioCombustible.DecimalPlaces = 4
         Me.nud_precioCombustible.Dock = System.Windows.Forms.DockStyle.Fill
         Me.nud_precioCombustible.Font = New System.Drawing.Font("Yu Gothic UI", 15.85714!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nud_precioCombustible.Increment = New Decimal(New Integer() {10, 0, 0, 262144})
         Me.nud_precioCombustible.Location = New System.Drawing.Point(294, 244)
         Me.nud_precioCombustible.Margin = New System.Windows.Forms.Padding(4)
         Me.nud_precioCombustible.Name = "nud_precioCombustible"

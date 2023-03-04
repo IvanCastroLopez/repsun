@@ -100,3 +100,4 @@
 "28/02/2023 22:08:29","El nombre de usuario o la contraseña están mal escritos"
 "28/02/2023 22:08:43","Error iniciando sesión. Inténtelo de nuevo. Si el error persiste llame al técnico responsable del sistema"
 "01/03/2023 3:11:06","El nombre de usuario o la contraseña están mal escritos"
+"04/03/2023 22:39:53","El nombre de usuario o la contraseña están mal escritos"
