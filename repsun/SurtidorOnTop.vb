@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 Imports System.Drawing.Printing
 Imports repsun.Herramientas
 
@@ -8,6 +9,7 @@ Public Class SurtidorOnTop
     ' Aquí se establece la conexión a la base de datos mediante el proveedor Microsoft.ACE.OLEDB.12.0 y se especifica la ubicación de la base de datos.
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
+    Public Shared selectedCar As Integer
     Private Sub SurtidorOnTop_Load(sender As Object, e As EventArgs) Handles Me.Load
         GestionForm.cargarDatosCombustible()
     End Sub
@@ -101,6 +103,10 @@ Public Class SurtidorOnTop
 
     Dim codCliente As String
     Dim nombreCliente As String
+    Private Sub SurtidorOnTop_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Surtidores.quitarCoche(selectedCar)
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim userInput As String = String.Empty
         Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(cbx_tipoCombustible.SelectedIndex, Decimal.Parse(txt_litros.Text))
@@ -139,6 +145,7 @@ Public Class SurtidorOnTop
                 MsgBox("Pago Correcto")
                 AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
                 PrintDocument1.Print()
+                Surtidores.quitarCoche(selectedCar)
                 Me.Close()
             ElseIf resultado = DialogResult.No Then
                 ' Acción para el botón "Cancelar"
@@ -150,6 +157,7 @@ Public Class SurtidorOnTop
         Else
             Me.Refresh()
         End If
+        Surtidores.quitarCoche(selectedCar)
         Dispose()
     End Sub
 
@@ -214,7 +222,7 @@ Public Class SurtidorOnTop
 
         yPos += 30
         If Not cliente Then
-            ev.Graphics.DrawString(txt_litros.Text.ToString() & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
             Dim totalDescuento = precioTotal - precioTotal * 0.02
@@ -273,6 +281,5 @@ Public Class SurtidorOnTop
         ev.HasMorePages = False
 
     End Sub
-
 
 End Class

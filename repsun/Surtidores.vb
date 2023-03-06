@@ -114,8 +114,21 @@
         vaciarCoches()
     End Sub
 
-    Private Sub quitarCoche()
-
+    Public Sub quitarCoche(pos As Integer)
+        Select Case pos
+            Case 1
+                pbx_coche1.Image = Nothing
+                pbx_coche1.Enabled = False
+            Case 2
+                pbx_coche2.Image = Nothing
+                pbx_coche2.Enabled = False
+            Case 3
+                pbx_coche3.Image = Nothing
+                pbx_coche3.Enabled = False
+            Case 4
+                pbx_coche4.Image = Nothing
+                pbx_coche4.Enabled = False
+        End Select
     End Sub
 
     Private Sub vaciarCoches()
@@ -131,18 +144,22 @@
 
     Private Sub pbx_coche1_Click(sender As Object, e As EventArgs) Handles pbx_coche1.Click
         SurtidorOnTop.Show()
+        SurtidorOnTop.selectedCar = 1
     End Sub
 
     Private Sub pbx_coche2_Click(sender As Object, e As EventArgs) Handles pbx_coche2.Click
         SurtidorOnTop.Show()
+        SurtidorOnTop.selectedCar = 2
     End Sub
 
     Private Sub pbx_coche3_Click(sender As Object, e As EventArgs) Handles pbx_coche3.Click
         SurtidorOnTop.Show()
+        SurtidorOnTop.selectedCar = 3
     End Sub
 
     Private Sub pbx_coche4_Click(sender As Object, e As EventArgs) Handles pbx_coche4.Click
         SurtidorOnTop.Show()
+        SurtidorOnTop.selectedCar = 4
     End Sub
 
     ''' <summary>
