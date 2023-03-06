@@ -207,18 +207,18 @@ Public Class SurtidorOnTop
 
         ' Imprime los articulos
 
-        ev.Graphics.DrawString(txt_litros.ToString(), printFont, Brushes.Black, 130, yPos)
-        ev.Graphics.DrawString(cbx_tipoCombustible.ToString(), printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(txt_litros.Text.ToString() & "L", printFont, Brushes.Black, 130, yPos)
+        ev.Graphics.DrawString(cbx_tipoCombustible.Text.ToString(), printFont, Brushes.Black, 160, yPos)
         Dim precioTotal As Decimal = Decimal.Parse(txt_precioTotal.Text)
         yPos += 20
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
 
         yPos += 30
         If Not cliente Then
-            ev.Graphics.DrawString(txt_litros.ToString() & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
+            ev.Graphics.DrawString(txt_litros.Text.ToString() & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
-            ev.Graphics.DrawString(txt_litros.ToString() & "€" & " -2% = " & (txt_precioTotal.Text - txt_precioTotal.Text * 0.02), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            ev.Graphics.DrawString(txt_litros.Text.ToString() & "€" & " -2% = " & (txt_precioTotal.Text - txt_precioTotal.Text * 0.02), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
             yPos += 30
         End If
 
