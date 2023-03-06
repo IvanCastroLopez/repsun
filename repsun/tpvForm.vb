@@ -369,7 +369,17 @@ Public Class tpvForm
 
         AddHandler aceptarButton.Click, Sub()
                                             If Decimal.TryParse(dineroTextBox.Text, dinero) AndAlso Decimal.TryParse(combustibleTextBox.Text, combustible) Then
-                                                Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(tipoCombustible.ToString, Decimal.Parse(combustibleTextBox.Text))
+                                                Dim tipoCombustibleInt As Integer
+                                                If tipoCombustible.Equals(Herramientas.tipoCombustible.sin_plomo_95) Then
+                                                    tipoCombustibleInt = 0
+                                                ElseIf tipoCombustible.Equals(Herramientas.tipoCombustible.sin_plomo_98) Then
+                                                    tipoCombustibleInt = 1
+                                                ElseIf tipoCombustible.Equals(Herramientas.tipoCombustible.diesel) Then
+                                                    tipoCombustible = 2
+                                                ElseIf tipoCombustible.Equals(Herramientas.tipoCombustible.diesel_plus) Then
+                                                    tipoCombustibleInt = 3
+                                                End If
+                                                Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(tipoCombustibleInt, Decimal.Parse(combustibleTextBox.Text))
                                                 If ComprobacionCantidad Then
                                                     inputBoxForm.DialogResult = DialogResult.OK
                                                     conexion.Close()
@@ -431,6 +441,10 @@ Public Class tpvForm
         total = 0
         dgv_combustible.Rows.Clear()
         bcombustible = False
+        producto = ""
+        precio = 0
+        cantidad = 0
+        preciolitro = 0
 
         actualizarCampos(ObtenerTotalCarrito())
     End Sub
@@ -552,7 +566,11 @@ Public Class tpvForm
         total = 0
         dgv_combustible.Rows.Clear()
         bcombustible = False
-
+        producto = ""
+        precio = 0
+        cantidad = 0
+        preciolitro = 0
+        txt_introducido.Text = ""
         actualizarCampos(ObtenerTotalCarrito())
     End Sub
 
