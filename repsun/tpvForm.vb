@@ -3,6 +3,7 @@ Imports System.Data.OleDb
 Imports System.Data.SqlClient
 Imports System.Drawing.Printing
 Imports System.Security
+Imports repsun.Herramientas
 
 Public Class tpvForm
     ' Aquí se establece la conexión a la base de datos mediante el proveedor Microsoft.ACE.OLEDB.12.0 y se especifica la ubicación de la base de datos.
@@ -12,6 +13,7 @@ Public Class tpvForm
     Public adaptador_tienda As New OleDbDataAdapter("Select * from Producto", conexion)
     Public adaptador_cesta As New OleDbDataAdapter("SELECT * FROM CestaCompra", conexion)
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
+    Public adaptador_combustible As New OleDbDataAdapter("Select * from Combustible", conexion)
     'Aquí se crea un objeto DataSet llamado "gestion_dataset".
     Public gestion_dataset As New DataSet
 
@@ -29,6 +31,7 @@ Public Class tpvForm
 
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         adaptador_cesta.Fill(gestion_dataset, "CestaCompra")
+        adaptador_combustible.Fill(gestion_dataset, "Combustible")
 
         ' Configuramos el DataGridView con las columnas de cantidad, código, nombre y precio.
         dgv_carrito.Columns.Add("Cantidad", "Cantidad")
@@ -236,13 +239,13 @@ Public Class tpvForm
         lbl_totalSinImpuestos.Text = "Total sin impuestos: " & Math.Round(totalSinImpuestos, 2) & "€"
     End Function
 
-    Dim combustible As Boolean = False
+    Dim bcombustible As Boolean = False
     Dim producto As String = ""
     Dim precio As Decimal = 0
     Dim cantidad As Integer = 0
     Dim preciolitro As Decimal = 0
     Private Sub pbx_sp95_Click(sender As Object, e As EventArgs) Handles pbx_sp95.Click, pbx_sp98.Click, pbx_diesela.Click, pbx_diesela_plus.Click
-        If combustible Then
+        If bcombustible Then
             MsgBox("Ya hay un combustible dentro de la venta")
             Exit Sub
         ElseIf sender.Equals(pbx_sp95) Then
@@ -256,7 +259,7 @@ Public Class tpvForm
                 preciolitro = dinero / combustible
                 producto = "Gasolina sin plomo 95"
                 cantidad = Math.Round(combustible, 0)
-                combustible = True
+                bcombustible = True
             End If
         ElseIf sender.Equals(pbx_sp98) Then
             ' Obtener el precio y la cantidad de combustible
@@ -269,7 +272,7 @@ Public Class tpvForm
                 preciolitro = dinero / combustible
                 producto = "Gasolina sin plomo 98"
                 cantidad = Math.Round(combustible, 0)
-                combustible = True
+                bcombustible = True
             End If
         ElseIf sender.Equals(pbx_diesela) Then
             ' Obtener el precio y la cantidad de combustible
@@ -282,7 +285,7 @@ Public Class tpvForm
                 preciolitro = dinero / combustible
                 producto = "Diesel A"
                 cantidad = Math.Round(combustible, 0)
-                combustible = True
+                bcombustible = True
             End If
         ElseIf sender.Equals(pbx_diesela_plus) Then
             ' Obtener el precio y la cantidad de combustible
@@ -295,7 +298,7 @@ Public Class tpvForm
                 preciolitro = dinero / combustible
                 producto = "Diesel A+"
                 cantidad = Math.Round(combustible, 0)
-                combustible = True
+                bcombustible = True
             End If
         End If
         If producto <> "" And precio > 0 Then
@@ -317,8 +320,8 @@ Public Class tpvForm
 
 
     Function ObtenerValoresDineroCombustible(tipoCombustible As Herramientas.tipoCombustible) As Tuple(Of Decimal, Decimal)
-        Dim dinero As Decimal
-        Dim combustible As Decimal
+        Dim dinero As Decimal = 0
+        Dim combustible As Decimal = 0
 
         Dim inputBoxForm As New Form()
         inputBoxForm.FormBorderStyle = FormBorderStyle.FixedDialog
@@ -337,6 +340,7 @@ Public Class tpvForm
         Dim dineroTextBox As New TextBox()
         dineroTextBox.Location = New Point(110, 20)
         dineroTextBox.Width = 150
+        dineroTextBox.MaxLength = 6
         dineroTextBox.Font = New Font(dineroTextBox.Font.FontFamily, 12)
 
         Dim combustibleLabel As New Label()
@@ -348,6 +352,7 @@ Public Class tpvForm
         Dim combustibleTextBox As New TextBox()
         combustibleTextBox.Location = New Point(110, 60)
         combustibleTextBox.Width = 150
+        combustibleTextBox.MaxLength = 4
         combustibleTextBox.Font = New Font(combustibleTextBox.Font.FontFamily, 12)
 
         Dim aceptarButton As New Button()
@@ -364,11 +369,26 @@ Public Class tpvForm
 
         AddHandler aceptarButton.Click, Sub()
                                             If Decimal.TryParse(dineroTextBox.Text, dinero) AndAlso Decimal.TryParse(combustibleTextBox.Text, combustible) Then
-                                                inputBoxForm.DialogResult = DialogResult.OK
-                                                inputBoxForm.Close()
+                                                conexion.Open()
+                                                Dim comando As New OleDbCommand("select * from Combustible where tipo_combustible=@com", conexion)
+                                                comando.Parameters.AddWithValue("@com", tipoCombustible.ToString)
+                                                Dim res As OleDbDataReader = comando.ExecuteReader
+                                                If res.Read Then
+                                                    Dim cantidad As Decimal = res("cantidad")
+                                                    If combustibleTextBox.Text < cantidad Then
+                                                        inputBoxForm.DialogResult = DialogResult.OK
+                                                        conexion.Close()
+                                                        inputBoxForm.Close()
+                                                    Else
+                                                        inputBoxForm.DialogResult = DialogResult.Cancel
+                                                        MessageBox.Show("No queda tanto combustible")
+                                                    End If
+                                                End If
                                             Else
+                                                inputBoxForm.DialogResult = DialogResult.Cancel
                                                 MessageBox.Show("Los valores introducidos no son válidos.")
                                             End If
+                                            conexion.Close()
                                         End Sub
 
         AddHandler cancelarButton.Click, Sub()
@@ -416,6 +436,7 @@ Public Class tpvForm
         carrito.Clear()
         total = 0
         dgv_combustible.Rows.Clear()
+        bcombustible = False
 
         actualizarCampos(ObtenerTotalCarrito())
     End Sub
@@ -532,6 +553,7 @@ Public Class tpvForm
         Else
             Registros.GrabarError("Dinero insuficiente", "No cobrar")
         End If
+        btn_eliminarTodo_Click()
     End Sub
 
 

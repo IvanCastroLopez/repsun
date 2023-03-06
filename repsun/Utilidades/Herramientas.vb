@@ -83,7 +83,6 @@ Public Class Herramientas
         conexion.Open()
 
         ' Se ejecuta el comando y se obtiene un data reader con los datos del combustible.
-        ' Se ejecuta el comando y se obtiene un data reader con los datos del combustible.
         Dim res As OleDbDataReader = comando.ExecuteReader
 
         ' Se mueve el cursor al primer registro.
