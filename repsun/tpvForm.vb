@@ -64,6 +64,7 @@ Public Class tpvForm
         dgv_carrito.RowsDefaultCellStyle.BackColor = Color.White
         dgv_carrito.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
 
+        GestionForm.cargarDatosCombustible()
     End Sub
 
 
@@ -147,7 +148,6 @@ Public Class tpvForm
 
 
     ' ** CARRITO DE COMPRA **
-
     Private Function ObtenerProductoPorCodigo(codigo As Integer) As DataRow
         Dim producto As DataRow = Nothing
 
@@ -369,20 +369,14 @@ Public Class tpvForm
 
         AddHandler aceptarButton.Click, Sub()
                                             If Decimal.TryParse(dineroTextBox.Text, dinero) AndAlso Decimal.TryParse(combustibleTextBox.Text, combustible) Then
-                                                conexion.Open()
-                                                Dim comando As New OleDbCommand("select * from Combustible where tipo_combustible=@com", conexion)
-                                                comando.Parameters.AddWithValue("@com", tipoCombustible.ToString)
-                                                Dim res As OleDbDataReader = comando.ExecuteReader
-                                                If res.Read Then
-                                                    Dim cantidad As Decimal = res("cantidad")
-                                                    If combustibleTextBox.Text < cantidad Then
-                                                        inputBoxForm.DialogResult = DialogResult.OK
-                                                        conexion.Close()
-                                                        inputBoxForm.Close()
-                                                    Else
-                                                        inputBoxForm.DialogResult = DialogResult.Cancel
-                                                        MessageBox.Show("No queda tanto combustible")
-                                                    End If
+                                                Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(tipoCombustible.ToString, Decimal.Parse(combustibleTextBox.Text))
+                                                If ComprobacionCantidad Then
+                                                    inputBoxForm.DialogResult = DialogResult.OK
+                                                    conexion.Close()
+                                                    inputBoxForm.Close()
+                                                Else
+                                                    inputBoxForm.DialogResult = DialogResult.Cancel
+                                                    MessageBox.Show("No queda tanto combustible")
                                                 End If
                                             Else
                                                 inputBoxForm.DialogResult = DialogResult.Cancel
