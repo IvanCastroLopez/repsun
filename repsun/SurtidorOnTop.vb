@@ -105,16 +105,14 @@ Public Class SurtidorOnTop
         Dim userInput As String = String.Empty
         Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(cbx_tipoCombustible.SelectedIndex, Decimal.Parse(txt_litros.Text))
 
-        MsgBox(cbx_tipoCombustible.SelectedIndex)
-        MsgBox(txt_litros.Text)
-        MsgBox(ComprobacionCantidad)
+        MsgBox(ComprobacionCantidad) 'borrar
 
         If ComprobacionCantidad Then
             userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
 
             If userInput = String.Empty Then
                 ' El usuario hizo clic en Cancelar
-                Exit Sub
+                'Exit Sub
             Else
                 If ExisteClienteRepsol(userInput) Then
                     cliente = True
@@ -152,7 +150,7 @@ Public Class SurtidorOnTop
                 MsgBox("Pago cancelado.")
             End If
         Else
-            Refresh()
+            Me.Refresh()
         End If
         Dispose()
     End Sub
@@ -211,7 +209,7 @@ Public Class SurtidorOnTop
 
         ev.Graphics.DrawString(txt_litros.ToString(), printFont, Brushes.Black, 130, yPos)
         ev.Graphics.DrawString(cbx_tipoCombustible.ToString(), printFont, Brushes.Black, 160, yPos)
-        Dim precioTotal As Decimal = txt_litros.ToString()
+        Dim precioTotal As Decimal = Decimal.Parse(txt_precioTotal.Text)
         yPos += 20
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
 

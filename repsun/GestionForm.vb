@@ -587,11 +587,10 @@ Public Class GestionForm
         pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
     End Sub
 
-    Public Sub actualizarCantidadBDCombustibles()
+    Public Sub actualizarCantidadBDCombustibles(combustible As Integer)
         Dim query As String = "UPDATE Combustible set cantidad=@can WHERE tipo_combustible = @com"
         Dim comando As New OleDbCommand(query, conexion)
         conexion.Open()
-        Dim combustible = cbx_tipoCombustible.SelectedIndex
         Select Case combustible
             Case 0
                 comando.Parameters.AddWithValue("@can", cantidad_SinPlomo95.ToString)
@@ -652,7 +651,7 @@ Public Class GestionForm
         pgb_sinPlomo98.Value = Math.Round(cantidad_SinPLomo98, 0, MidpointRounding.ToEven)
         pgb_diesel.Value = Math.Round(cantidad_Diesel, 0, MidpointRounding.ToEven)
         pgb_dieselPlus.Value = Math.Round(cantidad_DieselPlus, 0, MidpointRounding.ToEven)
-        actualizarCantidadBDCombustibles()
+        actualizarCantidadBDCombustibles(cbx_tipoCombustible.SelectedIndex)
         Me.Refresh()
 
     End Sub
@@ -718,8 +717,8 @@ Public Class GestionForm
                 MsgBox("Primero debes seleccionar el tanque de combustible que deseas utilizar")
                 Resultado = False
         End Select
+        actualizarCantidadBDCombustibles(combustible)
         Return Resultado
-        actualizarCantidadBDCombustibles()
     End Function
 
     Private Sub cargarSinPlomo95()
