@@ -679,6 +679,37 @@ Public Class GestionForm
         actualizarPrecioBDCombustible()
     End Sub
 
+    'Public Function comprobarCombustible(combustible As Integer, cantidad As Decimal) As Boolean
+    '    Select Case combustible
+    '        Case 0
+    '            If (cantidad_SinPlomo95 - cantidad) >= 0 Then
+    '                cantidad_SinPlomo95 = cantidad_SinPlomo95 - cantidad
+    '            Else
+    '                MsgBox("No puedes sacar mas de "canti"L")
+    '            End If
+    '        Case 1
+    '            If (cantidad + cantidad_SinPLomo98) <= 10000 Then
+    '                cantidad_SinPLomo98 = cantidad + cantidad_SinPLomo98
+    '            Else
+    '                MsgBox("No puedes superar la capacidad de 10000L")
+    '            End If
+    '        Case 2
+    '            If (cantidad + cantidad_Diesel) <= 10000 Then
+    '                cantidad_Diesel = cantidad + cantidad_Diesel
+    '            Else
+    '                MsgBox("No puedes superar la capacidad de 10000L")
+    '            End If
+    '        Case 3
+    '            If (cantidad + cantidad_DieselPlus) <= 10000 Then
+    '                cantidad_DieselPlus = cantidad + cantidad_DieselPlus
+    '            Else
+    '                MsgBox("No puedes superar la capacidad de 10000L")
+    '            End If
+    '        Case Else
+    '            MsgBox("Primero debes seleccionar el tanque de combustible que deseas rellenar")
+    '    End Select
+    'End Function
+
     Private Sub cargarSinPlomo95()
         cbx_tipoCombustible.SelectedIndex = 0
         nud_precioCombustible.Value = Decimal.Parse(precio_SinPlomo95)
