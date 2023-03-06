@@ -553,7 +553,13 @@ Public Class tpvForm
         Else
             Registros.GrabarError("Dinero insuficiente", "No cobrar")
         End If
-        btn_eliminarTodo_Click()
+        dgv_carrito.Rows.Clear()
+        carrito.Clear()
+        total = 0
+        dgv_combustible.Rows.Clear()
+        bcombustible = False
+
+        actualizarCampos(ObtenerTotalCarrito())
     End Sub
 
 
