@@ -721,6 +721,19 @@ Public Class GestionForm
         Return Resultado
     End Function
 
+    Public Function getPrecioComb(combustible As String) As Decimal
+        Select Case combustible
+            Case "Sin Plomo 95"
+                Return precio_SinPlomo95
+            Case "Sin Plomo 98"
+                Return precio_SinPLomo98
+            Case "Diesel"
+                Return precio_Diesel
+            Case "Diesel +"
+                Return precio_DieselPlus
+        End Select
+    End Function
+
     Private Sub cargarSinPlomo95()
         cbx_tipoCombustible.SelectedIndex = 0
         nud_precioCombustible.Value = Decimal.Parse(precio_SinPlomo95)

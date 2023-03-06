@@ -105,8 +105,6 @@ Public Class SurtidorOnTop
         Dim userInput As String = String.Empty
         Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(cbx_tipoCombustible.SelectedIndex, Decimal.Parse(txt_litros.Text))
 
-        MsgBox(ComprobacionCantidad) 'borrar
-
         If ComprobacionCantidad Then
             userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
 
@@ -207,8 +205,9 @@ Public Class SurtidorOnTop
 
         ' Imprime los articulos
 
-        ev.Graphics.DrawString(txt_litros.Text.ToString() & "L", printFont, Brushes.Black, 130, yPos)
-        ev.Graphics.DrawString(cbx_tipoCombustible.Text.ToString(), printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(txt_litros.Text.ToString(), printFont, Brushes.Black, 130, yPos)
+        ev.Graphics.DrawString(cbx_tipoCombustible.Text.ToString(), printFont, Brushes.Black, 160, yPos) 'tipo
+        ev.Graphics.DrawString(GestionForm.getPrecioComb(cbx_tipoCombustible.Text), printFont, Brushes.Black, 370, yPos)
         Dim precioTotal As Decimal = Decimal.Parse(txt_precioTotal.Text)
         yPos += 20
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
@@ -218,7 +217,8 @@ Public Class SurtidorOnTop
             ev.Graphics.DrawString(txt_litros.Text.ToString() & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
-            ev.Graphics.DrawString(txt_litros.Text.ToString() & "€" & " -2% = " & (txt_precioTotal.Text - txt_precioTotal.Text * 0.02), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            Dim totalDescuento = precioTotal - precioTotal * 0.02
+            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€" & " -2% = " & Math.Round(totalDescuento, 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
             yPos += 30
         End If
 
