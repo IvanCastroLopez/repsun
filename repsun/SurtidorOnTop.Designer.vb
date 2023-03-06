@@ -49,7 +49,7 @@ Partial Class SurtidorOnTop
         Me.tlp_surtidorGeneral.Controls.Add(Me.TableLayoutPanel1, 1, 2)
         Me.tlp_surtidorGeneral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_surtidorGeneral.Location = New System.Drawing.Point(0, 0)
-        Me.tlp_surtidorGeneral.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp_surtidorGeneral.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_surtidorGeneral.Name = "tlp_surtidorGeneral"
         Me.tlp_surtidorGeneral.RowCount = 4
         Me.tlp_surtidorGeneral.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.0!))
@@ -73,7 +73,7 @@ Partial Class SurtidorOnTop
         Me.tlp_pantallaSurtidor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_pantallaSurtidor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tlp_pantallaSurtidor.Location = New System.Drawing.Point(735, 425)
-        Me.tlp_pantallaSurtidor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp_pantallaSurtidor.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp_pantallaSurtidor.Name = "tlp_pantallaSurtidor"
         Me.tlp_pantallaSurtidor.RowCount = 7
         Me.tlp_pantallaSurtidor.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.0!))
@@ -100,7 +100,7 @@ Partial Class SurtidorOnTop
         Me.cbx_tipoCombustible.FormattingEnabled = True
         Me.cbx_tipoCombustible.Items.AddRange(New Object() {"Sin Plomo 95", "Sin Plomo 98", "Diesel", "Diesel +"})
         Me.cbx_tipoCombustible.Location = New System.Drawing.Point(106, 70)
-        Me.cbx_tipoCombustible.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbx_tipoCombustible.Margin = New System.Windows.Forms.Padding(4)
         Me.cbx_tipoCombustible.Name = "cbx_tipoCombustible"
         Me.cbx_tipoCombustible.Size = New System.Drawing.Size(480, 46)
         Me.cbx_tipoCombustible.TabIndex = 0
@@ -115,7 +115,7 @@ Partial Class SurtidorOnTop
         Me.txt_precioTotal.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_precioTotal.ForeColor = System.Drawing.Color.White
         Me.txt_precioTotal.Location = New System.Drawing.Point(282, 167)
-        Me.txt_precioTotal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_precioTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_precioTotal.MaxLength = 5
         Me.txt_precioTotal.Name = "txt_precioTotal"
         Me.txt_precioTotal.Size = New System.Drawing.Size(304, 38)
@@ -132,7 +132,7 @@ Partial Class SurtidorOnTop
         Me.txt_litros.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_litros.ForeColor = System.Drawing.Color.White
         Me.txt_litros.Location = New System.Drawing.Point(282, 264)
-        Me.txt_litros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_litros.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_litros.MaxLength = 5
         Me.txt_litros.Name = "txt_litros"
         Me.txt_litros.Size = New System.Drawing.Size(304, 38)
@@ -150,7 +150,7 @@ Partial Class SurtidorOnTop
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 2, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(736, 824)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -163,7 +163,7 @@ Partial Class SurtidorOnTop
         '
         Me.pgb_gasolinaSurtidor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pgb_gasolinaSurtidor.Location = New System.Drawing.Point(5, 60)
-        Me.pgb_gasolinaSurtidor.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pgb_gasolinaSurtidor.Margin = New System.Windows.Forms.Padding(5)
         Me.pgb_gasolinaSurtidor.Name = "pgb_gasolinaSurtidor"
         Me.pgb_gasolinaSurtidor.Size = New System.Drawing.Size(478, 45)
         Me.pgb_gasolinaSurtidor.TabIndex = 0
@@ -173,7 +173,7 @@ Partial Class SurtidorOnTop
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button1.Font = New System.Drawing.Font("Yu Gothic UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(574, 60)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 45)
         Me.Button1.TabIndex = 1
@@ -190,7 +190,7 @@ Partial Class SurtidorOnTop
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1912, 1018)

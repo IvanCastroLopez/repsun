@@ -8,6 +8,9 @@ Public Class SurtidorOnTop
     ' Aquí se establece la conexión a la base de datos mediante el proveedor Microsoft.ACE.OLEDB.12.0 y se especifica la ubicación de la base de datos.
     Public conexion As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Repsol_db.accdb")
     Public adaptador_clientes As New OleDbDataAdapter("Select * from ClienteRepsol", conexion)
+    Private Sub SurtidorOnTop_Load(sender As Object, e As EventArgs) Handles Me.Load
+        GestionForm.cargarDatosCombustible()
+    End Sub
 
     Private Sub txt_precioTotal_LostFocus(sender As Object, e As EventArgs) Handles txt_precioTotal.LostFocus
         Dim dinero As Decimal
@@ -100,46 +103,58 @@ Public Class SurtidorOnTop
     Dim nombreCliente As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim userInput As String = String.Empty
-        userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
+        Dim ComprobacionCantidad As Boolean = GestionForm.comprobarCombustible(cbx_tipoCombustible.SelectedIndex, Decimal.Parse(txt_litros.Text))
 
-        If userInput = String.Empty Then
-            ' El usuario hizo clic en Cancelar
-        Else
-            If ExisteClienteRepsol(userInput) Then
-                cliente = True
-                Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
-                Dim queryCliente2 As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
-                Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
-                comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
-                Dim comandoCliente2 As New OleDbCommand(queryCliente2, conexion)
-                comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
-                Dim readerPublicCliente As OleDbDataReader
-                conexion.Open()
-                readerPublicCliente = comandoCliente2.ExecuteReader
-                If readerPublicCliente.Read Then
-                    codCliente = userInput
-                    nombreCliente = readerPublicCliente("nombre")
+        MsgBox(cbx_tipoCombustible.SelectedIndex)
+        MsgBox(txt_litros.Text)
+        MsgBox(ComprobacionCantidad)
+
+        If ComprobacionCantidad Then
+            userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
+
+            If userInput = String.Empty Then
+                ' El usuario hizo clic en Cancelar
+                Exit Sub
+            Else
+                If ExisteClienteRepsol(userInput) Then
+                    cliente = True
+                    Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+                    Dim queryCliente2 As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+                    Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
+                    comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
+                    Dim comandoCliente2 As New OleDbCommand(queryCliente2, conexion)
+                    comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
+                    Dim readerPublicCliente As OleDbDataReader
+                    conexion.Open()
+                    readerPublicCliente = comandoCliente2.ExecuteReader
+                    If readerPublicCliente.Read Then
+                        codCliente = userInput
+                        nombreCliente = readerPublicCliente("nombre")
+                    End If
+                    readerPublicCliente.Close()
+                    conexion.Close()
                 End If
-                readerPublicCliente.Close()
-                conexion.Close()
             End If
-        End If
-        Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
-        AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
-        PrintDocument1.Print()
-        If resultado = DialogResult.Yes Then
-            MsgBox("Pago Correcto")
+
+            Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
             AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
             PrintDocument1.Print()
-            Me.Close()
-        ElseIf resultado = DialogResult.No Then
-            ' Acción para el botón "Cancelar"
-            MsgBox("No se puede pagar con efectivo")
-        ElseIf resultado = DialogResult.Cancel Then
-            ' Acción para el botón "Cancelar"
-            MsgBox("Pago cancelado.")
+            If resultado = DialogResult.Yes Then
+                MsgBox("Pago Correcto")
+                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+                PrintDocument1.Print()
+                Me.Close()
+            ElseIf resultado = DialogResult.No Then
+                ' Acción para el botón "Cancelar"
+                MsgBox("No se puede pagar con efectivo")
+            ElseIf resultado = DialogResult.Cancel Then
+                ' Acción para el botón "Cancelar"
+                MsgBox("Pago cancelado.")
+            End If
+        Else
+            Refresh()
         End If
-
+        Dispose()
     End Sub
 
     Public Function ExisteClienteRepsol(ByVal cod_cliente As Integer) As Boolean
@@ -260,4 +275,6 @@ Public Class SurtidorOnTop
         ev.HasMorePages = False
 
     End Sub
+
+
 End Class
