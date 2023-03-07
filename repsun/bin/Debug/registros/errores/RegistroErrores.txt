@@ -1,1 +1,6 @@
 "07/03/2023 16:41:37","El nombre de usuario o la contraseña están mal escritos"
+"07/03/2023 18:42:13","El nombre de usuario o la contraseña están mal escritos"
+"07/03/2023 18:43:54","Ha ocurrido un error creando el empleado. Revise los campos"
+"07/03/2023 18:44:02","Ha ocurrido un error creando el empleado. Revise los campos"
+"07/03/2023 18:44:45","Error iniciando sesión. Inténtelo de nuevo. Si el error persiste llame al técnico responsable del sistema"
+"07/03/2023 18:44:50","El nombre de usuario o la contraseña están mal escritos"
