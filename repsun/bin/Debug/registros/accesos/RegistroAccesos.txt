@@ -13,3 +13,5 @@
 "07/03/2023 18:17:23 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
 "07/03/2023 18:32:54 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
 "07/03/2023 18:33:55 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"07/03/2023 18:39:14 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
+"07/03/2023 18:39:57 [Acceso Válido] | Nombre de usuario: admin | Contraseña: admin"
