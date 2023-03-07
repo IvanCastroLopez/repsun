@@ -257,7 +257,7 @@ Public Class tpvForm
                 ' Calcular el precio por litro
                 precio = dinero
                 preciolitro = dinero / combustible
-                producto = "Gasolina sin plomo 95"
+                producto = "Gas. Sin plomo 95"
                 cantidad = Math.Round(combustible, 0)
                 bcombustible = True
             End If
@@ -270,7 +270,7 @@ Public Class tpvForm
                 ' Calcular el precio por litro
                 precio = dinero
                 preciolitro = dinero / combustible
-                producto = "Gasolina sin plomo 98"
+                producto = "Gas. Sin plomo 98"
                 cantidad = Math.Round(combustible, 0)
                 bcombustible = True
             End If
