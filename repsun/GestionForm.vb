@@ -63,7 +63,7 @@ Public Class GestionForm
     Private Sub txt_buscarTienda_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarTienda.TextChanged
         Dim comando As New OleDbCommand(("Select * from Producto where nombre LIKE '%" & txt_buscarTienda.Text & "%'"), conexion)
         adaptador_tienda.SelectCommand = comando
-        gestion_dataset.Clear()
+        gestion_dataset.Tables("producto").Clear()
         adaptador_tienda.Fill(gestion_dataset, "Producto")
         dgv_tienda.DataSource = gestion_dataset
     End Sub
@@ -185,14 +185,15 @@ Public Class GestionForm
     ''' </summary>
     ''' <param name="sender">Object: txt_buscarEmpleado</param>
     ''' <param name="e">EventArgs: TextChanged</param>
-    Private Sub txt_buscarEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarEmpleado.TextChanged
-        Dim comando As New OleDbCommand(("SELECT * FROM empleados WHERE nombre LIKE '%" & txt_buscarEmpleado.Text & "%'"), conexion)
-        adaptador_empleados.SelectCommand = comando
 
-        gestion_dataset.Clear()
-        adaptador_empleados.Fill(gestion_dataset, "empleados")
-        dgv_empleados.DataSource = gestion_dataset
+
+    Private Sub txt_buscarEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarEmpleado.TextChanged
+        Dim vista As New DataView(gestion_dataset.Tables("relacion"))
+        vista.RowFilter = "empleado.cod_empleado = usuarios.cod_empleado AND nombre LIKE '%" & txt_buscarEmpleado.Text & "%'"
+        dgv_empleados.DataSource = vista
     End Sub
+
+
 
     ''' <summary>
     ''' Muestra GestionEmpleadosOnTop en modo crear.
@@ -317,12 +318,12 @@ Public Class GestionForm
     ''' <param name="sender">Object: txt_buscarProveedores</param>
     ''' <param name="e">EventArgs: TextChanged</param>
     Private Sub txt_buscarproveedores_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarProveedores.TextChanged
-        Dim comando As New OleDbCommand(("Select * from proveedor where nombre_emp LIKE '%" & txt_buscarProveedores.Text & "%'"), conexion)
-        adaptador_proveedores.SelectCommand = comando
-        gestion_dataset.Clear()
-        adaptador_proveedores.Fill(gestion_dataset, "proveedor")
-        dgv_proveedores.DataSource = gestion_dataset
+        Dim vista As New DataView(gestion_dataset.Tables("proveedor"))
+        vista.RowFilter = "nombre_emp LIKE '%" & txt_buscarProveedores.Text & "%'"
+        dgv_proveedores.DataSource = vista
     End Sub
+
+
 
     ''' <summary>
     ''' Muestra GestionProveedoresOnTop.
@@ -443,10 +444,10 @@ Public Class GestionForm
     ''' <param name="sender">Object: txt_buscarCliente</param>
     ''' <param name="e">EventArgs: TextChanged</param>
     Private Sub txt_buscarCliente_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarCliente.TextChanged
-        Dim comando As New OleDbCommand(("SELECT * FROM clientes WHERE nombre LIKE '%" & txt_buscarCliente.Text & "%'"), conexion)
+        Dim comando As New OleDbCommand(("SELECT * FROM clienteRepsol WHERE nombre LIKE '%" & txt_buscarCliente.Text & "%'"), conexion)
         adaptador_clientes.SelectCommand = comando
         gestion_dataset.Clear()
-        adaptador_clientes.Fill(gestion_dataset, "clientes")
+        adaptador_clientes.Fill(gestion_dataset, "clienteRepsol")
         dgv_clientes.DataSource = gestion_dataset
     End Sub
 
