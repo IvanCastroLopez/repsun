@@ -732,6 +732,7 @@ Public Class GestionForm
             Case "Diesel +"
                 Return precio_DieselPlus
         End Select
+        Return Nothing
     End Function
 
     Private Sub cargarSinPlomo95()

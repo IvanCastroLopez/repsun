@@ -90,7 +90,7 @@ Public Class tpvForm
             ' Buscar el control con el nombre especificado
             Dim controlTLP() As Control = Me.Controls.Find(nombre, True)
 
-            Dim tlp As TableLayoutPanel
+            Dim tlp As TableLayoutPanel = Nothing
 
             ' Verificar si se encontró el control y si es un TableLayoutPanel
             If controlTLP IsNot Nothing AndAlso controlTLP.Length > 0 AndAlso TypeOf controlTLP(0) Is TableLayoutPanel Then
