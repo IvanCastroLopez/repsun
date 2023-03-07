@@ -500,7 +500,7 @@ Public Class tpvForm
     ' BOTON SALIR
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         MenuPrincipalForm.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Dim tarjeta As Boolean = False
@@ -510,75 +510,80 @@ Public Class tpvForm
 
     ' BOTON COBRAR
     Private Sub btn_teclado_cobrar_Click(sender As Object, e As EventArgs) Handles btn_teclado_cobrar.Click
-        If txt_introducido.Text >= Math.Round(ObtenerTotalCarrito(), 2) Then
-            Dim userInput As String = String.Empty
+        If Not txt_introducido.Text = "" Then
+            If txt_introducido.Text <> "" And txt_introducido.Text >= Math.Round(ObtenerTotalCarrito(), 2) Then
+                Dim userInput As String = String.Empty
 
-            userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
+                userInput = InputBox("Pregunte si es cliente, si lo es, introduzca su código de cliente: ", "¿Es Cliente?")
 
-            If userInput = String.Empty Then
-                ' El usuario hizo clic en Cancelar
-            Else
-                If ExisteClienteRepsol(userInput) Then
-                    Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
-                    Dim queryCliente2 As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
-                    Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
-                    comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
-                    Dim comandoCliente2 As New OleDbCommand(queryCliente2, conexion)
-                    comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
-                    Dim readerPublicCliente As OleDbDataReader
-                    conexion.Open()
-                    readerPublicCliente = comandoCliente2.ExecuteReader
-                    If readerPublicCliente.Read Then
-                        codCliente = userInput
-                        nombreCliente = readerPublicCliente("nombre")
+                If userInput = String.Empty Then
+                    ' El usuario hizo clic en Cancelar
+                Else
+                    If ExisteClienteRepsol(userInput) Then
+                        Dim queryCliente As String = "SELECT COUNT(*) FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+                        Dim queryCliente2 As String = "SELECT * FROM ClienteRepsol WHERE cod_cliente = @cod_cliente"
+                        Dim comandoCliente As New OleDbCommand(queryCliente, conexion)
+                        comandoCliente.Parameters.AddWithValue("@cod_cliente", userInput)
+                        Dim comandoCliente2 As New OleDbCommand(queryCliente2, conexion)
+                        comandoCliente2.Parameters.AddWithValue("@cod_cliente", userInput)
+                        Dim readerPublicCliente As OleDbDataReader
+                        conexion.Open()
+                        readerPublicCliente = comandoCliente2.ExecuteReader
+                        If readerPublicCliente.Read Then
+                            codCliente = userInput
+                            nombreCliente = readerPublicCliente("nombre")
+                        End If
+                        readerPublicCliente.Close()
+                        conexion.Close()
                     End If
-                    readerPublicCliente.Close()
-                    conexion.Close()
                 End If
-            End If
-            Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
+                Dim resultado As DialogResult = MessageBox.Show("¿Va a pagar con tarjeta?", "Opciones de Pago", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
 
-            If resultado = DialogResult.Yes Then
-                ' Acción para el botón "Tarjeta"
-                MsgBox("Pago con tarjeta seleccionado.")
-                tarjeta = True
-                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
-                PrintDocument1.Print()
+                If resultado = DialogResult.Yes Then
+                    ' Acción para el botón "Tarjeta"
+                    MsgBox("Pago con tarjeta seleccionado.")
+                    tarjeta = True
+                    AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+                    PrintDocument1.Print()
 
-                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket2
-                PrintDocument1.Print()
-            ElseIf resultado = DialogResult.No Then
-                ' Acción para el botón "Efectivo"
-                MsgBox("Pago en efectivo seleccionado.")
-                tarjeta = False
-                MsgBox("Devolver: " & (txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)))
-                AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
-                PrintDocument1.Print()
-            ElseIf resultado = DialogResult.Cancel Then
-                ' Acción para el botón "Cancelar"
-                MsgBox("Pago cancelado.")
+                    AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket2
+                    PrintDocument1.Print()
+                ElseIf resultado = DialogResult.No Then
+                    ' Acción para el botón "Efectivo"
+                    MsgBox("Pago en efectivo seleccionado.")
+                    tarjeta = False
+                    MsgBox("Devolver: " & (txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)))
+                    AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+                    PrintDocument1.Print()
+                ElseIf resultado = DialogResult.Cancel Then
+                    ' Acción para el botón "Cancelar"
+                    MsgBox("Pago cancelado.")
+                End If
+            Else
+                Registros.GrabarError("Dinero insuficiente", "No cobrar")
             End If
-        Else
-            Registros.GrabarError("Dinero insuficiente", "No cobrar")
+            dgv_carrito.Rows.Clear()
+            carrito.Clear()
+            total = 0
+            dgv_combustible.Rows.Clear()
+            bcombustible = False
+            producto = ""
+            precio = 0
+            cantidad = 0
+            preciolitro = 0
+            txt_introducido.Text = ""
+            actualizarCampos(ObtenerTotalCarrito())
         End If
-        dgv_carrito.Rows.Clear()
-        carrito.Clear()
-        total = 0
-        dgv_combustible.Rows.Clear()
-        bcombustible = False
-        producto = ""
-        precio = 0
-        cantidad = 0
-        preciolitro = 0
-        txt_introducido.Text = ""
-        actualizarCampos(ObtenerTotalCarrito())
+
     End Sub
 
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        ' Comprueba si la tecla presionada es F1.
+        If e.KeyCode = Keys.F1 Then
+            ' Llama al método ShowHelp del HelpProvider asociado al HelpButton.
 
-
-
-
-
+        End If
+    End Sub
 
 
 

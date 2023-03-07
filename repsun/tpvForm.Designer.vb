@@ -875,7 +875,8 @@ Partial Class tpvForm
         '
         'HelpProvider1
         '
-        Me.HelpProvider1.HelpNamespace = ".\Debug\Repsun_Ayuda.chm"
+        Me.HelpProvider1.HelpNamespace = "C:\Users\castr\source\repos\IvanCastroLopez\repsun\repsun\bin\Debug\Repsun_Ayuda." &
+    "chm"
         '
         'tpvForm
         '
@@ -884,7 +885,10 @@ Partial Class tpvForm
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.tlp_tpv)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.HelpButton = True
+        Me.HelpProvider1.SetHelpKeyword(Me, "")
         Me.Name = "tpvForm"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "tpvForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_tpv.ResumeLayout(False)
