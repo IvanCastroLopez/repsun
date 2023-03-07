@@ -653,7 +653,7 @@ Public Class tpvForm
             ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
-            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 220, yPos)
             yPos += 30
         End If
 
