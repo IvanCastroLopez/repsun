@@ -188,9 +188,12 @@ Public Class GestionForm
 
 
     Private Sub txt_buscarEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarEmpleado.TextChanged
-        Dim vista As New DataView(gestion_dataset.Tables("relacion"))
-        vista.RowFilter = "empleado.cod_empleado = usuarios.cod_empleado AND nombre LIKE '%" & txt_buscarEmpleado.Text & "%'"
-        dgv_empleados.DataSource = vista
+        Dim comandoSQL As String = "SELECT empleado.cod_empleado, nombre, apellidos, dni, email, telefono, rol, nombre_usuario, contrasena, admin FROM Empleado INNER JOIN Usuarios ON empleado.cod_empleado = usuarios.cod_empleado WHERE nombre LIKE '%" & txt_buscarEmpleado.Text & "%' OR apellidos LIKE '%" & txt_buscarEmpleado.Text & "%'"
+        Dim adapter As New OleDbDataAdapter(comandoSQL, conexion)
+        Dim ds As New DataSet()
+        adapter.Fill(ds, "Empleado_Usuarios")
+        dgv_empleados.DataSource = ds
+        dgv_empleados.DataMember = "Empleado_Usuarios"
     End Sub
 
 
@@ -444,11 +447,9 @@ Public Class GestionForm
     ''' <param name="sender">Object: txt_buscarCliente</param>
     ''' <param name="e">EventArgs: TextChanged</param>
     Private Sub txt_buscarCliente_TextChanged(sender As Object, e As EventArgs) Handles txt_buscarCliente.TextChanged
-        Dim comando As New OleDbCommand(("SELECT * FROM clienteRepsol WHERE nombre LIKE '%" & txt_buscarCliente.Text & "%'"), conexion)
-        adaptador_clientes.SelectCommand = comando
-        gestion_dataset.Clear()
-        adaptador_clientes.Fill(gestion_dataset, "clienteRepsol")
-        dgv_clientes.DataSource = gestion_dataset
+        Dim vista As New DataView(gestion_dataset.Tables("clienteRepsol"))
+        vista.RowFilter = "nombre LIKE '%" & txt_buscarCliente.Text & "%'"
+        dgv_clientes.DataSource = vista
     End Sub
 
     ''' <summary>
