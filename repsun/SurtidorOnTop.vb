@@ -214,7 +214,7 @@ Public Class SurtidorOnTop
         ' Imprime los articulos
 
         ev.Graphics.DrawString(txt_litros.Text.ToString(), printFont, Brushes.Black, 130, yPos)
-        ev.Graphics.DrawString(cbx_tipoCombustible.Text.ToString(), printFont, Brushes.Black, 160, yPos) 'tipo
+        ev.Graphics.DrawString(cbx_tipoCombustible.Text.ToString(), printFont, Brushes.Black, 210, yPos) 'tipo
         ev.Graphics.DrawString(GestionForm.getPrecioComb(cbx_tipoCombustible.Text), printFont, Brushes.Black, 370, yPos)
         Dim precioTotal As Decimal = Decimal.Parse(txt_precioTotal.Text)
         yPos += 20
@@ -226,7 +226,7 @@ Public Class SurtidorOnTop
             yPos += 30
         Else
             Dim totalDescuento = precioTotal - precioTotal * 0.02
-            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€" & " -2% = " & Math.Round(totalDescuento, 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€" & " -2% = " & Math.Round(totalDescuento, 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 220, yPos)
             yPos += 30
         End If
 
