@@ -26,6 +26,7 @@ Partial Class RegistrosOnTop
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -72,13 +73,20 @@ Partial Class RegistrosOnTop
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(119, 18)
         Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\castr\source\repos\IvanCastroLopez\repsun\repsun\bin\Debug\Repsun_Ayuda." &
+    "chm"
+        '
         'RegistrosOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.HelpButton = True
         Me.Name = "RegistrosOnTop"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "RegistrosOnTop"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
@@ -92,4 +100,5 @@ Partial Class RegistrosOnTop
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

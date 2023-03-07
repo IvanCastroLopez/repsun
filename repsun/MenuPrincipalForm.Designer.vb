@@ -148,8 +148,10 @@ Partial Class MenuPrincipalForm
         Me.Controls.Add(Me.tlp_layoutBotones)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.HelpButton = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MenuPrincipalForm"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "MenuPrincipalForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.tlp_layoutBotones.ResumeLayout(False)

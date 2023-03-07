@@ -36,6 +36,7 @@ Partial Class GestionProveedoresOnTop
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -221,14 +222,21 @@ Partial Class GestionProveedoresOnTop
         Me.txt_email.Size = New System.Drawing.Size(518, 31)
         Me.txt_email.TabIndex = 5
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\castr\source\repos\IvanCastroLopez\repsun\repsun\bin\Debug\Repsun_Ayuda." &
+    "chm"
+        '
         'GestionProveedoresOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1049, 575)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
+        Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GestionProveedoresOnTop"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "GestionProveedoresOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
         Me.tlp_GestionProductosOnTop.PerformLayout()
@@ -249,4 +257,5 @@ Partial Class GestionProveedoresOnTop
     Friend WithEvents txt_telefono As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txt_email As TextBox
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
