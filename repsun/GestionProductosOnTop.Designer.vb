@@ -35,6 +35,7 @@ Partial Class GestionProductosOnTop
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_accion = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -201,6 +202,11 @@ Partial Class GestionProductosOnTop
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nombre"
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\castr\source\repos\IvanCastroLopez\repsun\repsun\bin\Debug\Repsun_Ayuda." &
+    "chm"
+        '
         'GestionProductosOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,8 +214,10 @@ Partial Class GestionProductosOnTop
         Me.ClientSize = New System.Drawing.Size(1049, 575)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GestionProductosOnTop"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "Gestión de producto"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
         Me.tlp_GestionProductosOnTop.PerformLayout()
@@ -229,4 +237,5 @@ Partial Class GestionProductosOnTop
     Friend WithEvents lbl_TituloGestionProductos As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents btn_accion As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
