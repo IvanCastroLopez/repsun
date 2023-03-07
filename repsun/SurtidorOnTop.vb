@@ -226,7 +226,7 @@ Public Class SurtidorOnTop
             yPos += 30
         Else
             Dim totalDescuento = precioTotal - precioTotal * 0.02
-            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€" & " -2% = " & Math.Round(totalDescuento, 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            ev.Graphics.DrawString(Math.Round(precioTotal, 2).ToString() & "€" & " -2% = " & Math.Round(totalDescuento, 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 220, yPos)
             yPos += 30
         End If
 
