@@ -37,6 +37,7 @@ Partial Class ClientesOnTop
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.btn_accion = New System.Windows.Forms.Button()
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.tlp_GestionProductosOnTop.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -243,6 +244,11 @@ Partial Class ClientesOnTop
         Me.btn_accion.TabIndex = 5
         Me.btn_accion.UseVisualStyleBackColor = False
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\castr\source\repos\IvanCastroLopez\repsun\repsun\bin\Debug\Repsun_Ayuda." &
+    "chm"
+        '
         'ClientesOnTop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -250,7 +256,9 @@ Partial Class ClientesOnTop
         Me.ClientSize = New System.Drawing.Size(1049, 575)
         Me.Controls.Add(Me.tlp_GestionProductosOnTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.HelpButton = True
         Me.Name = "ClientesOnTop"
+        Me.HelpProvider1.SetShowHelp(Me, True)
         Me.Text = "ClientesOnTop"
         Me.tlp_GestionProductosOnTop.ResumeLayout(False)
         Me.tlp_GestionProductosOnTop.PerformLayout()
@@ -273,4 +281,5 @@ Partial Class ClientesOnTop
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_email As TextBox
     Friend WithEvents btn_accion As Button
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
