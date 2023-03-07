@@ -642,7 +642,7 @@ Public Class tpvForm
         Next
 
         ev.Graphics.DrawString(Math.Round(cantidad, 2).ToString, printFont, Brushes.Black, 130, yPos)
-        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 190, yPos)
         ev.Graphics.DrawString(Math.Round(preciolitro, 2).ToString, printFont, Brushes.Black, 370, yPos)
         ev.Graphics.DrawString(Math.Round(precio, 2).ToString, printFont, Brushes.Black, 420, yPos)
         yPos += 20
