@@ -230,6 +230,7 @@ Public Class tpvForm
         Return totalCarrito
     End Function
 
+
     Private Function actualizarCampos(Total As Decimal)
         Dim impuestos As Decimal = Total * 0.21
         Dim totalSinImpuestos As Decimal = Total - impuestos
@@ -239,11 +240,14 @@ Public Class tpvForm
         lbl_totalSinImpuestos.Text = "Total sin impuestos: " & Math.Round(totalSinImpuestos, 2) & "€"
     End Function
 
+
     Dim bcombustible As Boolean = False
     Dim producto As String = ""
     Dim precio As Decimal = 0
     Dim cantidad As Integer = 0
     Dim preciolitro As Decimal = 0
+
+
     Private Sub pbx_sp95_Click(sender As Object, e As EventArgs) Handles pbx_sp95.Click, pbx_sp98.Click, pbx_diesela.Click, pbx_diesela_plus.Click
         If bcombustible Then
             MsgBox("Ya hay un combustible dentro de la venta")
@@ -546,15 +550,43 @@ Public Class tpvForm
                     AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
                     PrintDocument1.Print()
 
+                    RemoveHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+
                     AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket2
                     PrintDocument1.Print()
+
+                    dgv_carrito.Rows.Clear()
+                    carrito.Clear()
+                    total = 0
+                    dgv_combustible.Rows.Clear()
+                    bcombustible = False
+                    producto = ""
+                    precio = 0
+                    cantidad = 0
+                    preciolitro = 0
+                    txt_introducido.Text = ""
+                    actualizarCampos(ObtenerTotalCarrito())
                 ElseIf resultado = DialogResult.No Then
                     ' Acción para el botón "Efectivo"
                     MsgBox("Pago en efectivo seleccionado.")
                     tarjeta = False
                     MsgBox("Devolver: " & (txt_introducido.Text - Math.Round(ObtenerTotalCarrito(), 2)))
+
                     AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
                     PrintDocument1.Print()
+
+
+                    dgv_carrito.Rows.Clear()
+                    carrito.Clear()
+                    total = 0
+                    dgv_combustible.Rows.Clear()
+                    bcombustible = False
+                    producto = ""
+                    precio = 0
+                    cantidad = 0
+                    preciolitro = 0
+                    txt_introducido.Text = ""
+                    actualizarCampos(ObtenerTotalCarrito())
                 ElseIf resultado = DialogResult.Cancel Then
                     ' Acción para el botón "Cancelar"
                     MsgBox("Pago cancelado.")
@@ -562,17 +594,6 @@ Public Class tpvForm
             Else
                 Registros.GrabarError("Dinero insuficiente", "No cobrar")
             End If
-            dgv_carrito.Rows.Clear()
-            carrito.Clear()
-            total = 0
-            dgv_combustible.Rows.Clear()
-            bcombustible = False
-            producto = ""
-            precio = 0
-            cantidad = 0
-            preciolitro = 0
-            txt_introducido.Text = ""
-            actualizarCampos(ObtenerTotalCarrito())
         End If
 
     End Sub
@@ -838,18 +859,14 @@ Public Class tpvForm
             End If
             yPos += 40
         End If
-        '---
+        ''---
         yPos += 40
-        If tarjeta Then
-            ev.Graphics.DrawString("Firme aquí:", printFont, Brushes.Black, 130, yPos)
-            yPos += 20
-        End If
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
         yPos += 80
 
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
         yPos += 40
-        '---
+        ''---
 
         If cliente Then
             ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 130, yPos)
