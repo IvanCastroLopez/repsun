@@ -779,7 +779,7 @@ Public Class tpvForm
         Next
 
         ev.Graphics.DrawString(Math.Round(cantidad, 2).ToString, printFont, Brushes.Black, 130, yPos)
-        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 160, yPos)
+        ev.Graphics.DrawString(producto, printFont, Brushes.Black, 190, yPos)
         ev.Graphics.DrawString(Math.Round(preciolitro, 2).ToString, printFont, Brushes.Black, 370, yPos)
         ev.Graphics.DrawString(Math.Round(precio, 2).ToString, printFont, Brushes.Black, 420, yPos)
 
@@ -791,7 +791,7 @@ Public Class tpvForm
             ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€", New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 390, yPos)
             yPos += 30
         Else
-            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 280, yPos)
+            ev.Graphics.DrawString(Math.Round(ObtenerTotalCarrito(), 2) & "€" & " -2% = " & Math.Round(ObtenerTotalCarrito() - (ObtenerTotalCarrito() * 0.02), 2), New Font("Courier New", 15, FontStyle.Bold), Brushes.Black, 220, yPos)
             yPos += 30
         End If
 
@@ -818,7 +818,6 @@ Public Class tpvForm
         yPos += 20
 
         If tarjeta Then
-
             ev.Graphics.DrawString("Tarjeta: ", printFont, Brushes.Black, 130, yPos)
         Else
             ev.Graphics.DrawString("Efectivo: ", printFont, Brushes.Black, 130, yPos)
@@ -839,6 +838,18 @@ Public Class tpvForm
             End If
             yPos += 40
         End If
+        '---
+        yPos += 40
+        If tarjeta Then
+            ev.Graphics.DrawString("Firme aquí:", printFont, Brushes.Black, 130, yPos)
+            yPos += 20
+        End If
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 80
+
+        ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
+        yPos += 40
+        '---
 
         If cliente Then
             ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 130, yPos)
