@@ -550,6 +550,8 @@ Public Class tpvForm
                     AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
                     PrintDocument1.Print()
 
+                    RemoveHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket
+
                     AddHandler PrintDocument1.PrintPage, AddressOf Me.PrintTicket2
                     PrintDocument1.Print()
 
@@ -857,18 +859,14 @@ Public Class tpvForm
             End If
             yPos += 40
         End If
-        '---
+        ''---
         yPos += 40
-        If tarjeta Then
-            ev.Graphics.DrawString("Firme aquí:", printFont, Brushes.Black, 130, yPos)
-            yPos += 20
-        End If
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
         yPos += 80
 
         ev.Graphics.DrawString("-----------------------------------", printFont, Brushes.Black, 120, yPos)
         yPos += 40
-        '---
+        ''---
 
         If cliente Then
             ev.Graphics.DrawString("GRACIAS POR VENIR " & nombreCliente, New Font("Courier New", 14, FontStyle.Bold), Brushes.Black, 130, yPos)
