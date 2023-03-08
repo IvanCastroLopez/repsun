@@ -809,10 +809,29 @@ Public Class GestionForm
     End Sub
 
     Public MiReporte As Object
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Dim dataGridViewPrint
+        Select Case tbc_gestion.SelectedIndex
+            Case 1
+                dataGridViewPrint = New DataGridViewPrinter(dgv_tienda, PrintDocument1)
+            Case 2
+                dataGridViewPrint = New DataGridViewPrinter(dgv_empleados, PrintDocument1)
+            Case 3
+                dataGridViewPrint = New DataGridViewPrinter(dgv_proveedores, PrintDocument1)
+            Case 4
+                dataGridViewPrint = New DataGridViewPrinter(dgv_clientes, PrintDocument1)
+        End Select
+        'dataGridViewPrint.Print()
+    End Sub
     'Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
     '    Dim MyForm As New VisorInformes
     '    MiReporte = New CrystalReport1
     '    MyForm.Show()
+    'End Sub
+
+    'Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+    '    PrintDocument1.Print()
     'End Sub
 
     Private Sub btn_empleados_Click(sender As Object, e As EventArgs) Handles btn_empleados.Click
@@ -847,4 +866,6 @@ Public Class GestionForm
         System.Diagnostics.Process.Start(url)
 
     End Sub
+
+
 End Class

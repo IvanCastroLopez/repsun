@@ -135,6 +135,7 @@
     <Compile Include="tpvForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Utilidades\DataGridViewPrinter.vb" />
     <Compile Include="Utilidades\Registros.vb" />
     <Compile Include="Utilidades\Herramientas.vb" />
     <Compile Include="Utilidades\Validaciones.vb" />
